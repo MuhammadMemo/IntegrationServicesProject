@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimProductSCD"
   DTS:PackageType="5"
-  DTS:VersionBuild="49"
-  DTS:VersionGUID="{E1DC5986-ABFC-4413-993A-3A585BAC2441}">
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{C1EC9537-E612-4726-9DC7-4111B619A096}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -161,7 +161,6 @@
                     <outputColumn
                       refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Status]"
                       dataType="bool"
-                      description="Status"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Status]"
@@ -351,7 +350,7 @@
                 <input
                   refId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
+                  errorRowDisposition="IgnoreFailure"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
@@ -419,12 +418,12 @@
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
                       dataType="wstr"
-                      length="100"
+                      length="150"
                       name="ProductName" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
                       dataType="wstr"
-                      length="20"
+                      length="150"
                       name="Category" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SubCategory]"
@@ -853,7 +852,7 @@ where [refTable].[CompanyName] = ?</property>
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       dataType="wstr"
-                      length="20"
+                      length="150"
                       name="Param_0">
                       <properties>
                         <property
@@ -865,7 +864,7 @@ where [refTable].[CompanyName] = ?</property>
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       dataType="wstr"
-                      length="100"
+                      length="150"
                       name="Param_1">
                       <properties>
                         <property
@@ -1432,20 +1431,6 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
                   name="Union All Input 1">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[DATAAREAID]"
-                      cachedDataType="wstr"
-                      cachedLength="4"
-                      cachedName="DATAAREAID"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATAAREAID]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[DATAAREAID]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[SalesPrice]"
                       cachedDataType="numeric"
                       cachedName="SalesPrice"
@@ -1556,16 +1541,8 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
                           name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[PurchasePriceConvert]}</property>
                       </properties>
                     </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
-                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]"
-                  hasSideEffects="true"
-                  name="Union All Input 2">
-                  <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[DATAAREAID]"
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[DATAAREAID]"
                       cachedDataType="wstr"
                       cachedLength="4"
                       cachedName="DATAAREAID"
@@ -1578,6 +1555,14 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
                           name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[DATAAREAID]}</property>
                       </properties>
                     </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
                     <inputColumn
                       refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SalesPrice]"
                       cachedDataType="numeric"
@@ -1687,6 +1672,20 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
                           dataType="System.Int32"
                           description="Output column lineage ID"
                           name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[PurchasePriceConvert]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[DATAAREAID]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="DATAAREAID"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATAAREAID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[DATAAREAID]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -2267,6 +2266,19 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
