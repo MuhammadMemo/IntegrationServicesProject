@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimProductSCD"
   DTS:PackageType="5"
-  DTS:VersionBuild="84"
-  DTS:VersionGUID="{022EB9C3-8055-4E9E-B986-3199832F7698}">
+  DTS:VersionBuild="86"
+  DTS:VersionGUID="{100BA971-CEDA-46DA-9418-815486C54CED}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -72,7 +72,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="StartPakage">
       <DTS:VariableValue
-        DTS:DataType="7">11/18/2023 1:22:57 AM</DTS:VariableValue>
+        DTS:DataType="7">11/18/2023 10:47:56 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2334,28 +2334,18 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
           Size="151,42"
           Id="Package\Sequence Container\Data Flow Task"
           TopLeft="30.5,209.5" />
-        <EdgeLayout
-          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
-          TopLeft="106,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Sequence Container\Expression - Set Start date"
+          TopLeft="6.5,19.5" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Sequence Container\Log Task"
+          TopLeft="45.5,311.5" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Sequence Container\TimeStamp Task"
+          TopLeft="27.5,107.5" />
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
           TopLeft="106,251.5">
@@ -2378,10 +2368,6 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="205,42"
-          Id="Package\Sequence Container\Expression - Set Start date"
-          TopLeft="6.5,19.5" />
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
           TopLeft="107.5,61.5">
@@ -2404,21 +2390,35 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Sequence Container\TimeStamp Task"
-          TopLeft="27.5,107.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Sequence Container\Log Task"
-          TopLeft="45.5,311.5" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="106,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="212,408"
+          PanelSize="212,409"
           Size="212,452"
           Id="Package\Sequence Container"
-          TopLeft="426,43" />
+          TopLeft="428,67" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2782,33 +2782,33 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
         <NodeLayout
           Size="176,42"
           Id="Package\Sequence Container\Data Flow Task\Row Count Update 1"
-          TopLeft="329.5,529" />
+          TopLeft="340.5,546" />
         <EdgeLayout
           Id="Package\Sequence Container\Data Flow Task.Paths[OLE DB Command Output2]"
           TopLeft="404,504.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="13.5,24.4999999999999"
+              EndConnector="24.5,41.4999999999999"
               Start="0,0"
-              End="13.5,16.9999999999999">
+              End="24.5,33.9999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.24999999999994" />
+                    End="0,16.7499999999999" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,8.24999999999994"
-                    Point2="0,12.2499999999999"
-                    Point3="4,12.2499999999999" />
+                    Point1="0,16.7499999999999"
+                    Point2="0,20.7499999999999"
+                    Point3="4,20.7499999999999" />
                   <mssgle:LineSegment
-                    End="9.5,12.2499999999999" />
+                    End="20.5,20.7499999999999" />
                   <mssgle:CubicBezierSegment
-                    Point1="9.5,12.2499999999999"
-                    Point2="13.5,12.2499999999999"
-                    Point3="13.5,16.2499999999999" />
+                    Point1="20.5,20.7499999999999"
+                    Point2="24.5,20.7499999999999"
+                    Point3="24.5,24.7499999999999" />
                   <mssgle:LineSegment
-                    End="13.5,16.9999999999999" />
+                    End="24.5,33.9999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2945,19 +2945,6 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Data Flow Task\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">View</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\Data Flow Task\Lookup">
     <Properties>
       <Property>
@@ -3049,6 +3036,19 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
