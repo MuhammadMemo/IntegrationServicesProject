@@ -12,8 +12,8 @@
   DTS:MaxErrorCount="10"
   DTS:ObjectName="PackageLookup"
   DTS:PackageType="5"
-  DTS:VersionBuild="92"
-  DTS:VersionGUID="{F31B5217-C71E-4AEF-AA08-2FEE502C2E19}">
+  DTS:VersionBuild="93"
+  DTS:VersionGUID="{8D64CDC5-BD25-4957-817F-F1FCC69AA13E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -1726,7 +1726,7 @@ where [BrancheAlternativeKey] =? and  [CompanyKey] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate)&#xA;     VALUES ('DimProduct',?,?,?,?,?,?,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate)&#xA;     VALUES ('DimBranche',?,?,?,?,?,?,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
