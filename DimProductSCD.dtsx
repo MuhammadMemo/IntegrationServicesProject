@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimProductSCD"
   DTS:PackageType="5"
-  DTS:VersionBuild="101"
-  DTS:VersionGUID="{3FEDB5E3-4464-461E-B29F-CC0777EB8EE3}">
+  DTS:VersionBuild="102"
+  DTS:VersionGUID="{50F93FF8-3634-4911-A99A-33F1E3256E6D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -4137,7 +4137,7 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
           PanelSize="241,408"
           Size="241,451"
           Id="Package\Container DimProduct SCD"
-          TopLeft="990,51" />
+          TopLeft="1330,63" />
         <NodeLayout
           Size="189,42"
           Id="Package\Container DimBranches Lookup\Data Flow Task -Delete"
@@ -4225,24 +4225,36 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="246,408"
+          PanelSize="249,408"
           Size="249,451"
           Id="Package\Container DimBranches Lookup"
-          TopLeft="697,50" />
+          TopLeft="1059,70" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="990,276">
+          TopLeft="1450.5,63">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-44,0"
+              EndConnector="-267,7"
               Start="0,0"
-              End="-36.5,0">
+              End="-267,-0.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-36.5,0" />
+                    End="0,-18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-18.5"
+                    Point2="0,-22.5"
+                    Point3="-4,-22.5" />
+                  <mssgle:LineSegment
+                    End="-263,-22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-263,-22.5"
+                    Point2="-267,-22.5"
+                    Point3="-267,-18.5" />
+                  <mssgle:LineSegment
+                    End="-267,-0.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

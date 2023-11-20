@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="5/2/2023 12:37:45 PM"
@@ -7,12 +7,12 @@
   DTS:CreatorName="PC\Muhammad"
   DTS:DTSID="{279B312A-1B2C-4755-B8B9-D1F9E084BCE7}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5209.0"
+  DTS:LastModifiedProductVersion="16.0.5131.0"
   DTS:LocaleID="3073"
   DTS:ObjectName="PackageFactsalesLookup"
   DTS:PackageType="5"
-  DTS:VersionBuild="98"
-  DTS:VersionGUID="{C5091788-8813-48D1-8C66-AD4D74410E7F}">
+  DTS:VersionBuild="99"
+  DTS:VersionGUID="{F12E7876-A51D-4AC7-9F82-66EB41398CDA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -155,8 +155,8 @@ where [refTable].[BrancheAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
               <connections>
                 <connection
                   refId="Package\Data Flow Task-Insert-Update\Lookup Branchs.Connections[OleDbConnection]"
-                  connectionManagerID="{EA6E430A-95D0-43D4-B80B-0F5588019022}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[PC_MSSQLSERVER2022.DataWarehouse]"
+                  connectionManagerID="{EA6E430A-95D0-43D4-B80B-0F5588019022}:invalid"
+                  connectionManagerRefId="{EA6E430A-95D0-43D4-B80B-0F5588019022}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -329,8 +329,8 @@ where [refTable].[CompanyName] = ?</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task-Insert-Update\Lookup Campany.Connections[OleDbConnection]"
-                  connectionManagerID="{EA6E430A-95D0-43D4-B80B-0F5588019022}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[PC_MSSQLSERVER2022.DataWarehouse]"
+                  connectionManagerID="{EA6E430A-95D0-43D4-B80B-0F5588019022}:invalid"
+                  connectionManagerRefId="{EA6E430A-95D0-43D4-B80B-0F5588019022}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -487,8 +487,8 @@ where [refTable].[SalesOrderNumber] = ? and [refTable].[SalesOrderLineNumber] = 
               <connections>
                 <connection
                   refId="Package\Data Flow Task-Insert-Update\Lookup FactSales.Connections[OleDbConnection]"
-                  connectionManagerID="{EA6E430A-95D0-43D4-B80B-0F5588019022}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[PC_MSSQLSERVER2022.DataWarehouse]"
+                  connectionManagerID="{EA6E430A-95D0-43D4-B80B-0F5588019022}:invalid"
+                  connectionManagerRefId="{EA6E430A-95D0-43D4-B80B-0F5588019022}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -932,8 +932,8 @@ where [refTable].[ProductsAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
               <connections>
                 <connection
                   refId="Package\Data Flow Task-Insert-Update\Lookup Product.Connections[OleDbConnection]"
-                  connectionManagerID="{EA6E430A-95D0-43D4-B80B-0F5588019022}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[PC_MSSQLSERVER2022.DataWarehouse]"
+                  connectionManagerID="{EA6E430A-95D0-43D4-B80B-0F5588019022}:invalid"
+                  connectionManagerRefId="{EA6E430A-95D0-43D4-B80B-0F5588019022}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1082,8 +1082,8 @@ UPDATE [dbo].[FactSales]
               <connections>
                 <connection
                   refId="Package\Data Flow Task-Insert-Update\OLE DB Command-Update.Connections[OleDbConnection]"
-                  connectionManagerID="{EA6E430A-95D0-43D4-B80B-0F5588019022}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[PC_MSSQLSERVER2022.DataWarehouse]"
+                  connectionManagerID="{EA6E430A-95D0-43D4-B80B-0F5588019022}:invalid"
+                  connectionManagerRefId="{EA6E430A-95D0-43D4-B80B-0F5588019022}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1473,8 +1473,8 @@ UPDATE [dbo].[FactSales]
               <connections>
                 <connection
                   refId="Package\Data Flow Task-Insert-Update\OLE DB Destination-Insert.Connections[OleDbConnection]"
-                  connectionManagerID="{EA6E430A-95D0-43D4-B80B-0F5588019022}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[PC_MSSQLSERVER2022.DataWarehouse]"
+                  connectionManagerID="{EA6E430A-95D0-43D4-B80B-0F5588019022}:invalid"
+                  connectionManagerRefId="{EA6E430A-95D0-43D4-B80B-0F5588019022}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1788,8 +1788,8 @@ SELECT  [CompanyName]
               <connections>
                 <connection
                   refId="Package\Data Flow Task-Insert-Update\OLE DB Source FactSales.Connections[OleDbConnection]"
-                  connectionManagerID="{BEE87EF1-6F38-42BB-9C4A-7E3E3B7C1267}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[PC_MSSQLSERVER2022.DynamicsAx1]"
+                  connectionManagerID="{155A0EFD-3698-446D-862B-8BB7B74DA5D9}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[mffco-srv.DynamicsAx1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2297,21 +2297,21 @@ SELECT  [CompanyName]
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="152,42"
+          Id="Package\Data Flow Task-Insert-Update\Lookup Product"
+          TopLeft="532,309" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Data Flow Task-Insert-Update\OLE DB Source FactSales"
+          TopLeft="537,53" />
+        <NodeLayout
           Size="160,42"
           Id="Package\Data Flow Task-Insert-Update\Lookup Campany"
           TopLeft="551,132" />
         <NodeLayout
           Size="203,42"
-          Id="Package\Data Flow Task-Insert-Update\OLE DB Destination-Insert"
-          TopLeft="380,526" />
-        <NodeLayout
-          Size="203,42"
           Id="Package\Data Flow Task-Insert-Update\OLE DB Command-Update"
           TopLeft="657,496" />
-        <NodeLayout
-          Size="197,42"
-          Id="Package\Data Flow Task-Insert-Update\OLE DB Source FactSales"
-          TopLeft="537,53" />
         <NodeLayout
           Size="160,42"
           Id="Package\Data Flow Task-Insert-Update\Lookup FactSales"
@@ -2321,9 +2321,103 @@ SELECT  [CompanyName]
           Id="Package\Data Flow Task-Insert-Update\Lookup Branchs"
           TopLeft="533,221" />
         <NodeLayout
-          Size="152,42"
-          Id="Package\Data Flow Task-Insert-Update\Lookup Product"
-          TopLeft="532,309" />
+          Size="203,42"
+          Id="Package\Data Flow Task-Insert-Update\OLE DB Destination-Insert"
+          TopLeft="380,526" />
+        <EdgeLayout
+          Id="Package\Data Flow Task-Insert-Update.Paths[OLE DB Source Output]"
+          TopLeft="633.25,95">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task-Insert-Update.Paths[Lookup No Match Output]"
+          TopLeft="560.666666666667,455">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-79.1666666666666,71"
+              Start="0,0"
+              End="-79.1666666666666,63.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.8217821782178" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.8217821782178"
+                    Point2="0,28.8217821782178"
+                    Point3="-4,28.8217821782178" />
+                  <mssgle:LineSegment
+                    End="-75.1666666666666,28.8217821782178" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-75.1666666666666,28.8217821782178"
+                    Point2="-79.1666666666666,28.8217821782178"
+                    Point3="-79.1666666666666,32.8217821782178" />
+                  <mssgle:LineSegment
+                    End="-79.1666666666666,63.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-95.3897200520833,33.8217821782178,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task-Insert-Update.Paths[Lookup Match Output3]"
+          TopLeft="611.333333333333,455">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="147.166666666667,41"
+              Start="0,0"
+              End="147.166666666667,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.6435643564356" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.6435643564356"
+                    Point2="0,16.6435643564356"
+                    Point3="4,16.6435643564356" />
+                  <mssgle:LineSegment
+                    End="143.166666666667,16.6435643564356" />
+                  <mssgle:CubicBezierSegment
+                    Point1="143.166666666667,16.6435643564356"
+                    Point2="147.166666666667,16.6435643564356"
+                    Point3="147.166666666667,20.6435643564356" />
+                  <mssgle:LineSegment
+                    End="147.166666666667,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="16.5232942708335,21.6435643564356,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task-Insert-Update.Paths[Lookup Match Output2]"
           TopLeft="608,351">
@@ -2420,103 +2514,40 @@ SELECT  [CompanyName]
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task-Insert-Update.Paths[OLE DB Source Output]"
-          TopLeft="633.25,95">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37"
-              Start="0,0"
-              End="0,29.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task-Insert-Update.Paths[Lookup No Match Output]"
-          TopLeft="560.666666666667,455">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-79.1666666666666,71"
-              Start="0,0"
-              End="-79.1666666666666,63.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.8217821782178" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.8217821782178"
-                    Point2="0,28.8217821782178"
-                    Point3="-4,28.8217821782178" />
-                  <mssgle:LineSegment
-                    End="-75.1666666666666,28.8217821782178" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-75.1666666666666,28.8217821782178"
-                    Point2="-79.1666666666666,28.8217821782178"
-                    Point3="-79.1666666666666,32.8217821782178" />
-                  <mssgle:LineSegment
-                    End="-79.1666666666666,63.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-95.3897200520833,33.8217821782178,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task-Insert-Update.Paths[Lookup Match Output3]"
-          TopLeft="611.333333333333,455">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="147.166666666667,41"
-              Start="0,0"
-              End="147.166666666667,33.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.6435643564356" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.6435643564356"
-                    Point2="0,16.6435643564356"
-                    Point3="4,16.6435643564356" />
-                  <mssgle:LineSegment
-                    End="143.166666666667,16.6435643564356" />
-                  <mssgle:CubicBezierSegment
-                    Point1="143.166666666667,16.6435643564356"
-                    Point2="147.166666666667,16.6435643564356"
-                    Point3="147.166666666667,20.6435643564356" />
-                  <mssgle:LineSegment
-                    End="147.166666666667,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="16.5232942708335,21.6435643564356,114.120078125,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task-Insert-Update\Lookup Product">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimProduct]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task-Insert-Update\OLE DB Source FactSales">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task-Insert-Update\Lookup Campany">
     <Properties>
@@ -2541,33 +2572,12 @@ SELECT  [CompanyName]
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task-Insert-Update\OLE DB Destination-Insert">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task-Insert-Update\OLE DB Source FactSales">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task-Insert-Update\Lookup FactSales">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2577,7 +2587,7 @@ SELECT  [CompanyName]
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2608,25 +2618,15 @@ SELECT  [CompanyName]
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task-Insert-Update\Lookup Product">
+    design-time-name="Package\Data Flow Task-Insert-Update\OLE DB Destination-Insert">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimProduct]</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
