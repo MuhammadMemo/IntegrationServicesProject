@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="131"
-  DTS:VersionGUID="{DD53DCFE-58A2-4283-8328-F0FE155B5B3C}">
+  DTS:VersionBuild="151"
+  DTS:VersionGUID="{BFE80AF3-23BE-4FFF-81BB-369662341682}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -1757,11 +1757,1253 @@ where [BrancheAlternativeKey] =? and  [CompanyKey] = ?</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimBranches Lookup.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{e847cd43-1f78-49c2-897d-a0db34915775}"
+          DTS:DTSID="{AC86EA47-8673-431A-84B1-107CB02F6C88}"
           DTS:From="Package\Container DimBranches Lookup\Expression - Set Start date"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
           DTS:To="Package\Container DimBranches Lookup\Data Flow Task-Insert,Update" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Container DimCustomer Lookup"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{b9e7f639-1852-4d11-8adf-6be034b0e8a3}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Container DimCustomer Lookup">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{0394f4b6-bbf7-441b-938c-e6c30f219a17}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:MaxErrorCount="10"
+          DTS:ObjectName="Data Flow Task-Insert,Update"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="CompanyId"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimCompany]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimCompany]) [refTable]
+where [refTable].[CompanyName] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Companykey" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CompanyAlternativeKey" dataType="DT_WSTR" length="5" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CompanyName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\113:invalid};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1256</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[hyperv-srv.DataWarehouse.sa]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Inputs[Lookup Input].Columns[DATAAREAID]"
+                          cachedDataType="wstr"
+                          cachedLength="4"
+                          cachedName="DATAAREAID"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATAAREAID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CompanyName</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Outputs[Lookup Match Output].Columns[Companykey]"
+                          dataType="ui1"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Outputs[Lookup Match Output].Columns[Companykey]"
+                          name="Companykey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">Companykey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimCustomer]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimCustomer]) [refTable]
+where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CompanyKey" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CustomerKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CustomerAlternativeKey" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CustomerName" dataType="DT_WSTR" length="70" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CustomerGroup" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CustomerType" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CustomerClassification" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Birthday" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Gendr" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="UpdatLasteTime" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerAlternativeKey]};#{Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1256</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[hyperv-srv.DataWarehouse.sa]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[CustomerAlternativeKey]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="CustomerAlternativeKey"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerAlternativeKey]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CustomerAlternativeKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[Companykey]"
+                          cachedDataType="ui1"
+                          cachedName="Companykey"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Outputs[Lookup Match Output].Columns[Companykey]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CompanyKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">
+UPDATE [dbo].[DimCustomer]
+   SET
+     [CustomerName] = ?
+      ,[CustomerGroup] =?
+      ,[CustomerType] = ?
+      ,[CustomerClassification] =?
+      ,[Birthday] = ?
+      ,[Gendr] = ?
+where [CustomerAlternativeKey] =? and  [CompanyKey] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[hyperv-srv.DataWarehouse.sa]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[CustomerName]"
+                          cachedDataType="wstr"
+                          cachedLength="150"
+                          cachedName="CustomerName"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerName]" />
+                        <inputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[CustomerGroup]"
+                          cachedDataType="wstr"
+                          cachedLength="60"
+                          cachedName="CustomerGroup"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerGroup]" />
+                        <inputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[CustomerType]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="CustomerType"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerType]" />
+                        <inputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[CustomerClassification]"
+                          cachedDataType="wstr"
+                          cachedLength="60"
+                          cachedName="CustomerClassification"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerClassification]" />
+                        <inputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[birthdate]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="birthdate"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[birthdate]" />
+                        <inputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[Gendr]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="Gendr"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gendr]" />
+                        <inputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[CustomerAlternativeKey]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="CustomerAlternativeKey"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerAlternativeKey]" />
+                        <inputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[Companykey]"
+                          cachedDataType="ui1"
+                          cachedName="Companykey"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Outputs[Lookup Match Output].Columns[Companykey]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="wstr"
+                          length="150"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="wstr"
+                          length="60"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="wstr"
+                          length="50"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          dataType="wstr"
+                          length="100"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          dataType="wstr"
+                          length="10"
+                          name="Param_4">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="Param_5">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          dataType="wstr"
+                          length="50"
+                          name="Param_6">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          dataType="ui1"
+                          name="Param_7">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[DimCustomer]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1256</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[hyperv-srv.DataWarehouse.sa]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="IgnoreFailure"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerAlternativeKey]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="CustomerAlternativeKey"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerAlternativeKey]"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerAlternativeKey]" />
+                        <inputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerName]"
+                          cachedDataType="wstr"
+                          cachedLength="150"
+                          cachedName="CustomerName"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerName]"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerName]" />
+                        <inputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerGroup]"
+                          cachedDataType="wstr"
+                          cachedLength="60"
+                          cachedName="CustomerGroup"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerGroup]"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerGroup]" />
+                        <inputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerClassification]"
+                          cachedDataType="wstr"
+                          cachedLength="60"
+                          cachedName="CustomerClassification"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerClassification]"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerClassification]" />
+                        <inputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Gendr]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="Gendr"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gendr]"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gendr]" />
+                        <inputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerType]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="CustomerType"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerType]"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerType]" />
+                        <inputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Companykey]"
+                          cachedDataType="ui1"
+                          cachedName="Companykey"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Outputs[Lookup Match Output].Columns[Companykey]" />
+                        <inputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[birthdate]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="birthdate"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Birthday]"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[birthdate]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatLasteTime]"
+                          dataType="dbTimeStamp"
+                          name="UpdatLasteTime" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                          dataType="ui1"
+                          name="CompanyKey" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerKey]"
+                          dataType="i4"
+                          name="CustomerKey" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerAlternativeKey]"
+                          dataType="wstr"
+                          length="50"
+                          name="CustomerAlternativeKey" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerName]"
+                          dataType="wstr"
+                          length="150"
+                          name="CustomerName" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerGroup]"
+                          dataType="wstr"
+                          length="60"
+                          name="CustomerGroup" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerType]"
+                          dataType="wstr"
+                          length="50"
+                          name="CustomerType" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerClassification]"
+                          dataType="wstr"
+                          length="100"
+                          name="CustomerClassification" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Birthday]"
+                          dataType="wstr"
+                          length="10"
+                          name="Birthday" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gendr]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="Gendr" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[_DWCustomer]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [NAME]
+      ,[GROUPID]
+      ,[DATAAREAID]
+  FROM [dbo].[COMMISSIONSALESGROUP]</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1256</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{155A0EFD-3698-446D-862B-8BB7B74DA5D9}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[mffco-srv.DynamicsAx1]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerName]"
+                          length="150"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerName]"
+                          name="CustomerName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerGroup]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerGroup]"
+                          length="60"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerGroup]"
+                          name="CustomerGroup"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerClassification]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerClassification]"
+                          length="60"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerClassification]"
+                          name="CustomerClassification"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[birthdate]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[birthdate]"
+                          length="10"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[birthdate]"
+                          name="birthdate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gendr]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Gendr]"
+                          length="1"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gendr]"
+                          name="Gendr"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerType]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerType]"
+                          length="20"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerType]"
+                          name="CustomerType"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerAlternativeKey]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerAlternativeKey]"
+                          length="20"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerAlternativeKey]"
+                          name="CustomerAlternativeKey"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATAAREAID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATAAREAID]"
+                          length="4"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATAAREAID]"
+                          name="DATAAREAID"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATAAREAID]"
+                          dataType="wstr"
+                          length="4"
+                          name="DATAAREAID" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerAlternativeKey]"
+                          dataType="wstr"
+                          length="20"
+                          name="CustomerAlternativeKey" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerName]"
+                          dataType="wstr"
+                          length="150"
+                          name="CustomerName" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerGroup]"
+                          dataType="wstr"
+                          length="60"
+                          name="CustomerGroup" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IDNATIONALSTR]"
+                          dataType="wstr"
+                          length="20"
+                          name="IDNATIONALSTR" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerClassification]"
+                          dataType="wstr"
+                          length="60"
+                          name="CustomerClassification" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[birthdate]"
+                          dataType="wstr"
+                          length="10"
+                          name="birthdate" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Gendr]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="Gendr" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerType]"
+                          dataType="wstr"
+                          length="20"
+                          name="CustomerType" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerName]"
+                          dataType="wstr"
+                          length="150"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerName]"
+                          name="CustomerName" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerGroup]"
+                          dataType="wstr"
+                          length="60"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerGroup]"
+                          name="CustomerGroup" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerClassification]"
+                          dataType="wstr"
+                          length="60"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerClassification]"
+                          name="CustomerClassification" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[birthdate]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[birthdate]"
+                          name="birthdate" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Gendr]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Gendr]"
+                          name="Gendr" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerType]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerType]"
+                          name="CustomerType" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerAlternativeKey]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerAlternativeKey]"
+                          name="CustomerAlternativeKey" />
+                        <outputColumn
+                          refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATAAREAID]"
+                          dataType="wstr"
+                          length="4"
+                          lineageId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATAAREAID]"
+                          name="DATAAREAID" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Row Count Insert"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count Insert">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::InsertCount</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Row Count Insert.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Row Count Insert.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Row Count Insert.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Row Count Update"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count Update">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::UpdateCount</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Row Count Update.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Row Count Update.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Row Count Update.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+                  endId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+                  endId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Row Count Update.Inputs[Row Count Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
+                  endId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Row Count Insert.Inputs[Row Count Input 1]"
+                  name="Lookup No Match Output"
+                  startId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+                  endId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId.Inputs[Lookup Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+                  endId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Row Count Insert.Outputs[Row Count Output 1]" />
+                <path
+                  refId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+                  endId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Row Count Update.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Container DimCustomer Lookup\Expression - Set Start date"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{f4156cd9-7539-44d7-bd5c-c217354aceb0}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Expression - Set Start date"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::StartPakage]= GETDATE()" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Container DimCustomer Lookup\Log Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{7ef018aa-65cf-42f8-b389-1b1fc7653a9a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate)&#xA;     VALUES ('DimCustomer',?,?,?,?,?,?,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::InsertCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::UpdateCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::MachineName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::DeleteCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::StartPakage"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Container DimCustomer Lookup.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{1E195A24-0718-4583-92BA-DC09BBBA466E}"
+          DTS:From="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Container DimCustomer Lookup\Log Task" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Container DimCustomer Lookup.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{39d6882a-c198-4510-aff1-5d00271500d0}"
+          DTS:From="Package\Container DimCustomer Lookup\Expression - Set Start date"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -4009,6 +5251,14 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Container DimBranches Lookup" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{03FCFBF5-AEAA-4134-B504-26B9F74400B1}"
+      DTS:From="Package\Container DimBranches Lookup"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Container DimCustomer Lookup" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -4109,10 +5359,10 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="231,409"
+          PanelSize="231,408"
           Size="231,452"
           Id="Package\Container DimBranches Lookup"
-          TopLeft="679,69" />
+          TopLeft="1192,55" />
         <NodeLayout
           Size="151,42"
           Id="Package\Container DimProduct SCD\Data Flow Task"
@@ -4120,7 +5370,7 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
         <NodeLayout
           Size="205,42"
           Id="Package\Container DimProduct SCD\Expression - Set Start date"
-          TopLeft="5.5,5.5" />
+          TopLeft="3.5,21.5" />
         <NodeLayout
           Size="121,42"
           Id="Package\Container DimProduct SCD\Log Task"
@@ -4128,7 +5378,7 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
         <NodeLayout
           Size="157,42"
           Id="Package\Container DimProduct SCD\TimeStamp Task"
-          TopLeft="29.5,107.5" />
+          TopLeft="32.5,117.5" />
         <EdgeLayout
           Id="Package\Container DimProduct SCD.PrecedenceConstraints[Constraint]"
           TopLeft="108,251.5">
@@ -4153,7 +5403,92 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Container DimProduct SCD.PrecedenceConstraints[Constraint 1]"
-          TopLeft="108,47.5">
+          TopLeft="108.5,63.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Container DimProduct SCD.PrecedenceConstraints[Constraint 2]"
+          TopLeft="109.5,159.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="216,409"
+          Size="216,452"
+          Id="Package\Container DimProduct SCD"
+          TopLeft="1473,48" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="1473,277.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-50,0"
+              Start="0,0"
+              End="-42.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-42.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update"
+          TopLeft="5.50000000000003,107.5" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Container DimCustomer Lookup\Expression - Set Start date"
+          TopLeft="13,5.5" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Container DimCustomer Lookup\Log Task"
+          TopLeft="55,209.5" />
+        <EdgeLayout
+          Id="Package\Container DimCustomer Lookup.PrecedenceConstraints[Constraint 2]"
+          TopLeft="115.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4174,8 +5509,8 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Container DimProduct SCD.PrecedenceConstraints[Constraint 2]"
-          TopLeft="108,149.5">
+          Id="Package\Container DimCustomer Lookup.PrecedenceConstraints[Constraint]"
+          TopLeft="115.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4198,24 +5533,36 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="216,409"
-          Size="216,452"
-          Id="Package\Container DimProduct SCD"
-          TopLeft="1060,69" />
+          PanelSize="231,306"
+          Size="231,350"
+          Id="Package\Container DimCustomer Lookup"
+          TopLeft="904,68" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="1060,295">
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="1192,281">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-150,0"
+              EndConnector="-57,-38"
               Start="0,0"
-              End="-142.5,0">
+              End="-49.5,-38">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-142.5,0" />
+                    End="-24.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-24.5,0"
+                    Point2="-28.5,0"
+                    Point3="-28.5,-4" />
+                  <mssgle:LineSegment
+                    End="-28.5,-34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-28.5,-34"
+                    Point2="-28.5,-38"
+                    Point3="-32.5,-38" />
+                  <mssgle:LineSegment
+                    End="-49.5,-38" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4439,9 +5786,7 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4463,9 +5808,7 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4595,9 +5938,7 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5285,6 +6626,300 @@ select itemid, ITEMNAME,ITEMGROUPID , DIMENSION2_,DATAAREAID ,isnull(cast (Purch
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source"
+          TopLeft="538.5,69.5" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup"
+          TopLeft="551,254" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Row Count Update"
+          TopLeft="826,289" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination"
+          TopLeft="317.5,413.5" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Row Count Insert"
+          TopLeft="265.5,279" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId"
+          TopLeft="543.5,155.5" />
+        <EdgeLayout
+          Id="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+          TopLeft="611.75,111.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
+          TopLeft="551,275">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-124.5,25"
+              Start="0,0"
+              End="-117,25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-58.25,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-58.25,0"
+                    Point2="-62.25,0"
+                    Point3="-62.25,4" />
+                  <mssgle:LineSegment
+                    End="-62.25,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-62.25,21"
+                    Point2="-62.25,25"
+                    Point3="-66.25,25" />
+                  <mssgle:LineSegment
+                    End="-117,25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-118.05638671875,-17.609375,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+          TopLeft="664,275">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="162,35"
+              Start="0,0"
+              End="154.5,35">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="77,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="77,0"
+                    Point2="81,0"
+                    Point3="81,4" />
+                  <mssgle:LineSegment
+                    End="81,31" />
+                  <mssgle:CubicBezierSegment
+                    Point1="81,31"
+                    Point2="81,35"
+                    Point3="85,35" />
+                  <mssgle:LineSegment
+                    End="154.5,35" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="32.80861328125,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          TopLeft="608.75,197.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.5"
+              Start="0,0"
+              End="0,49">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,18.6953125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+          TopLeft="346,321">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="57,92.5"
+              Start="0,0"
+              End="57,85">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.25"
+                    Point2="0,46.25"
+                    Point3="4,46.25" />
+                  <mssgle:LineSegment
+                    End="53,46.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="53,46.25"
+                    Point2="57,46.25"
+                    Point3="57,50.25" />
+                  <mssgle:LineSegment
+                    End="57,85" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Command"
+          TopLeft="814,393" />
+        <EdgeLayout
+          Id="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+          TopLeft="909.5,331">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.5,62"
+              Start="0,0"
+              End="-12.5,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27"
+                    Point2="0,31"
+                    Point3="-4,31" />
+                  <mssgle:LineSegment
+                    End="-8.5,31" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.5,31"
+                    Point2="-12.5,31"
+                    Point3="-12.5,35" />
+                  <mssgle:LineSegment
+                    End="-12.5,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCustomer]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Container DimCustomer Lookup\Data Flow Task-Insert,Update\CompanyId">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCompany]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
