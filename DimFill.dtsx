@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="207"
-  DTS:VersionGUID="{8C7F2C71-4A26-468B-B54B-883B4E7E394F}">
+  DTS:VersionBuild="215"
+  DTS:VersionGUID="{ACAB2058-A77B-4DF9-9E73-A885DF63BD49}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -10015,6 +10015,1497 @@ where [refTable].[CountryAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Sequence DimPromotion Lookup"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{cbbc377f-f05e-4996-a5e1-7646cee21799}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence DimPromotion Lookup">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{F7A91888-D5E2-4B87-9CB6-D49CA8C41E4B}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task-Insert,Update"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimPromotion]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimPromotion]) [refTable]
+where [refTable].[PromotionAlternativeKey] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CompanyKey" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PromotionKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PromotionAlternativeKey" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="STATUS" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FROMDATE" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TODATE" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DELIVERYDATE" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DESCRIPTION" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ITEMGROUP" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DESCACTIVE" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SORTDISC" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PRICEDISCOUNT" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DISCOUNT" dataType="DT_NUMERIC" length="0" precision="18" scale="0" codePage="0"/&gt;&lt;referenceColumn name="QUANTITY" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Location" dataType="DT_WSTR" length="150" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UpdatLasteTime" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PromotionAlternativeKey]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1256</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[hyperv-srv.DataWarehouse.sa]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[PromotionAlternativeKey]"
+                          cachedDataType="i8"
+                          cachedName="PromotionAlternativeKey"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PromotionAlternativeKey]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">PromotionAlternativeKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup 1"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimCompany]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimCompany]) [refTable]
+where [refTable].[CompanyName] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Companykey" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CompanyAlternativeKey" dataType="DT_WSTR" length="5" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CompanyName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1256</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[hyperv-srv.DataWarehouse.sa]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input].Columns[CompanyName]"
+                          cachedDataType="wstr"
+                          cachedLength="4"
+                          cachedName="CompanyName"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CompanyName</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[Companykey]"
+                          dataType="ui1"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[Companykey]"
+                          name="Companykey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">Companykey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimPromotion]
+   SET 
+      [DESCRIPTION] = ?
+      ,[FROMDATE] =?
+      ,[TODATE] = ?
+      ,[DELIVERYDATE] = ?
+      ,[QUANTITY] = ?
+      ,[DISCOUNT] = ?
+      ,[PRICEDISCOUNT] = ?
+      ,[Location] = ?
+      ,[ITEMGROUP] = ?
+      ,[DESCACTIVE] = ?
+      ,[STATUS] = ?
+      ,[SORTDISC] = ?
+
+ WHERE  [PromotionAlternativeKey] = ?     and [CompanyKey] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1256</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[hyperv-srv.DataWarehouse.sa]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[DESCRIPTION]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="DESCRIPTION"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DESCRIPTION]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[FROMDATE]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="FROMDATE"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[FROMDATE]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[TODATE]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="TODATE"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[TODATE]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[DELIVERYDATE]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DELIVERYDATE"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DELIVERYDATE]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[QUANTITY]"
+                          cachedDataType="i4"
+                          cachedName="QUANTITY"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[QUANTITY]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[DISCOUNT]"
+                          cachedDataType="i4"
+                          cachedName="DISCOUNT"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DISCOUNT]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[PRICEDISCOUNT]"
+                          cachedDataType="numeric"
+                          cachedName="PRICEDISCOUNT"
+                          cachedPrecision="28"
+                          cachedScale="12"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRICEDISCOUNT]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[Location]"
+                          cachedDataType="wstr"
+                          cachedLength="150"
+                          cachedName="Location"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Location]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[ITEMGROUP]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="ITEMGROUP"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ITEMGROUP]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[DESCACTIVE]"
+                          cachedDataType="i4"
+                          cachedName="DESCACTIVE"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DESCACTIVE]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[STATUS]"
+                          cachedDataType="i4"
+                          cachedName="STATUS"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATUS]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[SORTDISC]"
+                          cachedDataType="i8"
+                          cachedName="SORTDISC"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SORTDISC]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[PromotionAlternativeKey]"
+                          cachedDataType="i8"
+                          cachedName="PromotionAlternativeKey"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PromotionAlternativeKey]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[Companykey]"
+                          cachedDataType="ui1"
+                          cachedName="Companykey"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[Companykey]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="wstr"
+                          length="100"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="wstr"
+                          length="10"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="wstr"
+                          length="10"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          dataType="wstr"
+                          length="10"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          dataType="i4"
+                          name="Param_4">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          dataType="numeric"
+                          name="Param_5"
+                          precision="18">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          dataType="cy"
+                          name="Param_6">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          dataType="wstr"
+                          length="150"
+                          name="Param_7">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          dataType="wstr"
+                          length="50"
+                          name="Param_8">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          dataType="i4"
+                          name="Param_9">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          dataType="ui1"
+                          name="Param_10">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                          dataType="i8"
+                          name="Param_11">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                          dataType="i8"
+                          name="Param_12">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                          dataType="ui1"
+                          name="Param_13">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[DimPromotion]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1256</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[hyperv-srv.DataWarehouse.sa]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DESCRIPTION]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="DESCRIPTION"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESCRIPTION]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DESCRIPTION]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FROMDATE]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="FROMDATE"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FROMDATE]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[FROMDATE]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TODATE]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="TODATE"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TODATE]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[TODATE]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DELIVERYDATE]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DELIVERYDATE"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DELIVERYDATE]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DELIVERYDATE]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[QUANTITY]"
+                          cachedDataType="i4"
+                          cachedName="QUANTITY"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITY]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[QUANTITY]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DISCOUNT]"
+                          cachedDataType="i4"
+                          cachedName="DISCOUNT"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DISCOUNT]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DISCOUNT]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PRICEDISCOUNT]"
+                          cachedDataType="numeric"
+                          cachedName="PRICEDISCOUNT"
+                          cachedPrecision="28"
+                          cachedScale="12"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRICEDISCOUNT]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRICEDISCOUNT]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Location]"
+                          cachedDataType="wstr"
+                          cachedLength="150"
+                          cachedName="Location"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Location]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Location]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ITEMGROUP]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="ITEMGROUP"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ITEMGROUP]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ITEMGROUP]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DESCACTIVE]"
+                          cachedDataType="i4"
+                          cachedName="DESCACTIVE"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESCACTIVE]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DESCACTIVE]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[STATUS]"
+                          cachedDataType="i4"
+                          cachedName="STATUS"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATUS]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SORTDISC]"
+                          cachedDataType="i8"
+                          cachedName="SORTDISC"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SORTDISC]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SORTDISC]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PromotionAlternativeKey]"
+                          cachedDataType="i8"
+                          cachedName="PromotionAlternativeKey"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PromotionAlternativeKey]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PromotionAlternativeKey]" />
+                        <inputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Companykey]"
+                          cachedDataType="ui1"
+                          cachedName="Companykey"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[Companykey]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                          dataType="ui1"
+                          name="CompanyKey" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PromotionKey]"
+                          dataType="i4"
+                          name="PromotionKey" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PromotionAlternativeKey]"
+                          dataType="i8"
+                          name="PromotionAlternativeKey" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
+                          dataType="ui1"
+                          name="STATUS" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FROMDATE]"
+                          dataType="wstr"
+                          length="10"
+                          name="FROMDATE" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TODATE]"
+                          dataType="wstr"
+                          length="10"
+                          name="TODATE" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DELIVERYDATE]"
+                          dataType="wstr"
+                          length="10"
+                          name="DELIVERYDATE" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESCRIPTION]"
+                          dataType="wstr"
+                          length="100"
+                          name="DESCRIPTION" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ITEMGROUP]"
+                          dataType="wstr"
+                          length="50"
+                          name="ITEMGROUP" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DESCACTIVE]"
+                          dataType="i4"
+                          name="DESCACTIVE" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SORTDISC]"
+                          dataType="i8"
+                          name="SORTDISC" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRICEDISCOUNT]"
+                          dataType="cy"
+                          name="PRICEDISCOUNT" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DISCOUNT]"
+                          dataType="numeric"
+                          name="DISCOUNT"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QUANTITY]"
+                          dataType="i4"
+                          name="QUANTITY" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Location]"
+                          dataType="wstr"
+                          length="150"
+                          name="Location" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatLasteTime]"
+                          dataType="dbTimeStamp"
+                          name="UpdatLasteTime" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[_DWPromotion]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1256</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{155A0EFD-3698-446D-862B-8BB7B74DA5D9}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[mffco-srv.DynamicsAx1]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DESCRIPTION]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPTION]"
+                          length="100"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DESCRIPTION]"
+                          name="DESCRIPTION"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[FROMDATE]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FROMDATE]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[FROMDATE]"
+                          name="FROMDATE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[TODATE]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TODATE]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[TODATE]"
+                          name="TODATE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DELIVERYDATE]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DELIVERYDATE]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DELIVERYDATE]"
+                          name="DELIVERYDATE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[QUANTITY]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[QUANTITY]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[QUANTITY]"
+                          name="QUANTITY"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DISCOUNT]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DISCOUNT]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DISCOUNT]"
+                          name="DISCOUNT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRICEDISCOUNT]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PRICEDISCOUNT]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRICEDISCOUNT]"
+                          name="PRICEDISCOUNT"
+                          precision="28"
+                          scale="12"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Location]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Location]"
+                          length="150"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Location]"
+                          name="Location"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ITEMGROUP]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ITEMGROUP]"
+                          length="50"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ITEMGROUP]"
+                          name="ITEMGROUP"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DESCACTIVE]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DESCACTIVE]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DESCACTIVE]"
+                          name="DESCACTIVE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CREATEDATE]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CREATEDATE]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CREATEDATE]"
+                          name="CREATEDATE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATUS]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[STATUS]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATUS]"
+                          name="STATUS"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SORTDISC]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SORTDISC]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SORTDISC]"
+                          name="SORTDISC"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
+                          length="4"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
+                          name="CompanyName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PromotionAlternativeKey]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PromotionAlternativeKey]"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PromotionAlternativeKey]"
+                          name="PromotionAlternativeKey"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPTION]"
+                          dataType="wstr"
+                          length="100"
+                          name="DESCRIPTION" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FROMDATE]"
+                          dataType="dbTimeStamp"
+                          name="FROMDATE" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TODATE]"
+                          dataType="dbTimeStamp"
+                          name="TODATE" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DELIVERYDATE]"
+                          dataType="dbTimeStamp"
+                          name="DELIVERYDATE" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[QUANTITY]"
+                          dataType="i4"
+                          name="QUANTITY" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DISCOUNT]"
+                          dataType="i4"
+                          name="DISCOUNT" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PRICEDISCOUNT]"
+                          dataType="numeric"
+                          name="PRICEDISCOUNT"
+                          precision="28"
+                          scale="12" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Location]"
+                          dataType="wstr"
+                          length="150"
+                          name="Location" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ITEMGROUP]"
+                          dataType="wstr"
+                          length="50"
+                          name="ITEMGROUP" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DESCACTIVE]"
+                          dataType="i4"
+                          name="DESCACTIVE" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CREATEDATE]"
+                          dataType="dbTimeStamp"
+                          name="CREATEDATE" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[STATUS]"
+                          dataType="i4"
+                          name="STATUS" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SORTDISC]"
+                          dataType="i8"
+                          name="SORTDISC" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
+                          dataType="wstr"
+                          length="4"
+                          name="CompanyName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PromotionAlternativeKey]"
+                          dataType="i8"
+                          name="PromotionAlternativeKey" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PromotionAlternativeKey]"
+                          dataType="i8"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PromotionAlternativeKey]"
+                          name="PromotionAlternativeKey" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DESCRIPTION]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DESCRIPTION]"
+                          name="DESCRIPTION" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FROMDATE]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FROMDATE]"
+                          name="FROMDATE" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TODATE]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TODATE]"
+                          name="TODATE" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DELIVERYDATE]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DELIVERYDATE]"
+                          name="DELIVERYDATE" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[QUANTITY]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[QUANTITY]"
+                          name="QUANTITY" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DISCOUNT]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DISCOUNT]"
+                          name="DISCOUNT" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PRICEDISCOUNT]"
+                          dataType="numeric"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PRICEDISCOUNT]"
+                          name="PRICEDISCOUNT"
+                          precision="28"
+                          scale="12" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Location]"
+                          dataType="wstr"
+                          length="150"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Location]"
+                          name="Location" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ITEMGROUP]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ITEMGROUP]"
+                          name="ITEMGROUP" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DESCACTIVE]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DESCACTIVE]"
+                          name="DESCACTIVE" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CREATEDATE]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CREATEDATE]"
+                          name="CREATEDATE" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[STATUS]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[STATUS]"
+                          name="STATUS" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SORTDISC]"
+                          dataType="i8"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SORTDISC]"
+                          name="SORTDISC" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyName]"
+                          dataType="wstr"
+                          length="4"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyName]"
+                          name="CompanyName" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::UpdateCount</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Row Count 1"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count 1">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::InsertCount</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Row Count 1.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+                  endId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+                  endId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
+                  endId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
+                  name="Lookup No Match Output"
+                  startId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+                  endId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Row Count 1.Outputs[Row Count Output 1]" />
+                <path
+                  refId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+                  endId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Row Count.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence DimPromotion Lookup\Expression Task"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{9d882900-5054-485c-b40a-00185bf46a9f}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Expression Task"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::StartPakage]=getdate()" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence DimPromotion Lookup\Log Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{0f3a6db7-1a36-4e63-9ecb-7f13b151cb02}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate)&#xA;     VALUES ('DimPromotion',?,?,?,?,?,?,GETDATE())" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::InsertCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::UpdateCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::MachineName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::DeleteCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::StartPakage"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence DimPromotion Lookup.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{40AB9E76-BF52-4793-AAEE-C54AFDF6526C}"
+          DTS:From="Package\Sequence DimPromotion Lookup\Expression Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence DimPromotion Lookup.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{2F06E193-7EE0-4141-879A-46B371733EB3}"
+          DTS:From="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence DimPromotion Lookup\Log Task" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Sequence DimUnit Lookup"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
@@ -11030,6 +12521,14 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
       DTS:To="Package\Sequence DimUnit Lookup" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{F4FC8FC6-00CA-40B3-A592-44C429DDEEEE}"
+      DTS:From="Package\Sequence DimUnit Lookup"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Sequence DimPromotion Lookup" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -11042,7 +12541,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="220,42"
           Id="Package\Container DimBranches Lookup\Data Flow Task-Insert,Update"
@@ -11806,6 +13305,91 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,50" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Sequence DimPromotion Lookup\Expression Task"
+          TopLeft="38,5.5" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Sequence DimPromotion Lookup\Log Task"
+          TopLeft="55,209.5" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update"
+          TopLeft="5.50000000000003,107.5" />
+        <EdgeLayout
+          Id="Package\Sequence DimPromotion Lookup.PrecedenceConstraints[Constraint]"
+          TopLeft="115.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimPromotion Lookup.PrecedenceConstraints[Constraint 1]"
+          TopLeft="115.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="255,306"
+          Size="255,349"
+          Id="Package\Sequence DimPromotion Lookup"
+          TopLeft="271.25,481.25" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="236,654.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="35.25,0"
+              Start="0,0"
+              End="27.75,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="27.75,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14825,6 +16409,300 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Command"
+          TopLeft="602,483" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Row Count"
+          TopLeft="628,401" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Row Count 1"
+          TopLeft="272,387" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup"
+          TopLeft="453,262" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1"
+          TopLeft="449,165" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination"
+          TopLeft="263,514" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source"
+          TopLeft="455,80" />
+        <EdgeLayout
+          Id="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+          TopLeft="530,122">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20,43"
+              Start="0,0"
+              End="-20,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5"
+                    Point2="0,21.5"
+                    Point3="-4,21.5" />
+                  <mssgle:LineSegment
+                    End="-16,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16,21.5"
+                    Point2="-20,21.5"
+                    Point3="-20,25.5" />
+                  <mssgle:LineSegment
+                    End="-20,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          TopLeft="509.75,207">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,17.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
+          TopLeft="509.5,304">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-168,83"
+              Start="0,0"
+              End="-168,75.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.5"
+                    Point2="0,41.5"
+                    Point3="-4,41.5" />
+                  <mssgle:LineSegment
+                    End="-164,41.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-164,41.5"
+                    Point2="-168,41.5"
+                    Point3="-168,45.5" />
+                  <mssgle:LineSegment
+                    End="-168,75.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-139.80638671875,46.5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+          TopLeft="527,304">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="166,97"
+              Start="0,0"
+              End="166,89.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.6125654450262" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.6125654450262"
+                    Point2="0,39.6125654450262"
+                    Point3="4,39.6125654450262" />
+                  <mssgle:LineSegment
+                    End="162,39.6125654450262" />
+                  <mssgle:CubicBezierSegment
+                    Point1="162,39.6125654450262"
+                    Point2="166,39.6125654450262"
+                    Point3="166,43.6125654450262" />
+                  <mssgle:LineSegment
+                    End="166,89.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="34.80861328125,44.6125654450262,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+          TopLeft="345,429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,85"
+              Start="0,0"
+              End="0,77.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,77.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+          TopLeft="693,443">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8,40"
+              Start="0,0"
+              End="-8,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16"
+                    Point2="0,20"
+                    Point3="-4,20" />
+                  <mssgle:LineSegment
+                    End="-4,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4,20"
+                    Point2="-8,20"
+                    Point3="-8,24" />
+                  <mssgle:LineSegment
+                    End="-8,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimPromotion]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCompany]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimPromotion Lookup\Data Flow Task-Insert,Update\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
