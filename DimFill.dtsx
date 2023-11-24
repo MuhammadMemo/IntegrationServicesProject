@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="215"
-  DTS:VersionGUID="{ACAB2058-A77B-4DF9-9E73-A885DF63BD49}">
+  DTS:VersionBuild="217"
+  DTS:VersionGUID="{6EBA5901-D659-40AC-8FF9-4265A27C24BB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -9931,7 +9931,7 @@ where [refTable].[CountryAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
           DTS:LocaleID="-1"
           DTS:ObjectName="Expression Task"
           DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExpressionTask
@@ -9947,7 +9947,7 @@ where [refTable].[CountryAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -11422,7 +11422,7 @@ where [refTable].[CompanyName] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Expression Task"
           DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExpressionTask
@@ -11438,7 +11438,7 @@ where [refTable].[CompanyName] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -12380,7 +12380,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:LocaleID="-1"
           DTS:ObjectName="Expression Task"
           DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExpressionTask
@@ -12396,7 +12396,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -12529,6 +12529,14 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
       DTS:To="Package\Sequence DimPromotion Lookup" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{7B314886-579E-4963-BD0B-BBD8775FB6EF}"
+      DTS:From="Package\Container DimDimension Lookup"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Container DimRegion Lookup" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -12790,33 +12798,21 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           PanelSize="231,306"
           Size="231,350"
           Id="Package\Container DimCustomer Lookup"
-          TopLeft="1380.25,74.25" />
+          TopLeft="1381.5,61.75" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="1668.25,236.25">
+          TopLeft="1668.25,236.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-57,13"
+              EndConnector="-55.75,0"
               Start="0,0"
-              End="-49.5,13">
+              End="-48.25,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-24.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-24.5,0"
-                    Point2="-28.5,0"
-                    Point3="-28.5,4" />
-                  <mssgle:LineSegment
-                    End="-28.5,9" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-28.5,9"
-                    Point2="-28.5,13"
-                    Point3="-32.5,13" />
-                  <mssgle:LineSegment
-                    End="-49.5,13" />
+                    End="-48.25,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12887,7 +12883,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           PanelSize="231,306"
           Size="231,350"
           Id="Package\Container DimAccount Lookup"
-          TopLeft="839.25,74.25" />
+          TopLeft="844.25,63" />
         <NodeLayout
           Size="155,42"
           Id="Package\Container DimAVendor Lookup\Expression Task"
@@ -12950,21 +12946,21 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           PanelSize="231,306"
           Size="231,350"
           Id="Package\Container DimAVendor Lookup"
-          TopLeft="1111.25,79.25" />
+          TopLeft="1116.25,61.75" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1380.25,251.75">
+          TopLeft="1381.5,236.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-38,0"
+              EndConnector="-34.25,0"
               Start="0,0"
-              End="-30.5,0">
+              End="-26.75,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-30.5,0" />
+                    End="-26.75,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12975,7 +12971,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="1111.25,251.75">
+          TopLeft="1116.25,237.375">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -13057,21 +13053,21 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           PanelSize="231,306"
           Size="231,349"
           Id="Package\Container DimCar Lookup"
-          TopLeft="557,78.25" />
+          TopLeft="563.25,68.25" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="839.25,251">
+          TopLeft="844.25,240.375">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-51.25,0"
+              EndConnector="-50,0"
               Start="0,0"
-              End="-43.75,0">
+              End="-42.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-43.75,0" />
+                    End="-42.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13142,21 +13138,21 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           PanelSize="256,306"
           Size="256,349"
           Id="Package\Container DimDimension Lookup"
-          TopLeft="272.5,72.5" />
+          TopLeft="271.25,70" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="557,249.875">
+          TopLeft="563.25,243.625">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-28.5,0"
+              EndConnector="-36,0"
               Start="0,0"
-              End="-21,0">
+              End="-28.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-21,0" />
+                    End="-28.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13227,7 +13223,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           PanelSize="231,306"
           Size="231,350"
           Id="Package\Container DimRegion Lookup"
-          TopLeft="7.5,71.25" />
+          TopLeft="7.5,66.25" />
         <NodeLayout
           Size="155,42"
           Id="Package\Sequence DimUnit Lookup\Expression Task"
@@ -13290,21 +13286,21 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           PanelSize="231,306"
           Size="231,350"
           Id="Package\Sequence DimUnit Lookup"
-          TopLeft="5,478.75" />
+          TopLeft="5,456.25" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="121.75,421.25">
+          TopLeft="121.75,416.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57.5"
+              EndConnector="0,40"
               Start="0,0"
-              End="0,50">
+              End="0,32.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50" />
+                    End="0,32.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13375,21 +13371,43 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           PanelSize="255,306"
           Size="255,349"
           Id="Package\Sequence DimPromotion Lookup"
-          TopLeft="271.25,481.25" />
+          TopLeft="273.75,455" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="236,654.75">
+          TopLeft="236,630.375">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="35.25,0"
+              EndConnector="37.75,0"
               Start="0,0"
-              End="27.75,0">
+              End="30.25,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="27.75,0" />
+                    End="30.25,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="271.25,242.875">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-32.75,0"
+              Start="0,0"
+              End="-25.25,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-25.25,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
