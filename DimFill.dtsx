@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="338"
-  DTS:VersionGUID="{F65149E2-9147-49DC-87F4-CC6A92544293}">
+  DTS:VersionBuild="351"
+  DTS:VersionGUID="{000E5219-E951-4665-A1AE-17C430AD8521}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACpMifi9MTnRST2dHvh+B4cAAAAAASAAACgAAAAEAAAAHIj0WoQ0Jnj5S4/a+6DH7YQAAAAJrhDQpVtDiwQLQnqfesQsxQAAAASBjGaRwTDVsnydWhkcMkkBIjwwQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACErr6Mk1EeH3lAchXB/iy0AAAAAASAAACgAAAAEAAAANyvQHuzp121sMG/sufzVGgQAAAAT6k0xCmAcxpYTjP6lG36rBQAAAC1HrzgALpIQ0ybnyB+SpKLV3Fqxg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -11206,27 +11206,6 @@ where [refTable].[CompanyKey] = ? and [refTable].[EmployeeAlternativeKey] = ?</p
                           externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                           lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEPT_NAME]" />
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[BIRTH_DATE]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="BIRTH_DATE"
-                          externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]" />
-                        <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[HIRE_DATE]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="HIRE_DATE"
-                          externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[HIRE_DATE]" />
-                        <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[INS_DATE]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="INS_DATE"
-                          externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[INS_DATE]" />
-                        <inputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[CampanyKey]"
                           cachedDataType="ui1"
                           cachedName="CampanyKey"
@@ -11260,6 +11239,27 @@ where [refTable].[CompanyKey] = ? and [refTable].[EmployeeAlternativeKey] = ?</p
                           cachedName="WorkeStatus"
                           externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                           lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column.Outputs[Derived Column Output].Columns[WorkeStatus]" />
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[HIRE_DATE]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="HIRE_DATE"
+                          externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[HIRE_DATE]" />
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[BIRTH_DATE]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="BIRTH_DATE"
+                          externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]" />
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[INS_DATE]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="INS_DATE"
+                          externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[INS_DATE]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -20295,7 +20295,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <NodeLayout
           Size="163,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Script Component"
-          TopLeft="482,227" />
+          TopLeft="484.727272727273,231.545454545455" />
         <NodeLayout
           Size="154,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column"
@@ -20315,15 +20315,15 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <NodeLayout
           Size="171,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination"
-          TopLeft="249,519" />
+          TopLeft="200.818181818182,519" />
         <NodeLayout
           Size="156,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Data Conversion"
-          TopLeft="481,295" />
+          TopLeft="484.636363636364,300.454545454545" />
         <NodeLayout
           Size="166,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Command"
-          TopLeft="681,547" />
+          TopLeft="661,536.090909090909" />
         <EdgeLayout
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
           TopLeft="513,404">
@@ -20392,30 +20392,18 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Derived Column Output]"
-          TopLeft="648,184">
+          TopLeft="568.613636363636,205">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-3,64"
+              EndConnector="0,26.5454545454546"
               Start="0,0"
-              End="4.5,64">
+              End="0,19.0454545454546">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="18.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.5,0"
-                    Point2="22.5,0"
-                    Point3="22.5,4" />
-                  <mssgle:LineSegment
-                    End="22.5,60" />
-                  <mssgle:CubicBezierSegment
-                    Point1="22.5,60"
-                    Point2="22.5,64"
-                    Point3="18.5,64" />
-                  <mssgle:LineSegment
-                    End="4.5,64" />
+                    End="0,19.0454545454546" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -20426,30 +20414,18 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Data Conversion Output]"
-          TopLeft="559,337">
+          TopLeft="566.068181818182,342.454545454545">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10.5,46"
+              EndConnector="0,40.5454545454546"
               Start="0,0"
-              End="10.5,38.5">
+              End="0,33.0454545454546">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19"
-                    Point2="0,23"
-                    Point3="4,23" />
-                  <mssgle:LineSegment
-                    End="6.5,23" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6.5,23"
-                    Point2="10.5,23"
-                    Point3="10.5,27" />
-                  <mssgle:LineSegment
-                    End="10.5,38.5" />
+                    End="0,33.0454545454546" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -20464,9 +20440,9 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="23,43"
+              EndConnector="-25.1818181818182,43"
               Start="0,0"
-              End="23,35.5">
+              End="-25.1818181818182,35.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -20475,15 +20451,15 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   <mssgle:CubicBezierSegment
                     Point1="0,17.5"
                     Point2="0,21.5"
-                    Point3="4,21.5" />
+                    Point3="-4,21.5" />
                   <mssgle:LineSegment
-                    End="19,21.5" />
+                    End="-21.1818181818182,21.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="19,21.5"
-                    Point2="23,21.5"
-                    Point3="23,25.5" />
+                    Point1="-21.1818181818182,21.5"
+                    Point2="-25.1818181818182,21.5"
+                    Point3="-25.1818181818182,25.5" />
                   <mssgle:LineSegment
-                    End="23,35.5" />
+                    End="-25.1818181818182,35.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -20498,26 +20474,26 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="56,61"
+              EndConnector="35.9999999999999,50.0909090909091"
               Start="0,0"
-              End="56,53.5">
+              End="35.9999999999999,42.5909090909091">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.5" />
+                    End="0,21.0454545454546" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.5"
-                    Point2="0,30.5"
-                    Point3="4,30.5" />
+                    Point1="0,21.0454545454546"
+                    Point2="0,25.0454545454546"
+                    Point3="4,25.0454545454546" />
                   <mssgle:LineSegment
-                    End="52,30.5" />
+                    End="31.9999999999999,25.0454545454546" />
                   <mssgle:CubicBezierSegment
-                    Point1="52,30.5"
-                    Point2="56,30.5"
-                    Point3="56,34.5" />
+                    Point1="31.9999999999999,25.0454545454546"
+                    Point2="35.9999999999999,25.0454545454546"
+                    Point3="35.9999999999999,29.0454545454546" />
                   <mssgle:LineSegment
-                    End="56,53.5" />
+                    End="35.9999999999999,42.5909090909091" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -20528,18 +20504,18 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Output 0]"
-          TopLeft="561.25,269">
+          TopLeft="564.431818181818,273.545454545455">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,26"
+              EndConnector="0,26.9090909090908"
               Start="0,0"
-              End="0,18.5">
+              End="0,19.4090909090908">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.5" />
+                    End="0,19.4090909090908" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -20551,41 +20527,27 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <NodeLayout
           Size="150,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source"
-          TopLeft="487,85" />
+          TopLeft="488.818181818182,85" />
         <EdgeLayout
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
-          TopLeft="562,127">
+          TopLeft="567.409090909091,127">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9,36"
+              EndConnector="0,36"
               Start="0,0"
-              End="9,28.5">
+              End="0,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14"
-                    Point2="0,18"
-                    Point3="4,18" />
-                  <mssgle:LineSegment
-                    End="5,18" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5,18"
-                    Point2="9,18"
-                    Point3="9,22" />
-                  <mssgle:LineSegment
-                    End="9,28.5" />
+                    End="0,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-3.5,23,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
