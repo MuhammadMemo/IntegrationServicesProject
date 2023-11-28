@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="481"
-  DTS:VersionGUID="{B9818EAA-89A9-4859-8662-03B39FE40FFA}">
+  DTS:VersionBuild="483"
+  DTS:VersionGUID="{B8176DBC-B319-4ED5-81E7-172E33B43417}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAxztfWNBJxtGkJdTqXwAdeAAAAAASAAACgAAAAEAAAAGf660rB6xUx5wdK13zKZ9wQAAAA5QB8AlpItmTq0tt6poX5ghQAAACz/gSLh/bwvk/R04YkwuiayQFW/A</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAILLuVDP4Km4OelBlyadCpAAAAAASAAACgAAAAEAAAAAhpjeC2ts5hSy1w0IR4KREQAAAAKqS9XMwbnQ5Pgu+Vrw1wHRQAAAA0gXmAUgSlM+5+t9YBAq5EhJHq5w</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -44,7 +44,7 @@
           <DTS:Password
             DTS:Name="PASSWORD"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADtGD83is/aZ+aihIjNRz/DAAAAAASAAACgAAAAEAAAADfB0riqgBIXMqwBrSHnyr4QAAAAjwXz2mCOTpy+wi6o+eZOZhQAAAA5z3/XN5wOfOwgUt0iXsaPykenyQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACxn/mAA/9U+ixgRG+8tFfAAAAAAASAAACgAAAAEAAAAJTAxz1dThvDXBt04Azw2isQAAAARIK/bg18ZtxryNK764uZchQAAACevRZ1XxvqEDt85eYrfMx/PmUxBQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -58,6 +58,30 @@
       DTS:ObjectName="DeleteCount">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CDE066F4-D238-42BF-851D-7E97C322E559}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT EMP_SER,&#xA;  EMPLOYEE_CODE,&#xA;  EMPLOYEE_NAME,&#xA;  LEAVE_FLAG,&#xA;  DEPT_NAME,&#xA;  JOB_NAME,&#xA;  SECTION_NAME,&#xA;  DIVISION_NAME,&#xA;  HIRE_DATE,&#xA;  BIRTH_DATE,&#xA;  INS_DATE,&#xA;  MODIFIEDDATE&#xA;FROM MUHAMMAD_EMP_ALL_DATA &#xA;WHERE MODIFIEDDATE &gt; '+ @[User::LastModifaydate] +' &quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Emp">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT EMP_SER,
+  EMPLOYEE_CODE,
+  EMPLOYEE_NAME,
+  LEAVE_FLAG,
+  DEPT_NAME,
+  JOB_NAME,
+  SECTION_NAME,
+  DIVISION_NAME,
+  HIRE_DATE,
+  BIRTH_DATE,
+  INS_DATE,
+  MODIFIEDDATE
+FROM MUHAMMAD_EMP_ALL_DATA 
+WHERE MODIFIEDDATE &gt; '+ @[User::LastModifaydate] +' </DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -12874,13 +12898,9 @@ where [refTable].[CompanyKey] = ? and [refTable].[EmployeeAlternativeKey] = ?</p
   EMPLOYEE_CODE,
   EMPLOYEE_NAME,
   LEAVE_FLAG,
-  DEPT_CODE,
   DEPT_NAME,
-  JOB_CODE,
   JOB_NAME,
-  SECTION_CODE,
   SECTION_NAME,
-  DIVISION_CODE,
   DIVISION_NAME,
   HIRE_DATE,
   BIRTH_DATE,
@@ -12891,7 +12911,7 @@ WHERE MODIFIEDDATE &gt;?</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
-                      name="SqlCommandVariable"></property>
+                      name="SqlCommandVariable">User::Emp</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -12904,7 +12924,7 @@ WHERE MODIFIEDDATE &gt;?</property>
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">2</property>
+                      typeConverter="AccessMode">3</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
@@ -12964,16 +12984,6 @@ WHERE MODIFIEDDATE &gt;?</property>
                           precision="1"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEPT_CODE]"
-                          dataType="numeric"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DEPT_CODE]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEPT_CODE]"
-                          name="DEPT_CODE"
-                          precision="10"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEPT_NAME]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
@@ -12982,16 +12992,6 @@ WHERE MODIFIEDDATE &gt;?</property>
                           length="40"
                           lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEPT_NAME]"
                           name="DEPT_NAME"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[JOB_CODE]"
-                          dataType="numeric"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[JOB_CODE]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[JOB_CODE]"
-                          name="JOB_CODE"
-                          precision="3"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[JOB_NAME]"
@@ -13004,16 +13004,6 @@ WHERE MODIFIEDDATE &gt;?</property>
                           name="JOB_NAME"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SECTION_CODE]"
-                          dataType="numeric"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SECTION_CODE]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SECTION_CODE]"
-                          name="SECTION_CODE"
-                          precision="10"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SECTION_NAME]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
@@ -13022,16 +13012,6 @@ WHERE MODIFIEDDATE &gt;?</property>
                           length="40"
                           lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SECTION_NAME]"
                           name="SECTION_NAME"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DIVISION_CODE]"
-                          dataType="numeric"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DIVISION_CODE]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DIVISION_CODE]"
-                          name="DIVISION_CODE"
-                          precision="10"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DIVISION_NAME]"
@@ -13107,40 +13087,20 @@ WHERE MODIFIEDDATE &gt;?</property>
                           name="LEAVE_FLAG"
                           precision="1" />
                         <externalMetadataColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DEPT_CODE]"
-                          dataType="numeric"
-                          name="DEPT_CODE"
-                          precision="10" />
-                        <externalMetadataColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DEPT_NAME]"
                           dataType="wstr"
                           length="40"
                           name="DEPT_NAME" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[JOB_CODE]"
-                          dataType="numeric"
-                          name="JOB_CODE"
-                          precision="3" />
                         <externalMetadataColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[JOB_NAME]"
                           dataType="wstr"
                           length="40"
                           name="JOB_NAME" />
                         <externalMetadataColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SECTION_CODE]"
-                          dataType="numeric"
-                          name="SECTION_CODE"
-                          precision="10" />
-                        <externalMetadataColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SECTION_NAME]"
                           dataType="wstr"
                           length="40"
                           name="SECTION_NAME" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DIVISION_CODE]"
-                          dataType="numeric"
-                          name="DIVISION_CODE"
-                          precision="10" />
                         <externalMetadataColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DIVISION_NAME]"
                           dataType="wstr"
@@ -13198,23 +13158,11 @@ WHERE MODIFIEDDATE &gt;?</property>
                           name="LEAVE_FLAG"
                           precision="1" />
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DEPT_CODE]"
-                          dataType="numeric"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DEPT_CODE]"
-                          name="DEPT_CODE"
-                          precision="10" />
-                        <outputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DEPT_NAME]"
                           dataType="wstr"
                           length="40"
                           lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DEPT_NAME]"
                           name="DEPT_NAME" />
-                        <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[JOB_CODE]"
-                          dataType="numeric"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[JOB_CODE]"
-                          name="JOB_CODE"
-                          precision="3" />
                         <outputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[JOB_NAME]"
                           dataType="wstr"
@@ -13222,23 +13170,11 @@ WHERE MODIFIEDDATE &gt;?</property>
                           lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[JOB_NAME]"
                           name="JOB_NAME" />
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SECTION_CODE]"
-                          dataType="numeric"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SECTION_CODE]"
-                          name="SECTION_CODE"
-                          precision="10" />
-                        <outputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SECTION_NAME]"
                           dataType="wstr"
                           length="40"
                           lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SECTION_NAME]"
                           name="SECTION_NAME" />
-                        <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DIVISION_CODE]"
-                          dataType="numeric"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DIVISION_CODE]"
-                          name="DIVISION_CODE"
-                          precision="10" />
                         <outputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DIVISION_NAME]"
                           dataType="wstr"
