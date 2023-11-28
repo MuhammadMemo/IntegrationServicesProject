@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="441"
-  DTS:VersionGUID="{AA538F66-F082-4008-B0C5-A6708BFA1795}">
+  DTS:VersionBuild="445"
+  DTS:VersionGUID="{AB59BDF4-4FA0-4784-94E1-5AE50AA23725}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACiv67uTBNxHE8UDreA2BDiAAAAAASAAACgAAAAEAAAAGAYQZBZdcdpXM4gIakj12IQAAAAuY0SwlqY6S7jJvaOz9mZdRQAAADoHjtpl4l4j+2sksj7vuJEvIMM4g</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAASjUGHwheMWg3fAmb54PsrAAAAAASAAACgAAAAEAAAABThw+aWfDxvKHk1TsWlapoQAAAAwu36T5+zWzKvwkm5ct84zBQAAABkSA1WcXYmg4U8YklkW0ouvCuGzg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -44,7 +44,7 @@
           <DTS:Password
             DTS:Name="PASSWORD"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABhwfJ2Is4lJvYGPb7IZUlMAAAAAASAAACgAAAAEAAAAMg1X9RGPNRhfKF2gYnmQQ8QAAAAKyZ57zoPEhnhuVS1aYURtRQAAADlQrYDfmbgYgxhWzaFJRJEBwkGrw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACiJ88kp7C0MbL8u8qBA01uAAAAAASAAACgAAAAEAAAABw5h+Ol+PacsGZAfLwGVPkQAAAA3Gu8zds+2MXnH82Ih7THmRQAAABEhUnX9lcE4k0AzkB2nYjBoMaWTA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2280,7 +2280,7 @@ where [BrancheAlternativeKey] =? and  [CompanyKey] = ?</property>
             DTS:FilterKind="0" />
           <DTS:ObjectData>
             <ExpressionTask
-              Expression="@[User::StartPakage]= @[System::ContainerStartTime]" />
+              Expression="@[User::StartPakage]= getdate()" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -8502,7 +8502,7 @@ where [refTable].[CompanyName] = ?</property>
             DTS:FilterKind="0" />
           <DTS:ObjectData>
             <ExpressionTask
-              Expression="@[User::StartPakage]=  @[System::ContainerStartTime]" />
+              Expression="@[User::StartPakage]=getdate()" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -8521,7 +8521,7 @@ where [refTable].[CompanyName] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA; &#x9;IsUpdated,&#xA;&#x9;IsDeleted,&#xA;&#x9;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimBranchet',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA; &#x9;IsUpdated,&#xA;&#x9;IsDeleted,&#xA;&#x9;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimProduct',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -16492,29 +16492,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       DTS:ObjectName="Constraint 9"
       DTS:To="Package\Sequence DimEmployee" />
   </DTS:PrecedenceConstraints>
-  <DTS:EventHandlers>
-    <DTS:EventHandler
-      DTS:refId="Package.EventHandlers[OnError]"
-      DTS:CreationName="OnError"
-      DTS:DTSID="{38E7A4A5-5A5C-49D5-8802-CA56753AD7C2}"
-      DTS:EventID="0"
-      DTS:EventName="OnError"
-      DTS:LocaleID="-1">
-      <DTS:Variables>
-        <DTS:Variable
-          DTS:CreationName=""
-          DTS:Description="The propagate property of the event"
-          DTS:DTSID="{D7EFCD20-5390-4341-887F-FCC1D89C44BA}"
-          DTS:IncludeInDebugDump="6789"
-          DTS:Namespace="System"
-          DTS:ObjectName="Propagate">
-          <DTS:VariableValue
-            DTS:DataType="11">-1</DTS:VariableValue>
-        </DTS:Variable>
-      </DTS:Variables>
-      <DTS:Executables />
-    </DTS:EventHandler>
-  </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -18301,18 +18278,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <DtsEventHandler
-    design-time-name="Package.EventHandlers[OnError]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="155,42"
-          Id="{B204C60A-02CD-459C-B447-65C3AA7CCD6D}"
-          TopLeft="588,211" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\Container DimAccount\Data Flow Task-Insert,Update">
     <LayoutInfo>
