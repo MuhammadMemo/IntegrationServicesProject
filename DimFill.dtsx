@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="483"
-  DTS:VersionGUID="{B8176DBC-B319-4ED5-81E7-172E33B43417}">
+  DTS:VersionBuild="488"
+  DTS:VersionGUID="{32E01CD4-49E3-4609-8D28-EDB8BF9D3C18}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAILLuVDP4Km4OelBlyadCpAAAAAASAAACgAAAAEAAAAAhpjeC2ts5hSy1w0IR4KREQAAAAKqS9XMwbnQ5Pgu+Vrw1wHRQAAAA0gXmAUgSlM+5+t9YBAq5EhJHq5w</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAI//5JFH9/jjvrURfFXpLdAAAAAASAAACgAAAAEAAAACpTNjtjbN9aPakndQNf3/UQAAAAQFWNmURo9TJxy6xOw1rTuxQAAADXoRArCetHhOoxqb9KNPE1NWMzYg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -44,7 +44,7 @@
           <DTS:Password
             DTS:Name="PASSWORD"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACxn/mAA/9U+ixgRG+8tFfAAAAAAASAAACgAAAAEAAAAJTAxz1dThvDXBt04Azw2isQAAAARIK/bg18ZtxryNK764uZchQAAACevRZ1XxvqEDt85eYrfMx/PmUxBQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADsu9CcRtp+FL/Xk0QzAeWWAAAAAASAAACgAAAAEAAAANRyaS0H+hqev5OaUwx/p5AQAAAA2Qo/KV+2xSFwwnclz4MdkRQAAAA1HlQnjok54DJUQpiVbgCJ7GlZtA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -63,7 +63,7 @@
       DTS:CreationName=""
       DTS:DTSID="{CDE066F4-D238-42BF-851D-7E97C322E559}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT EMP_SER,&#xA;  EMPLOYEE_CODE,&#xA;  EMPLOYEE_NAME,&#xA;  LEAVE_FLAG,&#xA;  DEPT_NAME,&#xA;  JOB_NAME,&#xA;  SECTION_NAME,&#xA;  DIVISION_NAME,&#xA;  HIRE_DATE,&#xA;  BIRTH_DATE,&#xA;  INS_DATE,&#xA;  MODIFIEDDATE&#xA;FROM MUHAMMAD_EMP_ALL_DATA &#xA;WHERE MODIFIEDDATE &gt; '+ @[User::LastModifaydate] +' &quot;"
+      DTS:Expression="&quot;SELECT EMP_SER,&#xA;  EMPLOYEE_CODE,&#xA;  EMPLOYEE_NAME,&#xA;  LEAVE_FLAG,&#xA;  DEPT_NAME,&#xA;  JOB_NAME,&#xA;  SECTION_NAME,&#xA;  DIVISION_NAME,&#xA;  HIRE_DATE,&#xA;  BIRTH_DATE,&#xA;  INS_DATE,&#xA;  MODIFIEDDATE&#xA;FROM MUHAMMAD_EMP_ALL_DATA &#xA;WHERE MODIFIEDDATE &gt; '  + @[User::LastModifaydate] +   ' &quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Emp">
@@ -81,7 +81,7 @@
   INS_DATE,
   MODIFIEDDATE
 FROM MUHAMMAD_EMP_ALL_DATA 
-WHERE MODIFIEDDATE &gt; '+ @[User::LastModifaydate] +' </DTS:VariableValue>
+WHERE MODIFIEDDATE &gt; '  + @[User::LastModifaydate] +   ' </DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -952,15 +952,6 @@ where [refTable].[CompanyName] = ?</property>
                           lineageId="Package\Container DimAccount\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNTNAME]"
                           name="ACCOUNTNAME"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Container DimAccount\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODIFIEDDATETIME]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimAccount\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MODIFIEDDATETIME]"
-                          lineageId="Package\Container DimAccount\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODIFIEDDATETIME]"
-                          name="MODIFIEDDATETIME"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1028,11 +1019,6 @@ where [refTable].[CompanyName] = ?</property>
                           length="4"
                           lineageId="Package\Container DimAccount\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATAAREAID]"
                           name="DATAAREAID" />
-                        <outputColumn
-                          refId="Package\Container DimAccount\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MODIFIEDDATETIME]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\Container DimAccount\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MODIFIEDDATETIME]"
-                          name="MODIFIEDDATETIME" />
                         <outputColumn
                           refId="Package\Container DimAccount\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -8530,15 +8516,6 @@ where [refTable].[CompanyName] = ?</property>
                           precision="38"
                           scale="12"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODIFIEDDATETIME]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MODIFIEDDATETIME]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODIFIEDDATETIME]"
-                          name="MODIFIEDDATETIME"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -8623,11 +8600,6 @@ where [refTable].[CompanyName] = ?</property>
                           name="PurchasePrice"
                           precision="38"
                           scale="12" />
-                        <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MODIFIEDDATETIME]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MODIFIEDDATETIME]"
-                          name="MODIFIEDDATETIME" />
                         <outputColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
