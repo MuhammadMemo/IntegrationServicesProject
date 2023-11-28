@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="458"
-  DTS:VersionGUID="{D2E36424-7783-4080-A59B-8184D4A87836}">
+  DTS:VersionBuild="461"
+  DTS:VersionGUID="{9A1F8BFA-0C66-4724-9442-C8DC695C8A08}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAW7Th3VDGj7EyJl2w1znW0AAAAAASAAACgAAAAEAAAAJo9oEG14vAQ/GxaUwSvI0wQAAAA0qo2Pl10KOboLa2CBY0WXRQAAABQjcxcdSAY8FqrUnfRjqByvT1VVg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACIIGWXKnIQEcZUL14yTUOwAAAAAASAAACgAAAAEAAAALpDQn+nvcD1Ei1ZOHYm+ksQAAAAAwV27WgfiKdw31av/bs+nBQAAABslBTniCP/nvt2WZAhfQkIwkGIVQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -44,7 +44,7 @@
           <DTS:Password
             DTS:Name="PASSWORD"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAClsernDKo/a7mLEq9nKz+mAAAAAASAAACgAAAAEAAAABqSaIKOSMmmhPPotSggwpMQAAAAfYkuqdete5WCqNCZ7wKs2xQAAADpmKA5dl+LG/dtd3rQX6h2oWlX9A</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABCGy0Ie0cFBuMlkW3kOA5EAAAAAASAAACgAAAAEAAAAEoFgh7DB5Gh7bLFwhoUuKQQAAAAJCoWPv173k87Izi5k6cO1RQAAAD0Zj9SF2NSfNcUUi4fnJn7EJe3rw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1154,7 +1154,7 @@ where [refTable].[CompanyName] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimAccount',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimAccount',?,?,?,?,?,?,GETDATE(),5,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -1222,7 +1222,7 @@ where [refTable].[CompanyName] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimAccount',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimAccount',?,?,?,?,?,?,GETDATE(),5,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -2299,7 +2299,7 @@ where [BrancheAlternativeKey] =? and  [CompanyKey] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimBranche',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimBranche',?,?,?,?,?,?,GETDATE(),2,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -2367,7 +2367,7 @@ where [BrancheAlternativeKey] =? and  [CompanyKey] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimBranche',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimBranche',?,?,?,?,?,?,GETDATE(),2,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -3550,7 +3550,7 @@ where [refTable].[CarAlternativeKey] = ? and [refTable].[CompanyKey] = ?</proper
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimCar',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimCar',?,?,?,?,?,?,GETDATE(),6,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -3618,7 +3618,7 @@ where [refTable].[CarAlternativeKey] = ? and [refTable].[CompanyKey] = ?</proper
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimCar',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimCar',?,?,?,?,?,?,GETDATE(),6,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -4928,7 +4928,7 @@ where [CustomerAlternativeKey] =? and  [CompanyKey] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimCustomer',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimCustomer',?,?,?,?,?,?,GETDATE(),3,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -4996,7 +4996,7 @@ where [CustomerAlternativeKey] =? and  [CompanyKey] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimCustomer',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimCustomer',?,?,?,?,?,?,GETDATE(),3,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -6292,7 +6292,7 @@ where [refTable].[DimensionAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimDimension',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimDimension',?,?,?,?,?,?,GETDATE(),7,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -6360,7 +6360,7 @@ where [refTable].[DimensionAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimDimension',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimDimension',?,?,?,?,?,?,GETDATE(),7,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -9769,7 +9769,7 @@ where [refTable].[CountryAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimRegion',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimRegion',?,?,?,?,?,?,GETDATE(),8,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -9837,7 +9837,7 @@ where [refTable].[CountryAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimRegion',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimRegion',?,?,?,?,?,?,GETDATE(),8,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -10966,7 +10966,7 @@ where [refTable].[VendorAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pro
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimVendor',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimVendor',?,?,?,?,?,?,GETDATE(),4,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -11034,7 +11034,7 @@ where [refTable].[VendorAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pro
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimVendor',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimVendor',?,?,?,?,?,?,GETDATE(),4,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -13665,7 +13665,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimEmployee',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimEmployee',?,?,?,?,?,?,GETDATE(),11,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -13733,7 +13733,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimEmployee',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimEmployee',?,?,?,?,?,?,GETDATE(),11,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -15295,7 +15295,7 @@ where [refTable].[CompanyName] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimPromotion',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimPromotion',?,?,?,?,?,?,GETDATE(),10,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -15363,7 +15363,7 @@ where [refTable].[CompanyName] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimPromotion',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimPromotion',?,?,?,?,?,?,GETDATE(),10,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -16392,7 +16392,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimUnit',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimUnit',?,?,?,?,?,?,GETDATE(),9,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -16460,7 +16460,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimUnit',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimUnit',?,?,?,?,?,?,GETDATE(),9,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
