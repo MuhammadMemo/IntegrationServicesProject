@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="445"
-  DTS:VersionGUID="{AB59BDF4-4FA0-4784-94E1-5AE50AA23725}">
+  DTS:VersionBuild="458"
+  DTS:VersionGUID="{D2E36424-7783-4080-A59B-8184D4A87836}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAASjUGHwheMWg3fAmb54PsrAAAAAASAAACgAAAAEAAAABThw+aWfDxvKHk1TsWlapoQAAAAwu36T5+zWzKvwkm5ct84zBQAAABkSA1WcXYmg4U8YklkW0ouvCuGzg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAW7Th3VDGj7EyJl2w1znW0AAAAAASAAACgAAAAEAAAAJo9oEG14vAQ/GxaUwSvI0wQAAAA0qo2Pl10KOboLa2CBY0WXRQAAABQjcxcdSAY8FqrUnfRjqByvT1VVg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -44,7 +44,7 @@
           <DTS:Password
             DTS:Name="PASSWORD"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACiJ88kp7C0MbL8u8qBA01uAAAAAASAAACgAAAAEAAAABw5h+Ol+PacsGZAfLwGVPkQAAAA3Gu8zds+2MXnH82Ih7THmRQAAABEhUnX9lcE4k0AzkB2nYjBoMaWTA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAClsernDKo/a7mLEq9nKz+mAAAAAASAAACgAAAAEAAAABqSaIKOSMmmhPPotSggwpMQAAAAfYkuqdete5WCqNCZ7wKs2xQAAADpmKA5dl+LG/dtd3rQX6h2oWlX9A</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -61,36 +61,12 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D8DFDA9E-4644-4182-B239-2CF9D4539C0F}"
-      DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[System::ErrorDescription]"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="Error">
-      <DTS:VariableValue
-        DTS:DataType="8"
-        xml:space="preserve"></DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
       DTS:DTSID="{C3E5CD00-C921-46BB-8112-7256E3ABA38A}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="InsertCount">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
-    </DTS:Variable>
-    <DTS:Variable
-      DTS:CreationName=""
-      DTS:DTSID="{04236CAA-F0FE-487B-8D99-6AE311B8624C}"
-      DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT     isnull( format( MAX(ModifiedDate),'yyyy/MM/yy'),'1900/01/01') AS ModifiedDate&#xA;FROM            LogTable where [TableName] ='DimDimension'&quot;"
-      DTS:IncludeInDebugDump="2345"
-      DTS:Namespace="User"
-      DTS:ObjectName="Last">
-      <DTS:VariableValue
-        DTS:DataType="8">SELECT     isnull( format( MAX(ModifiedDate),'yyyy/MM/yy'),'1900/01/01') AS ModifiedDate
-FROM            LogTable where [TableName] ='DimDimension'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1163,13 +1139,13 @@ where [refTable].[CompanyName] = ?</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimAccount\Log Task"
+          DTS:refId="Package\Container DimAccount\Log Task Failure"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{3835835c-e3b6-42a3-a92a-7b00b575992a}"
+          DTS:DTSID="{de5e5d5d-93e6-4667-abd6-4d69e79f8ec2}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task"
+          DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
@@ -1178,7 +1154,7 @@ where [refTable].[CompanyName] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimBranchet',?,?,?,?,?,?,GETDATE(),5,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimAccount',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -1215,17 +1191,29 @@ where [refTable].[CompanyName] = ?</property>
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
                 SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Status"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimAccount\Log Task 1"
+          DTS:refId="Package\Container DimAccount\Log Task Success"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{42468374-6ccb-47a9-abc5-2047a2f2aef5}"
+          DTS:DTSID="{ae79a9a0-99bb-480f-ad24-f38674eae514}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task 1"
+          DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="1">
           <DTS:Variables />
@@ -1234,7 +1222,7 @@ where [refTable].[CompanyName] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimBranchet',?,?,?,?,?,?,GETDATE(),5,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimAccount',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -1270,6 +1258,18 @@ where [refTable].[CompanyName] = ?</property>
                 SQLTask:DtsVariableName="User::StartPakage"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Status"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
                 SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
@@ -1303,19 +1303,19 @@ where [refTable].[CompanyName] = ?</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimAccount.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{cfbea01f-87a7-43d1-96da-317729639562}"
+          DTS:DTSID="{821DCC1D-49A2-429E-A0A6-C0DBF2FB59DC}"
           DTS:From="Package\Container DimAccount\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Container DimAccount\Log Task" />
+          DTS:To="Package\Container DimAccount\Log Task Success" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimAccount.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{ED42191F-2A52-4A7E-8C9E-B0C04B28DF64}"
+          DTS:DTSID="{5AAAF2D3-AF81-404F-A408-CBA39BA9C7FF}"
           DTS:From="Package\Container DimAccount\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Container DimAccount\Log Task 1"
+          DTS:To="Package\Container DimAccount\Log Task Failure"
           DTS:Value="1" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimAccount.PrecedenceConstraints[Constraint 2]"
@@ -2284,13 +2284,13 @@ where [BrancheAlternativeKey] =? and  [CompanyKey] = ?</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimBranches\Log Task2"
+          DTS:refId="Package\Container DimBranches\Log Task Failure"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{fe0e34b7-9202-40b8-bb20-cf9b29c4248c}"
+          DTS:DTSID="{9706d818-a25d-4d89-8b5b-c66cd159e885}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task2"
+          DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
@@ -2299,63 +2299,7 @@ where [BrancheAlternativeKey] =? and  [CompanyKey] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA; ModifiedDate,&#xA; TableNo,&#xA;Status)&#xA;      VALUES ('DimBranche',?,?,?,?,?,?,GETDATE(),2,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="2"
-                SQLTask:DtsVariableName="User::InsertCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="3"
-                SQLTask:DtsVariableName="User::UpdateCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="System::MachineName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="System::PackageName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="4"
-                SQLTask:DtsVariableName="User::DeleteCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="5"
-                SQLTask:DtsVariableName="System::ContainerStartTime"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="7"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Container DimBranches\Log Task2 1"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{84ab6959-4adb-48df-a769-d9ef8ed36399}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task2 1"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
-          <DTS:Variables />
-          <DTS:LoggingOptions
-            DTS:FilterKind="0" />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA; ModifiedDate,&#xA; TableNo,&#xA;Status)&#xA;      VALUES ('DimBranche',?,?,?,?,?,?,GETDATE(),2,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimBranche',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -2392,6 +2336,86 @@ where [BrancheAlternativeKey] =? and  [CompanyKey] = ?</property>
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
                 SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Status"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Container DimBranches\Log Task Success"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9045e7b3-c729-4986-99f4-83184efd8eaa}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Task Success"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimBranche',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::InsertCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::UpdateCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::MachineName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::DeleteCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::StartPakage"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Status"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
@@ -2424,20 +2448,20 @@ where [BrancheAlternativeKey] =? and  [CompanyKey] = ?</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimBranches.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{E76D5430-AEF6-4FD4-9E73-061FD84285D4}"
+          DTS:DTSID="{29004CCD-57EF-4A40-81A1-F6BAD97DE695}"
           DTS:From="Package\Container DimBranches\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Container DimBranches\Log Task2" />
+          DTS:To="Package\Container DimBranches\Log Task Failure"
+          DTS:Value="1" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimBranches.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{8D9212BC-91C5-4D33-B1CA-E5EF2E57904B}"
+          DTS:DTSID="{9655B26A-4398-457B-93BF-910BBC02AE26}"
           DTS:From="Package\Container DimBranches\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Container DimBranches\Log Task2 1"
-          DTS:Value="1" />
+          DTS:To="Package\Container DimBranches\Log Task Success" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimBranches.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
@@ -3511,69 +3535,13 @@ where [refTable].[CarAlternativeKey] = ? and [refTable].[CompanyKey] = ?</proper
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimCar\Log Task"
+          DTS:refId="Package\Container DimCar\Log Task Failure"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{7dd4eaff-d3f1-48a7-a31c-467396f11089}"
+          DTS:DTSID="{05b40787-bb5e-4039-bfc1-cfb2ba479e73}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
-          <DTS:Variables />
-          <DTS:LoggingOptions
-            DTS:FilterKind="0" />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimBranchet',?,?,?,?,?,?,GETDATE(),6,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="2"
-                SQLTask:DtsVariableName="User::InsertCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="3"
-                SQLTask:DtsVariableName="User::UpdateCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="System::MachineName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="System::PackageName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="4"
-                SQLTask:DtsVariableName="User::DeleteCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="5"
-                SQLTask:DtsVariableName="User::StartPakage"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="7"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Container DimCar\Log Task 1"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{1ddfa79d-07d6-4846-9e9d-99c3bbed4e9d}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task 1"
+          DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
@@ -3582,7 +3550,7 @@ where [refTable].[CarAlternativeKey] = ? and [refTable].[CompanyKey] = ?</proper
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimBranchet',?,?,?,?,?,?,GETDATE(),6,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimCar',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -3618,6 +3586,86 @@ where [refTable].[CarAlternativeKey] = ? and [refTable].[CompanyKey] = ?</proper
                 SQLTask:DtsVariableName="User::StartPakage"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Status"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Container DimCar\Log Task Success"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{ed98711a-c723-42f3-b298-04228aba2d06}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Task Success"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimCar',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::InsertCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::UpdateCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::MachineName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::DeleteCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::StartPakage"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Status"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
                 SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
@@ -3659,19 +3707,19 @@ where [refTable].[CarAlternativeKey] = ? and [refTable].[CompanyKey] = ?</proper
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimCar.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{30B8B15A-F203-4F32-9E49-9514C9CC6939}"
+          DTS:DTSID="{E7BF7CB2-9EEA-40F4-BCFC-E65BEDBCE3E2}"
           DTS:From="Package\Container DimCar\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Container DimCar\Log Task" />
+          DTS:To="Package\Container DimCar\Log Task Success" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimCar.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{BAA3718A-563B-4E1C-913C-59F7AB38A5F5}"
+          DTS:DTSID="{F9174945-98BA-43B6-995C-F81F15225419}"
           DTS:From="Package\Container DimCar\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
-          DTS:To="Package\Container DimCar\Log Task 1"
+          DTS:To="Package\Container DimCar\Log Task Failure"
           DTS:Value="1" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimCar.PrecedenceConstraints[Constraint 3]"
@@ -4865,13 +4913,13 @@ where [CustomerAlternativeKey] =? and  [CompanyKey] = ?</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimCustomer\Log Task"
+          DTS:refId="Package\Container DimCustomer\Log Task Failure"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{7ef018aa-65cf-42f8-b389-1b1fc7653a9a}"
+          DTS:DTSID="{0dc83d9f-c8be-4d15-940e-f622670c1e11}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task"
+          DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
@@ -4880,7 +4928,7 @@ where [CustomerAlternativeKey] =? and  [CompanyKey] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimCustomer',?,?,?,?,?,?,GETDATE(),3,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimCustomer',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -4917,17 +4965,29 @@ where [CustomerAlternativeKey] =? and  [CompanyKey] = ?</property>
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
                 SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Status"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimCustomer\Log Task 1"
+          DTS:refId="Package\Container DimCustomer\Log Task Success"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{39ab2a9a-eda5-42c7-8578-db5780b5867b}"
+          DTS:DTSID="{e7c5c77a-1e67-45f9-96ed-1b224290cf57}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task 1"
+          DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="1">
           <DTS:Variables />
@@ -4936,7 +4996,7 @@ where [CustomerAlternativeKey] =? and  [CompanyKey] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimCustomer',?,?,?,?,?,?,GETDATE(),3,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimCustomer',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -4972,6 +5032,18 @@ where [CustomerAlternativeKey] =? and  [CompanyKey] = ?</property>
                 SQLTask:DtsVariableName="User::StartPakage"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Status"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
                 SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
@@ -5005,19 +5077,19 @@ where [CustomerAlternativeKey] =? and  [CompanyKey] = ?</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimCustomer.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{1E195A24-0718-4583-92BA-DC09BBBA466E}"
+          DTS:DTSID="{BF5E8ED2-1DCF-4D25-9CA9-36C315DFF15A}"
           DTS:From="Package\Container DimCustomer\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Container DimCustomer\Log Task" />
+          DTS:To="Package\Container DimCustomer\Log Task Success" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimCustomer.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{597DC0C5-701E-447A-B535-ACA5F3D5B518}"
+          DTS:DTSID="{08D0C562-5E36-4C60-9BB8-C0C685D731E0}"
           DTS:From="Package\Container DimCustomer\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Container DimCustomer\Log Task 1"
+          DTS:To="Package\Container DimCustomer\Log Task Failure"
           DTS:Value="1" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimCustomer.PrecedenceConstraints[Constraint 2]"
@@ -6205,13 +6277,13 @@ where [refTable].[DimensionAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimDimension\Log Task"
+          DTS:refId="Package\Container DimDimension\Log Task Failure"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{f3eea7a4-40cc-41bf-81da-182f294241af}"
+          DTS:DTSID="{4328e509-2021-40c7-9dfe-7d23c3e377f2}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task"
+          DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
@@ -6220,7 +6292,7 @@ where [refTable].[DimensionAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimDimension',?,?,?,?,?,?,GETDATE(),7,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimDimension',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -6257,17 +6329,29 @@ where [refTable].[DimensionAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
                 SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Status"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimDimension\Log Task 1"
+          DTS:refId="Package\Container DimDimension\Log Task Success"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{74b89141-268e-47fb-9c33-3bc9523685ea}"
+          DTS:DTSID="{80390d09-bc12-4df3-9d77-c8bf7a1cad24}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task 1"
+          DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="1">
           <DTS:Variables />
@@ -6276,7 +6360,7 @@ where [refTable].[DimensionAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimBranchet',?,?,?,?,?,?,GETDATE(),7,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimDimension',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -6312,6 +6396,18 @@ where [refTable].[DimensionAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
                 SQLTask:DtsVariableName="User::StartPakage"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Status"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
                 SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
@@ -6353,19 +6449,19 @@ where [refTable].[DimensionAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimDimension.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{0B00BAB2-DB1E-42F3-B17D-8E029198C5C1}"
+          DTS:DTSID="{65DF4000-483F-4789-AF65-C9D71D3CF41E}"
           DTS:From="Package\Container DimDimension\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Container DimDimension\Log Task" />
+          DTS:To="Package\Container DimDimension\Log Task Success" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimDimension.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{F0D98034-4B86-41A3-9B56-3E3ACC0D3189}"
+          DTS:DTSID="{B3885E85-89D5-4C5B-BDAC-4641CBC12CE1}"
           DTS:From="Package\Container DimDimension\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
-          DTS:To="Package\Container DimDimension\Log Task 1"
+          DTS:To="Package\Container DimDimension\Log Task Failure"
           DTS:Value="1" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimDimension.PrecedenceConstraints[Constraint 3]"
@@ -8506,22 +8602,22 @@ where [refTable].[CompanyName] = ?</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimProduct SCD\Log Task"
+          DTS:refId="Package\Container DimProduct SCD\Log Task Failure"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{83fb164e-dd53-4ca4-a350-12bcb9c66625}"
+          DTS:DTSID="{7806bf95-bd53-4f32-85b9-408592076710}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task"
+          DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA; &#x9;IsUpdated,&#xA;&#x9;IsDeleted,&#xA;&#x9;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimProduct',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimProduct',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -8574,22 +8670,22 @@ where [refTable].[CompanyName] = ?</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimProduct SCD\Log Task 1"
+          DTS:refId="Package\Container DimProduct SCD\Log Task Success"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{7806bf95-bd53-4f32-85b9-408592076710}"
+          DTS:DTSID="{83fb164e-dd53-4ca4-a350-12bcb9c66625}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task 1"
+          DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimBranchet',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA; &#x9;IsUpdated,&#xA;&#x9;IsDeleted,&#xA;&#x9;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimProduct',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -8674,7 +8770,7 @@ where [refTable].[CompanyName] = ?</property>
           DTS:From="Package\Container DimProduct SCD\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Container DimProduct SCD\Log Task" />
+          DTS:To="Package\Container DimProduct SCD\Log Task Success" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimProduct SCD.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
@@ -8698,7 +8794,7 @@ where [refTable].[CompanyName] = ?</property>
           DTS:From="Package\Container DimProduct SCD\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
-          DTS:To="Package\Container DimProduct SCD\Log Task 1"
+          DTS:To="Package\Container DimProduct SCD\Log Task Failure"
           DTS:Value="1" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
@@ -9658,69 +9754,13 @@ where [refTable].[CountryAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimRegion\Log Task"
+          DTS:refId="Package\Container DimRegion\Log Task Failure"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{f3d17596-a1db-4728-89d9-bfcbcf3fbcca}"
+          DTS:DTSID="{b2908945-aa07-43b3-ab38-33546ccfda28}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:LoggingOptions
-            DTS:FilterKind="0" />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimBranchet',?,?,?,?,?,?,GETDATE(),8,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="2"
-                SQLTask:DtsVariableName="User::InsertCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="3"
-                SQLTask:DtsVariableName="User::UpdateCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="System::MachineName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="System::PackageName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="4"
-                SQLTask:DtsVariableName="User::DeleteCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="5"
-                SQLTask:DtsVariableName="User::StartPakage"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="7"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Container DimRegion\Log Task 1"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{bc164a64-4dc6-43db-8659-c07fd76da7b6}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task 1"
+          DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="1">
           <DTS:Variables />
@@ -9729,7 +9769,7 @@ where [refTable].[CountryAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimBranchet',?,?,?,?,?,?,GETDATE(),8,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimRegion',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -9765,6 +9805,86 @@ where [refTable].[CountryAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                 SQLTask:DtsVariableName="User::StartPakage"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Status"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Container DimRegion\Log Task Success"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{d2179f17-8152-4d7a-ba24-956111b12056}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Task Success"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimRegion',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::InsertCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::UpdateCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::MachineName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::DeleteCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::StartPakage"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Status"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
                 SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
@@ -9806,19 +9926,19 @@ where [refTable].[CountryAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimRegion.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{E061044D-3418-4D98-BEB2-44307DF0DCDA}"
+          DTS:DTSID="{26B6FFA6-5C18-4FE8-BAD0-CA3ACA011B76}"
           DTS:From="Package\Container DimRegion\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Container DimRegion\Log Task" />
+          DTS:To="Package\Container DimRegion\Log Task Success" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimRegion.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{68F174C2-7A89-465A-845B-E162C42692DB}"
+          DTS:DTSID="{06203760-FB78-41C7-90EC-7A049E3599C9}"
           DTS:From="Package\Container DimRegion\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
-          DTS:To="Package\Container DimRegion\Log Task 1"
+          DTS:To="Package\Container DimRegion\Log Task Failure"
           DTS:Value="1" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimRegion.PrecedenceConstraints[Constraint 3]"
@@ -10831,69 +10951,13 @@ where [refTable].[VendorAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pro
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimVendor\Log Task"
+          DTS:refId="Package\Container DimVendor\Log Task Failure"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{2a404c67-b7bd-402b-b0d7-f6766c2ce4cf}"
+          DTS:DTSID="{0ff7e69b-3aab-4a76-a2ff-dadecfd6054b}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:LoggingOptions
-            DTS:FilterKind="0" />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimVendor',?,?,?,?,?,?,GETDATE(),4,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="2"
-                SQLTask:DtsVariableName="User::InsertCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="3"
-                SQLTask:DtsVariableName="User::UpdateCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="System::MachineName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="System::PackageName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="4"
-                SQLTask:DtsVariableName="User::DeleteCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="5"
-                SQLTask:DtsVariableName="User::StartPakage"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="7"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Container DimVendor\Log Task 1"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{bc746de5-c19a-46ad-9df7-fca869be9320}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task 1"
+          DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="1">
           <DTS:Variables />
@@ -10902,7 +10966,7 @@ where [refTable].[VendorAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pro
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimVendor',?,?,?,?,?,?,GETDATE(),4,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimVendor',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -10938,6 +11002,86 @@ where [refTable].[VendorAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pro
                 SQLTask:DtsVariableName="User::StartPakage"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Status"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Container DimVendor\Log Task Success"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{d19ad4ba-d464-4d1c-8195-7a3443ca3579}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Task Success"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimVendor',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::InsertCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::UpdateCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::MachineName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::DeleteCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::StartPakage"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Status"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
                 SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
@@ -10979,19 +11123,19 @@ where [refTable].[VendorAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pro
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimVendor.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{3490F71B-316E-4A8E-B388-790A3BAEB48F}"
+          DTS:DTSID="{6FC4B563-8C09-4FD4-B542-B367BF77CE70}"
           DTS:From="Package\Container DimVendor\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Container DimVendor\Log Task" />
+          DTS:To="Package\Container DimVendor\Log Task Success" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimVendor.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{1348009B-E498-451C-9A32-28C630133FA0}"
+          DTS:DTSID="{CFE9D734-9DBD-4D26-A655-2D87E7638F0E}"
           DTS:From="Package\Container DimVendor\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
-          DTS:To="Package\Container DimVendor\Log Task 1"
+          DTS:To="Package\Container DimVendor\Log Task Failure"
           DTS:Value="1" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Container DimVendor.PrecedenceConstraints[Constraint 3]"
@@ -13506,101 +13650,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Sequence DimEmployee\Log Task"
+          DTS:refId="Package\Sequence DimEmployee\Log Task Failure"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{7c6eea76-005e-4d0d-95c2-2b0b42c62d5d}"
+          DTS:DTSID="{39385c43-1a58-4484-81c1-be2de8ca1b90}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task"
+          DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
-          <DTS:EventHandlers>
-            <DTS:EventHandler
-              DTS:refId="Package\Sequence DimEmployee\Log Task.EventHandlers[OnError]"
-              DTS:CreationName="OnError"
-              DTS:DTSID="{76256CFE-4532-43A6-A774-B3181684C0E5}"
-              DTS:EventID="0"
-              DTS:EventName="OnError"
-              DTS:LocaleID="-1">
-              <DTS:Variables>
-                <DTS:Variable
-                  DTS:CreationName=""
-                  DTS:Description="The propagate property of the event"
-                  DTS:DTSID="{1A8F2635-8C1B-40F5-88C4-C770E26F5962}"
-                  DTS:IncludeInDebugDump="6789"
-                  DTS:Namespace="System"
-                  DTS:ObjectName="Propagate">
-                  <DTS:VariableValue
-                    DTS:DataType="11">-1</DTS:VariableValue>
-                </DTS:Variable>
-              </DTS:Variables>
-              <DTS:Executables />
-            </DTS:EventHandler>
-          </DTS:EventHandlers>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimEmployee',?,?,?,?,?,?,GETDATE(),11,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="2"
-                SQLTask:DtsVariableName="User::InsertCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="3"
-                SQLTask:DtsVariableName="User::UpdateCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="System::MachineName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="System::PackageName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="4"
-                SQLTask:DtsVariableName="User::DeleteCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="5"
-                SQLTask:DtsVariableName="User::StartPakage"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="7"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Sequence DimEmployee\Log Task 1"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{5bcbcf18-cfd6-46d5-ba5a-5211b8f34f3c}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task 1"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
-          <DTS:Variables />
-          <DTS:LoggingOptions
-            DTS:FilterKind="0" />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status,Note)&#xA;      VALUES ('DimEmployee',?,?,?,?,?,?,GETDATE(),11,'Failure',?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimEmployee',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -13639,9 +13704,83 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                 SQLTask:ParameterSize="-1" />
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="6"
-                SQLTask:DtsVariableName="User::Error"
+                SQLTask:DtsVariableName="User::Status"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence DimEmployee\Log Task Success"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{61efc629-8fe2-43f0-aff4-f37acb384a8b}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Task Success"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimEmployee',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::InsertCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::UpdateCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::MachineName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::DeleteCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::StartPakage"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Status"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
                 SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
@@ -13683,19 +13822,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Sequence DimEmployee.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{43bd2e9f-f170-4e35-b89e-efefb4c13fd8}"
+          DTS:DTSID="{42D5632F-66D6-4CD0-9440-04A2C9C86088}"
           DTS:From="Package\Sequence DimEmployee\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Sequence DimEmployee\Log Task" />
+          DTS:To="Package\Sequence DimEmployee\Log Task Success" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Sequence DimEmployee.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{f71b4205-f63a-40a2-829a-07394454e832}"
+          DTS:DTSID="{975DD85D-C8EB-41EB-A53C-23857B04B684}"
           DTS:From="Package\Sequence DimEmployee\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
-          DTS:To="Package\Sequence DimEmployee\Log Task 1"
+          DTS:To="Package\Sequence DimEmployee\Log Task Failure"
           DTS:Value="1" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Sequence DimEmployee.PrecedenceConstraints[Constraint 3]"
@@ -13706,29 +13845,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           DTS:ObjectName="Constraint 3"
           DTS:To="Package\Sequence DimEmployee\Data Flow Task-Insert,Update" />
       </DTS:PrecedenceConstraints>
-      <DTS:EventHandlers>
-        <DTS:EventHandler
-          DTS:refId="Package\Sequence DimEmployee.EventHandlers[OnError]"
-          DTS:CreationName="OnError"
-          DTS:DTSID="{5EA92114-7668-450D-97BC-861A5ED7F786}"
-          DTS:EventID="0"
-          DTS:EventName="OnError"
-          DTS:LocaleID="-1">
-          <DTS:Variables>
-            <DTS:Variable
-              DTS:CreationName=""
-              DTS:Description="The propagate property of the event"
-              DTS:DTSID="{8D0D3B41-08CB-4BCB-A8BC-CBE6B3864344}"
-              DTS:IncludeInDebugDump="6789"
-              DTS:Namespace="System"
-              DTS:ObjectName="Propagate">
-              <DTS:VariableValue
-                DTS:DataType="11">-1</DTS:VariableValue>
-            </DTS:Variable>
-          </DTS:Variables>
-          <DTS:Executables />
-        </DTS:EventHandler>
-      </DTS:EventHandlers>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Sequence DimPromotion"
@@ -15164,69 +15280,13 @@ where [refTable].[CompanyName] = ?</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Sequence DimPromotion\Log Task"
+          DTS:refId="Package\Sequence DimPromotion\Log Task Failure"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0f3a6db7-1a36-4e63-9ecb-7f13b151cb02}"
+          DTS:DTSID="{327bc69b-8079-438f-989e-4eb8faa6f039}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:LoggingOptions
-            DTS:FilterKind="0" />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimPromotion',?,?,?,?,?,?,GETDATE(),10,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="2"
-                SQLTask:DtsVariableName="User::InsertCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="3"
-                SQLTask:DtsVariableName="User::UpdateCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="System::MachineName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="System::PackageName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="4"
-                SQLTask:DtsVariableName="User::DeleteCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="5"
-                SQLTask:DtsVariableName="User::StartPakage"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="7"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Sequence DimPromotion\Log Task 1"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{3b1f239d-b706-4276-b9d2-2a6fd2833435}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task 1"
+          DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="1">
           <DTS:Variables />
@@ -15235,7 +15295,7 @@ where [refTable].[CompanyName] = ?</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimPromotion',?,?,?,?,?,?,GETDATE(),10,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimPromotion',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -15271,6 +15331,86 @@ where [refTable].[CompanyName] = ?</property>
                 SQLTask:DtsVariableName="User::StartPakage"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Status"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence DimPromotion\Log Task Success"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9bdb1298-386f-4ce3-a0c1-9612ec7fdf48}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Task Success"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimPromotion',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::InsertCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::UpdateCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::MachineName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::DeleteCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::StartPakage"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Status"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
                 SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
@@ -15312,19 +15452,19 @@ where [refTable].[CompanyName] = ?</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Sequence DimPromotion.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{2F06E193-7EE0-4141-879A-46B371733EB3}"
+          DTS:DTSID="{A3CB3794-7595-4207-850D-2F01BF1EA35D}"
           DTS:From="Package\Sequence DimPromotion\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Sequence DimPromotion\Log Task" />
+          DTS:To="Package\Sequence DimPromotion\Log Task Success" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Sequence DimPromotion.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{F770E61F-B010-4003-81BC-2D9B60526097}"
+          DTS:DTSID="{E874199F-B5BD-4EA2-A4D7-C196368B013E}"
           DTS:From="Package\Sequence DimPromotion\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
-          DTS:To="Package\Sequence DimPromotion\Log Task 1"
+          DTS:To="Package\Sequence DimPromotion\Log Task Failure"
           DTS:Value="1" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Sequence DimPromotion.PrecedenceConstraints[Constraint 3]"
@@ -16237,69 +16377,13 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Sequence DimUnit\Log Task"
+          DTS:refId="Package\Sequence DimUnit\Log Task Failure"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{fdb193bf-b8af-42eb-90cf-17aba79913f6}"
+          DTS:DTSID="{502a36dd-ef65-4b57-a8e3-bfb54a3b035d}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:LoggingOptions
-            DTS:FilterKind="0" />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimUnit',?,?,?,?,?,?,GETDATE(),9,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="2"
-                SQLTask:DtsVariableName="User::InsertCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="3"
-                SQLTask:DtsVariableName="User::UpdateCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="System::MachineName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="System::PackageName"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="130"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="4"
-                SQLTask:DtsVariableName="User::DeleteCount"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="5"
-                SQLTask:DtsVariableName="User::StartPakage"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="7"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Sequence DimUnit\Log Task 1"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{211966d4-0bf9-42f2-9c3e-274985e000f0}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Log Task 1"
+          DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="1">
           <DTS:Variables />
@@ -16308,7 +16392,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;   (TableName,&#xA;             Pakage,&#xA;    MachineName,&#xA;            IsInserted&#xA; ,IsUpdated,&#xA;IsDeleted,&#xA;StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimUnit',?,?,?,?,?,?,GETDATE(),9,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimUnit',?,?,?,?,?,?,GETDATE(),1,'Failure')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -16344,6 +16428,86 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                 SQLTask:DtsVariableName="User::StartPakage"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Status"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence DimUnit\Log Task Success"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{cd7ce6ff-8d6a-4c8a-abae-8fc66184bb58}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Task Success"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status)&#xA;      VALUES ('DimUnit',?,?,?,?,?,?,GETDATE(),1,'Success')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::InsertCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::UpdateCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::MachineName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::DeleteCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::StartPakage"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Status"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::TableNo"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
                 SQLTask:ParameterSize="-1" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
@@ -16385,19 +16549,19 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Sequence DimUnit.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{7F82C294-696E-40DD-81E8-0F0149057F66}"
+          DTS:DTSID="{F2548319-09FC-440F-86E7-5A19C6BD638D}"
           DTS:From="Package\Sequence DimUnit\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Sequence DimUnit\Log Task" />
+          DTS:To="Package\Sequence DimUnit\Log Task Success" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Sequence DimUnit.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{DDE04BD7-C015-4E7E-8181-305A88FD2640}"
+          DTS:DTSID="{B1AF3042-B1BC-400F-8FC7-1F592792CC19}"
           DTS:From="Package\Sequence DimUnit\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
-          DTS:To="Package\Sequence DimUnit\Log Task 1"
+          DTS:To="Package\Sequence DimUnit\Log Task Failure"
           DTS:Value="1" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Sequence DimUnit.PrecedenceConstraints[Constraint 3]"
@@ -16507,96 +16671,18 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <NodeLayout
           Size="220,42"
           Id="Package\Container DimAccount\Data Flow Task-Insert,Update"
-          TopLeft="138,209.5" />
+          TopLeft="195,209.5" />
         <NodeLayout
           Size="205,42"
           Id="Package\Container DimAccount\Expression - Set Start date"
-          TopLeft="145.5,5.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Container DimAccount\Log Task"
-          TopLeft="5.50000000000006,311.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Container DimAccount\Log Task 1"
-          TopLeft="187.5,311.5" />
-        <EdgeLayout
-          Id="Package\Container DimAccount.PrecedenceConstraints[Constraint]"
-          TopLeft="212.666666666667,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-146.666666666667,60"
-              Start="0,0"
-              End="-146.666666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2599277978339"
-                    Point2="0,24.2599277978339"
-                    Point3="-4,24.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-142.666666666667,24.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-142.666666666667,24.2599277978339"
-                    Point2="-146.666666666667,24.2599277978339"
-                    Point3="-146.666666666667,28.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-146.666666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Container DimAccount.PrecedenceConstraints[Constraint 1]"
-          TopLeft="283.333333333333,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-35.3333333333333,60"
-              Start="0,0"
-              End="-35.3333333333333,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2599277978339"
-                    Point2="0,24.2599277978339"
-                    Point3="-4,24.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-31.3333333333333,24.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-31.3333333333333,24.2599277978339"
-                    Point2="-35.3333333333333,24.2599277978339"
-                    Point3="-35.3333333333333,28.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-35.3333333333333,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-32.9080143229167,29.2599277978339,30.4826953125,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="202.5,5.5" />
         <NodeLayout
           Size="157,42"
           Id="Package\Container DimAccount\TimeStamp Task"
-          TopLeft="169.5,107.5" />
+          TopLeft="226.5,107.5" />
         <EdgeLayout
           Id="Package\Container DimAccount.PrecedenceConstraints[Constraint 2]"
-          TopLeft="248,47.5">
+          TopLeft="305,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16618,7 +16704,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Container DimAccount.PrecedenceConstraints[Constraint 3]"
-          TopLeft="248,149.5">
+          TopLeft="305,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16638,38 +16724,23 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="364,408"
-          Size="364,452"
-          Id="Package\Container DimAccount"
-          TopLeft="834.25,55.9166666666667" />
         <NodeLayout
-          Size="220,42"
-          Id="Package\Container DimBranches\Data Flow Task-Insert,Update"
-          TopLeft="147,209.5" />
+          Size="156,42"
+          Id="Package\Container DimAccount\Log Task Failure"
+          TopLeft="227,311.5" />
         <NodeLayout
-          Size="205,42"
-          Id="Package\Container DimBranches\Expression - Set Start date"
-          TopLeft="154.5,5.5" />
-        <NodeLayout
-          Size="127,42"
-          Id="Package\Container DimBranches\Log Task2"
+          Size="161,42"
+          Id="Package\Container DimAccount\Log Task Success"
           TopLeft="5.50000000000006,311.5" />
-        <NodeLayout
-          Size="127,42"
-          Id="Package\Container DimBranches\Log Task2 1"
-          TopLeft="193.5,311.5" />
         <EdgeLayout
-          Id="Package\Container DimBranches.PrecedenceConstraints[Constraint]"
-          TopLeft="221.666666666667,251.5">
+          Id="Package\Container DimAccount.PrecedenceConstraints[Constraint]"
+          TopLeft="269.666666666667,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-152.666666666667,60"
+              EndConnector="-183.666666666667,60"
               Start="0,0"
-              End="-152.666666666667,52.5">
+              End="-183.666666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -16680,13 +16751,13 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                     Point2="0,24.2599277978339"
                     Point3="-4,24.2599277978339" />
                   <mssgle:LineSegment
-                    End="-148.666666666667,24.2599277978339" />
+                    End="-179.666666666667,24.2599277978339" />
                   <mssgle:CubicBezierSegment
-                    Point1="-148.666666666667,24.2599277978339"
-                    Point2="-152.666666666667,24.2599277978339"
-                    Point3="-152.666666666667,28.2599277978339" />
+                    Point1="-179.666666666667,24.2599277978339"
+                    Point2="-183.666666666667,24.2599277978339"
+                    Point3="-183.666666666667,28.2599277978339" />
                   <mssgle:LineSegment
-                    End="-152.666666666667,52.5" />
+                    End="-183.666666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16696,8 +16767,8 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Container DimBranches.PrecedenceConstraints[Constraint 1]"
-          TopLeft="292.333333333333,251.5">
+          Id="Package\Container DimAccount.PrecedenceConstraints[Constraint 1]"
+          TopLeft="340.333333333333,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16731,13 +16802,28 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="420,408"
+          Size="420,451"
+          Id="Package\Container DimAccount"
+          TopLeft="962.25,64.5833333333334" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Container DimBranches\Data Flow Task-Insert,Update"
+          TopLeft="192.5,209.5" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Container DimBranches\Expression - Set Start date"
+          TopLeft="200,5.5" />
         <NodeLayout
           Size="157,42"
           Id="Package\Container DimBranches\TimeStamp Task"
-          TopLeft="178.5,107.5" />
+          TopLeft="224,107.5" />
         <EdgeLayout
           Id="Package\Container DimBranches.PrecedenceConstraints[Constraint 2]"
-          TopLeft="257,47.5">
+          TopLeft="302.5,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16759,7 +16845,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Container DimBranches.PrecedenceConstraints[Constraint 3]"
-          TopLeft="257,149.5">
+          TopLeft="302.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16779,38 +16865,23 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="372,408"
-          Size="372,452"
-          Id="Package\Container DimBranches"
-          TopLeft="2062,46.6666666666667" />
         <NodeLayout
-          Size="220,42"
-          Id="Package\Container DimCar\Data Flow Task-Insert,Update"
-          TopLeft="138,209.5" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Container DimCar\Expression Task"
-          TopLeft="170.5,5.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Container DimCar\Log Task"
+          Size="156,42"
+          Id="Package\Container DimBranches\Log Task Failure"
           TopLeft="5.50000000000006,311.5" />
         <NodeLayout
-          Size="121,42"
-          Id="Package\Container DimCar\Log Task 1"
-          TopLeft="187.5,311.5" />
+          Size="161,42"
+          Id="Package\Container DimBranches\Log Task Success"
+          TopLeft="222,311.5" />
         <EdgeLayout
-          Id="Package\Container DimCar.PrecedenceConstraints[Constraint 1]"
-          TopLeft="212.666666666667,251.5">
+          Id="Package\Container DimBranches.PrecedenceConstraints[Constraint]"
+          TopLeft="267.166666666667,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-146.666666666667,60"
+              EndConnector="-183.666666666667,60"
               Start="0,0"
-              End="-146.666666666667,52.5">
+              End="-183.666666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -16821,24 +16892,26 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                     Point2="0,24.2599277978339"
                     Point3="-4,24.2599277978339" />
                   <mssgle:LineSegment
-                    End="-142.666666666667,24.2599277978339" />
+                    End="-179.666666666667,24.2599277978339" />
                   <mssgle:CubicBezierSegment
-                    Point1="-142.666666666667,24.2599277978339"
-                    Point2="-146.666666666667,24.2599277978339"
-                    Point3="-146.666666666667,28.2599277978339" />
+                    Point1="-179.666666666667,24.2599277978339"
+                    Point2="-183.666666666667,24.2599277978339"
+                    Point3="-183.666666666667,28.2599277978339" />
                   <mssgle:LineSegment
-                    End="-146.666666666667,52.5" />
+                    End="-183.666666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-107.074680989583,29.2599277978339,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Container DimCar.PrecedenceConstraints[Constraint 2]"
-          TopLeft="283.333333333333,251.5">
+          Id="Package\Container DimBranches.PrecedenceConstraints[Constraint 1]"
+          TopLeft="337.833333333333,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16867,18 +16940,31 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-32.9080143229167,29.2599277978339,30.4826953125,9.7490234375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="418,408"
+          Size="418,452"
+          Id="Package\Container DimBranches"
+          TopLeft="2354,50.6666666666667" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Container DimCar\Data Flow Task-Insert,Update"
+          TopLeft="195,209.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Container DimCar\Expression Task"
+          TopLeft="227.5,5.5" />
         <NodeLayout
           Size="157,42"
           Id="Package\Container DimCar\TimeStamp Task"
-          TopLeft="169.5,107.5" />
+          TopLeft="226.5,107.5" />
         <EdgeLayout
           Id="Package\Container DimCar.PrecedenceConstraints[Constraint]"
-          TopLeft="248,47.5">
+          TopLeft="305,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16900,7 +16986,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Container DimCar.PrecedenceConstraints[Constraint 3]"
-          TopLeft="248,149.5">
+          TopLeft="305,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -16920,38 +17006,23 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="364,408"
-          Size="364,452"
-          Id="Package\Container DimCar"
-          TopLeft="430.75,56.1666666666666" />
         <NodeLayout
-          Size="220,42"
-          Id="Package\Container DimCustomer\Data Flow Task-Insert,Update"
-          TopLeft="138,209.5" />
+          Size="156,42"
+          Id="Package\Container DimCar\Log Task Failure"
+          TopLeft="227,311.5" />
         <NodeLayout
-          Size="205,42"
-          Id="Package\Container DimCustomer\Expression - Set Start date"
-          TopLeft="145.5,5.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Container DimCustomer\Log Task"
+          Size="161,42"
+          Id="Package\Container DimCar\Log Task Success"
           TopLeft="5.50000000000006,311.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Container DimCustomer\Log Task 1"
-          TopLeft="187.5,311.5" />
         <EdgeLayout
-          Id="Package\Container DimCustomer.PrecedenceConstraints[Constraint]"
-          TopLeft="212.666666666667,251.5">
+          Id="Package\Container DimCar.PrecedenceConstraints[Constraint 1]"
+          TopLeft="269.666666666667,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-146.666666666667,60"
+              EndConnector="-183.666666666667,60"
               Start="0,0"
-              End="-146.666666666667,52.5">
+              End="-183.666666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -16962,13 +17033,13 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                     Point2="0,24.2599277978339"
                     Point3="-4,24.2599277978339" />
                   <mssgle:LineSegment
-                    End="-142.666666666667,24.2599277978339" />
+                    End="-179.666666666667,24.2599277978339" />
                   <mssgle:CubicBezierSegment
-                    Point1="-142.666666666667,24.2599277978339"
-                    Point2="-146.666666666667,24.2599277978339"
-                    Point3="-146.666666666667,28.2599277978339" />
+                    Point1="-179.666666666667,24.2599277978339"
+                    Point2="-183.666666666667,24.2599277978339"
+                    Point3="-183.666666666667,28.2599277978339" />
                   <mssgle:LineSegment
-                    End="-146.666666666667,52.5" />
+                    End="-183.666666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16978,8 +17049,8 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Container DimCustomer.PrecedenceConstraints[Constraint 1]"
-          TopLeft="283.333333333333,251.5">
+          Id="Package\Container DimCar.PrecedenceConstraints[Constraint 2]"
+          TopLeft="340.333333333333,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17013,13 +17084,28 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="420,408"
+          Size="420,451"
+          Id="Package\Container DimCar"
+          TopLeft="504.75,66.1666666666666" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Container DimCustomer\Data Flow Task-Insert,Update"
+          TopLeft="195,209.5" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Container DimCustomer\Expression - Set Start date"
+          TopLeft="202.5,5.5" />
         <NodeLayout
           Size="157,42"
           Id="Package\Container DimCustomer\TimeStamp Task"
-          TopLeft="169.5,107.5" />
+          TopLeft="226.5,107.5" />
         <EdgeLayout
           Id="Package\Container DimCustomer.PrecedenceConstraints[Constraint 2]"
-          TopLeft="248,47.5">
+          TopLeft="305,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17041,7 +17127,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Container DimCustomer.PrecedenceConstraints[Constraint 3]"
-          TopLeft="248,149.5">
+          TopLeft="305,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17061,64 +17147,23 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="364,408"
-          Size="364,452"
-          Id="Package\Container DimCustomer"
-          TopLeft="1652.33333333333,45.5" />
         <NodeLayout
-          Size="220,42"
-          Id="Package\Container DimDimension\Data Flow Task-Insert,Update"
-          TopLeft="138,209.5" />
+          Size="156,42"
+          Id="Package\Container DimCustomer\Log Task Failure"
+          TopLeft="227,311.5" />
         <NodeLayout
-          Size="155,42"
-          Id="Package\Container DimDimension\Expression Task"
-          TopLeft="170.5,5.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Container DimDimension\Log Task"
+          Size="161,42"
+          Id="Package\Container DimCustomer\Log Task Success"
           TopLeft="5.50000000000006,311.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Container DimDimension\Log Task 1"
-          TopLeft="187.5,311.5" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Container DimDimension\TimeStamp Task"
-          TopLeft="169.5,107.5" />
         <EdgeLayout
-          Id="Package\Container DimDimension.PrecedenceConstraints[Constraint]"
-          TopLeft="248,47.5">
+          Id="Package\Container DimCustomer.PrecedenceConstraints[Constraint]"
+          TopLeft="269.666666666667,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="-183.666666666667,60"
               Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Container DimDimension.PrecedenceConstraints[Constraint 1]"
-          TopLeft="212.666666666667,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-146.666666666667,60"
-              Start="0,0"
-              End="-146.666666666667,52.5">
+              End="-183.666666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -17129,13 +17174,13 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                     Point2="0,24.2599277978339"
                     Point3="-4,24.2599277978339" />
                   <mssgle:LineSegment
-                    End="-142.666666666667,24.2599277978339" />
+                    End="-179.666666666667,24.2599277978339" />
                   <mssgle:CubicBezierSegment
-                    Point1="-142.666666666667,24.2599277978339"
-                    Point2="-146.666666666667,24.2599277978339"
-                    Point3="-146.666666666667,28.2599277978339" />
+                    Point1="-179.666666666667,24.2599277978339"
+                    Point2="-183.666666666667,24.2599277978339"
+                    Point3="-183.666666666667,28.2599277978339" />
                   <mssgle:LineSegment
-                    End="-146.666666666667,52.5" />
+                    End="-183.666666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17145,8 +17190,8 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Container DimDimension.PrecedenceConstraints[Constraint 2]"
-          TopLeft="283.333333333333,251.5">
+          Id="Package\Container DimCustomer.PrecedenceConstraints[Constraint 1]"
+          TopLeft="340.333333333333,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17180,9 +17225,28 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="420,408"
+          Size="420,452"
+          Id="Package\Container DimCustomer"
+          TopLeft="1891.19047619047,58.3571428571429" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Container DimDimension\Data Flow Task-Insert,Update"
+          TopLeft="195,209.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Container DimDimension\Expression Task"
+          TopLeft="227.5,5.5" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Container DimDimension\TimeStamp Task"
+          TopLeft="226.5,107.5" />
         <EdgeLayout
-          Id="Package\Container DimDimension.PrecedenceConstraints[Constraint 3]"
-          TopLeft="248,149.5">
+          Id="Package\Container DimDimension.PrecedenceConstraints[Constraint]"
+          TopLeft="305,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17202,38 +17266,45 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="364,408"
-          Size="364,452"
-          Id="Package\Container DimDimension"
-          TopLeft="24.5833333333334,57.9166666666667" />
-        <NodeLayout
-          Size="220,42"
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update"
-          TopLeft="138,209.5" />
-        <NodeLayout
-          Size="205,42"
-          Id="Package\Container DimProduct SCD\Expression - Set Start date"
-          TopLeft="145.5,5.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Container DimProduct SCD\Log Task"
-          TopLeft="5.50000000000006,311.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Container DimProduct SCD\Log Task 1"
-          TopLeft="187.5,311.5" />
         <EdgeLayout
-          Id="Package\Container DimProduct SCD.PrecedenceConstraints[Constraint]"
-          TopLeft="212.666666666667,251.5">
+          Id="Package\Container DimDimension.PrecedenceConstraints[Constraint 3]"
+          TopLeft="305,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-146.666666666667,60"
+              EndConnector="0,60"
               Start="0,0"
-              End="-146.666666666667,52.5">
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Container DimDimension\Log Task Failure"
+          TopLeft="227,311.5" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Container DimDimension\Log Task Success"
+          TopLeft="5.50000000000006,311.5" />
+        <EdgeLayout
+          Id="Package\Container DimDimension.PrecedenceConstraints[Constraint 1]"
+          TopLeft="269.666666666667,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-183.666666666667,60"
+              Start="0,0"
+              End="-183.666666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -17244,13 +17315,106 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                     Point2="0,24.2599277978339"
                     Point3="-4,24.2599277978339" />
                   <mssgle:LineSegment
-                    End="-142.666666666667,24.2599277978339" />
+                    End="-179.666666666667,24.2599277978339" />
                   <mssgle:CubicBezierSegment
-                    Point1="-142.666666666667,24.2599277978339"
-                    Point2="-146.666666666667,24.2599277978339"
-                    Point3="-146.666666666667,28.2599277978339" />
+                    Point1="-179.666666666667,24.2599277978339"
+                    Point2="-183.666666666667,24.2599277978339"
+                    Point3="-183.666666666667,28.2599277978339" />
                   <mssgle:LineSegment
-                    End="-146.666666666667,52.5" />
+                    End="-183.666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Container DimDimension.PrecedenceConstraints[Constraint 2]"
+          TopLeft="340.333333333333,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35.3333333333333,60"
+              Start="0,0"
+              End="-35.3333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2599277978339"
+                    Point2="0,24.2599277978339"
+                    Point3="-4,24.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-31.3333333333333,24.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-31.3333333333333,24.2599277978339"
+                    Point2="-35.3333333333333,24.2599277978339"
+                    Point3="-35.3333333333333,28.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-35.3333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-32.9080143229167,29.2599277978339,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="420,408"
+          Size="420,451"
+          Id="Package\Container DimDimension"
+          TopLeft="44.5833333333334,65.9166666666667" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update"
+          TopLeft="195,209.5" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Container DimProduct SCD\Expression - Set Start date"
+          TopLeft="202.5,5.5" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Container DimProduct SCD\Log Task Success"
+          TopLeft="5.50000000000006,311.5" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Container DimProduct SCD\Log Task Failure"
+          TopLeft="227,311.5" />
+        <EdgeLayout
+          Id="Package\Container DimProduct SCD.PrecedenceConstraints[Constraint]"
+          TopLeft="269.666666666667,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-183.666666666667,60"
+              Start="0,0"
+              End="-183.666666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2599277978339"
+                    Point2="0,24.2599277978339"
+                    Point3="-4,24.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-179.666666666667,24.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-179.666666666667,24.2599277978339"
+                    Point2="-183.666666666667,24.2599277978339"
+                    Point3="-183.666666666667,28.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-183.666666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17261,7 +17425,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Container DimProduct SCD.PrecedenceConstraints[Constraint 3]"
-          TopLeft="283.333333333333,251.5">
+          TopLeft="340.333333333333,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17298,10 +17462,10 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <NodeLayout
           Size="157,42"
           Id="Package\Container DimProduct SCD\TimeStamp Task"
-          TopLeft="169.5,107.5" />
+          TopLeft="226.5,107.5" />
         <EdgeLayout
           Id="Package\Container DimProduct SCD.PrecedenceConstraints[Constraint 1]"
-          TopLeft="248,47.5">
+          TopLeft="305,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17323,7 +17487,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Container DimProduct SCD.PrecedenceConstraints[Constraint 2]"
-          TopLeft="248,149.5">
+          TopLeft="305,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17346,103 +17510,25 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="364,408"
-          Size="364,452"
+          PanelSize="420,408"
+          Size="420,452"
           Id="Package\Container DimProduct SCD"
-          TopLeft="2466.75,40.9166666666666" />
+          TopLeft="2806.75,42.9166666666666" />
         <NodeLayout
           Size="220,42"
           Id="Package\Container DimRegion\Data Flow Task-Insert,Update"
-          TopLeft="138,209.5" />
+          TopLeft="195,209.5" />
         <NodeLayout
           Size="155,42"
           Id="Package\Container DimRegion\Expression Task"
-          TopLeft="170.5,5.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Container DimRegion\Log Task"
-          TopLeft="5.50000000000006,311.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Container DimRegion\Log Task 1"
-          TopLeft="187.5,311.5" />
-        <EdgeLayout
-          Id="Package\Container DimRegion.PrecedenceConstraints[Constraint 1]"
-          TopLeft="212.666666666667,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-146.666666666667,60"
-              Start="0,0"
-              End="-146.666666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2599277978339"
-                    Point2="0,24.2599277978339"
-                    Point3="-4,24.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-142.666666666667,24.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-142.666666666667,24.2599277978339"
-                    Point2="-146.666666666667,24.2599277978339"
-                    Point3="-146.666666666667,28.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-146.666666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Container DimRegion.PrecedenceConstraints[Constraint 2]"
-          TopLeft="283.333333333333,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-35.3333333333333,60"
-              Start="0,0"
-              End="-35.3333333333333,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2599277978339"
-                    Point2="0,24.2599277978339"
-                    Point3="-4,24.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-31.3333333333333,24.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-31.3333333333333,24.2599277978339"
-                    Point2="-35.3333333333333,24.2599277978339"
-                    Point3="-35.3333333333333,28.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-35.3333333333333,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-32.9080143229167,29.2599277978339,30.4826953125,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="227.5,5.5" />
         <NodeLayout
           Size="157,42"
           Id="Package\Container DimRegion\TimeStamp Task"
-          TopLeft="169.5,107.5" />
+          TopLeft="226.5,107.5" />
         <EdgeLayout
           Id="Package\Container DimRegion.PrecedenceConstraints[Constraint]"
-          TopLeft="248,47.5">
+          TopLeft="305,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17464,7 +17550,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Container DimRegion.PrecedenceConstraints[Constraint 3]"
-          TopLeft="248,149.5">
+          TopLeft="305,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17484,38 +17570,23 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="364,408"
-          Size="364,452"
-          Id="Package\Container DimRegion"
-          TopLeft="27.9166666666666,547.916666666667" />
         <NodeLayout
-          Size="220,42"
-          Id="Package\Container DimVendor\Data Flow Task-Insert,Update"
-          TopLeft="142,209.5" />
+          Size="156,42"
+          Id="Package\Container DimRegion\Log Task Failure"
+          TopLeft="227,311.5" />
         <NodeLayout
-          Size="155,42"
-          Id="Package\Container DimVendor\Expression Task"
-          TopLeft="174.5,5.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Container DimVendor\Log Task"
+          Size="161,42"
+          Id="Package\Container DimRegion\Log Task Success"
           TopLeft="5.50000000000006,311.5" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Container DimVendor\Log Task 1"
-          TopLeft="187,311.5" />
         <EdgeLayout
-          Id="Package\Container DimVendor.PrecedenceConstraints[Constraint 1]"
-          TopLeft="216.666666666667,251.5">
+          Id="Package\Container DimRegion.PrecedenceConstraints[Constraint 1]"
+          TopLeft="269.666666666667,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-150.666666666667,60"
+              EndConnector="-183.666666666667,60"
               Start="0,0"
-              End="-150.666666666667,52.5">
+              End="-183.666666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -17526,13 +17597,13 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                     Point2="0,24.2599277978339"
                     Point3="-4,24.2599277978339" />
                   <mssgle:LineSegment
-                    End="-146.666666666667,24.2599277978339" />
+                    End="-179.666666666667,24.2599277978339" />
                   <mssgle:CubicBezierSegment
-                    Point1="-146.666666666667,24.2599277978339"
-                    Point2="-150.666666666667,24.2599277978339"
-                    Point3="-150.666666666667,28.2599277978339" />
+                    Point1="-179.666666666667,24.2599277978339"
+                    Point2="-183.666666666667,24.2599277978339"
+                    Point3="-183.666666666667,28.2599277978339" />
                   <mssgle:LineSegment
-                    End="-150.666666666667,52.5" />
+                    End="-183.666666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17542,8 +17613,8 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Container DimVendor.PrecedenceConstraints[Constraint 2]"
-          TopLeft="287.333333333333,251.5">
+          Id="Package\Container DimRegion.PrecedenceConstraints[Constraint 2]"
+          TopLeft="340.333333333333,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17577,13 +17648,28 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="420,408"
+          Size="420,451"
+          Id="Package\Container DimRegion"
+          TopLeft="47.9166666666666,569.916666666667" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Container DimVendor\Data Flow Task-Insert,Update"
+          TopLeft="195,209.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Container DimVendor\Expression Task"
+          TopLeft="227.5,5.5" />
         <NodeLayout
           Size="157,42"
           Id="Package\Container DimVendor\TimeStamp Task"
-          TopLeft="173.5,107.5" />
+          TopLeft="226.5,107.5" />
         <EdgeLayout
           Id="Package\Container DimVendor.PrecedenceConstraints[Constraint]"
-          TopLeft="252,47.5">
+          TopLeft="305,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17605,7 +17691,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Container DimVendor.PrecedenceConstraints[Constraint 3]"
-          TopLeft="252,149.5">
+          TopLeft="305,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17625,64 +17711,23 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="368,408"
-          Size="368,452"
-          Id="Package\Container DimVendor"
-          TopLeft="1240,52.1666666666666" />
         <NodeLayout
-          Size="220,42"
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update"
-          TopLeft="138,209.5" />
+          Size="156,42"
+          Id="Package\Container DimVendor\Log Task Failure"
+          TopLeft="227,311.5" />
         <NodeLayout
-          Size="155,42"
-          Id="Package\Sequence DimEmployee\Expression Task"
-          TopLeft="170.5,5.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Sequence DimEmployee\Log Task"
+          Size="161,42"
+          Id="Package\Container DimVendor\Log Task Success"
           TopLeft="5.50000000000006,311.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Sequence DimEmployee\Log Task 1"
-          TopLeft="187.5,311.5" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Sequence DimEmployee\TimeStamp Task"
-          TopLeft="169.5,107.5" />
         <EdgeLayout
-          Id="Package\Sequence DimEmployee.PrecedenceConstraints[Constraint]"
-          TopLeft="248,47.5">
+          Id="Package\Container DimVendor.PrecedenceConstraints[Constraint 1]"
+          TopLeft="269.666666666667,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="-183.666666666667,60"
               Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimEmployee.PrecedenceConstraints[Constraint 1]"
-          TopLeft="212.666666666667,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-146.666666666667,60"
-              Start="0,0"
-              End="-146.666666666667,52.5">
+              End="-183.666666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -17693,13 +17738,154 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                     Point2="0,24.2599277978339"
                     Point3="-4,24.2599277978339" />
                   <mssgle:LineSegment
-                    End="-142.666666666667,24.2599277978339" />
+                    End="-179.666666666667,24.2599277978339" />
                   <mssgle:CubicBezierSegment
-                    Point1="-142.666666666667,24.2599277978339"
-                    Point2="-146.666666666667,24.2599277978339"
-                    Point3="-146.666666666667,28.2599277978339" />
+                    Point1="-179.666666666667,24.2599277978339"
+                    Point2="-183.666666666667,24.2599277978339"
+                    Point3="-183.666666666667,28.2599277978339" />
                   <mssgle:LineSegment
-                    End="-146.666666666667,52.5" />
+                    End="-183.666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Container DimVendor.PrecedenceConstraints[Constraint 2]"
+          TopLeft="340.333333333333,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35.3333333333333,60"
+              Start="0,0"
+              End="-35.3333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2599277978339"
+                    Point2="0,24.2599277978339"
+                    Point3="-4,24.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-31.3333333333333,24.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-31.3333333333333,24.2599277978339"
+                    Point2="-35.3333333333333,24.2599277978339"
+                    Point3="-35.3333333333333,28.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-35.3333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-32.9080143229167,29.2599277978339,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="420,408"
+          Size="420,451"
+          Id="Package\Container DimVendor"
+          TopLeft="1416,60.1666666666666" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update"
+          TopLeft="195,209.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Sequence DimEmployee\Expression Task"
+          TopLeft="227.5,5.5" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Sequence DimEmployee\TimeStamp Task"
+          TopLeft="226.5,107.5" />
+        <EdgeLayout
+          Id="Package\Sequence DimEmployee.PrecedenceConstraints[Constraint]"
+          TopLeft="305,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimEmployee.PrecedenceConstraints[Constraint 3]"
+          TopLeft="305,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Sequence DimEmployee\Log Task Failure"
+          TopLeft="227,311.5" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Sequence DimEmployee\Log Task Success"
+          TopLeft="5.50000000000006,311.5" />
+        <EdgeLayout
+          Id="Package\Sequence DimEmployee.PrecedenceConstraints[Constraint 1]"
+          TopLeft="269.666666666667,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-183.666666666667,60"
+              Start="0,0"
+              End="-183.666666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2599277978339"
+                    Point2="0,24.2599277978339"
+                    Point3="-4,24.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-179.666666666667,24.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-179.666666666667,24.2599277978339"
+                    Point2="-183.666666666667,24.2599277978339"
+                    Point3="-183.666666666667,28.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-183.666666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17710,7 +17896,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence DimEmployee.PrecedenceConstraints[Constraint 2]"
-          TopLeft="283.333333333333,251.5">
+          TopLeft="340.333333333333,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17742,130 +17928,30 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             <mssgm:EdgeLabel
               BoundingBox="-32.9080143229167,29.2599277978339,30.4826953125,9.7490234375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimEmployee.PrecedenceConstraints[Constraint 3]"
-          TopLeft="248,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="364,408"
-          Size="364,452"
+          PanelSize="420,408"
+          Size="420,451"
           Id="Package\Sequence DimEmployee"
-          TopLeft="1251.54761904762,553.869047619048" />
+          TopLeft="1423.54761904762,573.869047619048" />
         <NodeLayout
           Size="220,42"
           Id="Package\Sequence DimPromotion\Data Flow Task-Insert,Update"
-          TopLeft="138,209.5" />
+          TopLeft="195,209.5" />
         <NodeLayout
           Size="155,42"
           Id="Package\Sequence DimPromotion\Expression Task"
-          TopLeft="170.5,5.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Sequence DimPromotion\Log Task"
-          TopLeft="5.50000000000006,311.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Sequence DimPromotion\Log Task 1"
-          TopLeft="187.5,311.5" />
-        <EdgeLayout
-          Id="Package\Sequence DimPromotion.PrecedenceConstraints[Constraint 1]"
-          TopLeft="212.666666666667,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-146.666666666667,60"
-              Start="0,0"
-              End="-146.666666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2599277978339"
-                    Point2="0,24.2599277978339"
-                    Point3="-4,24.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-142.666666666667,24.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-142.666666666667,24.2599277978339"
-                    Point2="-146.666666666667,24.2599277978339"
-                    Point3="-146.666666666667,28.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-146.666666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimPromotion.PrecedenceConstraints[Constraint 2]"
-          TopLeft="283.333333333333,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-35.3333333333333,60"
-              Start="0,0"
-              End="-35.3333333333333,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2599277978339"
-                    Point2="0,24.2599277978339"
-                    Point3="-4,24.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-31.3333333333333,24.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-31.3333333333333,24.2599277978339"
-                    Point2="-35.3333333333333,24.2599277978339"
-                    Point3="-35.3333333333333,28.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-35.3333333333333,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-32.9080143229167,29.2599277978339,30.4826953125,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="227.5,5.5" />
         <NodeLayout
           Size="157,42"
           Id="Package\Sequence DimPromotion\TimeStamp Task"
-          TopLeft="169.5,107.5" />
+          TopLeft="226.5,107.5" />
         <EdgeLayout
           Id="Package\Sequence DimPromotion.PrecedenceConstraints[Constraint]"
-          TopLeft="248,47.5">
+          TopLeft="305,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17887,7 +17973,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence DimPromotion.PrecedenceConstraints[Constraint 3]"
-          TopLeft="248,149.5">
+          TopLeft="305,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -17907,38 +17993,23 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="364,408"
-          Size="364,452"
-          Id="Package\Sequence DimPromotion"
-          TopLeft="843.095238095239,553.333333333333" />
         <NodeLayout
-          Size="220,42"
-          Id="Package\Sequence DimUnit\Data Flow Task-Insert,Update"
-          TopLeft="142,209.5" />
+          Size="156,42"
+          Id="Package\Sequence DimPromotion\Log Task Failure"
+          TopLeft="227,311.5" />
         <NodeLayout
-          Size="155,42"
-          Id="Package\Sequence DimUnit\Expression Task"
-          TopLeft="174.5,5.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Sequence DimUnit\Log Task"
+          Size="161,42"
+          Id="Package\Sequence DimPromotion\Log Task Success"
           TopLeft="5.50000000000006,311.5" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Sequence DimUnit\Log Task 1"
-          TopLeft="187,311.5" />
         <EdgeLayout
-          Id="Package\Sequence DimUnit.PrecedenceConstraints[Constraint 1]"
-          TopLeft="216.666666666667,251.5">
+          Id="Package\Sequence DimPromotion.PrecedenceConstraints[Constraint 1]"
+          TopLeft="269.666666666667,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-150.666666666667,60"
+              EndConnector="-183.666666666667,60"
               Start="0,0"
-              End="-150.666666666667,52.5">
+              End="-183.666666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -17949,13 +18020,13 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                     Point2="0,24.2599277978339"
                     Point3="-4,24.2599277978339" />
                   <mssgle:LineSegment
-                    End="-146.666666666667,24.2599277978339" />
+                    End="-179.666666666667,24.2599277978339" />
                   <mssgle:CubicBezierSegment
-                    Point1="-146.666666666667,24.2599277978339"
-                    Point2="-150.666666666667,24.2599277978339"
-                    Point3="-150.666666666667,28.2599277978339" />
+                    Point1="-179.666666666667,24.2599277978339"
+                    Point2="-183.666666666667,24.2599277978339"
+                    Point3="-183.666666666667,28.2599277978339" />
                   <mssgle:LineSegment
-                    End="-150.666666666667,52.5" />
+                    End="-183.666666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17965,8 +18036,8 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence DimUnit.PrecedenceConstraints[Constraint 2]"
-          TopLeft="287.333333333333,251.5">
+          Id="Package\Sequence DimPromotion.PrecedenceConstraints[Constraint 2]"
+          TopLeft="340.333333333333,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -18000,13 +18071,28 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="420,408"
+          Size="420,451"
+          Id="Package\Sequence DimPromotion"
+          TopLeft="953.095238095239,571.333333333333" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Sequence DimUnit\Data Flow Task-Insert,Update"
+          TopLeft="195,209.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Sequence DimUnit\Expression Task"
+          TopLeft="227.5,5.5" />
         <NodeLayout
           Size="157,42"
           Id="Package\Sequence DimUnit\TimeStamp Task"
-          TopLeft="173.5,107.5" />
+          TopLeft="226.5,107.5" />
         <EdgeLayout
           Id="Package\Sequence DimUnit.PrecedenceConstraints[Constraint]"
-          TopLeft="252,47.5">
+          TopLeft="305,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -18028,7 +18114,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence DimUnit.PrecedenceConstraints[Constraint 3]"
-          TopLeft="252,149.5">
+          TopLeft="305,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -18048,27 +18134,105 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="368,408"
-          Size="368,452"
-          Id="Package\Sequence DimUnit"
-          TopLeft="432.083333333333,554.583333333333" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Sequence DimUnit\Log Task Failure"
+          TopLeft="227,311.5" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Sequence DimUnit\Log Task Success"
+          TopLeft="5.50000000000006,311.5" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="2466.75,269.791666666667">
+          Id="Package\Sequence DimUnit.PrecedenceConstraints[Constraint 1]"
+          TopLeft="269.666666666667,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-32.75,0"
+              EndConnector="-183.666666666667,60"
               Start="0,0"
-              End="-25.25,0">
+              End="-183.666666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-25.25,0" />
+                    End="0,20.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2599277978339"
+                    Point2="0,24.2599277978339"
+                    Point3="-4,24.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-179.666666666667,24.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-179.666666666667,24.2599277978339"
+                    Point2="-183.666666666667,24.2599277978339"
+                    Point3="-183.666666666667,28.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-183.666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimUnit.PrecedenceConstraints[Constraint 2]"
+          TopLeft="340.333333333333,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35.3333333333333,60"
+              Start="0,0"
+              End="-35.3333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2599277978339"
+                    Point2="0,24.2599277978339"
+                    Point3="-4,24.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-31.3333333333333,24.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-31.3333333333333,24.2599277978339"
+                    Point2="-35.3333333333333,24.2599277978339"
+                    Point3="-35.3333333333333,28.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-35.3333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-32.9080143229167,29.2599277978339,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="420,408"
+          Size="420,451"
+          Id="Package\Sequence DimUnit"
+          TopLeft="498.083333333333,570.583333333333" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="2806.75,272.791666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-34.75,0"
+              Start="0,0"
+              End="-27.25,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-27.25,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18079,18 +18243,18 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="2062,272.083333333333">
+          TopLeft="2354,280.511904761905">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-45.6666666666699,0"
+              EndConnector="-42.8095238095266,0"
               Start="0,0"
-              End="-38.1666666666699,0">
+              End="-35.3095238095266,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-38.1666666666699,0" />
+                    End="-35.3095238095266,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18101,18 +18265,18 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1652.33333333333,274.833333333333">
+          TopLeft="1891.19047619047,285.011904761905">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-44.3333333333301,0"
+              EndConnector="-55.1904761904732,0"
               Start="0,0"
-              End="-36.8333333333301,0">
+              End="-47.6904761904732,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-36.8333333333301,0" />
+                    End="-47.6904761904732,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18123,18 +18287,18 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="1240,280.041666666667">
+          TopLeft="1416,287.875">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-41.75,0"
+              EndConnector="-33.7500000000002,0"
               Start="0,0"
-              End="-34.25,0">
+              End="-26.2500000000002,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-34.25,0" />
+                    End="-26.2500000000002,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18145,18 +18309,18 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="834.25,282.041666666667">
+          TopLeft="962.25,290.875">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-39.5,0"
+              EndConnector="-37.5,0"
               Start="0,0"
-              End="-32,0">
+              End="-30,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-32,0" />
+                    End="-30,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18167,18 +18331,18 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="430.75,283.041666666667">
+          TopLeft="504.75,291.541666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-42.1666666666666,0"
+              EndConnector="-40.1666666666666,0"
               Start="0,0"
-              End="-34.6666666666666,0">
+              End="-32.6666666666666,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-34.6666666666666,0" />
+                    End="-32.6666666666666,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18189,18 +18353,18 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="391.916666666667,777.25">
+          TopLeft="467.916666666667,795.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="40.1666666666664,0"
+              EndConnector="30.1666666666664,0"
               Start="0,0"
-              End="32.6666666666664,0">
+              End="22.6666666666664,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="32.6666666666664,0" />
+                    End="22.6666666666664,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18211,18 +18375,18 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="800.083333333333,779.958333333333">
+          TopLeft="918.083333333333,796.458333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="43.0119047619055,0"
+              EndConnector="35.0119047619055,0"
               Start="0,0"
-              End="35.5119047619055,0">
+              End="27.5119047619055,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="35.5119047619055,0" />
+                    End="27.5119047619055,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18233,18 +18397,18 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="208.25,509.916666666667">
+          TopLeft="256.25,516.916666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.0000000000003"
+              EndConnector="0,53.0000000000002"
               Start="0,0"
-              End="0,30.5000000000003">
+              End="0,45.5000000000002">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5000000000003" />
+                    End="0,45.5000000000002" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -18255,18 +18419,18 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="1207.09523809524,779.601190476191">
+          TopLeft="1373.09523809524,798.101190476191">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="44.4523809523771,0"
+              EndConnector="50.4523809523771,0"
               Start="0,0"
-              End="36.9523809523771,0">
+              End="42.9523809523771,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="36.9523809523771,0" />
+                    End="42.9523809523771,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -20277,7 +20441,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -20287,7 +20451,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
