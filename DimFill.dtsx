@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="502"
-  DTS:VersionGUID="{5B924827-B009-4F33-9B70-316E85DFB43B}">
+  DTS:VersionBuild="512"
+  DTS:VersionGUID="{1F13CEA1-2F9A-4918-A34A-7B76D36F8919}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACE21QoUfREdh1/fdE/yu/oAAAAAASAAACgAAAAEAAAAC4AZwSZzEZC0vhMJXXCskoQAAAAZzHmBgXCCVTOHBImbeK0uxQAAAAVJgZAEN9mw3MXxqrKYi6gIEvGOw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAbG6m3xyH6n+uRroKi/yOBAAAAAASAAACgAAAAEAAAACUzyIjm1Gdy1W1GfrcZht4QAAAA6OdbYN2AYMRjcnBsa0hNQxQAAABw0w7m+LQT0Et9YkNruwRsstmweQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -44,7 +44,7 @@
           <DTS:Password
             DTS:Name="PASSWORD"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD+Ovec/lbcLDqkUJXCSKjnAAAAAASAAACgAAAAEAAAAJKxlisVGCoNEO6LoHcJSWcQAAAACcDNIMPydQPpIFscEH1XXBQAAAAAUh5bHmHvDvJxr7XYk7NnQqPVGA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAA27g9Wa6DaQE9c2aQgrqnAAAAAASAAACgAAAAEAAAAHXeREl0F32GJycJC4G8CMYQAAAAGf1dufnIagMpeUeZUbJVCRQAAABQYeSaqkvMdSlyLr4HsPCoF8ShDw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2944,6 +2944,13 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                           cachedName="CompanyName"
                           externalMetadataColumnId="Package\Container DimCampany\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyName]"
                           lineageId="Package\Container DimCampany\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]" />
+                        <inputColumn
+                          refId="Package\Container DimCampany\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Desc]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="Desc"
+                          externalMetadataColumnId="Package\Container DimCampany\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Desc]"
+                          lineageId="Package\Container DimCampany\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Desc]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2961,6 +2968,10 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                           dataType="wstr"
                           length="10"
                           name="CompanyName" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimCampany\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Desc]"
+                          dataType="nText"
+                          name="Desc" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -12832,27 +12843,6 @@ where [refTable].[CompanyKey] = ? and [refTable].[EmployeeAlternativeKey] = ?</p
                           externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DepartmenName]"
                           lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEPT_NAME]" />
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BIRTH_DATE]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="BIRTH_DATE"
-                          externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Birthdate]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BIRTH_DATE]" />
-                        <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HIRE_DATE]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="HIRE_DATE"
-                          externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Hiredate]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[HIRE_DATE]" />
-                        <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[INS_DATE]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="INS_DATE"
-                          externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Insurancedate]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[INS_DATE]" />
-                        <inputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[JOB_NAME]"
                           cachedDataType="wstr"
                           cachedLength="40"
@@ -12918,21 +12908,6 @@ where [refTable].[CompanyKey] = ? and [refTable].[EmployeeAlternativeKey] = ?</p
                           length="100"
                           name="DepartmenName" />
                         <externalMetadataColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Birthdate]"
-                          dataType="wstr"
-                          length="10"
-                          name="Birthdate" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Hiredate]"
-                          dataType="wstr"
-                          length="10"
-                          name="Hiredate" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Insurancedate]"
-                          dataType="wstr"
-                          length="10"
-                          name="Insurancedate" />
-                        <externalMetadataColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WorkeStatus]"
                           dataType="wstr"
                           length="30"
@@ -12941,6 +12916,21 @@ where [refTable].[CompanyKey] = ? and [refTable].[EmployeeAlternativeKey] = ?</p
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatLasteTime]"
                           dataType="dbTimeStamp"
                           name="UpdatLasteTime" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BirthDate]"
+                          dataType="wstr"
+                          length="10"
+                          name="BirthDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HireDate]"
+                          dataType="wstr"
+                          length="10"
+                          name="HireDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InsuranceDate]"
+                          dataType="wstr"
+                          length="10"
+                          name="InsuranceDate" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
