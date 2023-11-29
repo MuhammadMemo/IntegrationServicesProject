@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="525"
-  DTS:VersionGUID="{24410D1E-731A-4AC4-A1F8-D4441FDD518F}">
+  DTS:VersionBuild="531"
+  DTS:VersionGUID="{0EBB412D-1349-4033-ABC5-688A047E4A0C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADpdkp0nynC+E53ycoEVAXWAAAAAASAAACgAAAAEAAAAPxZ6pvqDHnWaAJeEbxWJnEQAAAAt+RE3NvEHK/R3GHXss0Q+xQAAAAPbapw0o38DztsuM6NA5dtS8mV8A</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABIDIIPfwOEMEmjV5RKESWKAAAAAASAAACgAAAAEAAAAMlNE1Ex5Tm1ImyV0osb/OIQAAAAIuIC4bHs4l9TLdtCdYyocRQAAAD8NxozQvB37PuKHd/iM2iJhGA+Mw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -44,7 +44,7 @@
           <DTS:Password
             DTS:Name="PASSWORD"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA5fUO2RumXjoU0BA4z+2+YAAAAAASAAACgAAAAEAAAALuW02qV5xDDcNPG+0jXUzkQAAAAQ4ZnAYn9t6tJLCxgXtHfUBQAAACpoCww5R4VFXFpfIoLu4K+TxhVvQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC9LCejpxi7C9+oDfQAxNh7AAAAAASAAACgAAAAEAAAAJOwvqOShcAAnwi0UnLHacUQAAAAqTQb8sp8s0ABS9Gt14S+IxQAAACBXgfFvwnX/aBZ0ssU/RSqyIMLAg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -12020,17 +12020,17 @@ where [refTable].[VendorAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pro
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Sequence DimALLOWANCE_DEDUCTION"
+      DTS:refId="Package\Sequence DimEmpDeductionAllowance"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
       DTS:DTSID="{BC8B9722-0120-4B96-B07C-4A05B7766034}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Sequence DimALLOWANCE_DEDUCTION">
+      DTS:ObjectName="Sequence DimEmpDeductionAllowance">
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update"
+          DTS:refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{DD09648A-AE99-4BA8-9A14-AB4C7A4B2C86}"
@@ -12044,7 +12044,7 @@ where [refTable].[VendorAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pro
               version="1">
               <components>
                 <component
-                  refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion"
+                  refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion"
                   componentClassID="Microsoft.DataConvert"
                   contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Data Conversion"
@@ -12052,38 +12052,38 @@ where [refTable].[VendorAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pro
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]"
                       name="Data Conversion Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input].Columns[CODEALTERNATIVEKEY]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input].Columns[CODEALTERNATIVEKEY]"
                           cachedDataType="numeric"
                           cachedName="CODEALTERNATIVEKEY"
                           cachedPrecision="3"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CODEALTERNATIVEKEY]" />
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CODEALTERNATIVEKEY]" />
                         <inputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input].Columns[CAMPANYKEY]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input].Columns[CAMPANYKEY]"
                           cachedDataType="wstr"
                           cachedLength="38"
                           cachedName="CAMPANYKEY"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CAMPANYKEY]" />
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CAMPANYKEY]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output]"
                       exclusionGroup="1"
                       name="Data Conversion Output"
-                      synchronousInputId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]">
+                      synchronousInputId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODEALTERNATIVEKEY]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODEALTERNATIVEKEY]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODEALTERNATIVEKEY]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODEALTERNATIVEKEY]"
                           name="Copy of CODEALTERNATIVEKEY"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -12091,7 +12091,7 @@ where [refTable].[VendorAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pro
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CODEALTERNATIVEKEY]}</property>
+                              name="SourceInputColumnLineageID">#{Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CODEALTERNATIVEKEY]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -12099,11 +12099,11 @@ where [refTable].[VendorAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pro
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CAMPANYKEY]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CAMPANYKEY]"
                           dataType="ui1"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CAMPANYKEY]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CAMPANYKEY]"
                           name="Copy of CAMPANYKEY"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -12111,7 +12111,7 @@ where [refTable].[VendorAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pro
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CAMPANYKEY]}</property>
+                              name="SourceInputColumnLineageID">#{Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CAMPANYKEY]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -12122,22 +12122,22 @@ where [refTable].[VendorAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pro
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Data Conversion Error Output"
-                      synchronousInputId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]">
+                      synchronousInputId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -12146,7 +12146,7 @@ where [refTable].[VendorAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pro
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup"
+                  refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
                   description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -12202,7 +12202,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODEALTERNATIVEKEY]};#{Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CAMPANYKEY]};</property>
+                      name="ParameterMap">#{Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODEALTERNATIVEKEY]};#{Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CAMPANYKEY]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -12214,7 +12214,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup.Connections[OleDbConnection]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
                       connectionManagerRefId="Project.ConnectionManagers[hyperv-srv.DataWarehouse.sa]"
                       description="Connection manager used to access lookup data."
@@ -12222,14 +12222,14 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
                       name="Lookup Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[Copy of CAMPANYKEY]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[Copy of CAMPANYKEY]"
                           cachedDataType="ui1"
                           cachedName="Copy of CAMPANYKEY"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CAMPANYKEY]">
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CAMPANYKEY]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -12242,10 +12242,10 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[Copy of CODEALTERNATIVEKEY]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[Copy of CODEALTERNATIVEKEY]"
                           cachedDataType="i4"
                           cachedName="Copy of CODEALTERNATIVEKEY"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODEALTERNATIVEKEY]">
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODEALTERNATIVEKEY]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -12263,38 +12263,38 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]"
                       errorOrTruncationOperation="Lookup"
                       exclusionGroup="1"
                       name="Lookup Match Output"
-                      synchronousInputId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      synchronousInputId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup No Match Output]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup No Match Output]"
                       description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                       exclusionGroup="1"
                       name="Lookup No Match Output"
-                      synchronousInputId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      synchronousInputId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Lookup Error Output"
-                      synchronousInputId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      synchronousInputId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -12303,7 +12303,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command"
+                  refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command"
                   componentClassID="Microsoft.OLEDBCommand"
                   contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
                   description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
@@ -12334,7 +12334,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Connections[OleDbConnection]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
                       connectionManagerRefId="Project.ConnectionManagers[hyperv-srv.DataWarehouse.sa]"
                       description="The OLE DB runtime connection used to access the database."
@@ -12342,50 +12342,50 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
                       errorOrTruncationOperation="Command Execution"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Command Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[DEDUCTIONALLOWANCENAME]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[DEDUCTIONALLOWANCENAME]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="DEDUCTIONALLOWANCENAME"
-                          externalMetadataColumnId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEDUCTIONALLOWANCENAME]" />
+                          externalMetadataColumnId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEDUCTIONALLOWANCENAME]" />
                         <inputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[DEDUCTIONALLOWANCETYPE]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[DEDUCTIONALLOWANCETYPE]"
                           cachedDataType="numeric"
                           cachedName="DEDUCTIONALLOWANCETYPE"
                           cachedPrecision="1"
-                          externalMetadataColumnId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEDUCTIONALLOWANCETYPE]" />
+                          externalMetadataColumnId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEDUCTIONALLOWANCETYPE]" />
                         <inputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[PAYTYPE]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[PAYTYPE]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="PAYTYPE"
-                          externalMetadataColumnId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PAYTYPE]" />
+                          externalMetadataColumnId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PAYTYPE]" />
                         <inputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of CODEALTERNATIVEKEY]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of CODEALTERNATIVEKEY]"
                           cachedDataType="i4"
                           cachedName="Copy of CODEALTERNATIVEKEY"
-                          externalMetadataColumnId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODEALTERNATIVEKEY]" />
+                          externalMetadataColumnId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODEALTERNATIVEKEY]" />
                         <inputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of CAMPANYKEY]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of CAMPANYKEY]"
                           cachedDataType="ui1"
                           cachedName="Copy of CAMPANYKEY"
-                          externalMetadataColumnId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CAMPANYKEY]" />
+                          externalMetadataColumnId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CAMPANYKEY]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                           dataType="wstr"
                           length="200"
                           name="Param_0">
@@ -12397,7 +12397,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           dataType="ui1"
                           name="Param_1">
                           <properties>
@@ -12408,7 +12408,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                           dataType="wstr"
                           length="20"
                           name="Param_2">
@@ -12420,7 +12420,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                           dataType="i4"
                           name="Param_3">
                           <properties>
@@ -12431,7 +12431,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                           dataType="ui1"
                           name="Param_4">
                           <properties>
@@ -12446,29 +12446,29 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Output]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Output]"
                       exclusionGroup="1"
                       name="OLE DB Command Output"
-                      synchronousInputId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]">
+                      synchronousInputId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Command Error Output"
-                      synchronousInputId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]">
+                      synchronousInputId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -12477,7 +12477,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination"
+                  refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
@@ -12534,7 +12534,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Connections[OleDbConnection]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
                       connectionManagerRefId="Project.ConnectionManagers[hyperv-srv.DataWarehouse.sa]"
                       description="The OLE DB runtime connection used to access the database."
@@ -12542,76 +12542,76 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DEDUCTIONALLOWANCETYPE]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DEDUCTIONALLOWANCETYPE]"
                           cachedDataType="numeric"
                           cachedName="DEDUCTIONALLOWANCETYPE"
                           cachedPrecision="1"
-                          externalMetadataColumnId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DeductionAllowanceType]"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEDUCTIONALLOWANCETYPE]" />
+                          externalMetadataColumnId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DeductionAllowanceType]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEDUCTIONALLOWANCETYPE]" />
                         <inputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DEDUCTIONALLOWANCENAME]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DEDUCTIONALLOWANCENAME]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="DEDUCTIONALLOWANCENAME"
-                          externalMetadataColumnId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DeductionAllowanceName]"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEDUCTIONALLOWANCENAME]" />
+                          externalMetadataColumnId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DeductionAllowanceName]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEDUCTIONALLOWANCENAME]" />
                         <inputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PAYTYPE]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PAYTYPE]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="PAYTYPE"
-                          externalMetadataColumnId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PayType]"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PAYTYPE]" />
+                          externalMetadataColumnId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PayType]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PAYTYPE]" />
                         <inputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of CODEALTERNATIVEKEY]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of CODEALTERNATIVEKEY]"
                           cachedDataType="i4"
                           cachedName="Copy of CODEALTERNATIVEKEY"
-                          externalMetadataColumnId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodeAlternativeKey]"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODEALTERNATIVEKEY]" />
+                          externalMetadataColumnId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodeAlternativeKey]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODEALTERNATIVEKEY]" />
                         <inputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of CAMPANYKEY]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of CAMPANYKEY]"
                           cachedDataType="ui1"
                           cachedName="Copy of CAMPANYKEY"
-                          externalMetadataColumnId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CAMPANYKEY]" />
+                          externalMetadataColumnId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CAMPANYKEY]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
                           dataType="ui1"
                           name="CompanyKey" />
                         <externalMetadataColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodeKey]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodeKey]"
                           dataType="i4"
                           name="CodeKey" />
                         <externalMetadataColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodeAlternativeKey]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodeAlternativeKey]"
                           dataType="i4"
                           name="CodeAlternativeKey" />
                         <externalMetadataColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DeductionAllowanceName]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DeductionAllowanceName]"
                           dataType="wstr"
                           length="200"
                           name="DeductionAllowanceName" />
                         <externalMetadataColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DeductionAllowanceType]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DeductionAllowanceType]"
                           dataType="ui1"
                           name="DeductionAllowanceType" />
                         <externalMetadataColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PayType]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PayType]"
                           dataType="wstr"
                           length="20"
                           name="PayType" />
                         <externalMetadataColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatLasteTime]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatLasteTime]"
                           dataType="dbTimeStamp"
                           name="UpdatLasteTime" />
                       </externalMetadataColumns>
@@ -12619,22 +12619,22 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -12643,7 +12643,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source"
+                  refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
                   description="OLE DB Source"
@@ -12692,7 +12692,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Connections[OleDbConnection]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Connections[OleDbConnection]"
                       connectionManagerID="Package.ConnectionManagers[orcl.AXIOM]"
                       connectionManagerRefId="Package.ConnectionManagers[orcl.AXIOM]"
                       description="The OLE DB runtime connection used to access the database."
@@ -12700,66 +12700,66 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]"
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODIFIEDDATE]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODIFIEDDATE]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MODIFIEDDATE]"
+                          externalMetadataColumnId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MODIFIEDDATE]"
                           length="10"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODIFIEDDATE]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODIFIEDDATE]"
                           name="MODIFIEDDATE"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEDUCTIONALLOWANCETYPE]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEDUCTIONALLOWANCETYPE]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DEDUCTIONALLOWANCETYPE]"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEDUCTIONALLOWANCETYPE]"
+                          externalMetadataColumnId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DEDUCTIONALLOWANCETYPE]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEDUCTIONALLOWANCETYPE]"
                           name="DEDUCTIONALLOWANCETYPE"
                           precision="1"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEDUCTIONALLOWANCENAME]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEDUCTIONALLOWANCENAME]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DEDUCTIONALLOWANCENAME]"
+                          externalMetadataColumnId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DEDUCTIONALLOWANCENAME]"
                           length="100"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEDUCTIONALLOWANCENAME]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEDUCTIONALLOWANCENAME]"
                           name="DEDUCTIONALLOWANCENAME"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CAMPANYKEY]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CAMPANYKEY]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CAMPANYKEY]"
+                          externalMetadataColumnId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CAMPANYKEY]"
                           length="38"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CAMPANYKEY]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CAMPANYKEY]"
                           name="CAMPANYKEY"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PAYTYPE]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PAYTYPE]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PAYTYPE]"
+                          externalMetadataColumnId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PAYTYPE]"
                           length="10"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PAYTYPE]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PAYTYPE]"
                           name="PAYTYPE"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CODEALTERNATIVEKEY]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CODEALTERNATIVEKEY]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CODEALTERNATIVEKEY]"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CODEALTERNATIVEKEY]"
+                          externalMetadataColumnId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CODEALTERNATIVEKEY]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CODEALTERNATIVEKEY]"
                           name="CODEALTERNATIVEKEY"
                           precision="3"
                           truncationRowDisposition="FailComponent" />
@@ -12767,88 +12767,88 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MODIFIEDDATE]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MODIFIEDDATE]"
                           dataType="wstr"
                           length="10"
                           name="MODIFIEDDATE" />
                         <externalMetadataColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DEDUCTIONALLOWANCETYPE]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DEDUCTIONALLOWANCETYPE]"
                           dataType="numeric"
                           name="DEDUCTIONALLOWANCETYPE"
                           precision="1" />
                         <externalMetadataColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DEDUCTIONALLOWANCENAME]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DEDUCTIONALLOWANCENAME]"
                           dataType="wstr"
                           length="100"
                           name="DEDUCTIONALLOWANCENAME" />
                         <externalMetadataColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CAMPANYKEY]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CAMPANYKEY]"
                           dataType="wstr"
                           length="38"
                           name="CAMPANYKEY" />
                         <externalMetadataColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PAYTYPE]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PAYTYPE]"
                           dataType="wstr"
                           length="10"
                           name="PAYTYPE" />
                         <externalMetadataColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CODEALTERNATIVEKEY]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CODEALTERNATIVEKEY]"
                           dataType="numeric"
                           name="CODEALTERNATIVEKEY"
                           precision="3" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output]"
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CODEALTERNATIVEKEY]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CODEALTERNATIVEKEY]"
                           dataType="numeric"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CODEALTERNATIVEKEY]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CODEALTERNATIVEKEY]"
                           name="CODEALTERNATIVEKEY"
                           precision="3" />
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MODIFIEDDATE]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MODIFIEDDATE]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MODIFIEDDATE]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MODIFIEDDATE]"
                           name="MODIFIEDDATE" />
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DEDUCTIONALLOWANCETYPE]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DEDUCTIONALLOWANCETYPE]"
                           dataType="numeric"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DEDUCTIONALLOWANCETYPE]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DEDUCTIONALLOWANCETYPE]"
                           name="DEDUCTIONALLOWANCETYPE"
                           precision="1" />
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DEDUCTIONALLOWANCENAME]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DEDUCTIONALLOWANCENAME]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DEDUCTIONALLOWANCENAME]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DEDUCTIONALLOWANCENAME]"
                           name="DEDUCTIONALLOWANCENAME" />
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CAMPANYKEY]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CAMPANYKEY]"
                           dataType="wstr"
                           length="38"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CAMPANYKEY]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CAMPANYKEY]"
                           name="CAMPANYKEY" />
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PAYTYPE]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PAYTYPE]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PAYTYPE]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PAYTYPE]"
                           name="PAYTYPE" />
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -12857,7 +12857,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Row Count"
+                  refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Row Count"
                   componentClassID="Microsoft.RowCount"
                   contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
@@ -12870,7 +12870,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </properties>
                   <inputs>
                     <input
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
                       hasSideEffects="true"
                       name="Row Count Input 1">
                       <externalMetadataColumns />
@@ -12878,15 +12878,15 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Row Count.Outputs[Row Count Output 1]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Row Count.Outputs[Row Count Output 1]"
                       name="Row Count Output 1"
-                      synchronousInputId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]">
+                      synchronousInputId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]">
                       <externalMetadataColumns />
                     </output>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Row Count 1"
+                  refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Row Count 1"
                   componentClassID="Microsoft.RowCount"
                   contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
@@ -12899,7 +12899,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </properties>
                   <inputs>
                     <input
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
                       hasSideEffects="true"
                       name="Row Count Input 1">
                       <externalMetadataColumns />
@@ -12907,9 +12907,9 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Row Count 1.Outputs[Row Count Output 1]"
+                      refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Row Count 1.Outputs[Row Count Output 1]"
                       name="Row Count Output 1"
-                      synchronousInputId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]">
+                      synchronousInputId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]">
                       <externalMetadataColumns />
                     </output>
                   </outputs>
@@ -12917,41 +12917,41 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
               </components>
               <paths>
                 <path
-                  refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update.Paths[Data Conversion Output]"
-                  endId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
+                  refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update.Paths[Data Conversion Output]"
+                  endId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
                   name="Data Conversion Output"
-                  startId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output]" />
+                  startId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output]" />
                 <path
-                  refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
-                  endId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
+                  refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+                  endId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
                   name="Lookup Match Output"
-                  startId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]" />
+                  startId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
-                  endId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
+                  refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
+                  endId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
                   name="Lookup No Match Output"
-                  startId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup No Match Output]" />
+                  startId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
-                  endId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]"
+                  refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]"
                   name="OLE DB Source Output"
-                  startId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]" />
+                  startId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]" />
                 <path
-                  refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
-                  endId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+                  endId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   name="Row Count Output 1"
-                  startId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Row Count 1.Outputs[Row Count Output 1]" />
+                  startId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Row Count 1.Outputs[Row Count Output 1]" />
                 <path
-                  refId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
-                  endId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
+                  refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+                  endId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
                   name="Row Count Output 1"
-                  startId="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Row Count.Outputs[Row Count Output 1]" />
+                  startId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Row Count.Outputs[Row Count Output 1]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Sequence DimALLOWANCE_DEDUCTION\Expression Task"
+          DTS:refId="Package\Sequence DimEmpDeductionAllowance\Expression Task"
           DTS:CreationName="Microsoft.ExpressionTask"
           DTS:Description="Expression Task"
           DTS:DTSID="{66da4d6b-818c-4e33-a330-53b8fdb27b10}"
@@ -12967,7 +12967,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Sequence DimALLOWANCE_DEDUCTION\Log Task Failure"
+          DTS:refId="Package\Sequence DimEmpDeductionAllowance\Log Task Failure"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{d6e9c62a-4193-4808-b7ec-b9e90b5bb048}"
@@ -12982,7 +12982,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status,Batch)&#xA;      VALUES ('DimEmployee',?,?,?,?,?,?,GETDATE(),11,'Failure',?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status,Batch)&#xA;      VALUES ('DimEmpDeductionAllowance',?,?,?,?,?,?,GETDATE(),12,'Failure',?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -13029,7 +13029,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Sequence DimALLOWANCE_DEDUCTION\Log Task Success"
+          DTS:refId="Package\Sequence DimEmpDeductionAllowance\Log Task Success"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{5d097ed1-4601-445a-b434-f69e50e9a2e6}"
@@ -13044,7 +13044,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status,Batch)&#xA;      VALUES ('DimEmployee',?,?,?,?,?,?,GETDATE(),11,'Success',?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status,Batch)&#xA;      VALUES ('DimEmpDeductionAllowance',?,?,?,?,?,?,GETDATE(),12,'Success',?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="2"
                 SQLTask:DtsVariableName="User::InsertCount"
@@ -13091,7 +13091,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Sequence DimALLOWANCE_DEDUCTION\TimeStamp Task"
+          DTS:refId="Package\Sequence DimEmpDeductionAllowance\TimeStamp Task"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{2e0ed742-6589-4ae9-8bf7-28f9f63a9903}"
@@ -13106,7 +13106,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource="SELECT      MAX(ModifiedDate) AS ModifiedDate&#xA;FROM            LogTable where [TableName] ='DimDeductionAllowances' and Status='Success'"
+              SQLTask:SqlStatementSource="SELECT      MAX(ModifiedDate) AS ModifiedDate&#xA;FROM            LogTable where [TableName] ='DimEmpDeductionAllowance' and Status='Success'"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
                 SQLTask:ResultName="0"
@@ -13117,37 +13117,37 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Sequence DimALLOWANCE_DEDUCTION.PrecedenceConstraints[Constraint]"
+          DTS:refId="Package\Sequence DimEmpDeductionAllowance.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
           DTS:DTSID="{6ECD6D4A-052E-482C-A496-5CC4E4DE1980}"
-          DTS:From="Package\Sequence DimALLOWANCE_DEDUCTION\Expression Task"
+          DTS:From="Package\Sequence DimEmpDeductionAllowance\Expression Task"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Sequence DimALLOWANCE_DEDUCTION\TimeStamp Task" />
+          DTS:To="Package\Sequence DimEmpDeductionAllowance\TimeStamp Task" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Sequence DimALLOWANCE_DEDUCTION.PrecedenceConstraints[Constraint 1]"
+          DTS:refId="Package\Sequence DimEmpDeductionAllowance.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
           DTS:DTSID="{1C856688-A0D6-4A83-A823-DE8CFFEA6464}"
-          DTS:From="Package\Sequence DimALLOWANCE_DEDUCTION\TimeStamp Task"
+          DTS:From="Package\Sequence DimEmpDeductionAllowance\TimeStamp Task"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update" />
+          DTS:To="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Sequence DimALLOWANCE_DEDUCTION.PrecedenceConstraints[Constraint 2]"
+          DTS:refId="Package\Sequence DimEmpDeductionAllowance.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
           DTS:DTSID="{63B36DEB-D913-448A-9BBF-9E1AC8316A84}"
-          DTS:From="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update"
+          DTS:From="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
-          DTS:To="Package\Sequence DimALLOWANCE_DEDUCTION\Log Task Success" />
+          DTS:To="Package\Sequence DimEmpDeductionAllowance\Log Task Success" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Sequence DimALLOWANCE_DEDUCTION.PrecedenceConstraints[Constraint 3]"
+          DTS:refId="Package\Sequence DimEmpDeductionAllowance.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
           DTS:DTSID="{A3F86EF1-F7AE-42DA-A695-DB8BEEA76AE6}"
-          DTS:From="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update"
+          DTS:From="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
-          DTS:To="Package\Sequence DimALLOWANCE_DEDUCTION\Log Task Failure"
+          DTS:To="Package\Sequence DimEmpDeductionAllowance\Log Task Failure"
           DTS:Value="1" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
@@ -18473,7 +18473,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       DTS:From="Package\Sequence DimEmployee"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 12"
-      DTS:To="Package\Sequence DimALLOWANCE_DEDUCTION" />
+      DTS:To="Package\Sequence DimEmpDeductionAllowance" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -20511,22 +20511,22 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <NodeLayout
           Size="155,42"
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION\Expression Task"
+          Id="Package\Sequence DimEmpDeductionAllowance\Expression Task"
           TopLeft="227.5,5.5" />
         <NodeLayout
           Size="220,42"
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update"
+          Id="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update"
           TopLeft="195,209.5" />
         <NodeLayout
           Size="161,42"
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION\Log Task Success"
+          Id="Package\Sequence DimEmpDeductionAllowance\Log Task Success"
           TopLeft="5.50000000000006,311.5" />
         <NodeLayout
           Size="156,42"
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION\Log Task Failure"
+          Id="Package\Sequence DimEmpDeductionAllowance\Log Task Failure"
           TopLeft="227,311.5" />
         <EdgeLayout
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION.PrecedenceConstraints[Constraint 2]"
+          Id="Package\Sequence DimEmpDeductionAllowance.PrecedenceConstraints[Constraint 2]"
           TopLeft="269.666666666667,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -20560,7 +20560,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION.PrecedenceConstraints[Constraint 3]"
+          Id="Package\Sequence DimEmpDeductionAllowance.PrecedenceConstraints[Constraint 3]"
           TopLeft="340.333333333333,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -20597,10 +20597,10 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <NodeLayout
           Size="157,42"
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION\TimeStamp Task"
+          Id="Package\Sequence DimEmpDeductionAllowance\TimeStamp Task"
           TopLeft="226.5,107.5" />
         <EdgeLayout
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION.PrecedenceConstraints[Constraint]"
+          Id="Package\Sequence DimEmpDeductionAllowance.PrecedenceConstraints[Constraint]"
           TopLeft="305,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -20622,7 +20622,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION.PrecedenceConstraints[Constraint 1]"
+          Id="Package\Sequence DimEmpDeductionAllowance.PrecedenceConstraints[Constraint 1]"
           TopLeft="305,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -20648,7 +20648,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           IsExpanded="True"
           PanelSize="420,408"
           Size="420,452"
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION"
+          Id="Package\Sequence DimEmpDeductionAllowance"
           TopLeft="2427.42857142857,573.428571428571" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 12]"
@@ -24592,28 +24592,28 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update">
+    design-time-name="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150,42"
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source"
+          Id="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source"
           TopLeft="652,151" />
         <NodeLayout
           Size="130,42"
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Row Count"
+          Id="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Row Count"
           TopLeft="925,416" />
         <NodeLayout
           Size="139,42"
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Row Count 1"
+          Id="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Row Count 1"
           TopLeft="489,391" />
         <NodeLayout
           Size="156,42"
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Data Conversion"
+          Id="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Data Conversion"
           TopLeft="648,248" />
         <EdgeLayout
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+          Id="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
           TopLeft="726.5,193">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24636,10 +24636,10 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <NodeLayout
           Size="113,42"
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup"
+          Id="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup"
           TopLeft="703,336" />
         <EdgeLayout
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update.Paths[Data Conversion Output]"
+          Id="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update.Paths[Data Conversion Output]"
           TopLeft="726,290">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24673,7 +24673,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
+          Id="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
           TopLeft="703,357">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24709,7 +24709,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          Id="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
           TopLeft="759.5,378">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24746,14 +24746,14 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <NodeLayout
           Size="171,42"
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination"
+          Id="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination"
           TopLeft="489,490" />
         <NodeLayout
           Size="166,42"
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Command"
+          Id="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Command"
           TopLeft="954,514" />
         <EdgeLayout
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+          Id="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
           TopLeft="558.5,433">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24787,7 +24787,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+          Id="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
           TopLeft="990,458">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24824,7 +24824,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Source">
+    design-time-name="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -24832,7 +24832,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\Lookup">
+    design-time-name="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -24855,7 +24855,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence DimALLOWANCE_DEDUCTION\Data Flow Task-Insert,Update\OLE DB Destination">
+    design-time-name="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
