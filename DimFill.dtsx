@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="578"
-  DTS:VersionGUID="{CBEE1B74-B181-4F79-AB24-4A400A23B159}">
+  DTS:VersionBuild="589"
+  DTS:VersionGUID="{F344501D-EBA4-46FB-B83A-866954D64F77}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC1G/65+aqt5cqsk4dpWNR0AAAAAASAAACgAAAAEAAAANbTAhXzNyp9CoG2e19X1rsQAAAAxGe0w6DVbaanIwb+gFZIqhQAAAAhASthNY/+2SvjrrLA6dOPvPmniA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAkR4K1a2lNY5ZlKhAiuCjKAAAAAASAAACgAAAAEAAAANesaQOPO7vzDUtBaKgB/poQAAAAbwP4GdlB1Odwu3CemBVYPxQAAAAOJgxWsAVdYnvd4u+C/eTiys6y1Q</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -44,7 +44,7 @@
           <DTS:Password
             DTS:Name="PASSWORD"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADVRNV/cv/iKnrxx1cxwAxPAAAAAASAAACgAAAAEAAAAAMBxCBccwNhfLYtLXc/RqwQAAAA6I7ziatdn6tCwKvNmPI5CBQAAAD2hVK2Vrc2z55l7FjEW56j2uOJuA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABG+T0gFLNC6VQIP2Rm3LQbAAAAAASAAACgAAAAEAAAAFaxbm+4j3jb/sAGYtEERg8QAAAAgZc60vU/Mu1a3ak8tpNBixQAAAA/2m0BqasY7IQOAZdhQ/xuXIHQSQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -13143,6 +13143,1359 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Sequence DimEmpHoliday"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{77E01ED2-F4FF-4497-A9DB-DF4C6DC9FC6C}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence DimEmpHoliday">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{79090087-70D4-4DBB-97C1-6D0EA0BF909B}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task-Insert,Update"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input].Columns[COMPANYKEY]"
+                          cachedDataType="numeric"
+                          cachedName="COMPANYKEY"
+                          cachedPrecision="3"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANYKEY]" />
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input].Columns[YEAR]"
+                          cachedDataType="numeric"
+                          cachedName="YEAR"
+                          cachedPrecision="4"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[YEAR]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of COMPANYKEY]"
+                          dataType="ui1"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of COMPANYKEY]"
+                          name="Copy of COMPANYKEY"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANYKEY]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of YEAR]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of YEAR]"
+                          name="Copy of YEAR"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[YEAR]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimEmpHoliday]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimEmpHoliday]) [refTable]
+where [refTable].[HolidayDate] = ? and [refTable].[CompanyKey] = ? and [refTable].[YEARS] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CompanyKey" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="HolidayKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="HolidayName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="YEARS" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="HolidayDate" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UpdatLasteTime" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[HOLIDAY_DATE]};#{Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Copy of COMPANYKEY]};#{Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Copy of YEAR]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1256</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[hyperv-srv.DataWarehouse.sa]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[HOLIDAY_DATE]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="HOLIDAY_DATE"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[HOLIDAY_DATE]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">HolidayDate</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[Copy of COMPANYKEY]"
+                          cachedDataType="ui1"
+                          cachedName="Copy of COMPANYKEY"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Copy of COMPANYKEY]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CompanyKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[Copy of YEAR]"
+                          cachedDataType="i4"
+                          cachedName="Copy of YEAR"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Copy of YEAR]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">YEARS</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimEmpHoliday]
+   SET 
+      [HolidayName] = ?
+ WHERE  [HolidayDate] = ?  and [YEARS] = ? and [CompanyKey] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1256</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[hyperv-srv.DataWarehouse.sa]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[HOLIDAYNAME]"
+                          cachedDataType="wstr"
+                          cachedLength="70"
+                          cachedName="HOLIDAYNAME"
+                          externalMetadataColumnId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[HOLIDAYNAME]" />
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[HOLIDAY_DATE]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="HOLIDAY_DATE"
+                          externalMetadataColumnId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[HOLIDAY_DATE]" />
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of YEAR]"
+                          cachedDataType="i4"
+                          cachedName="Copy of YEAR"
+                          externalMetadataColumnId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Copy of YEAR]" />
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of COMPANYKEY]"
+                          cachedDataType="ui1"
+                          cachedName="Copy of COMPANYKEY"
+                          externalMetadataColumnId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Copy of COMPANYKEY]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="wstr"
+                          length="100"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="wstr"
+                          length="10"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="i4"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          dataType="ui1"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[DimEmpHoliday]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1256</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[hyperv-srv.DataWarehouse.sa]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HOLIDAYNAME]"
+                          cachedDataType="wstr"
+                          cachedLength="70"
+                          cachedName="HOLIDAYNAME"
+                          externalMetadataColumnId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HolidayName]"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[HOLIDAYNAME]" />
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of COMPANYKEY]"
+                          cachedDataType="ui1"
+                          cachedName="Copy of COMPANYKEY"
+                          externalMetadataColumnId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Copy of COMPANYKEY]" />
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HOLIDAY_DATE]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="HOLIDAY_DATE"
+                          externalMetadataColumnId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HolidayDate]"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[HOLIDAY_DATE]" />
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of YEAR]"
+                          cachedDataType="i4"
+                          cachedName="Copy of YEAR"
+                          externalMetadataColumnId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YEARS]"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Copy of YEAR]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                          dataType="ui1"
+                          name="CompanyKey" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HolidayKey]"
+                          dataType="i4"
+                          name="HolidayKey" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HolidayName]"
+                          dataType="wstr"
+                          length="100"
+                          name="HolidayName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YEARS]"
+                          dataType="i4"
+                          name="YEARS" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HolidayDate]"
+                          dataType="wstr"
+                          length="10"
+                          name="HolidayDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatLasteTime]"
+                          dataType="dbTimeStamp"
+                          name="UpdatLasteTime" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">"AXIOM"."DW_COMPANY_HOLIDAYS"</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1256</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[orcl.AXIOM]"
+                      connectionManagerRefId="Package.ConnectionManagers[orcl.AXIOM]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANYKEY]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COMPANYKEY]"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANYKEY]"
+                          name="COMPANYKEY"
+                          precision="3"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[YEAR]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[YEAR]"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[YEAR]"
+                          name="YEAR"
+                          precision="4"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[HOLIDAYNAME]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HOLIDAYNAME]"
+                          length="70"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[HOLIDAYNAME]"
+                          name="HOLIDAYNAME"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[HOLIDAY_DATE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HOLIDAY_DATE]"
+                          length="10"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[HOLIDAY_DATE]"
+                          name="HOLIDAY_DATE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODIFIEDDATE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MODIFIEDDATE]"
+                          length="10"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODIFIEDDATE]"
+                          name="MODIFIEDDATE"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COMPANYKEY]"
+                          dataType="numeric"
+                          name="COMPANYKEY"
+                          precision="3" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[YEAR]"
+                          dataType="numeric"
+                          name="YEAR"
+                          precision="4" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HOLIDAYNAME]"
+                          dataType="wstr"
+                          length="70"
+                          name="HOLIDAYNAME" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HOLIDAY_DATE]"
+                          dataType="wstr"
+                          length="10"
+                          name="HOLIDAY_DATE" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MODIFIEDDATE]"
+                          dataType="wstr"
+                          length="10"
+                          name="MODIFIEDDATE" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COMPANYKEY]"
+                          dataType="numeric"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COMPANYKEY]"
+                          name="COMPANYKEY"
+                          precision="3" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[YEAR]"
+                          dataType="numeric"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[YEAR]"
+                          name="YEAR"
+                          precision="4" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HOLIDAYNAME]"
+                          dataType="wstr"
+                          length="70"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HOLIDAYNAME]"
+                          name="HOLIDAYNAME" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HOLIDAY_DATE]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HOLIDAY_DATE]"
+                          name="HOLIDAY_DATE" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MODIFIEDDATE]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MODIFIEDDATE]"
+                          name="MODIFIEDDATE" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::UpdateCount</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Row Count 1"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count 1">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::InsertCount</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Row Count 1.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input].Columns[COMPANYKEY]"
+                          cachedDataType="numeric"
+                          cachedName="COMPANYKEY"
+                          cachedPrecision="3"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANYKEY]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input].Columns[YEAR]"
+                          cachedDataType="numeric"
+                          cachedName="YEAR"
+                          cachedPrecision="4"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[YEAR]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input].Columns[HOLIDAYNAME]"
+                          cachedDataType="wstr"
+                          cachedLength="70"
+                          cachedName="HOLIDAYNAME"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[HOLIDAYNAME]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input].Columns[HOLIDAY_DATE]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="HOLIDAY_DATE"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[HOLIDAY_DATE]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input].Columns[MODIFIEDDATE]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="MODIFIEDDATE"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODIFIEDDATE]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input].Columns[Copy of COMPANYKEY]"
+                          cachedDataType="ui1"
+                          cachedName="Copy of COMPANYKEY"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of COMPANYKEY]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input].Columns[Copy of YEAR]"
+                          cachedDataType="i4"
+                          cachedName="Copy of YEAR"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of YEAR]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[COMPANYKEY]"
+                          dataType="numeric"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[COMPANYKEY]"
+                          name="COMPANYKEY"
+                          precision="3">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANYKEY]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[YEAR]"
+                          dataType="numeric"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[YEAR]"
+                          name="YEAR"
+                          precision="4"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[YEAR]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[HOLIDAYNAME]"
+                          dataType="wstr"
+                          length="70"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[HOLIDAYNAME]"
+                          name="HOLIDAYNAME">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[HOLIDAYNAME]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[HOLIDAY_DATE]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[HOLIDAY_DATE]"
+                          name="HOLIDAY_DATE">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[HOLIDAY_DATE]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[MODIFIEDDATE]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[MODIFIEDDATE]"
+                          name="MODIFIEDDATE">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODIFIEDDATE]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Copy of COMPANYKEY]"
+                          dataType="ui1"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Copy of COMPANYKEY]"
+                          name="Copy of COMPANYKEY">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of COMPANYKEY]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Copy of YEAR]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Copy of YEAR]"
+                          name="Copy of YEAR">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of YEAR]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update.Paths[Data Conversion Output]"
+                  endId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+                  endId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
+                  endId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
+                  name="Lookup No Match Output"
+                  startId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+                  endId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Row Count 1.Outputs[Row Count Output 1]" />
+                <path
+                  refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+                  endId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Row Count.Outputs[Row Count Output 1]" />
+                <path
+                  refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update.Paths[Sort Output]"
+                  endId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
+                  name="Sort Output"
+                  startId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence DimEmpHoliday\Expression Task"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{9a4014dd-aab2-4134-b6ac-01c0976cebc2}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Expression Task"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::StartPakage]=getdate()" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence DimEmpHoliday\Log Task Failure"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9095036f-0079-49b1-a2b6-e960a09bab3e}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Task Failure"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status,Batch)&#xA;      VALUES ('DimEmpHoliday',?,?,?,?,?,?,GETDATE(),14,'Failure',?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::InsertCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::UpdateCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::MachineName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::DeleteCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::StartPakage"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Batch"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence DimEmpHoliday\Log Task Success"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{cf0f4da9-eb27-4549-8936-f6e8b6789e1c}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Task Success"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status,Batch)&#xA;      VALUES ('DimEmpHoliday',?,?,?,?,?,?,GETDATE(),14,'Success',?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::InsertCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::UpdateCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::MachineName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::DeleteCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::StartPakage"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Batch"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence DimEmpHoliday\TimeStamp Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{0b0bf983-3c49-497a-8c1e-fa078e3c6653}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TimeStamp Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
+              SQLTask:SqlStatementSource="SELECT      MAX(ModifiedDate) AS ModifiedDate&#xA;FROM            LogTable where [TableName] ='DimEmpHoliday' and Status='Success'"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::LastModifaydate" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence DimEmpHoliday.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{18528FC7-C67C-40DB-B690-8DA20E70AB67}"
+          DTS:From="Package\Sequence DimEmpHoliday\Expression Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence DimEmpHoliday\TimeStamp Task" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence DimEmpHoliday.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{7140F550-2798-4AA1-AF75-B7F54BB12D35}"
+          DTS:From="Package\Sequence DimEmpHoliday\TimeStamp Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence DimEmpHoliday.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{1BE61DC3-6A0F-4895-9A33-3BD0486DD495}"
+          DTS:From="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Sequence DimEmpHoliday\Log Task Success" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence DimEmpHoliday.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{F0BB06EF-3C0C-45C6-9C40-3BC3ACFBFEF9}"
+          DTS:From="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Sequence DimEmpHoliday\Log Task Failure"
+          DTS:Value="1" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Sequence DimEmployee"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
@@ -19870,6 +21223,14 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       DTS:ObjectName="Constraint 13"
       DTS:To="Package\Sequence DimEmpVacation" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 14]"
+      DTS:CreationName=""
+      DTS:DTSID="{439D4506-C3A2-46BE-A086-A4DFFB31A545}"
+      DTS:From="Package\Sequence DimEmpVacation"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 14"
+      DTS:To="Package\Sequence DimEmpHoliday" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{7FC24793-8CEE-4DA6-B018-8BCBD4287A41}"
@@ -22222,6 +23583,181 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   Capacity="5">
                   <mssgle:LineSegment
                     End="47.0714285714298,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Sequence DimEmpHoliday\Expression Task"
+          TopLeft="227.5,5.5" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Sequence DimEmpHoliday\TimeStamp Task"
+          TopLeft="226.5,107.5" />
+        <EdgeLayout
+          Id="Package\Sequence DimEmpHoliday.PrecedenceConstraints[Constraint]"
+          TopLeft="305,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Sequence DimEmpHoliday\Log Task Failure"
+          TopLeft="227,311.5" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Sequence DimEmpHoliday\Log Task Success"
+          TopLeft="5.50000000000006,311.5" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update"
+          TopLeft="195,209.5" />
+        <EdgeLayout
+          Id="Package\Sequence DimEmpHoliday.PrecedenceConstraints[Constraint 1]"
+          TopLeft="305,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimEmpHoliday.PrecedenceConstraints[Constraint 2]"
+          TopLeft="269.666666666667,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-183.666666666667,60"
+              Start="0,0"
+              End="-183.666666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2599277978339"
+                    Point2="0,24.2599277978339"
+                    Point3="-4,24.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-179.666666666667,24.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-179.666666666667,24.2599277978339"
+                    Point2="-183.666666666667,24.2599277978339"
+                    Point3="-183.666666666667,28.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-183.666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimEmpHoliday.PrecedenceConstraints[Constraint 3]"
+          TopLeft="340.333333333333,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35.3333333333333,60"
+              Start="0,0"
+              End="-35.3333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2599277978339"
+                    Point2="0,24.2599277978339"
+                    Point3="-4,24.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-31.3333333333333,24.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-31.3333333333333,24.2599277978339"
+                    Point2="-35.3333333333333,24.2599277978339"
+                    Point3="-35.3333333333333,28.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-35.3333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-32.9080143229167,29.2599277978339,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="420,408"
+          Size="420,452"
+          Id="Package\Sequence DimEmpHoliday"
+          TopLeft="2528,1056" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 14]"
+          TopLeft="3112,1024">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-374,32"
+              Start="0,0"
+              End="-374,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12"
+                    Point2="0,16"
+                    Point3="-4,16" />
+                  <mssgle:LineSegment
+                    End="-370,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-370,16"
+                    Point2="-374,16"
+                    Point3="-374,20" />
+                  <mssgle:LineSegment
+                    End="-374,24.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -26797,6 +28333,325 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Command"
+          TopLeft="819.5,469.5" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Row Count"
+          TopLeft="829.5,347.5" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Row Count 1"
+          TopLeft="198.5,348.5" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination"
+          TopLeft="195.5,451.5" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source"
+          TopLeft="553.5,77.5" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup"
+          TopLeft="542.5,307.5" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Data Conversion"
+          TopLeft="539.5,147.5" />
+        <EdgeLayout
+          Id="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+          TopLeft="628.5,119.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11,28"
+              Start="0,0"
+              End="-11,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10"
+                    Point2="0,14"
+                    Point3="-4,14" />
+                  <mssgle:LineSegment
+                    End="-7,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7,14"
+                    Point2="-11,14"
+                    Point3="-11,18" />
+                  <mssgle:LineSegment
+                    End="-11,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
+          TopLeft="542.5,328.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-205,41"
+              Start="0,0"
+              End="-197.5,41">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-98.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-98.5,0"
+                    Point2="-102.5,0"
+                    Point3="-102.5,4" />
+                  <mssgle:LineSegment
+                    End="-102.5,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-102.5,37"
+                    Point2="-102.5,41"
+                    Point3="-106.5,41" />
+                  <mssgle:LineSegment
+                    End="-197.5,41" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-158.30638671875,-17.609375,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          TopLeft="655.5,328.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="174,40"
+              Start="0,0"
+              End="166.5,40">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="83,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="83,0"
+                    Point2="87,0"
+                    Point3="87,4" />
+                  <mssgle:LineSegment
+                    End="87,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="87,36"
+                    Point2="87,40"
+                    Point3="91,40" />
+                  <mssgle:LineSegment
+                    End="166.5,40" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="38.80861328125,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+          TopLeft="268,390.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13,61"
+              Start="0,0"
+              End="13,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.5"
+                    Point2="0,30.5"
+                    Point3="4,30.5" />
+                  <mssgle:LineSegment
+                    End="9,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9,30.5"
+                    Point2="13,30.5"
+                    Point3="13,34.5" />
+                  <mssgle:LineSegment
+                    End="13,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+          TopLeft="894.5,389.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8,80"
+              Start="0,0"
+              End="8,72.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36"
+                    Point2="0,40"
+                    Point3="4,40" />
+                  <mssgle:LineSegment
+                    End="4,40" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4,40"
+                    Point2="8,40"
+                    Point3="8,44" />
+                  <mssgle:LineSegment
+                    End="8,72.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Sort"
+          TopLeft="553.5,220.5" />
+        <EdgeLayout
+          Id="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update.Paths[Data Conversion Output]"
+          TopLeft="617.5,189.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-15,31"
+              Start="0,0"
+              End="-15,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="-4,15.5" />
+                  <mssgle:LineSegment
+                    End="-11,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-11,15.5"
+                    Point2="-15,15.5"
+                    Point3="-15,19.5" />
+                  <mssgle:LineSegment
+                    End="-15,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update.Paths[Sort Output]"
+          TopLeft="600.75,262.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimEmpHoliday]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
