@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="616"
-  DTS:VersionGUID="{85C2F661-1AC3-4ABF-9A22-C635D182481F}">
+  DTS:VersionBuild="623"
+  DTS:VersionGUID="{86DAD73E-37F8-4271-92F0-D71B24963997}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA752seteTCMi4lpNOtkmLGAAAAAASAAACgAAAAEAAAAN7mQfmA+9FVXLgcsucF5kgQAAAAEzkJMrAMCESRPIhTzGl/qBQAAAAW0Zt3Px8jRmw4u4yRtBSiJKV8Bw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABED9E7NzakBnLFtKtSCO7NAAAAAASAAACgAAAAEAAAADfHGZiVgD5oSd3zXKvx6EAQAAAATkqD0u7KsKwx0z2iR2fokBQAAABoazhtr6gpugB521nEr0qPHEBDrg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -44,7 +44,7 @@
           <DTS:Password
             DTS:Name="PASSWORD"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABYN0zKJoTCs/fQ2dFDYlipAAAAAASAAACgAAAAEAAAAJKkV9Eln3aqhBGUQj8z9ioQAAAAskllw0qjxZmbMBRQ65DbtxQAAAB8wJICYyc4dma8O7WpZsPKHxKKjg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADXiSqVHiq8D2bJs3vXW0CQAAAAAASAAACgAAAAEAAAAAZqUFUBDwZoNL3OVyVpy7IQAAAAQPtA+qHdHt7q0XL7r0VowhQAAABEnhfx8QkqY2OV/ArmrsfXGqvQZg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -72,7 +72,7 @@
       DTS:CreationName=""
       DTS:DTSID="{CDE066F4-D238-42BF-851D-7E97C322E559}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT EMP_SER,&#xA;  EMPLOYEE_CODE,&#xA;  EMPLOYEE_NAME,&#xA;  LEAVE_FLAG,&#xA;  DEPT_NAME,&#xA;  JOB_CODE,&#xA;  JOB_NAME,&#xA;  SECTION_NAME,&#xA;  DIVISION_NAME,&#xA;  CONTRACT_TYPE,&#xA;  GENDER,&#xA;  CONTRACT_DATE,&#xA;  CONTRACT_END_DATE,&#xA;  HIRE_DATE,&#xA;  BIRTH_DATE,&#xA;  INS_DATE,&#xA;  MODIFIEDDATE&#xA;FROM DW_EMP  &#xA;WHERE MODIFIEDDATE &gt; '  + @[User::LastModifaydate] +   ' &quot;"
+      DTS:Expression="&quot;SELECT EMP_SER,&#xA;  EMPLOYEE_CODE,&#xA;  EMPLOYEE_NAME,&#xA;  LEAVE_FLAG,&#xA;  DEPT_NAME,&#xA;  JOB_CODE,&#xA;  JOB_NAME,&#xA;  SECTION_NAME,&#xA;  DIVISION_NAME,&#xA;  CONTRACT_TYPE,&#xA;  GENDER,&#xA; CompanyKey, CONTRACT_DATE,&#xA;  CONTRACT_END_DATE,&#xA;  HIRE_DATE,&#xA;  BIRTH_DATE,&#xA;  INS_DATE,&#xA;  MODIFIEDDATE&#xA;FROM DW_EMP  &#xA;WHERE MODIFIEDDATE &gt; '  + @[User::LastModifaydate] +   ' &quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Emp">
@@ -88,7 +88,7 @@
   DIVISION_NAME,
   CONTRACT_TYPE,
   GENDER,
-  CONTRACT_DATE,
+ CompanyKey, CONTRACT_DATE,
   CONTRACT_END_DATE,
   HIRE_DATE,
   BIRTH_DATE,
@@ -7440,12 +7440,12 @@ where [refTable].[CompanyName] = ?</property>
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Companykey" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CompanyAlternativeKey" dataType="DT_WSTR" length="5" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CompanyName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Companykey" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CompanyAlternativeKey" dataType="DT_WSTR" length="5" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CompanyName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Desc" dataType="DT_NTEXT" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]};</property>
+                      name="ParameterMap">#{Package\Container DimGeography\Data Flow Task-Insert,Update\120:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -7598,7 +7598,7 @@ where [refTable].[GeographyAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CompanyKey" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GeographyKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GeographyAlternativeKey" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RegionName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CityName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UpdatLasteTime" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CompanyKey" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GeographyKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GeographyAlternativeKey" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RegionName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CityName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UpdatLasteTime" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -7627,23 +7627,6 @@ where [refTable].[GeographyAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
                       name="Lookup Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Container DimGeography\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input].Columns[CountryAlternativeKey]"
-                          cachedDataType="wstr"
-                          cachedLength="30"
-                          cachedName="CountryAlternativeKey"
-                          lineageId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryAlternativeKey]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">GeographyAlternativeKey</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Container DimGeography\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input].Columns[Companykey]"
                           cachedDataType="ui1"
                           cachedName="Companykey"
@@ -7653,6 +7636,22 @@ where [refTable].[GeographyAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
                               dataType="System.String"
                               description="Specifies the column in the reference table that a column joins."
                               name="JoinToReferenceColumn">CompanyKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Container DimGeography\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input].Columns[CountryAlternativeKey]"
+                          cachedDataType="i8"
+                          cachedName="CountryAlternativeKey"
+                          lineageId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryAlternativeKey]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">GeographyAlternativeKey</property>
                             <property
                               dataType="System.Null"
                               description="Specifies the column in the reference table from which a column is copied."
@@ -7670,6 +7669,22 @@ where [refTable].[GeographyAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
                       exclusionGroup="1"
                       name="Lookup Match Output"
                       synchronousInputId="Package\Container DimGeography\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Container DimGeography\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[GeographyKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Container DimGeography\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[GeographyKey]"
+                          name="GeographyKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">GeographyKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
                       <externalMetadataColumns />
                     </output>
                     <output
@@ -7771,8 +7786,7 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                           lineageId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CityName]" />
                         <inputColumn
                           refId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[CountryAlternativeKey]"
-                          cachedDataType="wstr"
-                          cachedLength="30"
+                          cachedDataType="i8"
                           cachedName="CountryAlternativeKey"
                           externalMetadataColumnId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                           lineageId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryAlternativeKey]" />
@@ -7823,8 +7837,7 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          dataType="wstr"
-                          length="50"
+                          dataType="i8"
                           name="Param_3">
                           <properties>
                             <property
@@ -7959,8 +7972,7 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                           lineageId="Package\Container DimGeography\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]" />
                         <inputColumn
                           refId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CountryAlternativeKey]"
-                          cachedDataType="wstr"
-                          cachedLength="30"
+                          cachedDataType="i8"
                           cachedName="CountryAlternativeKey"
                           externalMetadataColumnId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GeographyAlternativeKey]"
                           lineageId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryAlternativeKey]" />
@@ -8002,8 +8014,7 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                           name="GeographyKey" />
                         <externalMetadataColumn
                           refId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GeographyAlternativeKey]"
-                          dataType="wstr"
-                          length="50"
+                          dataType="i8"
                           name="GeographyAlternativeKey" />
                         <externalMetadataColumn
                           refId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RegionName]"
@@ -8064,7 +8075,7 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[_DWRegion]</property>
+                      name="OpenRowset"></property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -8111,32 +8122,12 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                       <outputColumns>
                         <outputColumn
                           refId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryAlternativeKey]"
-                          dataType="wstr"
+                          dataType="i8"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CountryAlternativeKey]"
-                          length="30"
                           lineageId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryAlternativeKey]"
                           name="CountryAlternativeKey"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
-                          length="4"
-                          lineageId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
-                          name="CompanyName"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODIFIEDDATETIME]"
-                          dataType="dbTimeStamp"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MODIFIEDDATETIME]"
-                          lineageId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODIFIEDDATETIME]"
-                          name="MODIFIEDDATETIME"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[RegionName]"
@@ -8168,6 +8159,16 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                           lineageId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CityName]"
                           name="CityName"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
+                          length="4"
+                          lineageId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
+                          name="CompanyName"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -8175,15 +8176,6 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                           refId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CountryAlternativeKey]"
                           dataType="i8"
                           name="CountryAlternativeKey" />
-                        <externalMetadataColumn
-                          refId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
-                          dataType="wstr"
-                          length="4"
-                          name="CompanyName" />
-                        <externalMetadataColumn
-                          refId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MODIFIEDDATETIME]"
-                          dataType="dbTimeStamp"
-                          name="MODIFIEDDATETIME" />
                         <externalMetadataColumn
                           refId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RegionName]"
                           dataType="wstr"
@@ -8199,6 +8191,15 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                           dataType="wstr"
                           length="30"
                           name="CityName" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
+                          dataType="wstr"
+                          length="4"
+                          name="CompanyName" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MODIFIEDDATETIME]"
+                          dataType="dbTimeStamp"
+                          name="MODIFIEDDATETIME" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -8235,11 +8236,6 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                           length="4"
                           lineageId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyName]"
                           name="CompanyName" />
-                        <outputColumn
-                          refId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MODIFIEDDATETIME]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MODIFIEDDATETIME]"
-                          name="MODIFIEDDATETIME" />
                         <outputColumn
                           refId="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -8376,7 +8372,7 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -8438,7 +8434,7 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -13014,7 +13010,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -13076,7 +13072,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -14921,28 +14917,6 @@ where [refTable].[CompanyKey] = ? and [refTable].[HolidayAlternativeKey] = ?</pr
                       synchronousInputId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column.Outputs[Derived Column Output].Columns[CampanyKey]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Computation"
-                          errorRowDisposition="FailComponent"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column.Outputs[Derived Column Output].Columns[CampanyKey]"
-                          name="CampanyKey"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Expression"
-                              name="Expression">1</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Derived Column Friendly Expression"
-                              expressionType="Notify"
-                              name="FriendlyExpression">1</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column.Outputs[Derived Column Output].Columns[WorkeStatus]"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
@@ -14963,6 +14937,28 @@ where [refTable].[CompanyKey] = ? and [refTable].[HolidayAlternativeKey] = ?</pr
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
                               name="FriendlyExpression">(LEAVE_FLAG == 0) ? "Work" : "leave"</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column.Outputs[Derived Column Output].Columns[CampanyKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column.Outputs[Derived Column Output].Columns[CampanyKey]"
+                          name="CampanyKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">3</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">3</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -16029,6 +16025,16 @@ WHERE MODIFIEDDATE &gt;?</property>
                           lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONTRACT_END_DATE]"
                           name="CONTRACT_END_DATE"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANYKEY]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COMPANYKEY]"
+                          length="38"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANYKEY]"
+                          name="COMPANYKEY"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -16117,6 +16123,11 @@ WHERE MODIFIEDDATE &gt;?</property>
                           dataType="wstr"
                           length="10"
                           name="CONTRACT_END_DATE" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COMPANYKEY]"
+                          dataType="wstr"
+                          length="38"
+                          name="COMPANYKEY" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -16190,6 +16201,12 @@ WHERE MODIFIEDDATE &gt;?</property>
                           length="15"
                           lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GENDER]"
                           name="GENDER" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COMPANYKEY]"
+                          dataType="wstr"
+                          length="38"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COMPANYKEY]"
+                          name="COMPANYKEY" />
                         <outputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CONTRACT_DATE]"
                           dataType="wstr"
@@ -18461,7 +18478,7 @@ UPDATE [dbo].[DimEmpVacation]
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -18523,7 +18540,7 @@ UPDATE [dbo].[DimEmpVacation]
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -20079,7 +20096,7 @@ where [refTable].[CompanyName] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -20141,7 +20158,7 @@ where [refTable].[CompanyName] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -21164,7 +21181,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -21226,7 +21243,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -25721,13 +25738,13 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150,42"
-          Id="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source"
-          TopLeft="642,80" />
+          Size="166,42"
+          Id="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Command"
+          TopLeft="861,498" />
         <NodeLayout
-          Size="122,42"
-          Id="Package\Container DimGeography\Data Flow Task-Insert,Update\Lookup 1"
-          TopLeft="592,295" />
+          Size="171,42"
+          Id="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Destination"
+          TopLeft="344,517" />
         <NodeLayout
           Size="139,42"
           Id="Package\Container DimGeography\Data Flow Task-Insert,Update\Row Count 1"
@@ -25737,13 +25754,13 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           Id="Package\Container DimGeography\Data Flow Task-Insert,Update\Row Count"
           TopLeft="857,380" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Destination"
-          TopLeft="344,517" />
-        <NodeLayout
           Size="113,42"
           Id="Package\Container DimGeography\Data Flow Task-Insert,Update\Lookup"
           TopLeft="577,175" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Container DimGeography\Data Flow Task-Insert,Update\Lookup 1"
+          TopLeft="592,295" />
         <EdgeLayout
           Id="Package\Container DimGeography\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
           TopLeft="522.5,435">
@@ -25770,40 +25787,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                     Point3="-93,45" />
                   <mssgle:LineSegment
                     End="-93,74.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Container DimGeography\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
-          TopLeft="717,122">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-83.5,53"
-              Start="0,0"
-              End="-83.5,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.5"
-                    Point2="0,26.5"
-                    Point3="-4,26.5" />
-                  <mssgle:LineSegment
-                    End="-79.5,26.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-79.5,26.5"
-                    Point2="-83.5,26.5"
-                    Point3="-83.5,30.5" />
-                  <mssgle:LineSegment
-                    End="-83.5,45.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25920,10 +25903,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Command"
-          TopLeft="861,498" />
         <EdgeLayout
           Id="Package\Container DimGeography\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
           TopLeft="922,422">
@@ -25958,45 +25937,47 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source"
+          TopLeft="581,64" />
+        <EdgeLayout
+          Id="Package\Container DimGeography\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+          TopLeft="656,106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-22.5,69"
+              Start="0,0"
+              End="-22.5,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.5"
+                    Point2="0,34.5"
+                    Point3="-4,34.5" />
+                  <mssgle:LineSegment
+                    End="-18.5,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,34.5"
+                    Point2="-22.5,34.5"
+                    Point3="-22.5,38.5" />
+                  <mssgle:LineSegment
+                    End="-22.5,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">View</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Container DimGeography\Data Flow Task-Insert,Update\Lookup 1">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimGeography]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Destination">
     <Properties>
@@ -26016,7 +25997,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -26026,7 +26007,30 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Container DimGeography\Data Flow Task-Insert,Update\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimGeography]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -27548,29 +27552,25 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="163,42"
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Script Component"
-          TopLeft="484.727272727273,231.545454545455" />
-        <NodeLayout
           Size="139,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Row Count 1"
           TopLeft="242,434" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Row Count"
-          TopLeft="643,444" />
         <NodeLayout
           Size="150,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source"
           TopLeft="524,62" />
         <NodeLayout
+          Size="130,42"
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Row Count"
+          TopLeft="643,444" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Script Component"
+          TopLeft="484.727272727273,231.545454545455" />
+        <NodeLayout
           Size="113,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Lookup"
           TopLeft="513,383" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination"
-          TopLeft="200.818181818182,519" />
         <NodeLayout
           Size="154,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column"
@@ -27579,6 +27579,48 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           Size="156,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Data Conversion"
           TopLeft="484.636363636364,300.454545454545" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination"
+          TopLeft="200.818181818182,519" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Command"
+          TopLeft="695,551" />
+        <EdgeLayout
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+          TopLeft="708,486">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="70,65"
+              Start="0,0"
+              End="70,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.5"
+                    Point2="0,32.5"
+                    Point3="4,32.5" />
+                  <mssgle:LineSegment
+                    End="66,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="66,32.5"
+                    Point2="70,32.5"
+                    Point3="70,36.5" />
+                  <mssgle:LineSegment
+                    End="70,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
           TopLeft="311.5,476">
@@ -27771,44 +27813,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,33.0454545454546" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Command"
-          TopLeft="695,551" />
-        <EdgeLayout
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
-          TopLeft="708,486">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="70,65"
-              Start="0,0"
-              End="70,57.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.5"
-                    Point2="0,32.5"
-                    Point3="4,32.5" />
-                  <mssgle:LineSegment
-                    End="66,32.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="66,32.5"
-                    Point2="70,32.5"
-                    Point3="70,36.5" />
-                  <mssgle:LineSegment
-                    End="70,57.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -28760,6 +28764,14 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Container DimGeography\Data Flow Task-Insert,Update\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
