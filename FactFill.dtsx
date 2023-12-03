@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="114"
-  DTS:VersionGUID="{D8863048-97D6-4E93-9497-48C27E22247C}">
+  DTS:VersionBuild="143"
+  DTS:VersionGUID="{97BE2D0B-244F-46E4-93A7-71E446908E29}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -290,7 +290,7 @@ where [refTable].[BrancheAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BrancheKey]};#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BrancheKey]};#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -331,10 +331,10 @@ where [refTable].[BrancheAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Lookup BrancheKey.Inputs[Lookup Input].Columns[Companykey]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Lookup BrancheKey.Inputs[Lookup Input].Columns[CompanykeyOk]"
                           cachedDataType="ui1"
-                          cachedName="Companykey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]">
+                          cachedName="CompanykeyOk"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -464,7 +464,7 @@ where [refTable].[CarAlternativeKey] = ? and [refTable].[CompanyKey] = ?</proper
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CarKey]};#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CarKey]};#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -505,10 +505,10 @@ where [refTable].[CarAlternativeKey] = ? and [refTable].[CompanyKey] = ?</proper
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Lookup CarKey.Inputs[Lookup Input].Columns[Companykey]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Lookup CarKey.Inputs[Lookup Input].Columns[CompanykeyOk]"
                           cachedDataType="ui1"
-                          cachedName="Companykey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]">
+                          cachedName="CompanykeyOk"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -691,11 +691,11 @@ where [refTable].[CompanyName] = ?</property>
                       synchronousInputId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]"
                           dataType="ui1"
                           errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]"
-                          name="Companykey"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]"
+                          name="CompanykeyOk"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -796,7 +796,7 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerKey]};#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerKey]};#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -837,10 +837,10 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Lookup CustomerKey.Inputs[Lookup Input].Columns[Companykey]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Lookup CustomerKey.Inputs[Lookup Input].Columns[CompanykeyOk]"
                           cachedDataType="ui1"
-                          cachedName="Companykey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]">
+                          cachedName="CompanykeyOk"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -970,7 +970,7 @@ where [refTable].[DimensionAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimensionKey]};#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimensionKey]};#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1011,10 +1011,10 @@ where [refTable].[DimensionAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Lookup DimensionKey.Inputs[Lookup Input].Columns[Companykey]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Lookup DimensionKey.Inputs[Lookup Input].Columns[CompanykeyOk]"
                           cachedDataType="ui1"
-                          cachedName="Companykey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]">
+                          cachedName="CompanykeyOk"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -1144,7 +1144,7 @@ where [refTable].[CompanyKey] = ? and [refTable].[PromotionAlternativeKey] = ?</
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]};#{Package\Sequence FactSales\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PromotionKey]};</property>
+                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]};#{Package\Sequence FactSales\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PromotionKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1168,10 +1168,10 @@ where [refTable].[CompanyKey] = ? and [refTable].[PromotionAlternativeKey] = ?</
                       name="Lookup Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Lookup DimPromotion.Inputs[Lookup Input].Columns[Companykey]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Lookup DimPromotion.Inputs[Lookup Input].Columns[CompanykeyOk]"
                           cachedDataType="ui1"
-                          cachedName="Companykey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]">
+                          cachedName="CompanykeyOk"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -1317,7 +1317,7 @@ where [refTable].[EmployeeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmployeeKey]};#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmployeeKey]};#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1358,10 +1358,10 @@ where [refTable].[EmployeeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Lookup EmployeeKey.Inputs[Lookup Input].Columns[Companykey]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Lookup EmployeeKey.Inputs[Lookup Input].Columns[CompanykeyOk]"
                           cachedDataType="ui1"
-                          cachedName="Companykey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]">
+                          cachedName="CompanykeyOk"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -1491,7 +1491,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKey] = ?</property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[InventTranceKey]};#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[InventTranceKey]};#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1532,10 +1532,10 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKey] = ?</property
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Lookup FactSales.Inputs[Lookup Input].Columns[Companykey]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Lookup FactSales.Inputs[Lookup Input].Columns[CompanykeyOk]"
                           cachedDataType="ui1"
-                          cachedName="Companykey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]">
+                          cachedName="CompanykeyOk"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -1649,7 +1649,7 @@ where [refTable].[GeographyAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[GeographyAlternativeKey]};#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[GeographyAlternativeKey]};#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1689,10 +1689,10 @@ where [refTable].[GeographyAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Lookup GeographyKey.Inputs[Lookup Input].Columns[Companykey]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Lookup GeographyKey.Inputs[Lookup Input].Columns[CompanykeyOk]"
                           cachedDataType="ui1"
-                          cachedName="Companykey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]">
+                          cachedName="CompanykeyOk"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -1822,7 +1822,7 @@ where [refTable].[ProductAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductKey]};#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductKey]};#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1863,10 +1863,10 @@ where [refTable].[ProductAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Lookup ProductKey.Inputs[Lookup Input].Columns[Companykey]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Lookup ProductKey.Inputs[Lookup Input].Columns[CompanykeyOk]"
                           cachedDataType="ui1"
-                          cachedName="Companykey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]">
+                          cachedName="CompanykeyOk"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -1996,7 +1996,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitKey]};#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitKey]};#{Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2037,10 +2037,10 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Lookup UnitKey.Inputs[Lookup Input].Columns[Companykey]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Lookup UnitKey.Inputs[Lookup Input].Columns[CompanykeyOk]"
                           cachedDataType="ui1"
-                          cachedName="Companykey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]">
+                          cachedName="CompanykeyOk"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -2151,7 +2151,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">0</property>
+                      typeConverter="AccessMode">3</property>
                     <property
                       dataType="System.Boolean"
                       description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -2163,7 +2163,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                     <property
                       dataType="System.String"
                       description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                      name="FastLoadOptions"></property>
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -2192,6 +2192,12 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           cachedName="InventTranceKey"
                           externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InventTranceKey]"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[InventTranceKey]" />
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StatusKey]"
+                          cachedDataType="i4"
+                          cachedName="StatusKey"
+                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StatusKey]"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusKey]" />
                         <inputColumn
                           refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TypeKey]"
                           cachedDataType="i4"
@@ -2246,6 +2252,13 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductionDate]"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductionDate]" />
                         <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ShippingDate]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="ShippingDate"
+                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShippingDate]"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShippingDate]" />
+                        <inputColumn
                           refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnitPrice]"
                           cachedDataType="numeric"
                           cachedName="UnitPrice"
@@ -2253,14 +2266,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           cachedScale="12"
                           externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]" />
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SALESQTY]"
-                          cachedDataType="numeric"
-                          cachedName="SALESQTY"
-                          cachedPrecision="28"
-                          cachedScale="12"
-                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesQty]"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SALESQTY]" />
                         <inputColumn
                           refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DiscountPercent]"
                           cachedDataType="numeric"
@@ -2278,14 +2283,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DiscountAmount]"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DiscountAmount]" />
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LINEAMOUNT]"
-                          cachedDataType="numeric"
-                          cachedName="LINEAMOUNT"
-                          cachedPrecision="28"
-                          cachedScale="12"
-                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LineAmount]"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LINEAMOUNT]" />
-                        <inputColumn
                           refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AmountAfterTax]"
                           cachedDataType="r8"
                           cachedName="AmountAfterTax"
@@ -2298,11 +2295,21 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TaxAmount]"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TaxAmount]" />
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Companykey]"
-                          cachedDataType="ui1"
-                          cachedName="Companykey"
-                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]" />
+                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SALESQTY]"
+                          cachedDataType="numeric"
+                          cachedName="SALESQTY"
+                          cachedPrecision="28"
+                          cachedScale="12"
+                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesQty]"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SALESQTY]" />
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LINEAMOUNT]"
+                          cachedDataType="numeric"
+                          cachedName="LINEAMOUNT"
+                          cachedPrecision="28"
+                          cachedScale="12"
+                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LineAmount]"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LINEAMOUNT]" />
                         <inputColumn
                           refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GeographyKey]"
                           cachedDataType="i4"
@@ -2328,12 +2335,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerKey]"
                           lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CustomerKey.Outputs[Lookup Match Output].Columns[CustomerKey]" />
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PromotionKey]"
-                          cachedDataType="i4"
-                          cachedName="PromotionKey"
-                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PromotionKey]"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup DimPromotion.Outputs[Lookup Match Output].Columns[PromotionKey]" />
-                        <inputColumn
                           refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DimensionKey]"
                           cachedDataType="i4"
                           cachedName="DimensionKey"
@@ -2352,24 +2353,23 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeKey]"
                           lineageId="Package\Sequence FactSales\Data Flow Task\Lookup EmployeeKey.Outputs[Lookup Match Output].Columns[EmployeeKey]" />
                         <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PromotionKey]"
+                          cachedDataType="i4"
+                          cachedName="PromotionKey"
+                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PromotionKey]"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup DimPromotion.Outputs[Lookup Match Output].Columns[PromotionKey]" />
+                        <inputColumn
                           refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CarKey]"
                           cachedDataType="i2"
                           cachedName="CarKey"
                           externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CarKey]"
                           lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CarKey.Outputs[Lookup Match Output].Columns[CarKey]" />
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StatusKey]"
-                          cachedDataType="i4"
-                          cachedName="StatusKey"
-                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StatusKey]"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusKey]" />
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ShippingDate]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="ShippingDate"
-                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ShippingDate]"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShippingDate]" />
+                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CompanykeyOk]"
+                          cachedDataType="ui1"
+                          cachedName="CompanykeyOk"
+                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[CompanykeyOk]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2565,7 +2565,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select  top (100)* from dbo._DWFactSales</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select  top (5000)* from dbo._DWFactSales</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -2821,17 +2821,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           scale="12"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LinePercentDiscount]"
-                          dataType="numeric"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LinePercentDiscount]"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LinePercentDiscount]"
-                          name="LinePercentDiscount"
-                          precision="28"
-                          scale="12"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[AmountAfterTax]"
                           dataType="r8"
                           errorOrTruncationOperation="Conversion"
@@ -2848,46 +2837,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TaxAmount]"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TaxAmount]"
                           name="TaxAmount"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyKey]"
-                          length="4"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]"
-                          name="CompanyKey"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DELIVERYCOUNTRYREGIONID]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DELIVERYCOUNTRYREGIONID]"
-                          length="30"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DELIVERYCOUNTRYREGIONID]"
-                          name="DELIVERYCOUNTRYREGIONID"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DELIVERYSTATE]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DELIVERYSTATE]"
-                          length="30"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DELIVERYSTATE]"
-                          name="DELIVERYSTATE"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DELIVERYCOUNTY]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DELIVERYCOUNTY]"
-                          length="30"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DELIVERYCOUNTY]"
-                          name="DELIVERYCOUNTY"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[GeographyAlternativeKey]"
@@ -2919,6 +2868,16 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           name="LINEAMOUNT"
                           precision="28"
                           scale="12"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyKey]"
+                          length="4"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]"
+                          name="CompanyKey"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -3163,24 +3122,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderDateAlternativeKey]"
                           name="OrderDateAlternativeKey" />
                         <outputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DELIVERYCOUNTRYREGIONID]"
-                          dataType="wstr"
-                          length="30"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DELIVERYCOUNTRYREGIONID]"
-                          name="DELIVERYCOUNTRYREGIONID" />
-                        <outputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DELIVERYSTATE]"
-                          dataType="wstr"
-                          length="30"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DELIVERYSTATE]"
-                          name="DELIVERYSTATE" />
-                        <outputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DELIVERYCOUNTY]"
-                          dataType="wstr"
-                          length="30"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DELIVERYCOUNTY]"
-                          name="DELIVERYCOUNTY" />
-                        <outputColumn
                           refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GeographyAlternativeKey]"
                           dataType="i8"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GeographyAlternativeKey]"
@@ -3252,13 +3193,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           dataType="numeric"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DiscountAmount]"
                           name="DiscountAmount"
-                          precision="28"
-                          scale="12" />
-                        <outputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LinePercentDiscount]"
-                          dataType="numeric"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LinePercentDiscount]"
-                          name="LinePercentDiscount"
                           precision="28"
                           scale="12" />
                         <outputColumn
@@ -4256,28 +4190,40 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <NodeLayout
           Size="171,42"
           Id="Package\Sequence FactSales\Data Flow Task\OLE DB Destination"
-          TopLeft="40,266.25" />
+          TopLeft="76.25,261.25" />
         <EdgeLayout
           Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup No Match Output]"
-          TopLeft="125.625,162.642857142857">
+          TopLeft="125.75,162.642857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,103.607142857143"
+              EndConnector="36,98.607142857143"
               Start="0,0"
-              End="0,96.107142857143">
+              End="36,91.107142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,96.107142857143" />
+                    End="0,45.3035714285715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.3035714285715"
+                    Point2="0,49.3035714285715"
+                    Point3="4,49.3035714285715" />
+                  <mssgle:LineSegment
+                    End="32,49.3035714285715" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32,49.3035714285715"
+                    Point2="36,49.3035714285715"
+                    Point3="36,53.3035714285715" />
+                  <mssgle:LineSegment
+                    End="36,91.107142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,42.2488839285715,111.6127734375,11.609375"
+              BoundingBox="-46.6750390625,54.3035714285715,129.350078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
