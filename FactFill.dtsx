@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="159"
-  DTS:VersionGUID="{19293584-15C5-4339-B883-5901170BC635}">
+  DTS:VersionBuild="160"
+  DTS:VersionGUID="{A888972B-1969-4B6C-8F41-0C6BA9DE7751}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -173,7 +173,7 @@
                           refId="Package\Sequence FactSales\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[PromotionKey]"
                           cachedDataType="numeric"
                           cachedName="PromotionKey"
-                          cachedPrecision="10"
+                          cachedPrecision="19"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PromotionKey]" />
                       </inputColumns>
                       <externalMetadataColumns />
@@ -2565,7 +2565,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select  top (50000)* from dbo._DWFactSales where GeographyKey is not null</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select  top (50000) * from dbo._DWFactSales where GeographyKey is not null</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -2649,7 +2649,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PromotionKey]"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PromotionKey]"
                           name="PromotionKey"
-                          precision="10"
+                          precision="19"
                           truncationRowDisposition="IgnoreFailure" />
                         <outputColumn
                           refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DimensionKey]"
@@ -2911,7 +2911,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PromotionKey]"
                           dataType="numeric"
                           name="PromotionKey"
-                          precision="10" />
+                          precision="19" />
                         <externalMetadataColumn
                           refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimensionKey]"
                           dataType="wstr"
@@ -3015,21 +3015,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           dataType="dbTimeStamp"
                           name="MODIFIEDDATETIME" />
                         <externalMetadataColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DELIVERYCOUNTRYREGIONID]"
-                          dataType="wstr"
-                          length="30"
-                          name="DELIVERYCOUNTRYREGIONID" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DELIVERYSTATE]"
-                          dataType="wstr"
-                          length="30"
-                          name="DELIVERYSTATE" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DELIVERYCOUNTY]"
-                          dataType="wstr"
-                          length="30"
-                          name="DELIVERYCOUNTY" />
-                        <externalMetadataColumn
                           refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SALESQTY]"
                           dataType="numeric"
                           name="SALESQTY"
@@ -3081,7 +3066,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           dataType="numeric"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PromotionKey]"
                           name="PromotionKey"
-                          precision="10" />
+                          precision="19" />
                         <outputColumn
                           refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DimensionKey]"
                           dataType="wstr"
