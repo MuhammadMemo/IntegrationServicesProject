@@ -11,10 +11,35 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="185"
-  DTS:VersionGUID="{EB579175-15E9-48FE-A793-6B436F1E4BDA}">
+  DTS:VersionBuild="201"
+  DTS:VersionGUID="{654D8B89-B0CC-4998-AC53-471FC7F09815}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[log]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{AD0BE597-9415-4BFB-A46D-46478C0DF4AA}"
+      DTS:ObjectName="log">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\ism01\Desktop\log" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="hyperv-srv.DataWarehouse.sa"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{255998A5-3733-4786-B4C6-79FD9AC2D742}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -110,6 +135,395 @@
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">21,7,OnError,19,OnExecStatusChanged,13,OnInformation,27,OnPipelinePostComponentCall,25,OnPipelinePostEndOfRowset,25,OnPipelinePostPrimeOutput,26,OnPipelinePreComponentCall,24,OnPipelinePreEndOfRowset,24,OnPipelinePrePrimeOutput,18,OnPipelineRowsSent,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,10,OnProgress,13,OnQueryCancel,12,OnTaskFailed,22,OnVariableValueChanged,9,OnWarning,10,Diagnostic,12,DiagnosticEx</DTS:Property>
+    <DTS:Property
+      DTS:EventName="Diagnostic"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="DiagnosticEx"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnExecStatusChanged"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnInformation"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostComponentCall"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostPrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePreComponentCall"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePreEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePrePrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelineRowsSent"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnProgress"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnQueryCancel"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnVariableValueChanged"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnWarning"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{255998A5-3733-4786-B4C6-79FD9AC2D742}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Execute Batch No"
@@ -122,6 +536,9 @@
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="2" />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
@@ -142,6 +559,9 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Sequence FactSales">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="2" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Sequence FactSales\Data Flow Task"
@@ -153,6 +573,102 @@
           DTS:ObjectName="Data Flow Task"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0">
+            <DTS:Property
+              DTS:DataType="8"
+              DTS:Name="EventFilter">5,7,OnError,19,OnExecStatusChanged,13,OnInformation,25,OnPipelinePostEndOfRowset,10,OnProgress</DTS:Property>
+            <DTS:Property
+              DTS:EventName="OnError"
+              DTS:Name="ColumnFilter">
+              <DTS:Property
+                DTS:Name="Computer">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="Operator">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceName">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="ExecutionID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="MessageText">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="DataBytes">-1</DTS:Property>
+            </DTS:Property>
+            <DTS:Property
+              DTS:EventName="OnExecStatusChanged"
+              DTS:Name="ColumnFilter">
+              <DTS:Property
+                DTS:Name="Computer">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="Operator">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceName">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="ExecutionID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="MessageText">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="DataBytes">-1</DTS:Property>
+            </DTS:Property>
+            <DTS:Property
+              DTS:EventName="OnInformation"
+              DTS:Name="ColumnFilter">
+              <DTS:Property
+                DTS:Name="Computer">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="Operator">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceName">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="ExecutionID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="MessageText">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="DataBytes">-1</DTS:Property>
+            </DTS:Property>
+            <DTS:Property
+              DTS:EventName="OnPipelinePostEndOfRowset"
+              DTS:Name="ColumnFilter">
+              <DTS:Property
+                DTS:Name="Computer">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="Operator">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceName">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="ExecutionID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="MessageText">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="DataBytes">-1</DTS:Property>
+            </DTS:Property>
+            <DTS:Property
+              DTS:EventName="OnProgress"
+              DTS:Name="ColumnFilter">
+              <DTS:Property
+                DTS:Name="Computer">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="Operator">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceName">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="ExecutionID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="MessageText">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="DataBytes">-1</DTS:Property>
+            </DTS:Property>
+          </DTS:LoggingOptions>
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -2409,12 +2925,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LineAmount]"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LINEAMOUNT]" />
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProductKey]"
-                          cachedDataType="i4"
-                          cachedName="ProductKey"
-                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductKey]"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup ProductKey.Outputs[Lookup Match Output].Columns[ProductKey]" />
-                        <inputColumn
                           refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BrancheKey]"
                           cachedDataType="ui1"
                           cachedName="BrancheKey"
@@ -2468,6 +2978,12 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           cachedName="EmployeeKey"
                           externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeKey]"
                           lineageId="Package\Sequence FactSales\Data Flow Task\Lookup EmployeeKey.Outputs[Lookup Match Output].Columns[EmployeeKey]" />
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProductKey]"
+                          cachedDataType="i4"
+                          cachedName="ProductKey"
+                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductKey]"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup ProductKey.Outputs[Lookup Match Output].Columns[ProductKey]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2663,7 +3179,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select  top (100000) * from dbo._DWFactSales where GeographyKey is not null</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select   * from dbo._DWFactSales where GeographyKey is not null</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -3342,44 +3858,44 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   startId="Package\Sequence FactSales\Data Flow Task\Lookup BrancheKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output2]"
-                  endId="Package\Sequence FactSales\Data Flow Task\Lookup CustomerKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Sequence FactSales\Data Flow Task\Lookup ProductKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output3]"
                   endId="Package\Sequence FactSales\Data Flow Task\Lookup UnitKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\Sequence FactSales\Data Flow Task\Lookup DimensionKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output4]"
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output3]"
                   endId="Package\Sequence FactSales\Data Flow Task\Lookup EmployeeKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\Sequence FactSales\Data Flow Task\Lookup UnitKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output5]"
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output4]"
                   endId="Package\Sequence FactSales\Data Flow Task\Lookup DimensionKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\Sequence FactSales\Data Flow Task\Lookup DimPromotion.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output6]"
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output5]"
                   endId="Package\Sequence FactSales\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
                   name="Lookup Match Output"
                   startId="Package\Sequence FactSales\Data Flow Task\Lookup CustomerKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output7]"
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output6]"
                   endId="Package\Sequence FactSales\Data Flow Task\Lookup CarKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\Sequence FactSales\Data Flow Task\Lookup EmployeeKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output8]"
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output7]"
                   endId="Package\Sequence FactSales\Data Flow Task\Lookup FactSales.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\Sequence FactSales\Data Flow Task\Lookup GeographyKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output9]"
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output8]"
                   endId="Package\Sequence FactSales\Data Flow Task\Lookup GeographyKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\Sequence FactSales\Data Flow Task\Lookup CarKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output9]"
+                  endId="Package\Sequence FactSales\Data Flow Task\Lookup CustomerKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Sequence FactSales\Data Flow Task\Lookup ProductKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup No Match Output]"
                   endId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
@@ -3406,7 +3922,8 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
-            DTS:FilterKind="0" />
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
           <DTS:ObjectData>
             <ExpressionTask
               Expression="@[User::StartPakage]=getdate()" />
@@ -3424,7 +3941,8 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
-            DTS:FilterKind="0" />
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
@@ -3486,7 +4004,8 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
-            DTS:FilterKind="0" />
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
@@ -3548,7 +4067,8 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
-            DTS:FilterKind="0" />
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
@@ -3810,361 +4330,313 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <NodeLayout
           Size="177,42"
           Id="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey"
-          TopLeft="1726.89285714286,142.142857142857" />
+          TopLeft="1693.14285714286,145.892857142857" />
         <NodeLayout
           Size="179,42"
           Id="Package\Sequence FactSales\Data Flow Task\Lookup EmployeeKey"
-          TopLeft="431.214285714286,16.0714285714286" />
+          TopLeft="448.714285714286,16.0714285714286" />
         <NodeLayout
           Size="153,42"
           Id="Package\Sequence FactSales\Data Flow Task\Lookup UnitKey"
-          TopLeft="600.464285714286,117.857142857143" />
+          TopLeft="610.464285714286,145.357142857143" />
         <NodeLayout
           Size="150,42"
           Id="Package\Sequence FactSales\Data Flow Task\OLE DB Source"
-          TopLeft="1927.28571428571,22.4642857142857" />
+          TopLeft="1944.78571428571,22.4642857142857" />
         <NodeLayout
           Size="160,42"
           Id="Package\Sequence FactSales\Data Flow Task\Lookup FactSales"
-          TopLeft="139.75,191.642857142857" />
+          TopLeft="101,237.892857142857" />
         <NodeLayout
           Size="178,42"
           Id="Package\Sequence FactSales\Data Flow Task\Lookup CustomerKey"
-          TopLeft="1258.75,14.3928571428571" />
+          TopLeft="1276.25,14.3928571428571" />
         <NodeLayout
           Size="172,42"
           Id="Package\Sequence FactSales\Data Flow Task\Lookup BrancheKey"
-          TopLeft="1622.46428571429,16.3571428571428" />
+          TopLeft="1639.96428571429,16.3571428571428" />
         <NodeLayout
           Size="171,42"
           Id="Package\Sequence FactSales\Data Flow Task\OLE DB Destination"
-          TopLeft="43.25,295.25" />
+          TopLeft="309.5,372.75" />
         <NodeLayout
           Size="183,42"
           Id="Package\Sequence FactSales\Data Flow Task\Lookup DimensionKey"
-          TopLeft="744.821428571429,11.8571428571428" />
+          TopLeft="757.321428571429,19.3571428571428" />
         <NodeLayout
           Size="185,42"
           Id="Package\Sequence FactSales\Data Flow Task\Lookup GeographyKey"
-          TopLeft="37.75,28" />
+          TopLeft="55.25,28" />
         <NodeLayout
           Size="149,42"
           Id="Package\Sequence FactSales\Data Flow Task\Lookup CarKey"
-          TopLeft="289.107142857143,110.607142857143" />
+          TopLeft="304.107142857143,139.357142857143" />
         <NodeLayout
           Size="156,42"
           Id="Package\Sequence FactSales\Data Flow Task\Data Conversion"
-          TopLeft="987.21428571429,11.5714285714286" />
+          TopLeft="1022.21428571429,21.5714285714286" />
         <NodeLayout
           Size="183,42"
           Id="Package\Sequence FactSales\Data Flow Task\Lookup DimPromotion"
-          TopLeft="934.785714285714,119.571428571429" />
+          TopLeft="924.785714285714,143.321428571429" />
         <NodeLayout
           Size="169,42"
           Id="Package\Sequence FactSales\Data Flow Task\Lookup ProductKey"
-          TopLeft="1434,125.178571428571" />
+          TopLeft="1434,142.678571428571" />
         <EdgeLayout
           Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup No Match Output]"
-          TopLeft="219.75,233.642857142857">
+          TopLeft="181,279.892857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-91,61.607142857143"
+              EndConnector="214,92.857142857143"
               Start="0,0"
-              End="-91,54.107142857143">
+              End="214,85.357142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.8035714285715" />
+                    End="0,42.4285714285715" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.8035714285715"
-                    Point2="0,30.8035714285715"
-                    Point3="-4,30.8035714285715" />
+                    Point1="0,42.4285714285715"
+                    Point2="0,46.4285714285715"
+                    Point3="4,46.4285714285715" />
                   <mssgle:LineSegment
-                    End="-87,30.8035714285715" />
+                    End="210,46.4285714285715" />
                   <mssgle:CubicBezierSegment
-                    Point1="-87,30.8035714285715"
-                    Point2="-91,30.8035714285715"
-                    Point3="-91,34.8035714285715" />
+                    Point1="210,46.4285714285715"
+                    Point2="214,46.4285714285715"
+                    Point3="214,50.4285714285715" />
                   <mssgle:LineSegment
-                    End="-91,54.107142857143" />
+                    End="214,85.357142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-101.30638671875,35.8035714285715,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output6]"
-          TopLeft="1258.75,33.9821428571428">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-115.53571428571,0"
-              Start="0,0"
-              End="-108.03571428571,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-108.03571428571,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-102.209243861605,5,96.3827734375,11.609375"
+              BoundingBox="51.19361328125,51.4285714285715,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output5]"
-          TopLeft="997.119047619047,119.571428571429">
+          TopLeft="1276.25,38.9821428571428">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-131.630952380952,-65.7142857142862"
+              EndConnector="-98.0357142857099,0"
               Start="0,0"
-              End="-131.630952380952,-58.2142857142862">
+              End="-90.5357142857099,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-28.8571428571431" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-28.8571428571431"
-                    Point2="0,-32.8571428571431"
-                    Point3="-4,-32.8571428571431" />
-                  <mssgle:LineSegment
-                    End="-127.630952380952,-32.8571428571431" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-127.630952380952,-32.8571428571431"
-                    Point2="-131.630952380952,-32.8571428571431"
-                    Point3="-131.630952380952,-36.8571428571431" />
-                  <mssgle:LineSegment
-                    End="-131.630952380952,-58.2142857142862" />
+                    End="-90.5357142857099,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-114.006862909226,-27.8571428571431,96.3827734375,11.609375"
+              BoundingBox="-93.459243861605,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output4]"
-          TopLeft="652.797619047619,117.857142857143">
+          TopLeft="987.119047619047,143.321428571429">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-103.583333333333,-59.7857142857144"
+              EndConnector="-109.130952380952,-81.9642857142862"
               Start="0,0"
-              End="-103.583333333333,-52.2857142857144">
+              End="-109.130952380952,-74.4642857142862">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-25.9482715156578" />
+                    End="0,-36.9821428571431" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-25.9482715156578"
-                    Point2="0,-29.9482715156578"
-                    Point3="-4,-29.9482715156578" />
+                    Point1="0,-36.9821428571431"
+                    Point2="0,-40.9821428571431"
+                    Point3="-4,-40.9821428571431" />
                   <mssgle:LineSegment
-                    End="-99.5833333333334,-29.9482715156578" />
+                    End="-105.130952380952,-40.9821428571431" />
                   <mssgle:CubicBezierSegment
-                    Point1="-99.5833333333334,-29.9482715156578"
-                    Point2="-103.583333333333,-29.9482715156578"
-                    Point3="-103.583333333333,-33.9482715156578" />
+                    Point1="-105.130952380952,-40.9821428571431"
+                    Point2="-109.130952380952,-40.9821428571431"
+                    Point3="-109.130952380952,-44.9821428571431" />
                   <mssgle:LineSegment
-                    End="-103.583333333333,-52.2857142857144" />
+                    End="-109.130952380952,-74.4642857142862" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-99.9830533854167,-24.9482715156578,96.3827734375,11.609375"
+              BoundingBox="-102.756862909226,-35.9821428571431,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output3]"
-          TopLeft="807.154761904762,53.8571428571428">
+          TopLeft="662.797619047619,145.357142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-106.02380952381,64.0000000000002"
+              EndConnector="-96.0833333333334,-87.2857142857144"
               Start="0,0"
-              End="-106.02380952381,56.5000000000002">
+              End="-96.0833333333334,-79.7857142857144">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.9330333786754" />
+                    End="0,-39.7237608030272" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27.9330333786754"
-                    Point2="0,31.9330333786754"
-                    Point3="-4,31.9330333786754" />
+                    Point1="0,-39.7237608030272"
+                    Point2="0,-43.7237608030272"
+                    Point3="-4,-43.7237608030272" />
                   <mssgle:LineSegment
-                    End="-102.02380952381,31.9330333786754" />
+                    End="-92.0833333333334,-43.7237608030272" />
                   <mssgle:CubicBezierSegment
-                    Point1="-102.02380952381,31.9330333786754"
-                    Point2="-106.02380952381,31.9330333786754"
-                    Point3="-106.02380952381,35.9330333786754" />
+                    Point1="-92.0833333333334,-43.7237608030272"
+                    Point2="-96.0833333333334,-43.7237608030272"
+                    Point3="-96.0833333333334,-47.7237608030272" />
                   <mssgle:LineSegment
-                    End="-106.02380952381,56.5000000000002" />
+                    End="-96.0833333333334,-79.7857142857144" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-101.203291480655,36.9330333786754,96.3827734375,11.609375"
+              BoundingBox="-96.2330533854167,-38.7237608030272,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output2]"
-          TopLeft="1491.66666666667,125.178571428571">
+          TopLeft="819.654761904762,61.3571428571428">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-143.916666666667,-68.7857142857139"
+              EndConnector="-108.52380952381,84.0000000000002"
               Start="0,0"
-              End="-143.916666666667,-61.2857142857139">
+              End="-108.52380952381,76.5000000000002">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-23.9013565566905" />
+                    End="0,37.9121063095114" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-23.9013565566905"
-                    Point2="0,-27.9013565566905"
-                    Point3="-4,-27.9013565566905" />
+                    Point1="0,37.9121063095114"
+                    Point2="0,41.9121063095114"
+                    Point3="-4,41.9121063095114" />
                   <mssgle:LineSegment
-                    End="-139.916666666667,-27.9013565566905" />
+                    End="-104.52380952381,41.9121063095114" />
                   <mssgle:CubicBezierSegment
-                    Point1="-139.916666666667,-27.9013565566905"
-                    Point2="-143.916666666667,-27.9013565566905"
-                    Point3="-143.916666666667,-31.9013565566905" />
+                    Point1="-104.52380952381,41.9121063095114"
+                    Point2="-108.52380952381,41.9121063095114"
+                    Point3="-108.52380952381,45.9121063095114" />
                   <mssgle:LineSegment
-                    End="-143.916666666667,-61.2857142857139" />
+                    End="-108.52380952381,76.5000000000002" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-120.149720052083,-22.9013565566905,96.3827734375,11.609375"
+              BoundingBox="-102.453291480655,46.9121063095114,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output1]"
-          TopLeft="1681.13095238096,58.3571428571428">
+          TopLeft="1698.63095238096,58.3571428571428">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-135.797619047624,66.8214285714282"
+              EndConnector="-153.297619047624,84.3214285714282"
               Start="0,0"
-              End="-135.797619047624,59.3214285714282">
+              End="-153.297619047624,76.8214285714282">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.403975990396" />
+                    End="0,38.1522112845136" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.403975990396"
-                    Point2="0,33.403975990396"
-                    Point3="-4,33.403975990396" />
+                    Point1="0,38.1522112845136"
+                    Point2="0,42.1522112845136"
+                    Point3="-4,42.1522112845136" />
                   <mssgle:LineSegment
-                    End="-131.797619047624,33.403975990396" />
+                    End="-149.297619047624,42.1522112845136" />
                   <mssgle:CubicBezierSegment
-                    Point1="-131.797619047624,33.403975990396"
-                    Point2="-135.797619047624,33.403975990396"
-                    Point3="-135.797619047624,37.403975990396" />
+                    Point1="-149.297619047624,42.1522112845136"
+                    Point2="-153.297619047624,42.1522112845136"
+                    Point3="-153.297619047624,46.1522112845136" />
                   <mssgle:LineSegment
-                    End="-135.797619047624,59.3214285714282" />
+                    End="-153.297619047624,76.8214285714282" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-116.090196242562,38.403975990396,96.3827734375,11.609375"
+              BoundingBox="-124.840196242562,47.1522112845136,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output]"
-          TopLeft="1815.39285714286,142.142857142857">
+          TopLeft="1753.38690476191,145.892857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-79.5952380952367,-83.7857142857142"
+              EndConnector="0,-87.5357142857142"
               Start="0,0"
-              End="-79.5952380952367,-76.2857142857142">
+              End="0,-80.0357142857142">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-45.8080974325213" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-45.8080974325213"
-                    Point2="0,-49.8080974325213"
-                    Point3="-4,-49.8080974325213" />
-                  <mssgle:LineSegment
-                    End="-75.5952380952367,-49.8080974325213" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-75.5952380952367,-49.8080974325213"
-                    Point2="-79.5952380952367,-49.8080974325213"
-                    Point3="-79.5952380952367,-53.8080974325213" />
-                  <mssgle:LineSegment
-                    End="-79.5952380952367,-76.2857142857142" />
+                    End="0,-80.0357142857142" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-87.9890057663684,-44.8080974325213,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,-45.8225446428571,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence FactSales\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="1065.21428571429,53.5714285714286">
+          TopLeft="1100.21428571429,63.5714285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-9.76190476190936,66.0000000000004"
+              EndConnector="-54.7619047619094,79.7500000000004"
               Start="0,0"
-              End="-9.76190476190936,58.5000000000004">
+              End="-54.7619047619094,72.2500000000004">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.2567713976167" />
+                    End="0,43.4352654387868" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,35.2567713976167"
-                    Point2="0,39.2567713976167"
-                    Point3="-4,39.2567713976167" />
+                    Point1="0,43.4352654387868"
+                    Point2="0,47.4352654387868"
+                    Point3="-4,47.4352654387868" />
                   <mssgle:LineSegment
-                    End="-5.76190476190936,39.2567713976167" />
+                    End="-50.7619047619094,47.4352654387868" />
                   <mssgle:CubicBezierSegment
-                    Point1="-5.76190476190936,39.2567713976167"
-                    Point2="-9.76190476190936,39.2567713976167"
-                    Point3="-9.76190476190936,43.2567713976167" />
+                    Point1="-50.7619047619094,47.4352654387868"
+                    Point2="-54.7619047619094,47.4352654387868"
+                    Point3="-54.7619047619094,51.4352654387868" />
                   <mssgle:LineSegment
-                    End="-9.76190476190936,58.5000000000004" />
+                    End="-54.7619047619094,72.2500000000004" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4174,143 +4646,143 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output7]"
-          TopLeft="492.214285714286,58.0714285714286">
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output6]"
+          TopLeft="509.714285714286,58.0714285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-105.107142857143,52.5357142857144"
+              EndConnector="-107.607142857143,81.2857142857144"
               Start="0,0"
-              End="-105.107142857143,45.0357142857144">
+              End="-107.607142857143,73.7857142857144">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.2101826294247" />
+                    End="0,36.5536204381852" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.2101826294247"
-                    Point2="0,26.2101826294247"
-                    Point3="-4,26.2101826294247" />
+                    Point1="0,36.5536204381852"
+                    Point2="0,40.5536204381852"
+                    Point3="-4,40.5536204381852" />
                   <mssgle:LineSegment
-                    End="-101.107142857143,26.2101826294247" />
+                    End="-103.607142857143,40.5536204381852" />
                   <mssgle:CubicBezierSegment
-                    Point1="-101.107142857143,26.2101826294247"
-                    Point2="-105.107142857143,26.2101826294247"
-                    Point3="-105.107142857143,30.2101826294247" />
+                    Point1="-103.607142857143,40.5536204381852"
+                    Point2="-107.607142857143,40.5536204381852"
+                    Point3="-107.607142857143,44.5536204381852" />
                   <mssgle:LineSegment
-                    End="-105.107142857143,45.0357142857144" />
+                    End="-107.607142857143,73.7857142857144" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-100.744958147322,31.2101826294247,96.3827734375,11.609375"
+              BoundingBox="-101.994958147322,45.5536204381852,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output7]"
+          TopLeft="118.25,70">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62.75,167.892857142857"
+              Start="0,0"
+              End="62.75,160.392857142857">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.0209003215433" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,64.0209003215433"
+                    Point2="0,68.0209003215433"
+                    Point3="4,68.0209003215433" />
+                  <mssgle:LineSegment
+                    End="58.75,68.0209003215433" />
+                  <mssgle:CubicBezierSegment
+                    Point1="58.75,68.0209003215433"
+                    Point2="62.75,68.0209003215433"
+                    Point3="62.75,72.0209003215433" />
+                  <mssgle:LineSegment
+                    End="62.75,160.392857142857" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-16.81638671875,73.0209003215433,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output8]"
-          TopLeft="100.75,70">
+          TopLeft="355.107142857143,139.357142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="119,121.642857142857"
+              EndConnector="-177.857142857143,-69.357142857143"
               Start="0,0"
-              End="119,114.142857142857">
+              End="-177.857142857143,-61.857142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.2829581993568" />
+                    End="0,-30.7670089712647" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,45.2829581993568"
-                    Point2="0,49.2829581993568"
-                    Point3="4,49.2829581993568" />
+                    Point1="0,-30.7670089712647"
+                    Point2="0,-34.7670089712647"
+                    Point3="-4,-34.7670089712647" />
                   <mssgle:LineSegment
-                    End="115,49.2829581993568" />
+                    End="-173.857142857143,-34.7670089712647" />
                   <mssgle:CubicBezierSegment
-                    Point1="115,49.2829581993568"
-                    Point2="119,49.2829581993568"
-                    Point3="119,53.2829581993568" />
+                    Point1="-173.857142857143,-34.7670089712647"
+                    Point2="-177.857142857143,-34.7670089712647"
+                    Point3="-177.857142857143,-38.7670089712647" />
                   <mssgle:LineSegment
-                    End="119,114.142857142857" />
+                    End="-177.857142857143,-61.857142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="11.30861328125,54.2829581993568,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output9]"
-          TopLeft="340.107142857143,110.607142857143">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-180.357142857143,-40.607142857143"
-              Start="0,0"
-              End="-180.357142857143,-33.107142857143">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-16.3553497427024" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-16.3553497427024"
-                    Point2="0,-20.3553497427024"
-                    Point3="-4,-20.3553497427024" />
-                  <mssgle:LineSegment
-                    End="-176.357142857143,-20.3553497427024" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-176.357142857143,-20.3553497427024"
-                    Point2="-180.357142857143,-20.3553497427024"
-                    Point3="-180.357142857143,-24.3553497427024" />
-                  <mssgle:LineSegment
-                    End="-180.357142857143,-33.107142857143" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-138.369958147322,-15.3553497427024,96.3827734375,11.609375"
+              BoundingBox="-137.119958147322,-29.7670089712647,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="154,42"
           Id="Package\Sequence FactSales\Data Flow Task\Derived Column"
-          TopLeft="1938.75,140" />
+          TopLeft="1891.25,130" />
         <EdgeLayout
           Id="Package\Sequence FactSales\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="2002.28571428571,64.4642857142857">
+          TopLeft="2019.78571428571,64.4642857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="13.4642857142901,75.5357142857143"
+              EndConnector="-27.2023809523766,65.5357142857143"
               Start="0,0"
-              End="13.4642857142901,68.0357142857143">
+              End="-27.2023809523766,58.0357142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.7678571428572" />
+                    End="0,34.9170951156812" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,33.7678571428572"
-                    Point2="0,37.7678571428572"
-                    Point3="4,37.7678571428572" />
+                    Point1="0,34.9170951156812"
+                    Point2="0,38.9170951156812"
+                    Point3="-4,38.9170951156812" />
                   <mssgle:LineSegment
-                    End="9.4642857142901,37.7678571428572" />
+                    End="-23.2023809523766,38.9170951156812" />
                   <mssgle:CubicBezierSegment
-                    Point1="9.4642857142901,37.7678571428572"
-                    Point2="13.4642857142901,37.7678571428572"
-                    Point3="13.4642857142901,41.7678571428572" />
+                    Point1="-23.2023809523766,38.9170951156812"
+                    Point2="-27.2023809523766,38.9170951156812"
+                    Point3="-27.2023809523766,42.9170951156812" />
                   <mssgle:LineSegment
-                    End="13.4642857142901,68.0357142857143" />
+                    End="-27.2023809523766,58.0357142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4321,24 +4793,72 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence FactSales\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="1938.75,162.071428571428">
+          TopLeft="1943.91666666667,130">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-34.8571428571399,0"
+              EndConnector="-134.10714285714,15.892857142857"
               Start="0,0"
-              End="-27.3571428571399,0">
+              End="-134.10714285714,8.392857142857">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-27.3571428571399,0" />
+                    End="0,-18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-18.5"
+                    Point2="0,-22.5"
+                    Point3="-4,-22.5" />
+                  <mssgle:LineSegment
+                    End="-130.10714285714,-22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-130.10714285714,-22.5"
+                    Point2="-134.10714285714,-22.5"
+                    Point3="-134.10714285714,-18.5" />
+                  <mssgle:LineSegment
+                    End="-134.10714285714,8.392857142857" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output9]"
+          TopLeft="1491.66666666667,142.678571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-126.416666666667,-86.2857142857139"
+              Start="0,0"
+              End="-126.416666666667,-78.7857142857139">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-30.9998325238652" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-30.9998325238652"
+                    Point2="0,-34.9998325238652"
+                    Point3="-4,-34.9998325238652" />
+                  <mssgle:LineSegment
+                    End="-122.416666666667,-34.9998325238652" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-122.416666666667,-34.9998325238652"
+                    Point2="-126.416666666667,-34.9998325238652"
+                    Point3="-126.416666666667,-38.9998325238652" />
+                  <mssgle:LineSegment
+                    End="-126.416666666667,-78.7857142857139" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-111.399720052083,-29.9998325238652,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4427,7 +4947,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4437,7 +4957,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4601,7 +5121,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4611,7 +5131,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
