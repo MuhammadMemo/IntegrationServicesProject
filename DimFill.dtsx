@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="706"
-  DTS:VersionGUID="{76FAA7FF-0C67-4670-B185-F5259E9BB29B}">
+  DTS:VersionBuild="707"
+  DTS:VersionGUID="{BF08E24B-F990-4987-942E-2A590347759C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACZWB054W4Q8N4/qeNt1/tJAAAAAASAAACgAAAAEAAAAOGQxOMtQ9qrgns/T39fX84QAAAAq4alcilNWBNcPm4QkYuA+hQAAACVNC9e6tWp63gE7rPNFbgc8GAJmQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABdYyNbyQ8U33Pzu5IHiVdWAAAAAASAAACgAAAAEAAAABKiEv696m2v8sDCLGwt1qwQAAAA7v0Mz3znBGCMf2kf2WCmMhQAAABx0dtMtTe0bHLLMNFsEpzzPQSrkg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -44,11 +44,23 @@
           <DTS:Password
             DTS:Name="PASSWORD"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACIxixLphuWEqX/vNBbjMqhAAAAAASAAACgAAAAEAAAAHtoiru6jEh58dRZQYYB5sEQAAAAUEgRL5fhtscN+Fb8Pta1UxQAAAA3J85hzIZtJyFtg2DiEZrH5YOXfA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC5yA50x7dF5Z6eA8c1btEAAAAAAASAAACgAAAAEAAAAAz8Z99JyhffZ/Za6P/nmDgQAAAAPRvhg7aVLYxb8hcUICsaUxQAAACxejtK9krYNt/EGBoT7y6/0+jzzw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="hyperv-srv.DataWarehouse.sa"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{045EEF1B-78DE-4B25-B2AA-5280AB916F48}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -173,6 +185,107 @@ WHERE MODIFIEDDATE &gt; '  + @[User::LastModifaydate] +   ' </DTS:VariableValue>
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">5,7,OnError,13,OnInformation,14,OnPostValidate,10,OnProgress,9,OnWarning</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnInformation"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnProgress"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnWarning"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{045EEF1B-78DE-4B25-B2AA-5280AB916F48}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Container DimAccount"
@@ -183,6 +296,14 @@ WHERE MODIFIEDDATE &gt; '  + @[User::LastModifaydate] +   ' </DTS:VariableValue>
       DTS:LocaleID="-1"
       DTS:ObjectName="Container DimAccount">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="1">
+        <DTS:SelectedLogProviders>
+          <DTS:SelectedLogProvider
+            DTS:InstanceID="{045EEF1B-78DE-4B25-B2AA-5280AB916F48}" />
+        </DTS:SelectedLogProviders>
+      </DTS:LoggingOptions>
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Container DimAccount\Data Flow Task-Insert,Update"
@@ -195,6 +316,8 @@ WHERE MODIFIEDDATE &gt; '  + @[User::LastModifaydate] +   ' </DTS:VariableValue>
           DTS:ObjectName="Data Flow Task-Insert,Update"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -1156,7 +1279,8 @@ where [refTable].[CompanyName] = ?</property>
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
-            DTS:FilterKind="0" />
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <ExpressionTask
               Expression="@[User::StartPakage]= GETDATE()" />
@@ -1174,7 +1298,8 @@ where [refTable].[CompanyName] = ?</property>
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
-            DTS:FilterKind="0" />
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
@@ -1236,7 +1361,8 @@ where [refTable].[CompanyName] = ?</property>
           DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
-            DTS:FilterKind="0" />
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
@@ -1298,7 +1424,8 @@ where [refTable].[CompanyName] = ?</property>
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
-            DTS:FilterKind="0" />
+            DTS:FilterKind="0"
+            DTS:LoggingMode="1" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
@@ -1356,6 +1483,8 @@ where [refTable].[CompanyName] = ?</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Container DimBranches">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Container DimBranches\Data Flow Task-Insert,Update"
@@ -1368,6 +1497,8 @@ where [refTable].[CompanyName] = ?</property>
           DTS:ObjectName="Data Flow Task-Insert,Update"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -2489,6 +2620,8 @@ where [BrancheAlternativeKey] =? and  [CompanyKey] = ?</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Container DimCampany">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Container DimCampany\Data Flow Task-Insert,Update"
@@ -2501,6 +2634,8 @@ where [BrancheAlternativeKey] =? and  [CompanyKey] = ?</property>
           DTS:ObjectName="Data Flow Task-Insert,Update"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -3430,6 +3565,8 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Container DimCar">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Container DimCar\Data Flow Task-Insert,Update"
@@ -3441,6 +3578,8 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
           DTS:ObjectName="Data Flow Task-Insert,Update"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -4470,6 +4609,8 @@ where [refTable].[CarAlternativeKey] = ? and [refTable].[CompanyKey] = ?</proper
           DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <ExpressionTask
               Expression="@[User::StartPakage]=getDate()" />
@@ -4669,6 +4810,8 @@ where [refTable].[CarAlternativeKey] = ? and [refTable].[CompanyKey] = ?</proper
       DTS:LocaleID="-1"
       DTS:ObjectName="Container DimCustomer">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Container DimCustomer\Data Flow Task-Insert,Update"
@@ -4681,6 +4824,8 @@ where [refTable].[CarAlternativeKey] = ? and [refTable].[CompanyKey] = ?</proper
           DTS:ObjectName="Data Flow Task-Insert,Update"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -6014,6 +6159,8 @@ where [CustomerAlternativeKey] =? and  [CompanyKey] = ?</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Container DimDimension">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Container DimDimension\Data Flow Task-Insert,Update"
@@ -6025,6 +6172,8 @@ where [CustomerAlternativeKey] =? and  [CompanyKey] = ?</property>
           DTS:ObjectName="Data Flow Task-Insert,Update"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -7167,6 +7316,8 @@ where [refTable].[DimensionAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
           DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <ExpressionTask
               Expression="@[User::StartPakage]=getdate()" />
@@ -7366,6 +7517,8 @@ where [refTable].[DimensionAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
       DTS:LocaleID="-1"
       DTS:ObjectName="Container DimGeography">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Container DimGeography\Data Flow Task-Insert,Update"
@@ -7377,6 +7530,8 @@ where [refTable].[DimensionAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
           DTS:ObjectName="Data Flow Task-Insert,Update"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -8351,6 +8506,8 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
           DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <ExpressionTask
               Expression="@[User::StartPakage]=Getdate()" />
@@ -8550,6 +8707,8 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Container DimProduct SCD">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update"
@@ -8561,6 +8720,8 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
           DTS:ObjectName="Data Flow Task-Insert,Update"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -10850,6 +11011,8 @@ where [refTable].[CompanyName] = ?</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Container DimVendor">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Container DimVendor\Data Flow Task-Insert,Update"
@@ -10861,6 +11024,8 @@ where [refTable].[CompanyName] = ?</property>
           DTS:ObjectName="Data Flow Task-Insert,Update"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -11835,6 +12000,8 @@ where [refTable].[VendorAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pro
           DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <ExpressionTask
               Expression="@[User::StartPakage]=getdate()" />
@@ -12036,6 +12203,8 @@ where [refTable].[VendorAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pro
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
@@ -12057,6 +12226,8 @@ where [refTable].[VendorAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pro
       DTS:LocaleID="-1"
       DTS:ObjectName="Sequence DimEmpDeductionAllowance">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Sequence DimEmpDeductionAllowance\Data Flow Task-Insert,Update"
@@ -12068,6 +12239,8 @@ where [refTable].[VendorAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pro
           DTS:ObjectName="Data Flow Task-Insert,Update"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -12990,6 +13163,8 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <ExpressionTask
               Expression="@[User::StartPakage]=getdate()" />
@@ -13190,6 +13365,8 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       DTS:LocaleID="-1"
       DTS:ObjectName="Sequence DimEmpHoliday">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Sequence DimEmpHoliday\Data Flow Task-Insert,Update"
@@ -13201,6 +13378,8 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:ObjectName="Data Flow Task-Insert,Update"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -14464,6 +14643,8 @@ where [refTable].[CompanyKey] = ? and [refTable].[HolidayAlternativeKey] = ?</pr
           DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <ExpressionTask
               Expression="@[User::StartPakage]=getdate()" />
@@ -14665,6 +14846,8 @@ where [refTable].[CompanyKey] = ? and [refTable].[HolidayAlternativeKey] = ?</pr
       DTS:MaxErrorCount="5"
       DTS:ObjectName="Sequence DimEmployee">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update"
@@ -14676,6 +14859,8 @@ where [refTable].[CompanyKey] = ? and [refTable].[HolidayAlternativeKey] = ?</pr
           DTS:ObjectName="Data Flow Task-Insert,Update"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -19662,6 +19847,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <ExpressionTask
               Expression="@[User::StartPakage]=getdate()" />
@@ -19862,6 +20049,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       DTS:LocaleID="-1"
       DTS:ObjectName="Sequence DimEmpVacation">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Sequence DimEmpVacation\Data Flow Task-Insert,Update"
@@ -19873,6 +20062,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           DTS:ObjectName="Data Flow Task-Insert,Update"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -20772,6 +20963,8 @@ UPDATE [dbo].[DimEmpVacation]
           DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <ExpressionTask
               Expression="@[User::StartPakage]=getdate()" />
@@ -20971,6 +21164,8 @@ UPDATE [dbo].[DimEmpVacation]
       DTS:LocaleID="-1"
       DTS:ObjectName="Sequence DimPromotion">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Sequence DimPromotion\Data Flow Task-Insert,Update"
@@ -20982,6 +21177,8 @@ UPDATE [dbo].[DimEmpVacation]
           DTS:ObjectName="Data Flow Task-Insert,Update"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -22390,6 +22587,8 @@ where [refTable].[CompanyName] = ?</property>
           DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <ExpressionTask
               Expression="@[User::StartPakage]=getdate()" />
@@ -22589,6 +22788,8 @@ where [refTable].[CompanyName] = ?</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Sequence DimUnit">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Sequence DimUnit\Data Flow Task-Insert,Update"
@@ -22600,6 +22801,8 @@ where [refTable].[CompanyName] = ?</property>
           DTS:ObjectName="Data Flow Task-Insert,Update"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -23475,6 +23678,8 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <ExpressionTask
               Expression="@[User::StartPakage]=getdate()" />
@@ -28449,9 +28654,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28473,9 +28676,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28509,9 +28710,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28533,9 +28732,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28557,9 +28754,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28593,9 +28788,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28629,9 +28822,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28797,9 +28988,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28821,9 +29010,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28845,9 +29032,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
