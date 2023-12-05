@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="667"
-  DTS:VersionGUID="{A4419BAB-C821-49D5-842A-FB6ED5D62F64}">
+  DTS:VersionBuild="701"
+  DTS:VersionGUID="{055571B2-2CDE-45E8-90DA-202F68284530}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADVC9ksAhDitZPmYwVk9n/iAAAAAASAAACgAAAAEAAAAE5BoSq2yPSu7eAl5SmvsW4QAAAANTKjeRoa25fZKJ+b46LA5BQAAABgPG7uuONT+0md2c99bYbo3k1Jug</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADN4Eby5dsUYoO0Y8IKf8wVAAAAAASAAACgAAAAEAAAAF/ZIoTTrDPHDT3lche8Q9YQAAAAXLVogGWWeEgve8kmFyWuuRQAAABWUJdECUO1ltyhhFmFv7U6PESopg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -44,7 +44,7 @@
           <DTS:Password
             DTS:Name="PASSWORD"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADDtEmAYGYr1+iRPmNM9V1GAAAAAASAAACgAAAAEAAAAISVemo+4E1/aPQ5PbGj1j0QAAAAWOK13/dv9DW/NdVich1pPRQAAAAAAJZ5ZCphLVV6o6SiXHZSsT1tmg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAR9GskxoYaAWo0U7yqH8zJAAAAAASAAACgAAAAEAAAAKTleA5lwAXRc0u8T39ITVgQAAAA53VCPmWBWGJ+SwJNUE707BQAAABRsOFuPy1rH/PBlLh6gJL/2dHpVQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -15060,6 +15060,55 @@ where [refTable].[CompanyKey] = ? and [refTable].[HolidayAlternativeKey] = ?</pr
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column 1"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column 1"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column 1.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column 1.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column 1.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column 1.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column 1.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Lookup"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -15144,7 +15193,8 @@ where [refTable].[CompanyKey] = ? and [refTable].[EmployeeAlternativeKey] = ?</p
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="Data Conversion.EMPLOYEE_CODE"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Data Conversion.EMPLOYEE_CODE]">
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[Data Conversion.EMPLOYEE_CODE]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -15160,7 +15210,7 @@ where [refTable].[CompanyKey] = ? and [refTable].[EmployeeAlternativeKey] = ?</p
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[Data Conversion.CampanyKey]"
                           cachedDataType="ui1"
                           cachedName="Data Conversion.CampanyKey"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Data Conversion.CampanyKey]">
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[Data Conversion.CampanyKey]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -15376,6 +15426,465 @@ where [refTable].[CompanyName] = ?</property>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge"
+                  componentClassID="Microsoft.Merge"
+                  contactInfo="Merge;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Combines rows from multiple sorted data flows into one sorted data flow. Unlike the Merge Join, all rows flow to the output. For example, combine two sorted lists of customers into a single sorted list. If sorting is not important, use the Union All transformation. "
+                  name="Merge"
+                  version="1">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1]"
+                      name="Merge Input 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1].Columns[LEAVE_FLAG]"
+                          cachedDataType="numeric"
+                          cachedName="LEAVE_FLAG"
+                          cachedPrecision="1"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[LEAVE_FLAG]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[LEAVE_FLAG]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1].Columns[DEPT_NAME]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="DEPT_NAME"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[DEPT_NAME]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[DEPT_NAME]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1].Columns[JOB_CODE]"
+                          cachedDataType="numeric"
+                          cachedName="JOB_CODE"
+                          cachedPrecision="3"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[JOB_CODE]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[JOB_CODE]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1].Columns[JOB_NAME]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="JOB_NAME"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[JOB_NAME]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[JOB_NAME]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1].Columns[SECTION_NAME]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="SECTION_NAME"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[SECTION_NAME]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[SECTION_NAME]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1].Columns[DIVISION_NAME]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="DIVISION_NAME"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[DIVISION_NAME]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[DIVISION_NAME]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1].Columns[CONTRACT_TYPE]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="CONTRACT_TYPE"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[CONTRACT_TYPE]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[CONTRACT_TYPE]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1].Columns[GENDER]"
+                          cachedDataType="wstr"
+                          cachedLength="15"
+                          cachedName="GENDER"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[GENDER]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[GENDER]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1].Columns[COMPANYKEY]"
+                          cachedDataType="wstr"
+                          cachedLength="38"
+                          cachedName="COMPANYKEY"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[COMPANYKEY]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[COMPANYKEY]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1].Columns[CONTRACT_DATE]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="CONTRACT_DATE"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[CONTRACT_DATE]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[CONTRACT_DATE]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1].Columns[CONTRACT_END_DATE]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="CONTRACT_END_DATE"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[CONTRACT_END_DATE]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[CONTRACT_END_DATE]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1].Columns[HIRE_DATE]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="HIRE_DATE"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[HIRE_DATE]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[HIRE_DATE]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1].Columns[BIRTH_DATE]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="BIRTH_DATE"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[BIRTH_DATE]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[BIRTH_DATE]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1].Columns[INS_DATE]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="INS_DATE"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[INS_DATE]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[INS_DATE]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1].Columns[MODIFIEDDATE]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="MODIFIEDDATE"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[MODIFIEDDATE]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[MODIFIEDDATE]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1].Columns[WorkeStatus]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="WorkeStatus"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[WorkeStatus]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[WorkeStatus]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1].Columns[Data Conversion.CampanyKey]"
+                          cachedDataType="ui1"
+                          cachedName="Data Conversion.CampanyKey"
+                          cachedSortKeyPosition="2"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Data Conversion.CampanyKey]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[Data Conversion.CampanyKey]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1].Columns[Data Conversion.EMPLOYEE_NAME]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="Data Conversion.EMPLOYEE_NAME"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Data Conversion.EMPLOYEE_NAME]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[Data Conversion.EMPLOYEE_NAME]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1].Columns[Data Conversion.EMPLOYEE_CODE]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Data Conversion.EMPLOYEE_CODE"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Data Conversion.EMPLOYEE_CODE]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[Data Conversion.EMPLOYEE_CODE]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 2]"
+                      name="Merge Input 2">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 2].Columns[Companykey]"
+                          cachedDataType="ui1"
+                          cachedName="Companykey"
+                          cachedSortKeyPosition="2"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 1.Outputs[Sort Output].Columns[Companykey]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[Data Conversion.CampanyKey]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 2].Columns[Copy of EmplID]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="Copy of EmplID"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 1.Outputs[Sort Output].Columns[Copy of EmplID]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[Data Conversion.EMPLOYEE_CODE]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 2].Columns[NAME]"
+                          cachedDataType="wstr"
+                          cachedLength="150"
+                          cachedName="NAME"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 1.Outputs[Sort Output].Columns[NAME]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[Data Conversion.EMPLOYEE_NAME]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1]"
+                      isSorted="true"
+                      name="Merge Output 1">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[LEAVE_FLAG]"
+                          dataType="numeric"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[LEAVE_FLAG]"
+                          name="LEAVE_FLAG"
+                          precision="1" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[DEPT_NAME]"
+                          dataType="wstr"
+                          length="40"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[DEPT_NAME]"
+                          name="DEPT_NAME" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[JOB_CODE]"
+                          dataType="numeric"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[JOB_CODE]"
+                          name="JOB_CODE"
+                          precision="3" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[JOB_NAME]"
+                          dataType="wstr"
+                          length="40"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[JOB_NAME]"
+                          name="JOB_NAME" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[SECTION_NAME]"
+                          dataType="wstr"
+                          length="40"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[SECTION_NAME]"
+                          name="SECTION_NAME" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[DIVISION_NAME]"
+                          dataType="wstr"
+                          length="40"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[DIVISION_NAME]"
+                          name="DIVISION_NAME" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[CONTRACT_TYPE]"
+                          dataType="wstr"
+                          length="40"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[CONTRACT_TYPE]"
+                          name="CONTRACT_TYPE" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[GENDER]"
+                          dataType="wstr"
+                          length="15"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[GENDER]"
+                          name="GENDER" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[COMPANYKEY]"
+                          dataType="wstr"
+                          length="38"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[COMPANYKEY]"
+                          name="COMPANYKEY" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[CONTRACT_DATE]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[CONTRACT_DATE]"
+                          name="CONTRACT_DATE" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[CONTRACT_END_DATE]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[CONTRACT_END_DATE]"
+                          name="CONTRACT_END_DATE" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[HIRE_DATE]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[HIRE_DATE]"
+                          name="HIRE_DATE" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[BIRTH_DATE]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[BIRTH_DATE]"
+                          name="BIRTH_DATE" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[INS_DATE]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[INS_DATE]"
+                          name="INS_DATE" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[MODIFIEDDATE]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[MODIFIEDDATE]"
+                          name="MODIFIEDDATE" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[WorkeStatus]"
+                          dataType="wstr"
+                          length="5"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[WorkeStatus]"
+                          name="WorkeStatus" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[Data Conversion.CampanyKey]"
+                          dataType="ui1"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[Data Conversion.CampanyKey]"
+                          name="Data Conversion.CampanyKey"
+                          sortKeyPosition="2" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[Data Conversion.EMPLOYEE_NAME]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[Data Conversion.EMPLOYEE_NAME]"
+                          name="Data Conversion.EMPLOYEE_NAME" />
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[Data Conversion.EMPLOYEE_CODE]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[Data Conversion.EMPLOYEE_CODE]"
+                          name="Data Conversion.EMPLOYEE_CODE"
+                          sortKeyPosition="1" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -15453,97 +15962,98 @@ where [refTable].[CompanyName] = ?</property>
                           cachedLength="15"
                           cachedName="GENDER"
                           externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[GENDER]" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[GENDER]" />
                         <inputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[WorkeStatus]"
                           cachedDataType="wstr"
                           cachedLength="5"
                           cachedName="WorkeStatus"
                           externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WorkeStatus]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[WorkeStatus]" />
-                        <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Data Conversion.CampanyKey]"
-                          cachedDataType="ui1"
-                          cachedName="Data Conversion.CampanyKey"
-                          externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Data Conversion.CampanyKey]" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[WorkeStatus]" />
                         <inputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Data Conversion.EMPLOYEE_CODE]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="Data Conversion.EMPLOYEE_CODE"
+                          cachedSortKeyPosition="1"
                           externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeAlternativeKey]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Data Conversion.EMPLOYEE_CODE]" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[Data Conversion.EMPLOYEE_CODE]" />
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Script Component.EMPLOYEE_NAME]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Data Conversion.EMPLOYEE_NAME]"
                           cachedDataType="wstr"
                           cachedLength="200"
-                          cachedName="Script Component.EMPLOYEE_NAME"
+                          cachedName="Data Conversion.EMPLOYEE_NAME"
                           externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeName]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Script Component.EMPLOYEE_NAME]" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[Data Conversion.EMPLOYEE_NAME]" />
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[JOB_CODE]"
-                          cachedDataType="numeric"
-                          cachedName="JOB_CODE"
-                          cachedPrecision="3"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[JOB_NAME]"
+                          cachedDataType="wstr"
+                          cachedLength="40"
+                          cachedName="JOB_NAME"
                           externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Job]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[JOB_CODE]" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[JOB_NAME]" />
                         <inputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DEPT_NAME]"
                           cachedDataType="wstr"
                           cachedLength="40"
                           cachedName="DEPT_NAME"
                           externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DepartmenName]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[DEPT_NAME]" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[DEPT_NAME]" />
                         <inputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DIVISION_NAME]"
                           cachedDataType="wstr"
                           cachedLength="40"
                           cachedName="DIVISION_NAME"
                           externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DivisionName]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[DIVISION_NAME]" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[DIVISION_NAME]" />
                         <inputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CONTRACT_TYPE]"
                           cachedDataType="wstr"
                           cachedLength="40"
                           cachedName="CONTRACT_TYPE"
                           externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContractType]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[CONTRACT_TYPE]" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[CONTRACT_TYPE]" />
                         <inputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CONTRACT_DATE]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="CONTRACT_DATE"
                           externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContractDate]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[CONTRACT_DATE]" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[CONTRACT_DATE]" />
                         <inputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CONTRACT_END_DATE]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="CONTRACT_END_DATE"
                           externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContractEndDate]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[CONTRACT_END_DATE]" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[CONTRACT_END_DATE]" />
                         <inputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BIRTH_DATE]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="BIRTH_DATE"
                           externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BirthDate]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE]" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[BIRTH_DATE]" />
                         <inputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HIRE_DATE]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="HIRE_DATE"
                           externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HireDate]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[HIRE_DATE]" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[HIRE_DATE]" />
                         <inputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[INS_DATE]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="INS_DATE"
                           externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InsuranceDate]"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[INS_DATE]" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[INS_DATE]" />
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Data Conversion.CampanyKey]"
+                          cachedDataType="ui1"
+                          cachedName="Data Conversion.CampanyKey"
+                          externalMetadataColumnId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[Data Conversion.CampanyKey]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -16935,7 +17445,7 @@ namespace SC_e07ab622588544eeaa8b69a1175eab04.Properties {
     <msb:CodeName>SC_e07ab622588544eeaa8b69a1175eab04</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>SC_e07ab622588544eeaa8b69a1175eab04</msb:DisplayName>
-    <msb:ProjectId>{99A7E656-21A3-458E-947D-E2F57A1201AF}</msb:ProjectId>
+    <msb:ProjectId>{15B75AAD-DE7E-4A06-BAC1-C81E00CA685A}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="SC_e07ab622588544eeaa8b69a1175eab04.csproj" />
@@ -17082,7 +17592,7 @@ namespace SC_e07ab622588544eeaa8b69a1175eab04.Properties {
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAMluYmUAAAAAAAAAAOAAIiALATAAABYAAAAIAAAAAAAAWjQA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDADUDb2UAAAAAAAAAAOAAIiALATAAABYAAAAIAAAAAAAAWjQA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAAg0AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -17167,8 +17677,8 @@ IABwAHIAbwBwAGUAcgB0AHkAIABjAGEAbgBuAG8AdAAgAGIAZQAgAHMAZQB0ACAAdABvACAARgBh
 AGwAcwBlAC4AIABBAHMAcwBpAGcAbgAgAGEAIAB2AGEAbAB1AGUAIAB0AG8AIAB0AGgAZQAgAGMA
 bwBsAHUAbQBuACAAaQBuAHMAdABlAGEAZAAuAAAPSQBuAHAAdQB0ACAAMAAAcVMAQwBfAGUAMAA3
 AGEAYgA2ADIAMgA1ADgAOAA1ADQANABlAGUAYQBhADgAYgA2ADkAYQAxADEANwA1AGUAYQBiADAA
-NAAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAbYe1ICiVt0KGsG2x
-dXLidwAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERWQgABA4ODg4RbQkgAwESPR0IEkEDBhI9AwYd
+NAAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAzM2091G6VEOqXgSn
+0QTGowAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERWQgABA4ODg4RbQkgAwESPR0IEkEDBhI9AwYd
 CAQgAQ4IBSACAQgcBCABAggDIAACBiACAg4ReQUgAR0ICAcAARJ9EYCBBSAAEoCFByACAQ4SgIUI
 t3pcVhk04IkIiYRdzYCAzJEDBhIUAwYSGAMGEkUDBhJRAwYSVQMGEiAFIAEBEgwEAAEODgMgAA4E
 IAEBAgkgBAEIDhI9EkEFIAEBEkUEAAASUQQAABJVBQABARJVBAAAEiADAAABAygADgMoAAIECAAS
@@ -17330,57 +17840,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input]"
                       name="Sort Input">
                       <inputColumns>
-                        <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input].Columns[EMP_SER]"
-                          cachedDataType="numeric"
-                          cachedName="EMP_SER"
-                          cachedPrecision="20"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[EMP_SER]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input].Columns[EMPLOYEE_CODE]"
-                          cachedDataType="numeric"
-                          cachedName="EMPLOYEE_CODE"
-                          cachedPrecision="10"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[EMPLOYEE_CODE]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input].Columns[EMPLOYEE_NAME]"
-                          cachedDataType="wstr"
-                          cachedLength="200"
-                          cachedName="EMPLOYEE_NAME"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[EMPLOYEE_NAME]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
                         <inputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input].Columns[LEAVE_FLAG]"
                           cachedDataType="numeric"
@@ -17655,22 +18114,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                         </inputColumn>
                         <inputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input].Columns[CampanyKey]"
-                          cachedDataType="i4"
-                          cachedName="CampanyKey"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column.Outputs[Derived Column Output].Columns[CampanyKey]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input].Columns[CampanyKey1]"
                           cachedDataType="ui1"
                           cachedName="CampanyKey"
                           lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[CampanyKey]">
@@ -17682,11 +18125,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                             <property
                               dataType="System.Int32"
                               description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
+                              name="NewSortKeyPosition">2</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input].Columns[EMPLOYEE_NAME1]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input].Columns[EMPLOYEE_NAME]"
                           cachedDataType="wstr"
                           cachedLength="200"
                           cachedName="EMPLOYEE_NAME"
@@ -17703,7 +18146,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input].Columns[EMPLOYEE_CODE1]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input].Columns[EMPLOYEE_CODE]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="EMPLOYEE_CODE"
@@ -17729,48 +18172,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       isSorted="true"
                       name="Sort Output">
                       <outputColumns>
-                        <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[EMP_SER]"
-                          dataType="numeric"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[EMP_SER]"
-                          name="EMP_SER"
-                          precision="20">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[EMP_SER]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[OLE DB Source.EMPLOYEE_CODE]"
-                          dataType="numeric"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[OLE DB Source.EMPLOYEE_CODE]"
-                          name="OLE DB Source.EMPLOYEE_CODE"
-                          precision="10">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[EMPLOYEE_CODE]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Script Component.EMPLOYEE_NAME]"
-                          dataType="wstr"
-                          length="200"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Script Component.EMPLOYEE_NAME]"
-                          name="Script Component.EMPLOYEE_NAME">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[EMPLOYEE_NAME]}</property>
-                          </properties>
-                        </outputColumn>
                         <outputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[LEAVE_FLAG]"
                           dataType="numeric"
@@ -17996,23 +18397,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Derived Column.CampanyKey]"
-                          dataType="i4"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Derived Column.CampanyKey]"
-                          name="Derived Column.CampanyKey">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column.Outputs[Derived Column Output].Columns[CampanyKey]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
                           refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Data Conversion.CampanyKey]"
                           dataType="ui1"
                           lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Data Conversion.CampanyKey]"
-                          name="Data Conversion.CampanyKey">
+                          name="Data Conversion.CampanyKey"
+                          sortKeyPosition="2">
                           <properties>
                             <property
                               containsID="true"
@@ -18079,11 +18468,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       name="Sort Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 1.Inputs[Sort Input].Columns[EMPLID]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 1.Inputs[Sort Input].Columns[NAME]"
                           cachedDataType="wstr"
-                          cachedLength="20"
-                          cachedName="EMPLID"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[EMPLID]">
+                          cachedLength="150"
+                          cachedName="NAME"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[NAME]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -18093,6 +18482,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                               dataType="System.Int32"
                               description="Specifies the sort order of the column."
                               name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 1.Inputs[Sort Input].Columns[Companykey]"
+                          cachedDataType="ui1"
+                          cachedName="Companykey"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Lookup Company.Outputs[Lookup Match Output].Columns[Companykey]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">2</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -18123,17 +18528,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       name="Sort Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 1.Outputs[Sort Output].Columns[EMPLID]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 1.Outputs[Sort Output].Columns[NAME]"
                           dataType="wstr"
-                          length="20"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 1.Outputs[Sort Output].Columns[EMPLID]"
-                          name="EMPLID">
+                          length="150"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 1.Outputs[Sort Output].Columns[NAME]"
+                          name="NAME">
                           <properties>
                             <property
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[EMPLID]}</property>
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[NAME]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 1.Outputs[Sort Output].Columns[Companykey]"
+                          dataType="ui1"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 1.Outputs[Sort Output].Columns[Companykey]"
+                          name="Companykey"
+                          sortKeyPosition="2">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Lookup Company.Outputs[Lookup Match Output].Columns[Companykey]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -18157,513 +18576,628 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All"
-                  componentClassID="Microsoft.UnionAll"
-                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                  description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
-                  name="Union All"
+                  refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort 2"
                   version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
                   <inputs>
                     <input
-                      refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1]"
-                      name="Union All Input 1">
+                      refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input]"
+                      name="Sort Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[EMP_SER]"
-                          cachedDataType="numeric"
-                          cachedName="EMP_SER"
-                          cachedPrecision="20"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[EMP_SER]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[EMP_SER]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[OLE DB Source.EMPLOYEE_CODE]"
-                          cachedDataType="numeric"
-                          cachedName="OLE DB Source.EMPLOYEE_CODE"
-                          cachedPrecision="10"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[OLE DB Source.EMPLOYEE_CODE]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[OLE DB Source.EMPLOYEE_CODE]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[Script Component.EMPLOYEE_NAME]"
-                          cachedDataType="wstr"
-                          cachedLength="200"
-                          cachedName="Script Component.EMPLOYEE_NAME"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Script Component.EMPLOYEE_NAME]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Script Component.EMPLOYEE_NAME]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[LEAVE_FLAG]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input].Columns[LEAVE_FLAG]"
                           cachedDataType="numeric"
                           cachedName="LEAVE_FLAG"
                           cachedPrecision="1"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[LEAVE_FLAG]">
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[LEAVE_FLAG]">
                           <properties>
                             <property
-                              containsID="true"
                               dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[LEAVE_FLAG]}</property>
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[DEPT_NAME]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input].Columns[DEPT_NAME]"
                           cachedDataType="wstr"
                           cachedLength="40"
                           cachedName="DEPT_NAME"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[DEPT_NAME]">
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[DEPT_NAME]">
                           <properties>
                             <property
-                              containsID="true"
                               dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[DEPT_NAME]}</property>
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[JOB_CODE]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input].Columns[JOB_CODE]"
                           cachedDataType="numeric"
                           cachedName="JOB_CODE"
                           cachedPrecision="3"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[JOB_CODE]">
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[JOB_CODE]">
                           <properties>
                             <property
-                              containsID="true"
                               dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[JOB_CODE]}</property>
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[JOB_NAME]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input].Columns[JOB_NAME]"
                           cachedDataType="wstr"
                           cachedLength="40"
                           cachedName="JOB_NAME"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[JOB_NAME]">
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[JOB_NAME]">
                           <properties>
                             <property
-                              containsID="true"
                               dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[JOB_NAME]}</property>
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[SECTION_NAME]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input].Columns[SECTION_NAME]"
                           cachedDataType="wstr"
                           cachedLength="40"
                           cachedName="SECTION_NAME"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[SECTION_NAME]">
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[SECTION_NAME]">
                           <properties>
                             <property
-                              containsID="true"
                               dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[SECTION_NAME]}</property>
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[DIVISION_NAME]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input].Columns[DIVISION_NAME]"
                           cachedDataType="wstr"
                           cachedLength="40"
                           cachedName="DIVISION_NAME"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[DIVISION_NAME]">
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[DIVISION_NAME]">
                           <properties>
                             <property
-                              containsID="true"
                               dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[DIVISION_NAME]}</property>
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[CONTRACT_TYPE]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input].Columns[CONTRACT_TYPE]"
                           cachedDataType="wstr"
                           cachedLength="40"
                           cachedName="CONTRACT_TYPE"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[CONTRACT_TYPE]">
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[CONTRACT_TYPE]">
                           <properties>
                             <property
-                              containsID="true"
                               dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[CONTRACT_TYPE]}</property>
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[GENDER]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input].Columns[GENDER]"
                           cachedDataType="wstr"
                           cachedLength="15"
                           cachedName="GENDER"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[GENDER]">
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[GENDER]">
                           <properties>
                             <property
-                              containsID="true"
                               dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[GENDER]}</property>
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[COMPANYKEY]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input].Columns[COMPANYKEY]"
                           cachedDataType="wstr"
                           cachedLength="38"
                           cachedName="COMPANYKEY"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[COMPANYKEY]">
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[COMPANYKEY]">
                           <properties>
                             <property
-                              containsID="true"
                               dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[COMPANYKEY]}</property>
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[CONTRACT_DATE]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input].Columns[CONTRACT_DATE]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="CONTRACT_DATE"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[CONTRACT_DATE]">
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[CONTRACT_DATE]">
                           <properties>
                             <property
-                              containsID="true"
                               dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[CONTRACT_DATE]}</property>
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[CONTRACT_END_DATE]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input].Columns[CONTRACT_END_DATE]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="CONTRACT_END_DATE"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[CONTRACT_END_DATE]">
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[CONTRACT_END_DATE]">
                           <properties>
                             <property
-                              containsID="true"
                               dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[CONTRACT_END_DATE]}</property>
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[HIRE_DATE]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input].Columns[HIRE_DATE]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="HIRE_DATE"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[HIRE_DATE]">
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[HIRE_DATE]">
                           <properties>
                             <property
-                              containsID="true"
                               dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[HIRE_DATE]}</property>
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[BIRTH_DATE]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input].Columns[BIRTH_DATE]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="BIRTH_DATE"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[BIRTH_DATE]">
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[BIRTH_DATE]">
                           <properties>
                             <property
-                              containsID="true"
                               dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE]}</property>
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[INS_DATE]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input].Columns[INS_DATE]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="INS_DATE"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[INS_DATE]">
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[INS_DATE]">
                           <properties>
                             <property
-                              containsID="true"
                               dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[INS_DATE]}</property>
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[MODIFIEDDATE]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input].Columns[MODIFIEDDATE]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="MODIFIEDDATE"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[MODIFIEDDATE]">
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[MODIFIEDDATE]">
                           <properties>
                             <property
-                              containsID="true"
                               dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[MODIFIEDDATE]}</property>
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[WorkeStatus]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input].Columns[WorkeStatus]"
                           cachedDataType="wstr"
                           cachedLength="5"
                           cachedName="WorkeStatus"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[WorkeStatus]">
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[WorkeStatus]">
                           <properties>
                             <property
-                              containsID="true"
                               dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[WorkeStatus]}</property>
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[Derived Column.CampanyKey]"
-                          cachedDataType="i4"
-                          cachedName="Derived Column.CampanyKey"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Derived Column.CampanyKey]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Derived Column.CampanyKey]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[Data Conversion.CampanyKey]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input].Columns[Data Conversion.CampanyKey]"
                           cachedDataType="ui1"
                           cachedName="Data Conversion.CampanyKey"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Data Conversion.CampanyKey]">
+                          cachedSortKeyPosition="2"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[Data Conversion.CampanyKey]">
                           <properties>
                             <property
-                              containsID="true"
                               dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Data Conversion.CampanyKey]}</property>
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[Data Conversion.EMPLOYEE_NAME]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input].Columns[Data Conversion.EMPLOYEE_NAME]"
                           cachedDataType="wstr"
                           cachedLength="200"
                           cachedName="Data Conversion.EMPLOYEE_NAME"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Data Conversion.EMPLOYEE_NAME]">
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[Data Conversion.EMPLOYEE_NAME]">
                           <properties>
                             <property
-                              containsID="true"
                               dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Data Conversion.EMPLOYEE_NAME]}</property>
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[Data Conversion.EMPLOYEE_CODE]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input].Columns[Data Conversion.EMPLOYEE_CODE]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="Data Conversion.EMPLOYEE_CODE"
                           cachedSortKeyPosition="1"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Data Conversion.EMPLOYEE_CODE]">
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[Data Conversion.EMPLOYEE_CODE]">
                           <properties>
                             <property
-                              containsID="true"
                               dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Data Conversion.EMPLOYEE_CODE]}</property>
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
                           </properties>
                         </inputColumn>
                       </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 2]"
-                      hasSideEffects="true"
-                      name="Union All Input 2">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 2].Columns[Copy of EmplID]"
-                          cachedDataType="wstr"
-                          cachedLength="50"
-                          cachedName="Copy of EmplID"
-                          cachedSortKeyPosition="1"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 1.Outputs[Sort Output].Columns[Copy of EmplID]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Data Conversion.EMPLOYEE_CODE]}</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 3]"
-                      dangling="true"
-                      hasSideEffects="true"
-                      name="Union All Input 3">
                       <externalMetadataColumns />
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1]"
-                      name="Union All Output 1">
+                      refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[EMP_SER]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[LEAVE_FLAG]"
                           dataType="numeric"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[EMP_SER]"
-                          name="EMP_SER"
-                          precision="20" />
-                        <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[OLE DB Source.EMPLOYEE_CODE]"
-                          dataType="numeric"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[OLE DB Source.EMPLOYEE_CODE]"
-                          name="OLE DB Source.EMPLOYEE_CODE"
-                          precision="10" />
-                        <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Script Component.EMPLOYEE_NAME]"
-                          dataType="wstr"
-                          length="200"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Script Component.EMPLOYEE_NAME]"
-                          name="Script Component.EMPLOYEE_NAME" />
-                        <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[LEAVE_FLAG]"
-                          dataType="numeric"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[LEAVE_FLAG]"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[LEAVE_FLAG]"
                           name="LEAVE_FLAG"
-                          precision="1" />
+                          precision="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[LEAVE_FLAG]}</property>
+                          </properties>
+                        </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[DEPT_NAME]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[DEPT_NAME]"
                           dataType="wstr"
                           length="40"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[DEPT_NAME]"
-                          name="DEPT_NAME" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[DEPT_NAME]"
+                          name="DEPT_NAME">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[DEPT_NAME]}</property>
+                          </properties>
+                        </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[JOB_CODE]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[JOB_CODE]"
                           dataType="numeric"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[JOB_CODE]"
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[JOB_CODE]"
                           name="JOB_CODE"
-                          precision="3" />
+                          precision="3">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[JOB_CODE]}</property>
+                          </properties>
+                        </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[JOB_NAME]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[JOB_NAME]"
                           dataType="wstr"
                           length="40"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[JOB_NAME]"
-                          name="JOB_NAME" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[JOB_NAME]"
+                          name="JOB_NAME">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[JOB_NAME]}</property>
+                          </properties>
+                        </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[SECTION_NAME]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[SECTION_NAME]"
                           dataType="wstr"
                           length="40"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[SECTION_NAME]"
-                          name="SECTION_NAME" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[SECTION_NAME]"
+                          name="SECTION_NAME">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[SECTION_NAME]}</property>
+                          </properties>
+                        </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[DIVISION_NAME]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[DIVISION_NAME]"
                           dataType="wstr"
                           length="40"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[DIVISION_NAME]"
-                          name="DIVISION_NAME" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[DIVISION_NAME]"
+                          name="DIVISION_NAME">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[DIVISION_NAME]}</property>
+                          </properties>
+                        </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[CONTRACT_TYPE]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[CONTRACT_TYPE]"
                           dataType="wstr"
                           length="40"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[CONTRACT_TYPE]"
-                          name="CONTRACT_TYPE" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[CONTRACT_TYPE]"
+                          name="CONTRACT_TYPE">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[CONTRACT_TYPE]}</property>
+                          </properties>
+                        </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[GENDER]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[GENDER]"
                           dataType="wstr"
                           length="15"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[GENDER]"
-                          name="GENDER" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[GENDER]"
+                          name="GENDER">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[GENDER]}</property>
+                          </properties>
+                        </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[COMPANYKEY]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[COMPANYKEY]"
                           dataType="wstr"
                           length="38"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[COMPANYKEY]"
-                          name="COMPANYKEY" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[COMPANYKEY]"
+                          name="COMPANYKEY">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[COMPANYKEY]}</property>
+                          </properties>
+                        </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[CONTRACT_DATE]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[CONTRACT_DATE]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[CONTRACT_DATE]"
-                          name="CONTRACT_DATE" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[CONTRACT_DATE]"
+                          name="CONTRACT_DATE">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[CONTRACT_DATE]}</property>
+                          </properties>
+                        </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[CONTRACT_END_DATE]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[CONTRACT_END_DATE]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[CONTRACT_END_DATE]"
-                          name="CONTRACT_END_DATE" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[CONTRACT_END_DATE]"
+                          name="CONTRACT_END_DATE">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[CONTRACT_END_DATE]}</property>
+                          </properties>
+                        </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[HIRE_DATE]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[HIRE_DATE]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[HIRE_DATE]"
-                          name="HIRE_DATE" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[HIRE_DATE]"
+                          name="HIRE_DATE">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[HIRE_DATE]}</property>
+                          </properties>
+                        </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[BIRTH_DATE]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[BIRTH_DATE]"
-                          name="BIRTH_DATE" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[BIRTH_DATE]"
+                          name="BIRTH_DATE">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[BIRTH_DATE]}</property>
+                          </properties>
+                        </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[INS_DATE]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[INS_DATE]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[INS_DATE]"
-                          name="INS_DATE" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[INS_DATE]"
+                          name="INS_DATE">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[INS_DATE]}</property>
+                          </properties>
+                        </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[MODIFIEDDATE]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[MODIFIEDDATE]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[MODIFIEDDATE]"
-                          name="MODIFIEDDATE" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[MODIFIEDDATE]"
+                          name="MODIFIEDDATE">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[MODIFIEDDATE]}</property>
+                          </properties>
+                        </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[WorkeStatus]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[WorkeStatus]"
                           dataType="wstr"
                           length="5"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[WorkeStatus]"
-                          name="WorkeStatus" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[WorkeStatus]"
+                          name="WorkeStatus">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[WorkeStatus]}</property>
+                          </properties>
+                        </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Derived Column.CampanyKey]"
-                          dataType="i4"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Derived Column.CampanyKey]"
-                          name="Derived Column.CampanyKey" />
-                        <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Data Conversion.CampanyKey]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[Data Conversion.CampanyKey]"
                           dataType="ui1"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Data Conversion.CampanyKey]"
-                          name="Data Conversion.CampanyKey" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[Data Conversion.CampanyKey]"
+                          name="Data Conversion.CampanyKey">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[Data Conversion.CampanyKey]}</property>
+                          </properties>
+                        </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Data Conversion.EMPLOYEE_NAME]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[Data Conversion.EMPLOYEE_NAME]"
                           dataType="wstr"
                           length="200"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Data Conversion.EMPLOYEE_NAME]"
-                          name="Data Conversion.EMPLOYEE_NAME" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[Data Conversion.EMPLOYEE_NAME]"
+                          name="Data Conversion.EMPLOYEE_NAME">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[Data Conversion.EMPLOYEE_NAME]}</property>
+                          </properties>
+                        </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Data Conversion.EMPLOYEE_CODE]"
+                          refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[Data Conversion.EMPLOYEE_CODE]"
                           dataType="wstr"
                           length="50"
-                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Data Conversion.EMPLOYEE_CODE]"
-                          name="Data Conversion.EMPLOYEE_CODE" />
+                          lineageId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output].Columns[Data Conversion.EMPLOYEE_CODE]"
+                          name="Data Conversion.EMPLOYEE_CODE"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1].Columns[Data Conversion.EMPLOYEE_CODE]}</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -18687,13 +19221,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   name="Derived Column Output"
                   startId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column.Outputs[Derived Column Output]" />
                 <path
+                  refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Derived Column Output1]"
+                  endId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Data Conversion 1.Inputs[Data Conversion Input]"
+                  name="Derived Column Output"
+                  startId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column 1.Outputs[Derived Column Output]" />
+                <path
                   refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
                   endId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
                   name="Lookup Match Output"
                   startId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
-                  endId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Data Conversion 1.Inputs[Data Conversion Input]"
+                  endId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column 1.Inputs[Derived Column Input]"
                   name="Lookup Match Output"
                   startId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Lookup Company.Outputs[Lookup Match Output]" />
                 <path
@@ -18701,6 +19240,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   endId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
                   name="Lookup No Match Output"
                   startId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Merge Output 1]"
+                  endId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Inputs[Sort Input]"
+                  name="Merge Output 1"
+                  startId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Outputs[Merge Output 1]" />
                 <path
                   refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
                   endId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column.Inputs[Derived Column Input]"
@@ -18723,19 +19267,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   startId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Row Count 1.Outputs[Row Count Output 1]" />
                 <path
                   refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Sort Output]"
-                  endId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1]"
+                  endId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
                   name="Sort Output"
-                  startId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output]" />
+                  startId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2.Outputs[Sort Output]" />
                 <path
                   refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Sort Output1]"
-                  endId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 2]"
+                  endId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 2]"
                   name="Sort Output"
                   startId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 1.Outputs[Sort Output]" />
                 <path
-                  refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Union All Output 1]"
-                  endId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
-                  name="Union All Output 1"
-                  startId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1]" />
+                  refId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Sort Output2]"
+                  endId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge.Inputs[Merge Input 1]"
+                  name="Sort Output"
+                  startId="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -29010,7 +29554,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <NodeLayout
           Size="223,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Script Component Clean Name"
-          TopLeft="1134.72727272727,170.545454545455" />
+          TopLeft="1070.72727272727,153.545454545455" />
         <NodeLayout
           Size="139,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Row Count 1"
@@ -29018,179 +29562,57 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <NodeLayout
           Size="154,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column"
-          TopLeft="1321,125" />
+          TopLeft="990,93" />
         <NodeLayout
           Size="130,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Row Count"
           TopLeft="1005,491" />
         <NodeLayout
-          Size="107,42"
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 1"
-          TopLeft="510,341" />
-        <NodeLayout
           Size="165,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Data Conversion 1"
-          TopLeft="416,246" />
+          TopLeft="533,225" />
         <NodeLayout
           Size="113,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Lookup"
-          TopLeft="776,485" />
+          TopLeft="814,485" />
         <NodeLayout
           Size="150,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source"
-          TopLeft="1358,50" />
-        <NodeLayout
-          Size="98,42"
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort"
-          TopLeft="1041,329" />
+          TopLeft="859,35" />
         <NodeLayout
           Size="159,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source 1"
-          TopLeft="262,75" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination"
-          TopLeft="509,581" />
+          TopLeft="670,35" />
         <NodeLayout
           Size="156,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Data Conversion"
-          TopLeft="1055.63636363636,245.454545454545" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Union All"
-          TopLeft="772,386" />
-        <EdgeLayout
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Sort Output1]"
-          TopLeft="617,362">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="155,45"
-              Start="0,0"
-              End="147.5,45">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="73.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="73.5,0"
-                    Point2="77.5,0"
-                    Point3="77.5,4" />
-                  <mssgle:LineSegment
-                    End="77.5,41" />
-                  <mssgle:CubicBezierSegment
-                    Point1="77.5,41"
-                    Point2="77.5,45"
-                    Point3="81.5,45" />
-                  <mssgle:LineSegment
-                    End="147.5,45" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="69.5,-22,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Sort Output]"
-          TopLeft="1041,350">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-148,57"
-              Start="0,0"
-              End="-140.5,57">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-70,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-70,0"
-                    Point2="-74,0"
-                    Point3="-74,4" />
-                  <mssgle:LineSegment
-                    End="-74,53" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-74,53"
-                    Point2="-74,57"
-                    Point3="-78,57" />
-                  <mssgle:LineSegment
-                    End="-140.5,57" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-82,-22,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
-          TopLeft="575.5,529">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="19,52"
-              Start="0,0"
-              End="19,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22"
-                    Point2="0,26"
-                    Point3="4,26" />
-                  <mssgle:LineSegment
-                    End="15,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15,26"
-                    Point2="19,26"
-                    Point3="19,30" />
-                  <mssgle:LineSegment
-                    End="19,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="1021.63636363636,225.454545454545" />
         <EdgeLayout
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Output 0]"
-          TopLeft="1246.22727272727,212.545454545455">
+          TopLeft="1182.22727272727,195.545454545455">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-112.590909090909,32.90909090909"
+              EndConnector="-82.590909090909,29.90909090909"
               Start="0,0"
-              End="-112.590909090909,25.40909090909">
+              End="-82.590909090909,22.40909090909">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.454545454545" />
+                    End="0,10.954545454545" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.454545454545"
-                    Point2="0,16.454545454545"
-                    Point3="-4,16.454545454545" />
+                    Point1="0,10.954545454545"
+                    Point2="0,14.954545454545"
+                    Point3="-4,14.954545454545" />
                   <mssgle:LineSegment
-                    End="-108.590909090909,16.454545454545" />
+                    End="-78.590909090909,14.954545454545" />
                   <mssgle:CubicBezierSegment
-                    Point1="-108.590909090909,16.454545454545"
-                    Point2="-112.590909090909,16.454545454545"
-                    Point3="-112.590909090909,20.454545454545" />
+                    Point1="-78.590909090909,14.954545454545"
+                    Point2="-82.590909090909,14.954545454545"
+                    Point3="-82.590909090909,18.954545454545" />
                   <mssgle:LineSegment
-                    End="-112.590909090909,25.40909090909" />
+                    End="-82.590909090909,22.40909090909" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -29201,30 +29623,24 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
-          TopLeft="1433,92">
+          TopLeft="1009,56">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-35,33"
+              EndConnector="58,37"
               Start="0,0"
-              End="-35,25.5">
+              End="58,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.5" />
+                    End="54,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.5"
-                    Point2="0,16.5"
-                    Point3="-4,16.5" />
+                    Point1="54,0"
+                    Point2="58,0"
+                    Point3="58,4" />
                   <mssgle:LineSegment
-                    End="-31,16.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-31,16.5"
-                    Point2="-35,16.5"
-                    Point3="-35,20.5" />
-                  <mssgle:LineSegment
-                    End="-35,25.5" />
+                    End="58,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -29235,164 +29651,72 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
-          TopLeft="776,507">
+          TopLeft="814,507">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-131,0"
+              EndConnector="-169,0"
               Start="0,0"
-              End="-123.5,0">
+              End="-161.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-123.5,0" />
+                    End="-161.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-117.55638671875,5,111.6127734375,11.609375"
+              BoundingBox="-136.55638671875,5,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
-          TopLeft="889,509">
+          TopLeft="927,509">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="116,0"
+              EndConnector="78,0"
               Start="0,0"
-              End="108.5,0">
+              End="70.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="108.5,0" />
+                    End="70.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="6.05861328125,5,96.3827734375,11.609375"
+              BoundingBox="-12.94138671875,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Derived Column Output]"
-          TopLeft="1321,146">
+          TopLeft="1144,114">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-74.772727272727,24.545454545455"
+              EndConnector="38.227272727273,39.545454545455"
               Start="0,0"
-              End="-74.772727272727,17.045454545455">
+              End="38.227272727273,32.045454545455">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-70.772727272727,0" />
+                    End="34.227272727273,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-70.772727272727,0"
-                    Point2="-74.772727272727,0"
-                    Point3="-74.772727272727,4" />
+                    Point1="34.227272727273,0"
+                    Point2="38.227272727273,0"
+                    Point3="38.227272727273,4" />
                   <mssgle:LineSegment
-                    End="-74.772727272727,17.045454545455" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Data Conversion Output]"
-          TopLeft="498.5,288">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="65,53"
-              Start="0,0"
-              End="65,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.5"
-                    Point2="0,26.5"
-                    Point3="4,26.5" />
-                  <mssgle:LineSegment
-                    End="61,26.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="61,26.5"
-                    Point2="65,26.5"
-                    Point3="65,30.5" />
-                  <mssgle:LineSegment
-                    End="65,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Union All Output 1]"
-          TopLeft="832.5,428">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,57"
-              Start="0,0"
-              End="0,49.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,16.75,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Data Conversion Output1]"
-          TopLeft="1133.63636363636,287.454545454545">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-43.636363636364,41.545454545455"
-              Start="0,0"
-              End="-43.636363636364,34.045454545455">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.7727272727275" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.7727272727275"
-                    Point2="0,20.7727272727275"
-                    Point3="-4,20.7727272727275" />
-                  <mssgle:LineSegment
-                    End="-39.636363636364,20.7727272727275" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-39.636363636364,20.7727272727275"
-                    Point2="-43.636363636364,20.7727272727275"
-                    Point3="-43.636363636364,24.7727272727275" />
-                  <mssgle:LineSegment
-                    End="-43.636363636364,34.045454545455" />
+                    End="38.227272727273,32.045454545455" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -29404,33 +29728,181 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <NodeLayout
           Size="160,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Lookup Company"
-          TopLeft="329,155" />
+          TopLeft="543,97" />
         <EdgeLayout
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[OLE DB Source Output1]"
-          TopLeft="341.5,117">
+          TopLeft="670,56">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="67.5,38"
+              EndConnector="-47,41"
               Start="0,0"
-              End="67.5,30.5">
+              End="-47,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15" />
+                    End="-43,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15"
-                    Point2="0,19"
-                    Point3="4,19" />
+                    Point1="-43,0"
+                    Point2="-47,0"
+                    Point3="-47,4" />
                   <mssgle:LineSegment
-                    End="63.5,19" />
+                    End="-47,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column 1"
+          TopLeft="417,157" />
+        <EdgeLayout
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+          TopLeft="543,118">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-44.5,39"
+              Start="0,0"
+              End="-44.5,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-40.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="63.5,19"
-                    Point2="67.5,19"
-                    Point3="67.5,23" />
+                    Point1="-40.5,0"
+                    Point2="-44.5,0"
+                    Point3="-44.5,4" />
                   <mssgle:LineSegment
-                    End="67.5,30.5" />
+                    End="-44.5,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-92.69138671875,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Derived Column Output1]"
+          TopLeft="498.5,199">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="117,26"
+              Start="0,0"
+              End="117,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9"
+                    Point2="0,13"
+                    Point3="4,13" />
+                  <mssgle:LineSegment
+                    End="113,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="113,13"
+                    Point2="117,13"
+                    Point3="117,17" />
+                  <mssgle:LineSegment
+                    End="117,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2"
+          TopLeft="812,418" />
+        <EdgeLayout
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Sort Output]"
+          TopLeft="868,460">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25"
+              Start="0,0"
+              End="0,17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,0.75,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 1"
+          TopLeft="692,276" />
+        <EdgeLayout
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Data Conversion Output]"
+          TopLeft="698,246">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="47.5,30"
+              Start="0,0"
+              End="47.5,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="43.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43.5,0"
+                    Point2="47.5,0"
+                    Point3="47.5,4" />
+                  <mssgle:LineSegment
+                    End="47.5,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="108,42"
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge"
+          TopLeft="813,344" />
+        <EdgeLayout
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Merge Output 1]"
+          TopLeft="866.25,386">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -29440,39 +29912,135 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
-          TopLeft="409,197">
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Sort Output1]"
+          TopLeft="745.5,318">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="89.5,49"
+              EndConnector="104.833333333333,26"
               Start="0,0"
-              End="89.5,41.5">
+              End="104.833333333333,18.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.5" />
+                    End="0,11.3722627737226" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.5"
-                    Point2="0,24.5"
-                    Point3="4,24.5" />
+                    Point1="0,11.3722627737226"
+                    Point2="0,15.3722627737226"
+                    Point3="4,15.3722627737226" />
                   <mssgle:LineSegment
-                    End="85.5,24.5" />
+                    End="100.833333333333,15.3722627737226" />
                   <mssgle:CubicBezierSegment
-                    Point1="85.5,24.5"
-                    Point2="89.5,24.5"
-                    Point3="89.5,28.5" />
+                    Point1="100.833333333333,15.3722627737226"
+                    Point2="104.833333333333,15.3722627737226"
+                    Point3="104.833333333333,19.3722627737226" />
                   <mssgle:LineSegment
-                    End="89.5,41.5" />
+                    End="104.833333333333,18.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-3.44138671875,29.5,96.3827734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort"
+          TopLeft="920,275" />
+        <EdgeLayout
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Data Conversion Output1]"
+          TopLeft="1021.63636363636,246.454545454545">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-52.636363636364,28.545454545455"
+              Start="0,0"
+              End="-52.636363636364,21.045454545455">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-48.636363636364,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-48.636363636364,0"
+                    Point2="-52.636363636364,0"
+                    Point3="-52.636363636364,4" />
+                  <mssgle:LineSegment
+                    End="-52.636363636364,21.045454545455" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Sort Output2]"
+          TopLeft="969,317">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-85.3333333333334,27"
+              Start="0,0"
+              End="-85.3333333333334,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.963503649635" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.963503649635"
+                    Point2="0,15.963503649635"
+                    Point3="-4,15.963503649635" />
+                  <mssgle:LineSegment
+                    End="-81.3333333333334,15.963503649635" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-81.3333333333334,15.963503649635"
+                    Point2="-85.3333333333334,15.963503649635"
+                    Point3="-85.3333333333334,19.963503649635" />
+                  <mssgle:LineSegment
+                    End="-85.3333333333334,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination"
+          TopLeft="380.5,544.5" />
+        <EdgeLayout
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+          TopLeft="506,508">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-40,36.5"
+              Start="0,0"
+              End="-40,29">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-36,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-36,0"
+                    Point2="-40,0"
+                    Point3="-40,4" />
+                  <mssgle:LineSegment
+                    End="-40,29" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -29514,19 +30082,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -30463,6 +31018,19 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
