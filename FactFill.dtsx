@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="230"
-  DTS:VersionGUID="{7014BE46-AE8E-4C8B-921A-B299A67BC3A0}">
+  DTS:VersionBuild="233"
+  DTS:VersionGUID="{C0B5A227-8629-4766-925F-AFDE3D99594D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -548,6 +548,23 @@
             SQLTask:ResultName="0"
             SQLTask:DtsVariableName="User::Batch" />
         </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute Package DimFill"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{7F18F674-F2CA-419C-8103-8C1D69FED921}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute Package DimFill"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>DimFill.dtsx</PackageName>
+        </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -4197,6 +4214,14 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Sequence FactSales" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{EBC07587-6FA7-4832-AE95-8A612FC94D1F}"
+      DTS:From="Package\Execute Package DimFill"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Execute Batch No" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -4213,7 +4238,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <NodeLayout
           Size="162,42"
           Id="Package\Execute Batch No"
-          TopLeft="1533,73" />
+          TopLeft="1529,145" />
         <NodeLayout
           Size="151,42"
           Id="Package\Sequence FactSales\Data Flow Task"
@@ -4351,36 +4376,62 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="413,409"
+          PanelSize="413,408"
           Size="413,452"
           Id="Package\Sequence FactSales"
-          TopLeft="1047,32" />
+          TopLeft="1019,40" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="1533,94">
+          TopLeft="1529,166">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-73,164"
+              EndConnector="-97,100"
               Start="0,0"
-              End="-65.5,164">
+              End="-89.5,100">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-32.5,0" />
+                    End="-44.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-32.5,0"
-                    Point2="-36.5,0"
-                    Point3="-36.5,4" />
+                    Point1="-44.5,0"
+                    Point2="-48.5,0"
+                    Point3="-48.5,4" />
                   <mssgle:LineSegment
-                    End="-36.5,160" />
+                    End="-48.5,96" />
                   <mssgle:CubicBezierSegment
-                    Point1="-36.5,160"
-                    Point2="-36.5,164"
-                    Point3="-40.5,164" />
+                    Point1="-48.5,96"
+                    Point2="-48.5,100"
+                    Point3="-52.5,100" />
                   <mssgle:LineSegment
-                    End="-65.5,164" />
+                    End="-89.5,100" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Execute Package DimFill"
+          TopLeft="1517,50" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="1611.75,92">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
