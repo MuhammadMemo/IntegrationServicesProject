@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="327"
-  DTS:VersionGUID="{290A6CAC-E36B-4EDE-A2D6-E06607C1DDB5}">
+  DTS:VersionBuild="345"
+  DTS:VersionGUID="{FE31B225-D1D9-46D7-B515-DD5117EE1E1F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2127,7 +2127,7 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerKeySource]};#{Package\Sequence FactSales\Data Flow Task\121:invalid};</property>
+                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerKeySource]};#{Package\Sequence FactSales\Data Flow Task\Row Count Insert};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2995,7 +2995,7 @@ where [refTable].[ProductAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductKeySource]};#{Package\Sequence FactSales\Data Flow Task\121:invalid};</property>
+                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductKeySource]};#{Package\Sequence FactSales\Data Flow Task\Row Count Insert};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5296,6 +5296,93 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Sequence FactSales\Data Flow Task\Row Count Delete"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count Delete">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::DeleteCount</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence FactSales\Data Flow Task\Row Count Delete.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence FactSales\Data Flow Task\Row Count Delete.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Sequence FactSales\Data Flow Task\Row Count Delete.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence FactSales\Data Flow Task\Row Count Insert"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count Insert">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::InsertCount</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence FactSales\Data Flow Task\Row Count Insert.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence FactSales\Data Flow Task\Row Count Insert.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Sequence FactSales\Data Flow Task\Row Count Insert.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence FactSales\Data Flow Task\Row Count Update"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count Update">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::UpdateCount</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence FactSales\Data Flow Task\Row Count Update.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence FactSales\Data Flow Task\Row Count Update.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Sequence FactSales\Data Flow Task\Row Count Update.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Sequence FactSales\Data Flow Task\Slowly Changing Dimension"
                   componentClassID="Microsoft.SCD"
                   contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
@@ -6611,12 +6698,12 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                       <externalMetadataColumns />
                     </input>
                     <input
-                      refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2]"
+                      refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3]"
                       hasSideEffects="true"
-                      name="Union All Input 2">
+                      name="Union All Input 3">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[InventTranceKey]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[InventTranceKey]"
                           cachedDataType="wstr"
                           cachedLength="20"
                           cachedName="InventTranceKey"
@@ -6630,252 +6717,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[AmountAfterTax]"
-                          cachedDataType="numeric"
-                          cachedName="AmountAfterTax"
-                          cachedPrecision="28"
-                          cachedScale="12"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[AmountAfterTax]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[AmountAfterTax]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[TaxAmount]"
-                          cachedDataType="numeric"
-                          cachedName="TaxAmount"
-                          cachedPrecision="28"
-                          cachedScale="12"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[TaxAmount]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[TaxAmount]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SalesQTY]"
-                          cachedDataType="numeric"
-                          cachedName="SalesQTY"
-                          cachedPrecision="28"
-                          cachedScale="12"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[SalesQTY]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SalesQTY]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[LineAmount]"
-                          cachedDataType="numeric"
-                          cachedName="LineAmount"
-                          cachedPrecision="28"
-                          cachedScale="12"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[LineAmount]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[LineAmount]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[TypeKey]"
-                          cachedDataType="ui1"
-                          cachedName="TypeKey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[TypeKey]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[TypeKey]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[StatusKey]"
-                          cachedDataType="ui1"
-                          cachedName="StatusKey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[StatusKey]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[StatusKey]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[CarKeyName]"
-                          cachedDataType="wstr"
-                          cachedLength="62"
-                          cachedName="CarKeyName"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[CarKeyName]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CarKeyName]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[UnitPrice]"
-                          cachedDataType="numeric"
-                          cachedName="UnitPrice"
-                          cachedPrecision="28"
-                          cachedScale="12"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[UnitPrice]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[UnitPrice]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[Companykey]"
-                          cachedDataType="ui1"
-                          cachedName="Companykey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Companykey]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[BrancheKey]"
-                          cachedDataType="ui1"
-                          cachedName="BrancheKey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup BrancheKey.Outputs[Lookup Match Output].Columns[BrancheKey]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[BrancheKey]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[ProductKey]"
-                          cachedDataType="i4"
-                          cachedName="ProductKey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup ProductKey.Outputs[Lookup Match Output].Columns[ProductKey]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ProductKey]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[CustomerKey]"
-                          cachedDataType="i4"
-                          cachedName="CustomerKey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CustomerKey.Outputs[Lookup Match Output].Columns[CustomerKey]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CustomerKey]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[PromotionKey]"
-                          cachedDataType="i4"
-                          cachedName="PromotionKey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup DimPromotion.Outputs[Lookup Match Output].Columns[PromotionKey]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[PromotionKey]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[DimensionKey]"
-                          cachedDataType="i4"
-                          cachedName="DimensionKey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup DimensionKey.Outputs[Lookup Match Output].Columns[DimensionKey]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[DimensionKey]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[UnitKey]"
-                          cachedDataType="i4"
-                          cachedName="UnitKey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup UnitKey.Outputs[Lookup Match Output].Columns[UnitKey]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[UnitKey]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[EmployeeKey]"
-                          cachedDataType="i4"
-                          cachedName="EmployeeKey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup EmployeeKey.Outputs[Lookup Match Output].Columns[EmployeeKey]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[EmployeeKey]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[CarKey]"
-                          cachedDataType="i2"
-                          cachedName="CarKey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CarKey.Outputs[Lookup Match Output].Columns[CarKey]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CarKey]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[GeographyKey]"
-                          cachedDataType="i4"
-                          cachedName="GeographyKey"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup GeographyKey.Outputs[Lookup Match Output].Columns[GeographyKey]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[GeographyKey]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[CompanyKeySource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[CompanyKeySource]"
                           cachedDataType="wstr"
                           cachedLength="4"
                           cachedName="CompanyKeySource"
@@ -6889,7 +6731,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[ProductKeySource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[ProductKeySource]"
                           cachedDataType="wstr"
                           cachedLength="30"
                           cachedName="ProductKeySource"
@@ -6903,7 +6745,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[BrancheKeySource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[BrancheKeySource]"
                           cachedDataType="wstr"
                           cachedLength="30"
                           cachedName="BrancheKeySource"
@@ -6917,7 +6759,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[CustomerKeySource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[CustomerKeySource]"
                           cachedDataType="wstr"
                           cachedLength="20"
                           cachedName="CustomerKeySource"
@@ -6931,7 +6773,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[DimensionKeySource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[DimensionKeySource]"
                           cachedDataType="wstr"
                           cachedLength="20"
                           cachedName="DimensionKeySource"
@@ -6945,7 +6787,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[StatusKeySource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[StatusKeySource]"
                           cachedDataType="i4"
                           cachedName="StatusKeySource"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusKeySource]">
@@ -6958,7 +6800,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[TypeKeySource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[TypeKeySource]"
                           cachedDataType="i4"
                           cachedName="TypeKeySource"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TypeKeySource]">
@@ -6971,7 +6813,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[PromotionKeySource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[PromotionKeySource]"
                           cachedDataType="i8"
                           cachedName="PromotionKeySource"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PromotionKeySource]">
@@ -6984,7 +6826,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[UnitKeySource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[UnitKeySource]"
                           cachedDataType="wstr"
                           cachedLength="30"
                           cachedName="UnitKeySource"
@@ -6998,7 +6840,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[CarKeySource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[CarKeySource]"
                           cachedDataType="wstr"
                           cachedLength="30"
                           cachedName="CarKeySource"
@@ -7012,7 +6854,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[EmployeeKeySource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[EmployeeKeySource]"
                           cachedDataType="wstr"
                           cachedLength="20"
                           cachedName="EmployeeKeySource"
@@ -7026,7 +6868,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[GeographyKeySource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[GeographyKeySource]"
                           cachedDataType="i8"
                           cachedName="GeographyKeySource"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[GeographyKeySource]">
@@ -7039,7 +6881,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[OrderDateAlternativeKeySource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[OrderDateAlternativeKeySource]"
                           cachedDataType="i4"
                           cachedName="OrderDateAlternativeKeySource"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderDateAlternativeKeySource]">
@@ -7052,7 +6894,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[ProductionDateAlternativeKeySource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[ProductionDateAlternativeKeySource]"
                           cachedDataType="i4"
                           cachedName="ProductionDateAlternativeKeySource"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductionDateAlternativeKeySource]">
@@ -7065,7 +6907,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[ShippingDateAlternativeKeySource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[ShippingDateAlternativeKeySource]"
                           cachedDataType="i4"
                           cachedName="ShippingDateAlternativeKeySource"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ShippingDateAlternativeKeySource]">
@@ -7078,7 +6920,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[OrderDateSource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[OrderDateSource]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="OrderDateSource"
@@ -7092,7 +6934,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[ProductionDateSource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[ProductionDateSource]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="ProductionDateSource"
@@ -7106,7 +6948,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[ShippingDateSource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[ShippingDateSource]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="ShippingDateSource"
@@ -7120,7 +6962,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SalesOrderNumber]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[SalesOrderNumber]"
                           cachedDataType="wstr"
                           cachedLength="20"
                           cachedName="SalesOrderNumber"
@@ -7134,7 +6976,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SalesOrderLineNumberSource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[SalesOrderLineNumberSource]"
                           cachedDataType="numeric"
                           cachedName="SalesOrderLineNumberSource"
                           cachedPrecision="28"
@@ -7149,7 +6991,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[UnitPriceSource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[UnitPriceSource]"
                           cachedDataType="numeric"
                           cachedName="UnitPriceSource"
                           cachedPrecision="28"
@@ -7164,7 +7006,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[SALESQTYSource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[SALESQTYSource]"
                           cachedDataType="numeric"
                           cachedName="SALESQTYSource"
                           cachedPrecision="28"
@@ -7179,7 +7021,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[DiscountPercentSource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[DiscountPercentSource]"
                           cachedDataType="numeric"
                           cachedName="DiscountPercentSource"
                           cachedPrecision="28"
@@ -7194,7 +7036,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[DiscountAmountSource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[DiscountAmountSource]"
                           cachedDataType="numeric"
                           cachedName="DiscountAmountSource"
                           cachedPrecision="28"
@@ -7209,7 +7051,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[LinePercentDiscountSource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[LinePercentDiscountSource]"
                           cachedDataType="numeric"
                           cachedName="LinePercentDiscountSource"
                           cachedPrecision="28"
@@ -7224,7 +7066,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[LineAmountSource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[LineAmountSource]"
                           cachedDataType="numeric"
                           cachedName="LineAmountSource"
                           cachedPrecision="28"
@@ -7239,7 +7081,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[AmountAfterTaxSource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[AmountAfterTaxSource]"
                           cachedDataType="r8"
                           cachedName="AmountAfterTaxSource"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[AmountAfterTaxSource]">
@@ -7252,7 +7094,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[TaxAmountSource]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[TaxAmountSource]"
                           cachedDataType="r8"
                           cachedName="TaxAmountSource"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[TaxAmountSource]">
@@ -7265,7 +7107,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[MODIFIEDDATETIME]"
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[MODIFIEDDATETIME]"
                           cachedDataType="dbTimeStamp"
                           cachedName="MODIFIEDDATETIME"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODIFIEDDATETIME]">
@@ -7277,14 +7119,259 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                               name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[MODIFIEDDATETIME]}</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[AmountAfterTax]"
+                          cachedDataType="numeric"
+                          cachedName="AmountAfterTax"
+                          cachedPrecision="28"
+                          cachedScale="12"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[AmountAfterTax]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[AmountAfterTax]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[TaxAmount]"
+                          cachedDataType="numeric"
+                          cachedName="TaxAmount"
+                          cachedPrecision="28"
+                          cachedScale="12"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[TaxAmount]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[TaxAmount]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[SalesQTY]"
+                          cachedDataType="numeric"
+                          cachedName="SalesQTY"
+                          cachedPrecision="28"
+                          cachedScale="12"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[SalesQTY]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[SalesQTY]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[LineAmount]"
+                          cachedDataType="numeric"
+                          cachedName="LineAmount"
+                          cachedPrecision="28"
+                          cachedScale="12"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[LineAmount]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[LineAmount]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[TypeKey]"
+                          cachedDataType="ui1"
+                          cachedName="TypeKey"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[TypeKey]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[TypeKey]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[StatusKey]"
+                          cachedDataType="ui1"
+                          cachedName="StatusKey"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[StatusKey]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[StatusKey]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[CarKeyName]"
+                          cachedDataType="wstr"
+                          cachedLength="62"
+                          cachedName="CarKeyName"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[CarKeyName]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CarKeyName]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[UnitPrice]"
+                          cachedDataType="numeric"
+                          cachedName="UnitPrice"
+                          cachedPrecision="28"
+                          cachedScale="12"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[UnitPrice]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[UnitPrice]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[Companykey]"
+                          cachedDataType="ui1"
+                          cachedName="Companykey"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output].Columns[Companykey]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[Companykey]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[BrancheKey]"
+                          cachedDataType="ui1"
+                          cachedName="BrancheKey"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup BrancheKey.Outputs[Lookup Match Output].Columns[BrancheKey]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[BrancheKey]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[ProductKey]"
+                          cachedDataType="i4"
+                          cachedName="ProductKey"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup ProductKey.Outputs[Lookup Match Output].Columns[ProductKey]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[ProductKey]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[CustomerKey]"
+                          cachedDataType="i4"
+                          cachedName="CustomerKey"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CustomerKey.Outputs[Lookup Match Output].Columns[CustomerKey]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CustomerKey]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[PromotionKey]"
+                          cachedDataType="i4"
+                          cachedName="PromotionKey"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup DimPromotion.Outputs[Lookup Match Output].Columns[PromotionKey]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[PromotionKey]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[DimensionKey]"
+                          cachedDataType="i4"
+                          cachedName="DimensionKey"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup DimensionKey.Outputs[Lookup Match Output].Columns[DimensionKey]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[DimensionKey]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[UnitKey]"
+                          cachedDataType="i4"
+                          cachedName="UnitKey"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup UnitKey.Outputs[Lookup Match Output].Columns[UnitKey]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[UnitKey]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[EmployeeKey]"
+                          cachedDataType="i4"
+                          cachedName="EmployeeKey"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup EmployeeKey.Outputs[Lookup Match Output].Columns[EmployeeKey]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[EmployeeKey]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[CarKey]"
+                          cachedDataType="i2"
+                          cachedName="CarKey"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup CarKey.Outputs[Lookup Match Output].Columns[CarKey]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[CarKey]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3].Columns[GeographyKey]"
+                          cachedDataType="i4"
+                          cachedName="GeographyKey"
+                          lineageId="Package\Sequence FactSales\Data Flow Task\Lookup GeographyKey.Outputs[Lookup Match Output].Columns[GeographyKey]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Sequence FactSales\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[GeographyKey]}</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
                     <input
-                      refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3]"
+                      refId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2]"
                       dangling="true"
                       hasSideEffects="true"
-                      name="Union All Input 3">
+                      name="Union All Input 2">
                       <externalMetadataColumns />
                     </input>
                   </inputs>
@@ -7584,20 +7671,20 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   name="Changing Attribute Updates Output"
                   startId="Package\Sequence FactSales\Data Flow Task\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
                 <path
-                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Derived Column Output2]"
-                  endId="Package\Sequence FactSales\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input]"
-                  name="Derived Column Output"
-                  startId="Package\Sequence FactSales\Data Flow Task\Derived Column 2.Outputs[Derived Column Output]" />
-                <path
-                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Derived Column Output1]"
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Derived Column Output]"
                   endId="Package\Sequence FactSales\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]"
                   name="Derived Column Output"
                   startId="Package\Sequence FactSales\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Derived Column Output]"
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Derived Column Output1]"
                   endId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Inputs[Lookup Input]"
                   name="Derived Column Output"
                   startId="Package\Sequence FactSales\Data Flow Task\Derived Column 1.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Derived Column Output2]"
+                  endId="Package\Sequence FactSales\Data Flow Task\Row Count Insert.Inputs[Row Count Input 1]"
+                  name="Derived Column Output"
+                  startId="Package\Sequence FactSales\Data Flow Task\Derived Column 2.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Sequence FactSales\Data Flow Task.Paths[Historical Attribute Inserts Output]"
                   endId="Package\Sequence FactSales\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
@@ -7610,69 +7697,84 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   startId="Package\Sequence FactSales\Data Flow Task\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]" />
                 <path
                   refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output9]"
-                  endId="Package\Sequence FactSales\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  endId="Package\Sequence FactSales\Data Flow Task\Lookup UnitKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\Sequence FactSales\Data Flow Task\Lookup GeographyKey.Outputs[Lookup Match Output]" />
+                  startId="Package\Sequence FactSales\Data Flow Task\Lookup DimensionKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output8]"
-                  endId="Package\Sequence FactSales\Data Flow Task\Lookup DimensionKey.Inputs[Lookup Input]"
+                  endId="Package\Sequence FactSales\Data Flow Task\Lookup BrancheKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\Sequence FactSales\Data Flow Task\Lookup DimPromotion.Outputs[Lookup Match Output]" />
+                  startId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output7]"
+                  endId="Package\Sequence FactSales\Data Flow Task\Lookup CarKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Sequence FactSales\Data Flow Task\Lookup EmployeeKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output5]"
+                  endId="Package\Sequence FactSales\Data Flow Task\Lookup GeographyKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Sequence FactSales\Data Flow Task\Lookup CarKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output6]"
+                  endId="Package\Sequence FactSales\Data Flow Task\Lookup CustomerKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Sequence FactSales\Data Flow Task\Lookup ProductKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output3]"
+                  endId="Package\Sequence FactSales\Data Flow Task\Lookup DimPromotion.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Sequence FactSales\Data Flow Task\Lookup CustomerKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output2]"
                   endId="Package\Sequence FactSales\Data Flow Task\Lookup ProductKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\Sequence FactSales\Data Flow Task\Lookup BrancheKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output5]"
-                  endId="Package\Sequence FactSales\Data Flow Task\Lookup DimPromotion.Inputs[Lookup Input]"
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output1]"
+                  endId="Package\Sequence FactSales\Data Flow Task\Lookup DimensionKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\Sequence FactSales\Data Flow Task\Lookup CustomerKey.Outputs[Lookup Match Output]" />
+                  startId="Package\Sequence FactSales\Data Flow Task\Lookup DimPromotion.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output]"
+                  endId="Package\Sequence FactSales\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Sequence FactSales\Data Flow Task\Lookup GeographyKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output4]"
                   endId="Package\Sequence FactSales\Data Flow Task\Lookup EmployeeKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\Sequence FactSales\Data Flow Task\Lookup UnitKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output3]"
-                  endId="Package\Sequence FactSales\Data Flow Task\Lookup GeographyKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Sequence FactSales\Data Flow Task\Lookup CarKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output2]"
-                  endId="Package\Sequence FactSales\Data Flow Task\Lookup CustomerKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Sequence FactSales\Data Flow Task\Lookup ProductKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output1]"
-                  endId="Package\Sequence FactSales\Data Flow Task\Lookup CarKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Sequence FactSales\Data Flow Task\Lookup EmployeeKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output6]"
-                  endId="Package\Sequence FactSales\Data Flow Task\Lookup BrancheKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output]"
-                  endId="Package\Sequence FactSales\Data Flow Task\Lookup UnitKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Sequence FactSales\Data Flow Task\Lookup DimensionKey.Outputs[Lookup Match Output]" />
-                <path
                   refId="Package\Sequence FactSales\Data Flow Task.Paths[New Output]"
                   endId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 1]"
                   name="New Output"
                   startId="Package\Sequence FactSales\Data Flow Task\Slowly Changing Dimension.Outputs[New Output]" />
                 <path
-                  refId="Package\Sequence FactSales\Data Flow Task.Paths[OLE DB Command Output]"
-                  endId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 2]"
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[OLE DB Command Output1]"
+                  endId="Package\Sequence FactSales\Data Flow Task\Row Count Delete.Inputs[Row Count Input 1]"
                   name="OLE DB Command Output"
                   startId="Package\Sequence FactSales\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Output]" />
+                <path
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[OLE DB Command Output]"
+                  endId="Package\Sequence FactSales\Data Flow Task\Row Count Update.Inputs[Row Count Input 1]"
+                  name="OLE DB Command Output"
+                  startId="Package\Sequence FactSales\Data Flow Task\OLE DB Command 2.Outputs[OLE DB Command Output]" />
                 <path
                   refId="Package\Sequence FactSales\Data Flow Task.Paths[OLE DB Source Output]"
                   endId="Package\Sequence FactSales\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]"
                   name="OLE DB Source Output"
                   startId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Row Count Output 1]"
+                  endId="Package\Sequence FactSales\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Sequence FactSales\Data Flow Task\Row Count Insert.Outputs[Row Count Output 1]" />
+                <path
+                  refId="Package\Sequence FactSales\Data Flow Task.Paths[Row Count Output 11]"
+                  endId="Package\Sequence FactSales\Data Flow Task\Union All.Inputs[Union All Input 3]"
+                  name="Row Count Output 1"
+                  startId="Package\Sequence FactSales\Data Flow Task\Row Count Delete.Outputs[Row Count Output 1]" />
                 <path
                   refId="Package\Sequence FactSales\Data Flow Task.Paths[Union All Output 1]"
                   endId="Package\Sequence FactSales\Data Flow Task\Derived Column 2.Inputs[Derived Column Input]"
@@ -7710,7 +7812,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -7773,7 +7875,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -7923,11 +8025,11 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <NodeLayout
           Size="162,42"
           Id="Package\Execute Batch No"
-          TopLeft="1529,145" />
+          TopLeft="2547.33333333333,158.333333333333" />
         <NodeLayout
           Size="193,42"
           Id="Package\Execute Package DimFill"
-          TopLeft="1517,50" />
+          TopLeft="2535.33333333333,63.3333333333333" />
         <NodeLayout
           Size="151,42"
           Id="Package\Sequence FactSales\Data Flow Task"
@@ -8068,10 +8170,10 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           PanelSize="413,409"
           Size="413,452"
           Id="Package\Sequence FactSales"
-          TopLeft="1019,40" />
+          TopLeft="2037.33333333333,53.3333333333334" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="1529,166">
+          TopLeft="2547.33333333333,179.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8105,7 +8207,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="1611.75,92">
+          TopLeft="2630.08333333333,105.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8134,25 +8236,21 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="153,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Lookup UnitKey"
-          TopLeft="1091,138.5" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Sequence FactSales\Data Flow Task\OLE DB Source"
-          TopLeft="1476.5,27.5" />
-        <NodeLayout
-          Size="179,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Lookup EmployeeKey"
-          TopLeft="1398,138.5" />
-        <NodeLayout
           Size="185,42"
           Id="Package\Sequence FactSales\Data Flow Task\Lookup GeographyKey"
-          TopLeft="944,252.5" />
+          TopLeft="911,226.5" />
         <NodeLayout
           Size="178,42"
           Id="Package\Sequence FactSales\Data Flow Task\Lookup CustomerKey"
           TopLeft="30.5,131.5" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Lookup DimPromotion"
+          TopLeft="399,125.5" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Lookup BrancheKey"
+          TopLeft="569.5,31.5" />
         <NodeLayout
           Size="169,42"
           Id="Package\Sequence FactSales\Data Flow Task\Lookup ProductKey"
@@ -8160,65 +8258,345 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <NodeLayout
           Size="183,42"
           Id="Package\Sequence FactSales\Data Flow Task\Lookup DimensionKey"
-          TopLeft="759,139.5" />
+          TopLeft="766,126.5" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Derived Column 1"
-          TopLeft="1225,30.5" />
+          Size="150,42"
+          Id="Package\Sequence FactSales\Data Flow Task\OLE DB Source"
+          TopLeft="1476.5,27.5" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Slowly Changing Dimension"
+          TopLeft="497,221.5" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Sequence FactSales\Data Flow Task\OLE DB Command 2"
+          TopLeft="1073,438.5" />
         <NodeLayout
           Size="149,42"
           Id="Package\Sequence FactSales\Data Flow Task\Lookup CarKey"
-          TopLeft="1233,245.5" />
+          TopLeft="1219,221.5" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Lookup UnitKey"
+          TopLeft="1122,125.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Derived Column 2"
+          TopLeft="501,492.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Insert Destination"
+          TopLeft="218,581.5" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Union All"
+          TopLeft="527,404.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Derived Column 1"
+          TopLeft="1217,30.5" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey"
+          TopLeft="924,27.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Sequence FactSales\Data Flow Task\OLE DB Command"
+          TopLeft="58.5,401.5" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Lookup EmployeeKey"
+          TopLeft="1438,126.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Derived Column"
+          TopLeft="190.5,298.5" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Sequence FactSales\Data Flow Task\OLE DB Command 1"
+          TopLeft="745,444.5" />
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output4]"
-          TopLeft="1244,159.5">
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Historical Attribute Inserts Output]"
+          TopLeft="541.2,263.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="154,0"
+              EndConnector="-273.7,35"
               Start="0,0"
-              End="146.5,0">
+              End="-273.7,27.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="146.5,0" />
+                    End="0,6.4034969737727" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,6.4034969737727"
+                    Point2="0,10.4034969737727"
+                    Point3="-4,10.4034969737727" />
+                  <mssgle:LineSegment
+                    End="-269.7,10.4034969737727" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-269.7,10.4034969737727"
+                    Point2="-273.7,10.4034969737727"
+                    Point3="-273.7,14.4034969737727" />
+                  <mssgle:LineSegment
+                    End="-273.7,27.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="25.05861328125,5,96.3827734375,11.609375"
+              BoundingBox="-211.90638671875,15.4034969737727,150.1127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output3]"
-          TopLeft="1233,270">
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="1217,50">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-104,0"
+              EndConnector="-116,0"
               Start="0,0"
-              End="-96.5,0">
+              End="-108.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-96.5,0" />
+                    End="-108.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="267.5,340.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-126,61"
+              Start="0,0"
+              End="-126,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.5"
+                    Point2="0,30.5"
+                    Point3="-4,30.5" />
+                  <mssgle:LineSegment
+                    End="-122,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-122,30.5"
+                    Point2="-126,30.5"
+                    Point3="-126,34.5" />
+                  <mssgle:LineSegment
+                    End="-126,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Changing Attribute Updates Output]"
+          TopLeft="661.8,263.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="498.7,175"
+              Start="0,0"
+              End="498.7,167.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.0174848688635" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,48.0174848688635"
+                    Point2="0,52.0174848688635"
+                    Point3="4,52.0174848688635" />
+                  <mssgle:LineSegment
+                    End="494.7,52.0174848688635" />
+                  <mssgle:CubicBezierSegment
+                    Point1="494.7,52.0174848688635"
+                    Point2="498.7,52.0174848688635"
+                    Point3="498.7,56.0174848688635" />
+                  <mssgle:LineSegment
+                    End="498.7,167.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-96.44138671875,5,96.3827734375,11.609375"
+              BoundingBox="170.81609375,57.0174848688635,157.0678125,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output2]"
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="585,446.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="1476.5,50">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-96.5,0"
+              Start="0,0"
+              End="-89,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-89,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[New Output]"
+          TopLeft="584.45,263.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,141"
+              Start="0,0"
+              End="0,133.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,133.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.09138671875,61.033203125,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output9]"
+          TopLeft="949,147">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="173,0"
+              Start="0,0"
+              End="165.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="165.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="34.55861328125,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output8]"
+          TopLeft="924,50.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-182.5,0"
+              Start="0,0"
+              End="-175,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-175,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-135.69138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output7]"
+          TopLeft="1527.5,168.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-234,53"
+              Start="0,0"
+              End="-234,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="-4,26.5" />
+                  <mssgle:LineSegment
+                    End="-230,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-230,26.5"
+                    Point2="-234,26.5"
+                    Point3="-234,30.5" />
+                  <mssgle:LineSegment
+                    End="-234,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-165.19138671875,31.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output6]"
           TopLeft="294.5,72.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8254,94 +8632,56 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output1]"
-          TopLeft="1487.5,180.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-180,65"
-              Start="0,0"
-              End="-180,57.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.5"
-                    Point2="0,32.5"
-                    Point3="-4,32.5" />
-                  <mssgle:LineSegment
-                    End="-176,32.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-176,32.5"
-                    Point2="-180,32.5"
-                    Point3="-180,36.5" />
-                  <mssgle:LineSegment
-                    End="-180,57.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-138.19138671875,37.5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output]"
-          TopLeft="942,160">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="149,0"
-              Start="0,0"
-              End="141.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="141.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="22.55861328125,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="1476.5,50">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-88.5,0"
-              Start="0,0"
-              End="-81,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-81,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="183,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Lookup DimPromotion"
-          TopLeft="399,137.5" />
-        <EdgeLayout
           Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output5]"
-          TopLeft="208.5,155.5">
+          TopLeft="1219,245">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-123,0"
+              Start="0,0"
+              End="-115.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-115.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-105.94138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output4]"
+          TopLeft="1275,147">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="163,0"
+              Start="0,0"
+              End="155.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="155.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="29.55861328125,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output3]"
+          TopLeft="208.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8363,62 +8703,8 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey"
-          TopLeft="907,27.5" />
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="1225,50">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-141,0"
-              Start="0,0"
-              End="-133.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-133.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="172,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Lookup BrancheKey"
-          TopLeft="569.5,31.5" />
-        <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output6]"
-          TopLeft="907,50.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-165.5,0"
-              Start="0,0"
-              End="-158,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-158,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-127.19138671875,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output7]"
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output2]"
           TopLeft="569.5,52">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8442,369 +8728,233 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output8]"
-          TopLeft="582,159.5">
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output1]"
+          TopLeft="582,147">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="177,0"
+              EndConnector="184,0"
               Start="0,0"
-              End="169.5,0">
+              End="176.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="169.5,0" />
+                    End="176.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="36.55861328125,5,96.3827734375,11.609375"
+              BoundingBox="40.05861328125,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Slowly Changing Dimension"
-          TopLeft="503,245.5" />
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output9]"
-          TopLeft="944,270">
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output]"
+          TopLeft="911,245">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-232,0"
+              EndConnector="-205,0"
               Start="0,0"
-              End="-224.5,0">
+              End="-197.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-224.5,0" />
+                    End="-197.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-160.44138671875,5,96.3827734375,11.609375"
+              BoundingBox="-146.94138671875,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Derived Column"
-          TopLeft="206.5,325.5" />
-        <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Historical Attribute Inserts Output]"
-          TopLeft="547.2,287.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-263.7,38"
-              Start="0,0"
-              End="-263.7,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,7.29522528581036" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,7.29522528581036"
-                    Point2="0,11.2952252858104"
-                    Point3="-4,11.2952252858104" />
-                  <mssgle:LineSegment
-                    End="-259.7,11.2952252858104" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-259.7,11.2952252858104"
-                    Point2="-263.7,11.2952252858104"
-                    Point3="-263.7,15.2952252858104" />
-                  <mssgle:LineSegment
-                    End="-263.7,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-206.90638671875,16.2952252858104,150.1127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Sequence FactSales\Data Flow Task\OLE DB Command"
-          TopLeft="202.5,406.5" />
-        <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Derived Column Output1]"
-          TopLeft="284.5,367.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39"
-              Start="0,0"
-              End="0,31.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Union All"
-          TopLeft="527,404.5" />
-        <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[New Output]"
-          TopLeft="587.45,287.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,117"
-              Start="0,0"
-              End="0,109.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,109.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-27.09138671875,49.033203125,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[OLE DB Command Output]"
-          TopLeft="368.5,426.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="158.5,0"
-              Start="0,0"
-              End="151,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="151,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Derived Column 2"
-          TopLeft="499,482.5" />
-        <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Union All Output 1]"
-          TopLeft="584,446.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36"
-              Start="0,0"
-              End="0,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Insert Destination"
-          TopLeft="502,551.5" />
-        <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Derived Column Output2]"
-          TopLeft="582,524.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27"
-              Start="0,0"
-              End="0,19.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Sequence FactSales\Data Flow Task\OLE DB Command 1"
-          TopLeft="745,444.5" />
         <EdgeLayout
           Id="Package\Sequence FactSales\Data Flow Task.Paths[Inferred Member Updates Output]"
-          TopLeft="627.6,287.5">
+          TopLeft="621.6,263.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="204.9,157"
+              EndConnector="210.9,181"
               Start="0,0"
-              End="204.9,149.5">
+              End="210.9,173.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,66.147167813658" />
+                    End="0,76.8703017469561" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,66.147167813658"
-                    Point2="0,70.147167813658"
-                    Point3="4,70.147167813658" />
+                    Point1="0,76.8703017469561"
+                    Point2="0,80.8703017469561"
+                    Point3="4,80.8703017469561" />
                   <mssgle:LineSegment
-                    End="200.9,70.147167813658" />
+                    End="206.9,80.8703017469561" />
                   <mssgle:CubicBezierSegment
-                    Point1="200.9,70.147167813658"
-                    Point2="204.9,70.147167813658"
-                    Point3="204.9,74.147167813658" />
+                    Point1="206.9,80.8703017469561"
+                    Point2="210.9,80.8703017469561"
+                    Point3="210.9,84.8703017469561" />
                   <mssgle:LineSegment
-                    End="204.9,149.5" />
+                    End="210.9,173.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="28.04701171875,75.147167813658,148.8059765625,11.658203125"
+              BoundingBox="31.04701171875,85.8703017469561,148.8059765625,11.658203125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="175,42"
-          Id="Package\Sequence FactSales\Data Flow Task\OLE DB Command 2"
-          TopLeft="1073,438.5" />
+          Size="161,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Row Count Insert"
+          TopLeft="495.5,575.5" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Row Count Delete"
+          TopLeft="325.924354243542,405.5" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Row Count Update"
+          TopLeft="1087.92435424354,511.5" />
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Changing Attribute Updates Output]"
-          TopLeft="667.8,287.5">
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[OLE DB Command Output]"
+          TopLeft="1160.5,480.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="492.7,151"
+              EndConnector="10.9243542435424,31"
               Start="0,0"
-              End="492.7,143.5">
+              End="10.9243542435424,23.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.8836583725622" />
+                    End="0,11.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,40.8836583725622"
-                    Point2="0,44.8836583725622"
-                    Point3="4,44.8836583725622" />
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="4,15.5" />
                   <mssgle:LineSegment
-                    End="488.7,44.8836583725622" />
+                    End="6.92435424354244,15.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="488.7,44.8836583725622"
-                    Point2="492.7,44.8836583725622"
-                    Point3="492.7,48.8836583725622" />
+                    Point1="6.92435424354244,15.5"
+                    Point2="10.9243542435424,15.5"
+                    Point3="10.9243542435424,19.5" />
                   <mssgle:LineSegment
-                    End="492.7,143.5" />
+                    End="10.9243542435424,23.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="167.81609375,49.8836583725622,157.0678125,11.6630859375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Derived Column Output2]"
+          TopLeft="579.25,534.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Row Count Output 1]"
+          TopLeft="495.5,599.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-114.5,0"
+              Start="0,0"
+              End="-107,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-107,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[OLE DB Command Output1]"
+          TopLeft="224.5,424.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="101.424354243542,0"
+              Start="0,0"
+              End="93.9243542435424,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="93.9243542435424,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Row Count Output 11]"
+          TopLeft="489.924354243542,426">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="37.0756457564576,0"
+              Start="0,0"
+              End="29.5756457564576,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="29.5756457564576,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup UnitKey">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimUnit]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence FactSales\Data Flow Task\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup EmployeeKey">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimEmployee]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup GeographyKey">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -8827,7 +8977,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -8845,12 +8995,58 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup DimPromotion">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimPromotion]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup BrancheKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimBranche]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup ProductKey">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -8873,7 +9069,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -8883,7 +9079,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -8891,92 +9087,8 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup CarKey">
+    design-time-name="Package\Sequence FactSales\Data Flow Task\OLE DB Source">
     <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimCar]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup DimPromotion">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimPromotion]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimCompany]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup BrancheKey">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimBranche]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -9187,6 +9299,52 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup CarKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCar]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup UnitKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimUnit]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Sequence FactSales\Data Flow Task\Insert Destination">
     <Properties>
       <Property>
@@ -9196,6 +9354,52 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCompany]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup EmployeeKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimEmployee]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
