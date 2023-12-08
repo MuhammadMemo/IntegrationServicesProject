@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="364"
-  DTS:VersionGUID="{98D7C34C-D28E-416F-9162-F71756A18655}">
+  DTS:VersionBuild="365"
+  DTS:VersionGUID="{A427ACC9-D817-4C5C-9389-D42098973150}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1542,7 +1542,7 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerKeySource]};#{Package\Sequence FactSales\Data Flow Task\1088:invalid};</property>
+                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerKeySource]};#{Package\Sequence FactSales\Data Flow Task\1103:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2568,7 +2568,7 @@ where [refTable].[ProductAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductKeySource]};#{Package\Sequence FactSales\Data Flow Task\1088:invalid};</property>
+                      name="ParameterMap">#{Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductKeySource]};#{Package\Sequence FactSales\Data Flow Task\1103:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3263,6 +3263,22 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsDeleted]"
                           dataType="bool"
                           name="IsDeleted" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MeansOfDatingKey]"
+                          dataType="i4"
+                          name="MeansOfDatingKey" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MeansOfDeliveryKey]"
+                          dataType="ui1"
+                          name="MeansOfDeliveryKey" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PaymentMethodsKey]"
+                          dataType="i8"
+                          name="PaymentMethodsKey" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TermsOfDeliveryKey]"
+                          dataType="i4"
+                          name="TermsOfDeliveryKey" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -11256,66 +11272,66 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   startId="Package\Sequence FactSales\Data Flow Task1\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]" />
                 <path
                   refId="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output9]"
-                  endId="Package\Sequence FactSales\Data Flow Task1\Lookup UnitKey.Inputs[Lookup Input]"
+                  endId="Package\Sequence FactSales\Data Flow Task1\Lookup EmployeeKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\Sequence FactSales\Data Flow Task1\Lookup DimensionKey.Outputs[Lookup Match Output]" />
+                  startId="Package\Sequence FactSales\Data Flow Task1\Lookup UnitKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output8]"
-                  endId="Package\Sequence FactSales\Data Flow Task1\Lookup BrancheKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Sequence FactSales\Data Flow Task1\Lookup CompanyKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output7]"
-                  endId="Package\Sequence FactSales\Data Flow Task1\Lookup CarKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Sequence FactSales\Data Flow Task1\Lookup EmployeeKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output5]"
-                  endId="Package\Sequence FactSales\Data Flow Task1\Lookup GeographyKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Sequence FactSales\Data Flow Task1\Lookup CarKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output6]"
-                  endId="Package\Sequence FactSales\Data Flow Task1\Lookup CustomerKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Sequence FactSales\Data Flow Task1\Lookup ProductKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output3]"
-                  endId="Package\Sequence FactSales\Data Flow Task1\Lookup DimPromotion.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Sequence FactSales\Data Flow Task1\Lookup CustomerKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output2]"
-                  endId="Package\Sequence FactSales\Data Flow Task1\Lookup ProductKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Sequence FactSales\Data Flow Task1\Lookup BrancheKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output1]"
-                  endId="Package\Sequence FactSales\Data Flow Task1\Lookup DimensionKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Sequence FactSales\Data Flow Task1\Lookup DimPromotion.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output]"
                   endId="Package\Sequence FactSales\Data Flow Task1\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
                   name="Lookup Match Output"
                   startId="Package\Sequence FactSales\Data Flow Task1\Lookup GeographyKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output4]"
-                  endId="Package\Sequence FactSales\Data Flow Task1\Lookup EmployeeKey.Inputs[Lookup Input]"
+                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output7]"
+                  endId="Package\Sequence FactSales\Data Flow Task1\Lookup DimensionKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\Sequence FactSales\Data Flow Task1\Lookup UnitKey.Outputs[Lookup Match Output]" />
+                  startId="Package\Sequence FactSales\Data Flow Task1\Lookup DimPromotion.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output6]"
+                  endId="Package\Sequence FactSales\Data Flow Task1\Lookup ProductKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Sequence FactSales\Data Flow Task1\Lookup BrancheKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output5]"
+                  endId="Package\Sequence FactSales\Data Flow Task1\Lookup DimPromotion.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Sequence FactSales\Data Flow Task1\Lookup CustomerKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output3]"
+                  endId="Package\Sequence FactSales\Data Flow Task1\Lookup GeographyKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Sequence FactSales\Data Flow Task1\Lookup CarKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output2]"
+                  endId="Package\Sequence FactSales\Data Flow Task1\Lookup CarKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Sequence FactSales\Data Flow Task1\Lookup EmployeeKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output1]"
+                  endId="Package\Sequence FactSales\Data Flow Task1\Lookup BrancheKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Sequence FactSales\Data Flow Task1\Lookup CompanyKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output]"
+                  endId="Package\Sequence FactSales\Data Flow Task1\Lookup UnitKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Sequence FactSales\Data Flow Task1\Lookup DimensionKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output4]"
+                  endId="Package\Sequence FactSales\Data Flow Task1\Lookup CustomerKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Sequence FactSales\Data Flow Task1\Lookup ProductKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\Sequence FactSales\Data Flow Task1.Paths[New Output]"
                   endId="Package\Sequence FactSales\Data Flow Task1\Union All.Inputs[Union All Input 1]"
                   name="New Output"
                   startId="Package\Sequence FactSales\Data Flow Task1\Slowly Changing Dimension.Outputs[New Output]" />
                 <path
-                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[OLE DB Command Output1]"
+                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[OLE DB Command Output]"
                   endId="Package\Sequence FactSales\Data Flow Task1\Row Count Delete.Inputs[Row Count Input 1]"
                   name="OLE DB Command Output"
                   startId="Package\Sequence FactSales\Data Flow Task1\OLE DB Command.Outputs[OLE DB Command Output]" />
                 <path
-                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[OLE DB Command Output]"
+                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[OLE DB Command Output1]"
                   endId="Package\Sequence FactSales\Data Flow Task1\Row Count Update.Inputs[Row Count Input 1]"
                   name="OLE DB Command Output"
                   startId="Package\Sequence FactSales\Data Flow Task1\OLE DB Command 2.Outputs[OLE DB Command Output]" />
@@ -11325,15 +11341,15 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   name="OLE DB Source Output"
                   startId="Package\Sequence FactSales\Data Flow Task1\OLE DB Source.Outputs[OLE DB Source Output]" />
                 <path
-                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[Row Count Output 1]"
-                  endId="Package\Sequence FactSales\Data Flow Task1\Insert Destination.Inputs[OLE DB Destination Input]"
-                  name="Row Count Output 1"
-                  startId="Package\Sequence FactSales\Data Flow Task1\Row Count Insert.Outputs[Row Count Output 1]" />
-                <path
                   refId="Package\Sequence FactSales\Data Flow Task1.Paths[Row Count Output 11]"
                   endId="Package\Sequence FactSales\Data Flow Task1\Union All.Inputs[Union All Input 3]"
                   name="Row Count Output 1"
                   startId="Package\Sequence FactSales\Data Flow Task1\Row Count Delete.Outputs[Row Count Output 1]" />
+                <path
+                  refId="Package\Sequence FactSales\Data Flow Task1.Paths[Row Count Output 1]"
+                  endId="Package\Sequence FactSales\Data Flow Task1\Insert Destination.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Sequence FactSales\Data Flow Task1\Row Count Insert.Outputs[Row Count Output 1]" />
                 <path
                   refId="Package\Sequence FactSales\Data Flow Task1.Paths[Union All Output 1]"
                   endId="Package\Sequence FactSales\Data Flow Task1\Derived Column 2.Inputs[Derived Column Input]"
@@ -11594,6 +11610,10 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           Id="Package\Sequence FactSales\Data Flow Task"
           TopLeft="229.5,209.5" />
         <NodeLayout
+          Size="157,42"
+          Id="Package\Sequence FactSales\Data Flow Task1"
+          TopLeft="31.3333333333335,152.333333333333" />
+        <NodeLayout
           Size="205,42"
           Id="Package\Sequence FactSales\Expression - Set Start date"
           TopLeft="202.5,5.5" />
@@ -11723,10 +11743,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Sequence FactSales\Data Flow Task1"
-          TopLeft="31.3333333333335,152.333333333333" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -11799,45 +11815,21 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="185,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Lookup GeographyKey"
-          TopLeft="1453.22222222222,223.166666666667" />
-        <NodeLayout
-          Size="178,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Lookup CustomerKey"
-          TopLeft="19.3888888888889,31.5" />
-        <NodeLayout
-          Size="183,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Lookup DimPromotion"
-          TopLeft="215.666666666667,126.611111111111" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Lookup BrancheKey"
-          TopLeft="769.5,25.9444444444444" />
-        <NodeLayout
-          Size="169,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Lookup ProductKey"
-          TopLeft="392.222222222222,29.3888888888889" />
-        <NodeLayout
-          Size="183,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Lookup DimensionKey"
-          TopLeft="604.888888888889,120.944444444444" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Sequence FactSales\Data Flow Task\OLE DB Source"
-          TopLeft="1701.94444444444,26.3888888888889" />
+          Size="171,42"
+          Id="Package\Sequence FactSales\Data Flow Task\OLE DB Destination"
+          TopLeft="337.777777777778,416.666666666667" />
         <NodeLayout
           Size="149,42"
           Id="Package\Sequence FactSales\Data Flow Task\Lookup CarKey"
           TopLeft="1702.22222222222,124.833333333333" />
         <NodeLayout
-          Size="153,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Lookup UnitKey"
-          TopLeft="1024.33333333333,125.611111111111" />
+          Size="183,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Lookup DimPromotion"
+          TopLeft="215.666666666667,126.611111111111" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Derived Column 1"
-          TopLeft="1412.55555555556,29.3888888888889" />
+          Size="169,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Lookup ProductKey"
+          TopLeft="392.222222222222,29.3888888888889" />
         <NodeLayout
           Size="177,42"
           Id="Package\Sequence FactSales\Data Flow Task\Lookup CompanyKey"
@@ -11846,20 +11838,60 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           Size="179,42"
           Id="Package\Sequence FactSales\Data Flow Task\Lookup EmployeeKey"
           TopLeft="1352.33333333333,126.722222222222" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Lookup UnitKey"
+          TopLeft="1024.33333333333,125.611111111111" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Sequence FactSales\Data Flow Task\OLE DB Source"
+          TopLeft="1701.94444444444,26.3888888888889" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Lookup FactSales"
+          TopLeft="534.444444444444,231.111111111111" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Lookup CustomerKey"
+          TopLeft="19.3888888888889,31.5" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Row Count 1"
+          TopLeft="356.991905813098,322.166666666667" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Row Count"
+          TopLeft="787.722222222222,347.722222222222" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Lookup BrancheKey"
+          TopLeft="769.5,25.9444444444444" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Derived Column 1"
+          TopLeft="1412.55555555556,29.3888888888889" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Lookup DimensionKey"
+          TopLeft="604.888888888889,120.944444444444" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Sequence FactSales\Data Flow Task\Lookup GeographyKey"
+          TopLeft="1453.22222222222,223.166666666667" />
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="1412.55555555556,48.3333333333333">
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Row Count Output 1]"
+          TopLeft="424.884841795438,364.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-110.444444444445,0"
+              EndConnector="0,52.5000000000001"
               Start="0,0"
-              End="-102.944444444445,0">
+              End="0,45.0000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-102.944444444445,0" />
+                    End="0,45.0000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11888,6 +11920,102 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup No Match Output]"
+          TopLeft="614.444444444444,273.111111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-187.952538631346,49.0555555555556"
+              Start="0,0"
+              End="-187.952538631346,41.5555555555556">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5277777777778" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.5277777777778"
+                    Point2="0,24.5277777777778"
+                    Point3="-4,24.5277777777778" />
+                  <mssgle:LineSegment
+                    End="-183.952538631346,24.5277777777778" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-183.952538631346,24.5277777777778"
+                    Point2="-187.952538631346,24.5277777777778"
+                    Point3="-187.952538631346,28.5277777777778" />
+                  <mssgle:LineSegment
+                    End="-187.952538631346,41.5555555555556" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-149.782656034423,29.5277777777778,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output10]"
+          TopLeft="639.777777777778,273.111111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="212.944444444444,74.6111111111111"
+              Start="0,0"
+              End="212.944444444444,67.1111111111111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2876787678768" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.2876787678768"
+                    Point2="0,30.2876787678768"
+                    Point3="4,30.2876787678768" />
+                  <mssgle:LineSegment
+                    End="208.944444444444,30.2876787678768" />
+                  <mssgle:CubicBezierSegment
+                    Point1="208.944444444444,30.2876787678768"
+                    Point2="212.944444444444,30.2876787678768"
+                    Point3="212.944444444444,34.2876787678768" />
+                  <mssgle:LineSegment
+                    End="212.944444444444,67.1111111111111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="58.2808355034722,35.2876787678768,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output9]"
+          TopLeft="1453.22222222222,248.138888888889">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-758.777777777778,0"
+              Start="0,0"
+              End="-751.277777777778,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-751.277777777778,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-423.830275607639,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12130,132 +12258,20 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="160,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Lookup FactSales"
-          TopLeft="534.444444444444,231.111111111111" />
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output9]"
-          TopLeft="1453.22222222222,248.138888888889">
+          Id="Package\Sequence FactSales\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="1412.55555555556,48.3333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-758.777777777778,0"
+              EndConnector="-110.444444444445,0"
               Start="0,0"
-              End="-751.277777777778,0">
+              End="-102.944444444445,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-751.277777777778,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-423.830275607639,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Sequence FactSales\Data Flow Task\OLE DB Destination"
-          TopLeft="337.777777777778,416.666666666667" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Row Count"
-          TopLeft="787.722222222222,347.722222222222" />
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Sequence FactSales\Data Flow Task\Row Count 1"
-          TopLeft="356.991905813098,322.166666666667" />
-        <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup No Match Output]"
-          TopLeft="614.444444444444,273.111111111111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-187.952538631346,49.0555555555556"
-              Start="0,0"
-              End="-187.952538631346,41.5555555555556">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5277777777778" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.5277777777778"
-                    Point2="0,24.5277777777778"
-                    Point3="-4,24.5277777777778" />
-                  <mssgle:LineSegment
-                    End="-183.952538631346,24.5277777777778" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-183.952538631346,24.5277777777778"
-                    Point2="-187.952538631346,24.5277777777778"
-                    Point3="-187.952538631346,28.5277777777778" />
-                  <mssgle:LineSegment
-                    End="-187.952538631346,41.5555555555556" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-149.782656034423,29.5277777777778,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Lookup Match Output10]"
-          TopLeft="639.777777777778,273.111111111111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="212.944444444444,74.6111111111111"
-              Start="0,0"
-              End="212.944444444444,67.1111111111111">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.2876787678768" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.2876787678768"
-                    Point2="0,30.2876787678768"
-                    Point3="4,30.2876787678768" />
-                  <mssgle:LineSegment
-                    End="208.944444444444,30.2876787678768" />
-                  <mssgle:CubicBezierSegment
-                    Point1="208.944444444444,30.2876787678768"
-                    Point2="212.944444444444,30.2876787678768"
-                    Point3="212.944444444444,34.2876787678768" />
-                  <mssgle:LineSegment
-                    End="212.944444444444,67.1111111111111" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="58.2808355034722,35.2876787678768,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task.Paths[Row Count Output 1]"
-          TopLeft="424.884841795438,364.166666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52.5000000000001"
-              Start="0,0"
-              End="0,45.0000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.0000000000001" />
+                    End="-102.944444444445,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12268,30 +12284,20 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup GeographyKey">
+    design-time-name="Package\Sequence FactSales\Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimGeography]</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup CustomerKey">
+    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup CarKey">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -12301,7 +12307,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimCustomer]</Value>
+          type="q3:string">[dbo].[DimCar]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -12337,29 +12343,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup BrancheKey">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimBranche]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup ProductKey">
     <Properties>
       <Property>
@@ -12371,83 +12354,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[DimProduct]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup DimensionKey">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimDimension]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence FactSales\Data Flow Task\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup CarKey">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimCar]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup UnitKey">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimUnit]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -12494,6 +12400,152 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[DimEmployee]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup UnitKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimUnit]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence FactSales\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup FactSales">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[FactSales]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup CustomerKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCustomer]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup BrancheKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimBranche]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup DimensionKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDimension]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup GeographyKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimGeography]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -12753,7 +12805,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task1.Paths[OLE DB Command Output]"
+          Id="Package\Sequence FactSales\Data Flow Task1.Paths[OLE DB Command Output1]"
           TopLeft="1160.96217712177,480.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12819,7 +12871,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task1.Paths[OLE DB Command Output1]"
+          Id="Package\Sequence FactSales\Data Flow Task1.Paths[OLE DB Command Output]"
           TopLeft="224.5,424.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12909,7 +12961,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output9]"
+          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output]"
           TopLeft="949,146.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12933,7 +12985,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output8]"
+          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output1]"
           TopLeft="924,50.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12957,7 +13009,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output7]"
+          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output2]"
           TopLeft="1588.5,166.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12993,7 +13045,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output6]"
+          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output4]"
           TopLeft="294.5,72.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13029,7 +13081,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output5]"
+          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output3]"
           TopLeft="1280,245">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13053,7 +13105,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output4]"
+          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output9]"
           TopLeft="1304,145.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13077,7 +13129,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output3]"
+          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output5]"
           TopLeft="188.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13101,7 +13153,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output2]"
+          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output6]"
           TopLeft="569.5,52">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13125,7 +13177,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output1]"
+          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output7]"
           TopLeft="582,147">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13149,7 +13201,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output]"
+          Id="Package\Sequence FactSales\Data Flow Task1.Paths[Lookup Match Output8]"
           TopLeft="911,245">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13211,41 +13263,5 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence FactSales\Data Flow Task\Lookup FactSales">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[FactSales]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence FactSales\Data Flow Task\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
