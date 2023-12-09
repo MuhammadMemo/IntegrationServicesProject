@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="859"
-  DTS:VersionGUID="{9DF277A0-95CC-4E14-937B-642395A619EE}">
+  DTS:VersionBuild="861"
+  DTS:VersionGUID="{24B9D83A-2799-4B25-B24F-162CE4073D32}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAB3YztAs3InTVX3JS3ZWLqIAAAAAASAAACgAAAAEAAAAAXOOAKNAoTFKl559z5zTdYQAAAAh0BuaBdAKwPTNjQG5hPgaxQAAACKlhiEEC4H5d740NYL0aVsC5Cn4Q</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADYgMYNC0gREERk1CRAwIRTAAAAAASAAACgAAAAEAAAAKmVl4Zgmvxu6Q4ZmLzw7u8QAAAAwKP63WZpiA9DwwPehvfiaxQAAAC+VSvMHKcu7h7Zd7uq+H36fiQFGA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -22624,7 +22624,7 @@ where [refTable].[CompanyName] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]};</property>
+                      name="ParameterMap">#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\100:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -22782,7 +22782,7 @@ where [refTable].[MethodAcquisitionAlternativeKey] = ? and [refTable].[CompanyKe
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[MethodAcquisitionAlternativeKey]};#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                      name="ParameterMap">#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\101:invalid};#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -23120,7 +23120,7 @@ where [refTable].[MethodAcquisitionAlternativeKey] = ? and [refTable].[CompanyKe
                           name="UpdatLasteTime" />
                         <externalMetadataColumn
                           refId="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MethodAcquisitionKey]"
-                          dataType="i4"
+                          dataType="ui1"
                           name="MethodAcquisitionKey" />
                         <externalMetadataColumn
                           refId="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MethodAcquisitionAlternativeKey]"
@@ -23175,7 +23175,7 @@ where [refTable].[MethodAcquisitionAlternativeKey] = ? and [refTable].[CompanyKe
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[_DWPromotion]</property>
+                      name="OpenRowset"></property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -23184,7 +23184,7 @@ where [refTable].[MethodAcquisitionAlternativeKey] = ? and [refTable].[CompanyKe
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        MethodAcquisitionAlternativeKey, NameMethodAcquisition, CompanyName
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT   *
 FROM            _DWMethodAcquisition</property>
                     <property
                       dataType="System.String"
@@ -23206,7 +23206,7 @@ FROM            _DWMethodAcquisition</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
-                      name="ParameterMapping">"0:Input",{8C553B04-E311-46D1-894E-CA8E0E4157BB};</property>
+                      name="ParameterMapping"></property>
                   </properties>
                   <connections>
                     <connection
@@ -23221,16 +23221,6 @@ FROM            _DWMethodAcquisition</property>
                       refId="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]"
                       name="OLE DB Source Output">
                       <outputColumns>
-                        <outputColumn
-                          refId="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
-                          length="4"
-                          lineageId="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
-                          name="CompanyName"
-                          truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[MethodAcquisitionAlternativeKey]"
                           dataType="i8"
@@ -23250,14 +23240,19 @@ FROM            _DWMethodAcquisition</property>
                           lineageId="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[NameMethodAcquisition]"
                           name="NameMethodAcquisition"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
+                          length="4"
+                          lineageId="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
+                          name="CompanyName"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
-                          dataType="wstr"
-                          length="4"
-                          name="CompanyName" />
                         <externalMetadataColumn
                           refId="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MethodAcquisitionAlternativeKey]"
                           dataType="i8"
@@ -23267,6 +23262,11 @@ FROM            _DWMethodAcquisition</property>
                           dataType="wstr"
                           length="20"
                           name="NameMethodAcquisition" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
+                          dataType="wstr"
+                          length="4"
+                          name="CompanyName" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -36220,10 +36220,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           Size="166,42"
           Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Command"
           TopLeft="772.5,479.5" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source"
-          TopLeft="455,80" />
         <EdgeLayout
           Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
           TopLeft="345,429">
@@ -36288,40 +36284,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           Size="122,42"
           Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Lookup 1"
           TopLeft="446.5,248.5" />
-        <EdgeLayout
-          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
-          TopLeft="530,122">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-17,25.5"
-              Start="0,0"
-              End="-17,18">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.75"
-                    Point2="0,12.75"
-                    Point3="-4,12.75" />
-                  <mssgle:LineSegment
-                    End="-13,12.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13,12.75"
-                    Point2="-17,12.75"
-                    Point3="-17,16.75" />
-                  <mssgle:LineSegment
-                    End="-17,18" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
           TopLeft="510.25,189.5">
@@ -36418,6 +36380,44 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source"
+          TopLeft="455,79" />
+        <EdgeLayout
+          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+          TopLeft="530,121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17,26.5"
+              Start="0,0"
+              End="-17,19">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.25"
+                    Point2="0,13.25"
+                    Point3="-4,13.25" />
+                  <mssgle:LineSegment
+                    End="-13,13.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13,13.25"
+                    Point2="-17,13.25"
+                    Point3="-17,17.25" />
+                  <mssgle:LineSegment
+                    End="-17,19" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -36431,14 +36431,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -37433,7 +37425,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <NodeLayout
           Size="150,42"
           Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\OLE DB Source"
-          TopLeft="390.5,70.5" />
+          TopLeft="390.5,69.5" />
         <NodeLayout
           Size="113,42"
           Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\Lookup"
@@ -37444,30 +37436,30 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           TopLeft="728.5,529.5" />
         <EdgeLayout
           Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
-          TopLeft="465.5,112.5">
+          TopLeft="465.5,111.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9.5,37"
+              EndConnector="9.5,38"
               Start="0,0"
-              End="9.5,29.5">
+              End="9.5,30.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.5" />
+                    End="0,15" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.5"
-                    Point2="0,18.5"
-                    Point3="4,18.5" />
+                    Point1="0,15"
+                    Point2="0,19"
+                    Point3="4,19" />
                   <mssgle:LineSegment
-                    End="5.5,18.5" />
+                    End="5.5,19" />
                   <mssgle:CubicBezierSegment
-                    Point1="5.5,18.5"
-                    Point2="9.5,18.5"
-                    Point3="9.5,22.5" />
+                    Point1="5.5,19"
+                    Point2="9.5,19"
+                    Point3="9.5,23" />
                   <mssgle:LineSegment
-                    End="9.5,29.5" />
+                    End="9.5,30.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -37721,6 +37713,14 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <Value
           type="q4:int">0</Value>
       </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source">
+    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
