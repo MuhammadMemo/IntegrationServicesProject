@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="396"
-  DTS:VersionGUID="{14B7F10F-9599-4379-B8EB-A8A1C1D9F25D}">
+  DTS:VersionBuild="400"
+  DTS:VersionGUID="{4CBC7FD9-B9B6-4D76-8843-75C453C174E4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3744,13 +3744,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           cachedName="GeographyKey"
                           externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GeographyKey]"
                           lineageId="Package\Sequence FactSales\Data Flow Task\Lookup GeographyKey.Outputs[Lookup Match Output].Columns[GeographyKey]" />
-                        <inputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GroupType]"
-                          cachedDataType="wstr"
-                          cachedLength="13"
-                          cachedName="GroupType"
-                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GroupType]"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupType]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3915,11 +3908,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           dataType="wstr"
                           length="500"
                           name="NoteTrad" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GroupType]"
-                          dataType="wstr"
-                          length="50"
-                          name="GroupType" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -4352,16 +4340,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[NoteTradSource]"
                           name="NoteTradSource"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupType]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GroupType]"
-                          length="13"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupType]"
-                          name="GroupType"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4533,11 +4511,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           dataType="wstr"
                           length="100"
                           name="NoteTradSource" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GroupType]"
-                          dataType="wstr"
-                          length="13"
-                          name="GroupType" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -4602,12 +4575,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           length="100"
                           lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NoteTradSource]"
                           name="NoteTradSource" />
-                        <outputColumn
-                          refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GroupType]"
-                          dataType="wstr"
-                          length="13"
-                          lineageId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GroupType]"
-                          name="GroupType" />
                         <outputColumn
                           refId="Package\Sequence FactSales\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MethodAcquisitionKeySource]"
                           dataType="i8"

@@ -11,8 +11,8 @@
   DTS:LocaleID="3073"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="861"
-  DTS:VersionGUID="{24B9D83A-2799-4B25-B24F-162CE4073D32}">
+  DTS:VersionBuild="864"
+  DTS:VersionGUID="{1865146D-763C-403D-B945-57E62B241A69}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADYgMYNC0gREERk1CRAwIRTAAAAAASAAACgAAAAEAAAAKmVl4Zgmvxu6Q4ZmLzw7u8QAAAAwKP63WZpiA9DwwPehvfiaxQAAAC+VSvMHKcu7h7Zd7uq+H36fiQFGA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACsgQ8qkPnmm+3nYgHRPGY7AAAAAASAAACgAAAAEAAAAJyaBX7zmbrIHn5QG/KTm8oQAAAAvJeEVSdrNo/2I0fMsi7EgRQAAABkV1vJbt3hnDrht8xgpe1M7PAeWA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -9086,6 +9086,13 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                           externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[StatusProduct]"
                           lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[StatusProduct]" />
                         <inputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination.Inputs[OLE DB Destination Input].Columns[GroupType]"
+                          cachedDataType="wstr"
+                          cachedLength="13"
+                          cachedName="GroupType"
+                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[GroupType]"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[GroupType]" />
+                        <inputColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination.Inputs[OLE DB Destination Input].Columns[SalesPriceConvert]"
                           cachedDataType="cy"
                           cachedName="SalesPriceConvert"
@@ -9144,6 +9151,11 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                           dataType="wstr"
                           length="30"
                           name="StatusProduct" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[GroupType]"
+                          dataType="wstr"
+                          length="50"
+                          name="GroupType" />
                         <externalMetadataColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalesPrice]"
                           dataType="cy"
@@ -9499,7 +9511,7 @@ where [refTable].[CompanyName] = ?</property>
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimProduct] SET [Category] = ?,[ProductName] = ?,[PurchasePrice] = ?,[SalesPrice] = ?,[StatusCategory] = ?,[StatusProduct] = ?,[SubCategory] = ? WHERE [CompanyKey] = ? AND [ProductAlternativeKey] = ?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimProduct] SET [Category] = ?,[GroupType] = ?,[ProductName] = ?,[PurchasePrice] = ?,[SalesPrice] = ?,[StatusCategory] = ?,[StatusProduct] = ?,[SubCategory] = ? WHERE [CompanyKey] = ? AND [ProductAlternativeKey] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -9532,54 +9544,61 @@ where [refTable].[CompanyName] = ?</property>
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Companykey]"
                           cachedDataType="ui1"
                           cachedName="Companykey"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
                           lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[GroupType]"
+                          cachedDataType="wstr"
+                          cachedLength="13"
+                          cachedName="GroupType"
+                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupType]" />
                         <inputColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ProductsAlternativeKey]"
                           cachedDataType="wstr"
                           cachedLength="30"
                           cachedName="ProductsAlternativeKey"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
                           lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductsAlternativeKey]" />
                         <inputColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ProductName]"
                           cachedDataType="wstr"
                           cachedLength="150"
                           cachedName="ProductName"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                           lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]" />
                         <inputColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[PurchasePriceConvert]"
                           cachedDataType="cy"
                           cachedName="PurchasePriceConvert"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                           lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[PurchasePriceConvert]" />
                         <inputColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SalesPriceConvert]"
                           cachedDataType="cy"
                           cachedName="SalesPriceConvert"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                           lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[SalesPriceConvert]" />
                         <inputColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[StatusCategory]"
                           cachedDataType="wstr"
                           cachedLength="11"
                           cachedName="StatusCategory"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                           lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusCategory]" />
                         <inputColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[StatusProduct]"
                           cachedDataType="wstr"
                           cachedLength="30"
                           cachedName="StatusProduct"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                           lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusProduct]" />
                         <inputColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SubCategory]"
                           cachedDataType="wstr"
                           cachedLength="150"
                           cachedName="SubCategory"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                           lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SubCategory]" />
                       </inputColumns>
                       <externalMetadataColumns
@@ -9599,24 +9618,25 @@ where [refTable].[CompanyName] = ?</property>
                         <externalMetadataColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           dataType="wstr"
-                          length="150"
+                          length="50"
                           name="Param_1">
                           <properties>
                             <property
                               dataType="System.Int32"
                               description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">1</property>
+                              name="DBParamInfoFlags">65</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          dataType="cy"
+                          dataType="wstr"
+                          length="150"
                           name="Param_2">
                           <properties>
                             <property
                               dataType="System.Int32"
                               description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">17</property>
+                              name="DBParamInfoFlags">1</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
@@ -9632,20 +9652,19 @@ where [refTable].[CompanyName] = ?</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                          dataType="wstr"
-                          length="50"
+                          dataType="cy"
                           name="Param_4">
                           <properties>
                             <property
                               dataType="System.Int32"
                               description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
+                              name="DBParamInfoFlags">17</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                           dataType="wstr"
-                          length="30"
+                          length="50"
                           name="Param_5">
                           <properties>
                             <property
@@ -9657,7 +9676,7 @@ where [refTable].[CompanyName] = ?</property>
                         <externalMetadataColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                           dataType="wstr"
-                          length="150"
+                          length="30"
                           name="Param_6">
                           <properties>
                             <property
@@ -9668,8 +9687,20 @@ where [refTable].[CompanyName] = ?</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                          dataType="ui1"
+                          dataType="wstr"
+                          length="150"
                           name="Param_7">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          dataType="ui1"
+                          name="Param_8">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -9678,10 +9709,10 @@ where [refTable].[CompanyName] = ?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
                           dataType="wstr"
                           length="50"
-                          name="Param_8">
+                          name="Param_9">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -9742,7 +9773,7 @@ where [refTable].[CompanyName] = ?</property>
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimProduct] SET [Category] = ?,[ProductName] = ?,[StatusCategory] = ?,[StatusProduct] = ?,[SubCategory] = ? WHERE [CompanyKey] = ? AND [ProductAlternativeKey] = ? AND [Status] = '1'</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimProduct] SET [Category] = ?,[GroupType] = ?,[ProductName] = ?,[StatusCategory] = ?,[StatusProduct] = ?,[SubCategory] = ? WHERE [CompanyKey] = ? AND [ProductAlternativeKey] = ? AND [Status] = '1'</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -9775,42 +9806,49 @@ where [refTable].[CompanyName] = ?</property>
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Companykey]"
                           cachedDataType="ui1"
                           cachedName="Companykey"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                           lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[GroupType]"
+                          cachedDataType="wstr"
+                          cachedLength="13"
+                          cachedName="GroupType"
+                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupType]" />
                         <inputColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[ProductsAlternativeKey]"
                           cachedDataType="wstr"
                           cachedLength="30"
                           cachedName="ProductsAlternativeKey"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                           lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductsAlternativeKey]" />
                         <inputColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[ProductName]"
                           cachedDataType="wstr"
                           cachedLength="150"
                           cachedName="ProductName"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                           lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]" />
                         <inputColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[StatusCategory]"
                           cachedDataType="wstr"
                           cachedLength="11"
                           cachedName="StatusCategory"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                           lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusCategory]" />
                         <inputColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[StatusProduct]"
                           cachedDataType="wstr"
                           cachedLength="30"
                           cachedName="StatusProduct"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                           lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusProduct]" />
                         <inputColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[SubCategory]"
                           cachedDataType="wstr"
                           cachedLength="150"
                           cachedName="SubCategory"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                           lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SubCategory]" />
                       </inputColumns>
                       <externalMetadataColumns
@@ -9830,20 +9868,8 @@ where [refTable].[CompanyName] = ?</property>
                         <externalMetadataColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           dataType="wstr"
-                          length="150"
-                          name="Param_1">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">1</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          dataType="wstr"
                           length="50"
-                          name="Param_2">
+                          name="Param_1">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -9852,9 +9878,21 @@ where [refTable].[CompanyName] = ?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="wstr"
+                          length="150"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                           dataType="wstr"
-                          length="30"
+                          length="50"
                           name="Param_3">
                           <properties>
                             <property
@@ -9866,7 +9904,7 @@ where [refTable].[CompanyName] = ?</property>
                         <externalMetadataColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                           dataType="wstr"
-                          length="150"
+                          length="30"
                           name="Param_4">
                           <properties>
                             <property
@@ -9877,8 +9915,20 @@ where [refTable].[CompanyName] = ?</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                          dataType="ui1"
+                          dataType="wstr"
+                          length="150"
                           name="Param_5">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          dataType="ui1"
+                          name="Param_6">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -9887,10 +9937,10 @@ where [refTable].[CompanyName] = ?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                           dataType="wstr"
                           length="50"
-                          name="Param_6">
+                          name="Param_7">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -10086,6 +10136,16 @@ where [refTable].[CompanyName] = ?</property>
                           lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusProduct]"
                           name="StatusProduct"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupType]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GroupType]"
+                          length="13"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupType]"
+                          name="GroupType"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -10140,6 +10200,11 @@ where [refTable].[CompanyName] = ?</property>
                           dataType="wstr"
                           length="30"
                           name="StatusProduct" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GroupType]"
+                          dataType="wstr"
+                          length="13"
+                          name="GroupType" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -10189,6 +10254,12 @@ where [refTable].[CompanyName] = ?</property>
                           length="30"
                           lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StatusProduct]"
                           name="StatusProduct" />
+                        <outputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GroupType]"
+                          dataType="wstr"
+                          length="13"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GroupType]"
+                          name="GroupType" />
                         <outputColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesPrice]"
                           dataType="numeric"
@@ -10319,7 +10390,7 @@ where [refTable].[CompanyName] = ?</property>
                       dataType="System.String"
                       description="Specifies the SELECT statement used to create a schema rowset."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Category], [CompanyKey], [ProductAlternativeKey], [ProductName], [PurchasePrice], [SalesPrice], [StatusCategory], [StatusProduct], [SubCategory],[Status] FROM [dbo].[DimProduct]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Category], [CompanyKey], [GroupType], [ProductAlternativeKey], [ProductName], [PurchasePrice], [SalesPrice], [StatusCategory], [StatusProduct], [SubCategory],[Status] FROM [dbo].[DimProduct]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -10392,6 +10463,20 @@ where [refTable].[CompanyName] = ?</property>
                               dataType="System.Int32"
                               name="ColumnType"
                               typeConverter="ColumnType">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[GroupType]"
+                          cachedDataType="wstr"
+                          cachedLength="13"
+                          cachedName="GroupType"
+                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[GroupType]"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupType]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">2</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -10503,6 +10588,11 @@ where [refTable].[CompanyName] = ?</property>
                           dataType="ui1"
                           name="CompanyKey" />
                         <externalMetadataColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[GroupType]"
+                          dataType="wstr"
+                          length="50"
+                          name="GroupType" />
+                        <externalMetadataColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ProductAlternativeKey]"
                           dataType="wstr"
                           length="50"
@@ -10523,7 +10613,7 @@ where [refTable].[CompanyName] = ?</property>
                         <externalMetadataColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[StatusCategory]"
                           dataType="wstr"
-                          length="500"
+                          length="50"
                           name="StatusCategory" />
                         <externalMetadataColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[StatusProduct]"
@@ -10533,7 +10623,7 @@ where [refTable].[CompanyName] = ?</property>
                         <externalMetadataColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SubCategory]"
                           dataType="wstr"
-                          length="100"
+                          length="150"
                           name="SubCategory" />
                         <externalMetadataColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Status]"
@@ -10601,6 +10691,194 @@ where [refTable].[CompanyName] = ?</property>
                   name="Union All"
                   version="1">
                   <inputs>
+                    <input
+                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1]"
+                      name="Union All Input 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[DATAAREAID]"
+                          cachedDataType="wstr"
+                          cachedLength="4"
+                          cachedName="DATAAREAID"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATAAREAID]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[DATAAREAID]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[SalesPrice]"
+                          cachedDataType="numeric"
+                          cachedName="SalesPrice"
+                          cachedPrecision="38"
+                          cachedScale="12"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesPrice]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[SalesPrice]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[ProductsAlternativeKey]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="ProductsAlternativeKey"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductsAlternativeKey]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[ProductsAlternativeKey]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[ProductName]"
+                          cachedDataType="wstr"
+                          cachedLength="150"
+                          cachedName="ProductName"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[ProductName]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[Category]"
+                          cachedDataType="wstr"
+                          cachedLength="150"
+                          cachedName="Category"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Category]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Category]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[PurchasePrice]"
+                          cachedDataType="numeric"
+                          cachedName="PurchasePrice"
+                          cachedPrecision="38"
+                          cachedScale="12"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PurchasePrice]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[PurchasePrice]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[SubCategory]"
+                          cachedDataType="wstr"
+                          cachedLength="150"
+                          cachedName="SubCategory"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SubCategory]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[SubCategory]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[StatusCategory]"
+                          cachedDataType="wstr"
+                          cachedLength="11"
+                          cachedName="StatusCategory"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusCategory]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[StatusCategory]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[StatusProduct]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="StatusProduct"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusProduct]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[StatusProduct]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[GroupType]"
+                          cachedDataType="wstr"
+                          cachedLength="13"
+                          cachedName="GroupType"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupType]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[GroupType]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[Companykey]"
+                          cachedDataType="ui1"
+                          cachedName="Companykey"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Companykey]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[SalesPriceConvert]"
+                          cachedDataType="cy"
+                          cachedName="SalesPriceConvert"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[SalesPriceConvert]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[SalesPriceConvert]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[PurchasePriceConvert]"
+                          cachedDataType="cy"
+                          cachedName="PurchasePriceConvert"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[PurchasePriceConvert]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[PurchasePriceConvert]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
                     <input
                       refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 2]"
                       hasSideEffects="true"
@@ -10735,6 +11013,20 @@ where [refTable].[CompanyName] = ?</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 2].Columns[GroupType]"
+                          cachedDataType="wstr"
+                          cachedLength="13"
+                          cachedName="GroupType"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupType]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[GroupType]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 2].Columns[Companykey]"
                           cachedDataType="ui1"
                           cachedName="Companykey"
@@ -10762,181 +11054,6 @@ where [refTable].[CompanyName] = ?</property>
                         </inputColumn>
                         <inputColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 2].Columns[PurchasePriceConvert]"
-                          cachedDataType="cy"
-                          cachedName="PurchasePriceConvert"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[PurchasePriceConvert]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[PurchasePriceConvert]}</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1]"
-                      hasSideEffects="true"
-                      name="Union All Input 1">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[DATAAREAID]"
-                          cachedDataType="wstr"
-                          cachedLength="4"
-                          cachedName="DATAAREAID"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATAAREAID]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[DATAAREAID]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[SalesPrice]"
-                          cachedDataType="numeric"
-                          cachedName="SalesPrice"
-                          cachedPrecision="38"
-                          cachedScale="12"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesPrice]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[SalesPrice]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[ProductsAlternativeKey]"
-                          cachedDataType="wstr"
-                          cachedLength="30"
-                          cachedName="ProductsAlternativeKey"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductsAlternativeKey]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[ProductsAlternativeKey]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[ProductName]"
-                          cachedDataType="wstr"
-                          cachedLength="150"
-                          cachedName="ProductName"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[ProductName]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[Category]"
-                          cachedDataType="wstr"
-                          cachedLength="150"
-                          cachedName="Category"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Category]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Category]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[PurchasePrice]"
-                          cachedDataType="numeric"
-                          cachedName="PurchasePrice"
-                          cachedPrecision="38"
-                          cachedScale="12"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PurchasePrice]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[PurchasePrice]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[SubCategory]"
-                          cachedDataType="wstr"
-                          cachedLength="150"
-                          cachedName="SubCategory"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SubCategory]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[SubCategory]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[StatusCategory]"
-                          cachedDataType="wstr"
-                          cachedLength="11"
-                          cachedName="StatusCategory"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusCategory]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[StatusCategory]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[StatusProduct]"
-                          cachedDataType="wstr"
-                          cachedLength="30"
-                          cachedName="StatusProduct"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusProduct]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[StatusProduct]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[Companykey]"
-                          cachedDataType="ui1"
-                          cachedName="Companykey"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Companykey]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[SalesPriceConvert]"
-                          cachedDataType="cy"
-                          cachedName="SalesPriceConvert"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[SalesPriceConvert]">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Output column lineage ID"
-                              name="OutputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[SalesPriceConvert]}</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1].Columns[PurchasePriceConvert]"
                           cachedDataType="cy"
                           cachedName="PurchasePriceConvert"
                           lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[PurchasePriceConvert]">
@@ -11020,6 +11137,12 @@ where [refTable].[CompanyName] = ?</property>
                           length="30"
                           lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[StatusProduct]"
                           name="StatusProduct" />
+                        <outputColumn
+                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[GroupType]"
+                          dataType="wstr"
+                          length="13"
+                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[GroupType]"
+                          name="GroupType" />
                         <outputColumn
                           refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Companykey]"
                           dataType="ui1"
@@ -13496,7 +13619,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -13558,7 +13681,7 @@ where [refTable].[CodeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -22363,7 +22486,7 @@ UPDATE [dbo].[DimEmpVacation]
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -22425,7 +22548,7 @@ UPDATE [dbo].[DimEmpVacation]
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -22624,7 +22747,7 @@ where [refTable].[CompanyName] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\100:invalid};</property>
+                      name="ParameterMap">#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\790:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -22782,7 +22905,7 @@ where [refTable].[MethodAcquisitionAlternativeKey] = ? and [refTable].[CompanyKe
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\101:invalid};#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                      name="ParameterMap">#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\791:invalid};#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -30567,6 +30690,288 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           TopLeft="1938,534" />
         <NodeLayout
           Size="220,42"
+          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update"
+          TopLeft="195,209.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Sequence DimMethodDelivery\Expression Task"
+          TopLeft="220.833333333333,5.5" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Sequence DimMethodDelivery\Log Task Failure"
+          TopLeft="227,311.5" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Sequence DimMethodDelivery\Log Task Success"
+          TopLeft="5.50000000000006,311.5" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Sequence DimMethodDelivery\TimeStamp Task"
+          TopLeft="226.5,107.5" />
+        <EdgeLayout
+          Id="Package\Sequence DimMethodDelivery.PrecedenceConstraints[Constraint]"
+          TopLeft="301.666666666667,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimMethodDelivery.PrecedenceConstraints[Constraint 1]"
+          TopLeft="269.666666666667,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-183.666666666667,60"
+              Start="0,0"
+              End="-183.666666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2599277978339"
+                    Point2="0,24.2599277978339"
+                    Point3="-4,24.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-179.666666666667,24.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-179.666666666667,24.2599277978339"
+                    Point2="-183.666666666667,24.2599277978339"
+                    Point3="-183.666666666667,28.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-183.666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimMethodDelivery.PrecedenceConstraints[Constraint 2]"
+          TopLeft="340.333333333333,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35.3333333333333,60"
+              Start="0,0"
+              End="-35.3333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2599277978339"
+                    Point2="0,24.2599277978339"
+                    Point3="-4,24.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-31.3333333333333,24.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-31.3333333333333,24.2599277978339"
+                    Point2="-35.3333333333333,24.2599277978339"
+                    Point3="-35.3333333333333,28.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-35.3333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-32.9080143229166,29.2599277978339,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimMethodDelivery.PrecedenceConstraints[Constraint 3]"
+          TopLeft="305,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="420,409"
+          Size="420,452"
+          Id="Package\Sequence DimMethodDelivery"
+          TopLeft="2421.66666666667,540" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update"
+          TopLeft="195,209.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Sequence DimPaymentMethods\Expression Task"
+          TopLeft="227.5,5.5" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Sequence DimPaymentMethods\Log Task Failure"
+          TopLeft="227,311.5" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Sequence DimPaymentMethods\Log Task Success"
+          TopLeft="5.50000000000006,311.5" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Sequence DimPaymentMethods\TimeStamp Task"
+          TopLeft="226.5,107.5" />
+        <EdgeLayout
+          Id="Package\Sequence DimPaymentMethods.PrecedenceConstraints[Constraint]"
+          TopLeft="305,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimPaymentMethods.PrecedenceConstraints[Constraint 1]"
+          TopLeft="269.666666666667,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-183.666666666667,60"
+              Start="0,0"
+              End="-183.666666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2599277978339"
+                    Point2="0,24.2599277978339"
+                    Point3="-4,24.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-179.666666666667,24.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-179.666666666667,24.2599277978339"
+                    Point2="-183.666666666667,24.2599277978339"
+                    Point3="-183.666666666667,28.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-183.666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimPaymentMethods.PrecedenceConstraints[Constraint 2]"
+          TopLeft="340.333333333333,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35.3333333333333,60"
+              Start="0,0"
+              End="-35.3333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2599277978339"
+                    Point2="0,24.2599277978339"
+                    Point3="-4,24.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-31.3333333333333,24.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-31.3333333333333,24.2599277978339"
+                    Point2="-35.3333333333333,24.2599277978339"
+                    Point3="-35.3333333333333,28.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-35.3333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-32.9080143229166,29.2599277978339,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimPaymentMethods.PrecedenceConstraints[Constraint 3]"
+          TopLeft="305,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="420,409"
+          Size="420,452"
+          Id="Package\Sequence DimPaymentMethods"
+          TopLeft="2908,533" />
+        <NodeLayout
+          Size="220,42"
           Id="Package\Sequence DimPromotion\Data Flow Task-Insert,Update"
           TopLeft="195,209.5" />
         <NodeLayout
@@ -31014,6 +31419,72 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 15]"
+          TopLeft="2358,763">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63.6666666666665,0"
+              Start="0,0"
+              End="56.1666666666665,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="56.1666666666665,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 16]"
+          TopLeft="2841.66666666667,762.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66.333333333333,0"
+              Start="0,0"
+              End="58.833333333333,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="58.833333333333,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 17]"
+          TopLeft="3115.44047619048,985">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.8690476190499"
+              Start="0,0"
+              End="0,37.3690476190499">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.3690476190499" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="1453.19047619047,272.261904761905">
           <EdgeLayout.Curve>
@@ -31181,354 +31652,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   Capacity="5">
                   <mssgle:LineSegment
                     End="61.4047619047601,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="220,42"
-          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update"
-          TopLeft="195,209.5" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Sequence DimMethodDelivery\Expression Task"
-          TopLeft="220.833333333333,5.5" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Sequence DimMethodDelivery\Log Task Failure"
-          TopLeft="227,311.5" />
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Sequence DimMethodDelivery\Log Task Success"
-          TopLeft="5.50000000000006,311.5" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Sequence DimMethodDelivery\TimeStamp Task"
-          TopLeft="226.5,107.5" />
-        <EdgeLayout
-          Id="Package\Sequence DimMethodDelivery.PrecedenceConstraints[Constraint]"
-          TopLeft="301.666666666667,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimMethodDelivery.PrecedenceConstraints[Constraint 1]"
-          TopLeft="269.666666666667,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-183.666666666667,60"
-              Start="0,0"
-              End="-183.666666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2599277978339"
-                    Point2="0,24.2599277978339"
-                    Point3="-4,24.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-179.666666666667,24.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-179.666666666667,24.2599277978339"
-                    Point2="-183.666666666667,24.2599277978339"
-                    Point3="-183.666666666667,28.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-183.666666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimMethodDelivery.PrecedenceConstraints[Constraint 2]"
-          TopLeft="340.333333333333,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-35.3333333333333,60"
-              Start="0,0"
-              End="-35.3333333333333,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2599277978339"
-                    Point2="0,24.2599277978339"
-                    Point3="-4,24.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-31.3333333333333,24.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-31.3333333333333,24.2599277978339"
-                    Point2="-35.3333333333333,24.2599277978339"
-                    Point3="-35.3333333333333,28.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-35.3333333333333,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-32.9080143229166,29.2599277978339,30.4826953125,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimMethodDelivery.PrecedenceConstraints[Constraint 3]"
-          TopLeft="305,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="420,409"
-          Size="420,452"
-          Id="Package\Sequence DimMethodDelivery"
-          TopLeft="2421.66666666667,540" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 15]"
-          TopLeft="2358,763">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="63.6666666666665,0"
-              Start="0,0"
-              End="56.1666666666665,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="56.1666666666665,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="220,42"
-          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update"
-          TopLeft="195,209.5" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Sequence DimPaymentMethods\Expression Task"
-          TopLeft="227.5,5.5" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Sequence DimPaymentMethods\Log Task Failure"
-          TopLeft="227,311.5" />
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Sequence DimPaymentMethods\Log Task Success"
-          TopLeft="5.50000000000006,311.5" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Sequence DimPaymentMethods\TimeStamp Task"
-          TopLeft="226.5,107.5" />
-        <EdgeLayout
-          Id="Package\Sequence DimPaymentMethods.PrecedenceConstraints[Constraint]"
-          TopLeft="305,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimPaymentMethods.PrecedenceConstraints[Constraint 1]"
-          TopLeft="269.666666666667,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-183.666666666667,60"
-              Start="0,0"
-              End="-183.666666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2599277978339"
-                    Point2="0,24.2599277978339"
-                    Point3="-4,24.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-179.666666666667,24.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-179.666666666667,24.2599277978339"
-                    Point2="-183.666666666667,24.2599277978339"
-                    Point3="-183.666666666667,28.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-183.666666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimPaymentMethods.PrecedenceConstraints[Constraint 2]"
-          TopLeft="340.333333333333,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-35.3333333333333,60"
-              Start="0,0"
-              End="-35.3333333333333,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2599277978339"
-                    Point2="0,24.2599277978339"
-                    Point3="-4,24.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-31.3333333333333,24.2599277978339" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-31.3333333333333,24.2599277978339"
-                    Point2="-35.3333333333333,24.2599277978339"
-                    Point3="-35.3333333333333,28.2599277978339" />
-                  <mssgle:LineSegment
-                    End="-35.3333333333333,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-32.9080143229166,29.2599277978339,30.4826953125,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimPaymentMethods.PrecedenceConstraints[Constraint 3]"
-          TopLeft="305,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="420,409"
-          Size="420,452"
-          Id="Package\Sequence DimPaymentMethods"
-          TopLeft="2908,533" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 16]"
-          TopLeft="2841.66666666667,762.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="66.333333333333,0"
-              Start="0,0"
-              End="58.833333333333,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="58.833333333333,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 17]"
-          TopLeft="3115.44047619048,985">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44.8690476190499"
-              Start="0,0"
-              End="0,37.3690476190499">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.3690476190499" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -33673,112 +33796,36 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="163,42"
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination"
-          TopLeft="709,788.5" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2"
-          TopLeft="1086,413.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All"
-          TopLeft="727,546.5" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Derived Column 1"
-          TopLeft="708,621.5" />
-        <NodeLayout
           Size="209,42"
           Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Slowly Changing Dimension"
-          TopLeft="684,311.5" />
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command"
-          TopLeft="484.5,495.5" />
+          TopLeft="661,311.5" />
         <NodeLayout
           Size="176,42"
           Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Row Count Update 1"
-          TopLeft="877.5,483.5" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Derived Column"
-          TopLeft="533.5,408.5" />
+          TopLeft="872.5,541.5" />
         <NodeLayout
           Size="167,42"
           Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Row Count Update"
-          TopLeft="1070,531.5" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1"
-          TopLeft="850,413.5" />
+          TopLeft="1133,635.5" />
         <NodeLayout
           Size="154,42"
           Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Row Count New"
-          TopLeft="715.5,710.5" />
+          TopLeft="688.5,758.5" />
         <NodeLayout
           Size="156,42"
           Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion"
-          TopLeft="710.5,209.5" />
+          TopLeft="687.5,209.5" />
         <NodeLayout
           Size="150,42"
           Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source"
-          TopLeft="713.5,5.49999999999977" />
+          TopLeft="690.5,5.49999999999977" />
         <NodeLayout
           Size="113,42"
           Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup"
-          TopLeft="732,107.5" />
-        <EdgeLayout
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Union All Output 1]"
-          TopLeft="788.5,588.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33"
-              Start="0,0"
-              End="0,25.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
-          TopLeft="791.5,752.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36"
-              Start="0,0"
-              End="0,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="709,107.5" />
         <EdgeLayout
           Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
-          TopLeft="788.5,47.4999999999998">
+          TopLeft="765.5,47.4999999999998">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -33795,158 +33842,12 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[OLE DB Command Output2]"
-          TopLeft="937.5,455.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="28,28.0000000000001"
-              Start="0,0"
-              End="28,20.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10.0000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10.0000000000001"
-                    Point2="0,14.0000000000001"
-                    Point3="4,14.0000000000001" />
-                  <mssgle:LineSegment
-                    End="24,14.0000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="24,14.0000000000001"
-                    Point2="28,14.0000000000001"
-                    Point3="28,18.0000000000001" />
-                  <mssgle:LineSegment
-                    End="28,20.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[OLE DB Command Output1]"
-          TopLeft="1173.5,455.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-20,76.0000000000001"
-              Start="0,0"
-              End="-20,68.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.0000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34.0000000000001"
-                    Point2="0,38.0000000000001"
-                    Point3="-4,38.0000000000001" />
-                  <mssgle:LineSegment
-                    End="-16,38.0000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-16,38.0000000000001"
-                    Point2="-20,38.0000000000001"
-                    Point3="-20,42.0000000000001" />
-                  <mssgle:LineSegment
-                    End="-20,68.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[OLE DB Command Output]"
-          TopLeft="650.5,516.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="76.5,50.9999999999999"
-              Start="0,0"
-              End="69,50.9999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="34.25,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="34.25,0"
-                    Point2="38.25,0"
-                    Point3="38.25,4" />
-                  <mssgle:LineSegment
-                    End="38.25,46.9999999999999" />
-                  <mssgle:CubicBezierSegment
-                    Point1="38.25,46.9999999999999"
-                    Point2="38.25,50.9999999999999"
-                    Point3="42.25,50.9999999999999" />
-                  <mssgle:LineSegment
-                    End="69,50.9999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[New Output]"
-          TopLeft="768.4,353.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="19.1,193"
-              Start="0,0"
-              End="19.1,185.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,82.2318687136051" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,82.2318687136051"
-                    Point2="0,86.2318687136051"
-                    Point3="4,86.2318687136051" />
-                  <mssgle:LineSegment
-                    End="15.1,86.2318687136051" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.1,86.2318687136051"
-                    Point2="19.1,86.2318687136051"
-                    Point3="19.1,90.2318687136051" />
-                  <mssgle:LineSegment
-                    End="19.1,185.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-17.54138671875,91.2318687136051,54.1827734375,11.43359375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
-          TopLeft="788.5,149.5">
+          TopLeft="765.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -33969,8 +33870,204 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Data Conversion Output]"
+          TopLeft="765.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Derived Column"
+          TopLeft="550.5,413.5" />
+        <EdgeLayout
+          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Historical Attribute Inserts Output]"
+          TopLeft="705.2,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-77.7,60.0000000000001"
+              Start="0,0"
+              End="-77.7,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.8345662407532" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.8345662407532"
+                    Point2="0,17.8345662407532"
+                    Point3="-4,17.8345662407532" />
+                  <mssgle:LineSegment
+                    End="-73.7,17.8345662407532" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-73.7,17.8345662407532"
+                    Point2="-77.7,17.8345662407532"
+                    Point3="-77.7,21.8345662407532" />
+                  <mssgle:LineSegment
+                    End="-77.7,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-113.90638671875,22.8345662407532,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command"
+          TopLeft="538.5,515.5" />
+        <EdgeLayout
+          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Derived Column Output]"
+          TopLeft="624.5,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Union All"
+          TopLeft="705,617.5" />
+        <EdgeLayout
+          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[New Output]"
+          TopLeft="745.4,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="38.9333333333334,264"
+              Start="0,0"
+              End="38.9333333333334,256.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,138.493081663501" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,138.493081663501"
+                    Point2="0,142.493081663501"
+                    Point3="4,142.493081663501" />
+                  <mssgle:LineSegment
+                    End="34.9333333333334,142.493081663501" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.9333333333334,142.493081663501"
+                    Point2="38.9333333333334,142.493081663501"
+                    Point3="38.9333333333334,146.493081663501" />
+                  <mssgle:LineSegment
+                    End="38.9333333333334,256.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-7.6247200520833,147.493081663501,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[OLE DB Command Output]"
+          TopLeft="621.5,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="125.166666666667,59.9999999999999"
+              Start="0,0"
+              End="125.166666666667,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5301794453507"
+                    Point2="0,35.5301794453507"
+                    Point3="4,35.5301794453507" />
+                  <mssgle:LineSegment
+                    End="121.166666666667,35.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121.166666666667,35.5301794453507"
+                    Point2="125.166666666667,35.5301794453507"
+                    Point3="125.166666666667,39.5301794453507" />
+                  <mssgle:LineSegment
+                    End="125.166666666667,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Derived Column 1"
+          TopLeft="684,697.5" />
+        <EdgeLayout
+          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Union All Output 1]"
+          TopLeft="765.5,659.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination"
+          TopLeft="684,821.5" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 1"
+          TopLeft="827,413.5" />
+        <EdgeLayout
           Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Inferred Member Updates Output]"
-          TopLeft="808.6,353.5">
+          TopLeft="785.6,353.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -34004,129 +34101,13 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Historical Attribute Inserts Output]"
-          TopLeft="728.2,353.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-117.7,55.0000000000001"
-              Start="0,0"
-              End="-117.7,47.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.3483523873571" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.3483523873571"
-                    Point2="0,16.3483523873571"
-                    Point3="-4,16.3483523873571" />
-                  <mssgle:LineSegment
-                    End="-113.7,16.3483523873571" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-113.7,16.3483523873571"
-                    Point2="-117.7,16.3483523873571"
-                    Point3="-117.7,20.3483523873571" />
-                  <mssgle:LineSegment
-                    End="-117.7,47.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-133.90638671875,21.3483523873571,150.1127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Derived Column Output1]"
-          TopLeft="791,663.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47"
-              Start="0,0"
-              End="0,39.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Derived Column Output]"
-          TopLeft="610.5,450.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-43,45"
-              Start="0,0"
-              End="-43,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="-4,22.5" />
-                  <mssgle:LineSegment
-                    End="-39,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-39,22.5"
-                    Point2="-43,22.5"
-                    Point3="-43,26.5" />
-                  <mssgle:LineSegment
-                    End="-43,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Data Conversion Output]"
-          TopLeft="788.5,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 2"
+          TopLeft="1063,413.5" />
         <EdgeLayout
           Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Changing Attribute Updates Output]"
-          TopLeft="848.8,353.5">
+          TopLeft="825.8,353.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -34160,22 +34141,145 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Derived Column Output1]"
+          TopLeft="847,718.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-4.50000000000023,61.0000000000001"
+              Start="0,0"
+              End="2.99999999999977,61.0000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,57.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,57.0000000000001"
+                    Point2="22.5,61.0000000000001"
+                    Point3="18.5,61.0000000000001" />
+                  <mssgle:LineSegment
+                    End="2.99999999999977,61.0000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+          TopLeft="688.5,779.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-4.49999999999977,62.9999999999999"
+              Start="0,0"
+              End="-11.9999999999998,62.9999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-22.9999999999998,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.9999999999998,0"
+                    Point2="-26.9999999999998,0"
+                    Point3="-26.9999999999998,4" />
+                  <mssgle:LineSegment
+                    End="-26.9999999999998,58.9999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-26.9999999999998,58.9999999999999"
+                    Point2="-26.9999999999998,62.9999999999999"
+                    Point3="-22.9999999999998,62.9999999999999" />
+                  <mssgle:LineSegment
+                    End="-11.9999999999998,62.9999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[OLE DB Command Output1]"
+          TopLeft="1150.5,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66,180"
+              Start="0,0"
+              End="66,172.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,86.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,86.0000000000001"
+                    Point2="0,90.0000000000001"
+                    Point3="4,90.0000000000001" />
+                  <mssgle:LineSegment
+                    End="62,90.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="62,90.0000000000001"
+                    Point2="66,90.0000000000001"
+                    Point3="66,94.0000000000001" />
+                  <mssgle:LineSegment
+                    End="66,172.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[OLE DB Command Output2]"
+          TopLeft="914.5,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="46.0000000000001,86.0000000000001"
+              Start="0,0"
+              End="46.0000000000001,78.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.0000000000001"
+                    Point2="0,43.0000000000001"
+                    Point3="4,43.0000000000001" />
+                  <mssgle:LineSegment
+                    End="42.0000000000001,43.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42.0000000000001,43.0000000000001"
+                    Point2="46.0000000000001,43.0000000000001"
+                    Point3="46.0000000000001,47.0000000000001" />
+                  <mssgle:LineSegment
+                    End="46.0000000000001,78.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Slowly Changing Dimension">
     <Properties>
@@ -34198,6 +34302,12 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       &lt;ColumnName&gt;CompanyKey&lt;/ColumnName&gt;
       &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
       &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupType]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;GroupType&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductsAlternativeKey]&lt;/IdentificationString&gt;
@@ -36205,6 +36315,18 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="130,42"
+          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Row Count"
+          TopLeft="628,401" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Command"
+          TopLeft="772.5,479.5" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Lookup 1"
+          TopLeft="446.5,248.5" />
+        <NodeLayout
           Size="139,42"
           Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Row Count 1"
           TopLeft="272,387" />
@@ -36213,35 +36335,13 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Destination"
           TopLeft="263,514" />
         <NodeLayout
-          Size="130,42"
-          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Row Count"
-          TopLeft="628,401" />
+          Size="113,42"
+          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Lookup"
+          TopLeft="456.5,147.5" />
         <NodeLayout
-          Size="166,42"
-          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Command"
-          TopLeft="772.5,479.5" />
-        <EdgeLayout
-          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
-          TopLeft="345,429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,85"
-              Start="0,0"
-              End="0,77.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,77.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="150,42"
+          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source"
+          TopLeft="455,79" />
         <EdgeLayout
           Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
           TopLeft="693,443">
@@ -36273,38 +36373,68 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Lookup"
-          TopLeft="456.5,147.5" />
-        <NodeLayout
-          Size="122,42"
-          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Lookup 1"
-          TopLeft="446.5,248.5" />
         <EdgeLayout
-          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
-          TopLeft="510.25,189.5">
+          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+          TopLeft="345,429">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59"
+              EndConnector="0,85"
               Start="0,0"
-              End="0,51.5">
+              End="0,77.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.5" />
+                    End="0,77.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,19.9453125,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+          TopLeft="530,121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17,26.5"
+              Start="0,0"
+              End="-17,19">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.25"
+                    Point2="0,13.25"
+                    Point3="-4,13.25" />
+                  <mssgle:LineSegment
+                    End="-13,13.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13,13.25"
+                    Point2="-17,13.25"
+                    Point3="-17,17.25" />
+                  <mssgle:LineSegment
+                    End="-17,19" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -36380,47 +36510,56 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source"
-          TopLeft="455,79" />
         <EdgeLayout
-          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
-          TopLeft="530,121">
+          Id="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          TopLeft="510.25,189.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-17,26.5"
+              EndConnector="0,59"
               Start="0,0"
-              End="-17,19">
+              End="0,51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.25"
-                    Point2="0,13.25"
-                    Point3="-4,13.25" />
-                  <mssgle:LineSegment
-                    End="-13,13.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13,13.25"
-                    Point2="-17,13.25"
-                    Point3="-17,17.25" />
-                  <mssgle:LineSegment
-                    End="-17,19" />
+                    End="0,51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,19.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimMethodAcquisition]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Destination">
     <Properties>
@@ -36431,6 +36570,675 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCompany]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\Row Count"
+          TopLeft="628,401" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\OLE DB Command"
+          TopLeft="636.5,503.5" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\Lookup 1"
+          TopLeft="421.5,150.5" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\Row Count 1"
+          TopLeft="272,387" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\OLE DB Destination"
+          TopLeft="106.5,531.5" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\Lookup"
+          TopLeft="408.5,226.5" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\OLE DB Source"
+          TopLeft="431.5,66.5" />
+        <EdgeLayout
+          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+          TopLeft="693,443">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.5,60.5"
+              Start="0,0"
+              End="26.5,53">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.25"
+                    Point2="0,30.25"
+                    Point3="4,30.25" />
+                  <mssgle:LineSegment
+                    End="22.5,30.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,30.25"
+                    Point2="26.5,30.25"
+                    Point3="26.5,34.25" />
+                  <mssgle:LineSegment
+                    End="26.5,53" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+          TopLeft="341.5,429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-149.5,102.5"
+              Start="0,0"
+              End="-149.5,95">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.25"
+                    Point2="0,51.25"
+                    Point3="-4,51.25" />
+                  <mssgle:LineSegment
+                    End="-145.5,51.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-145.5,51.25"
+                    Point2="-149.5,51.25"
+                    Point3="-149.5,55.25" />
+                  <mssgle:LineSegment
+                    End="-149.5,95" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+          TopLeft="506.5,108.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-24,42"
+              Start="0,0"
+              End="-24,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17"
+                    Point2="0,21"
+                    Point3="-4,21" />
+                  <mssgle:LineSegment
+                    End="-20,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20,21"
+                    Point2="-24,21"
+                    Point3="-24,25" />
+                  <mssgle:LineSegment
+                    End="-24,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
+          TopLeft="465,268.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-123.5,118.5"
+              Start="0,0"
+              End="-123.5,111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,55.25"
+                    Point2="0,59.25"
+                    Point3="-4,59.25" />
+                  <mssgle:LineSegment
+                    End="-119.5,59.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-119.5,59.25"
+                    Point2="-123.5,59.25"
+                    Point3="-123.5,63.25" />
+                  <mssgle:LineSegment
+                    End="-123.5,111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-117.55638671875,64.25,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+          TopLeft="482.5,268.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="210.5,132.5"
+              Start="0,0"
+              End="210.5,125">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.1099476439791" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,50.1099476439791"
+                    Point2="0,54.1099476439791"
+                    Point3="4,54.1099476439791" />
+                  <mssgle:LineSegment
+                    End="206.5,54.1099476439791" />
+                  <mssgle:CubicBezierSegment
+                    Point1="206.5,54.1099476439791"
+                    Point2="210.5,54.1099476439791"
+                    Point3="210.5,58.1099476439791" />
+                  <mssgle:LineSegment
+                    End="210.5,125" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="57.05861328125,59.1099476439791,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          TopLeft="482.5,192.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17.5,34"
+              Start="0,0"
+              End="-17.5,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13"
+                    Point2="0,17"
+                    Point3="-4,17" />
+                  <mssgle:LineSegment
+                    End="-13.5,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.5,17"
+                    Point2="-17.5,17"
+                    Point3="-17.5,21" />
+                  <mssgle:LineSegment
+                    End="-17.5,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-56.94138671875,22,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCompany]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimMethodDelivery]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\Row Count"
+          TopLeft="628,431" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\OLE DB Command"
+          TopLeft="728.5,529.5" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\Lookup 1"
+          TopLeft="391.5,236.5" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\Row Count 1"
+          TopLeft="272,417" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\OLE DB Destination"
+          TopLeft="209.5,509.5" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\Lookup"
+          TopLeft="418.5,149.5" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\OLE DB Source"
+          TopLeft="390.5,69.5" />
+        <EdgeLayout
+          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+          TopLeft="693,473">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="118.5,56.5"
+              Start="0,0"
+              End="118.5,49">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.25"
+                    Point2="0,28.25"
+                    Point3="4,28.25" />
+                  <mssgle:LineSegment
+                    End="114.5,28.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="114.5,28.25"
+                    Point2="118.5,28.25"
+                    Point3="118.5,32.25" />
+                  <mssgle:LineSegment
+                    End="118.5,49" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+          TopLeft="341.5,459">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-46.5,50.5"
+              Start="0,0"
+              End="-46.5,43">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.25"
+                    Point2="0,25.25"
+                    Point3="-4,25.25" />
+                  <mssgle:LineSegment
+                    End="-42.5,25.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-42.5,25.25"
+                    Point2="-46.5,25.25"
+                    Point3="-46.5,29.25" />
+                  <mssgle:LineSegment
+                    End="-46.5,43" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+          TopLeft="465.5,111.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.5,38"
+              Start="0,0"
+              End="9.5,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15"
+                    Point2="0,19"
+                    Point3="4,19" />
+                  <mssgle:LineSegment
+                    End="5.5,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.5,19"
+                    Point2="9.5,19"
+                    Point3="9.5,23" />
+                  <mssgle:LineSegment
+                    End="9.5,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
+          TopLeft="452.5,278.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-111,138.5"
+              Start="0,0"
+              End="-111,131">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,65.25"
+                    Point2="0,69.25"
+                    Point3="-4,69.25" />
+                  <mssgle:LineSegment
+                    End="-107,69.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-107,69.25"
+                    Point2="-111,69.25"
+                    Point3="-111,73.25" />
+                  <mssgle:LineSegment
+                    End="-111,131" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-111.30638671875,74.25,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+          TopLeft="471.5,278.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="221.5,152.5"
+              Start="0,0"
+              End="221.5,145">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.1844660194175" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,58.1844660194175"
+                    Point2="0,62.1844660194175"
+                    Point3="4,62.1844660194175" />
+                  <mssgle:LineSegment
+                    End="217.5,62.1844660194175" />
+                  <mssgle:CubicBezierSegment
+                    Point1="217.5,62.1844660194175"
+                    Point2="221.5,62.1844660194175"
+                    Point3="221.5,66.1844660194175" />
+                  <mssgle:LineSegment
+                    End="221.5,145" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="62.55861328125,67.1844660194175,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          TopLeft="475,191.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-22.5,45"
+              Start="0,0"
+              End="-22.5,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="-4,22.5" />
+                  <mssgle:LineSegment
+                    End="-18.5,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,22.5"
+                    Point2="-22.5,22.5"
+                    Point3="-22.5,26.5" />
+                  <mssgle:LineSegment
+                    End="-22.5,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-59.44138671875,27.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimMethodPayment]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCompany]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -37043,686 +37851,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">View</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimCompany]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Lookup 1">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimMethodAcquisition]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\Row Count 1"
-          TopLeft="272,387" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\Row Count"
-          TopLeft="628,401" />
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\Lookup"
-          TopLeft="408.5,226.5" />
-        <NodeLayout
-          Size="122,42"
-          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\Lookup 1"
-          TopLeft="421.5,150.5" />
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\OLE DB Command"
-          TopLeft="636.5,503.5" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\OLE DB Source"
-          TopLeft="431.5,66.5" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\OLE DB Destination"
-          TopLeft="106.5,531.5" />
-        <EdgeLayout
-          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
-          TopLeft="506.5,108.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-24,42"
-              Start="0,0"
-              End="-24,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17"
-                    Point2="0,21"
-                    Point3="-4,21" />
-                  <mssgle:LineSegment
-                    End="-20,21" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-20,21"
-                    Point2="-24,21"
-                    Point3="-24,25" />
-                  <mssgle:LineSegment
-                    End="-24,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
-          TopLeft="482.5,192.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-17.5,34"
-              Start="0,0"
-              End="-17.5,26.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13"
-                    Point2="0,17"
-                    Point3="-4,17" />
-                  <mssgle:LineSegment
-                    End="-13.5,17" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13.5,17"
-                    Point2="-17.5,17"
-                    Point3="-17.5,21" />
-                  <mssgle:LineSegment
-                    End="-17.5,26.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-56.94138671875,22,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
-          TopLeft="465,268.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-123.5,118.5"
-              Start="0,0"
-              End="-123.5,111">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,55.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,55.25"
-                    Point2="0,59.25"
-                    Point3="-4,59.25" />
-                  <mssgle:LineSegment
-                    End="-119.5,59.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-119.5,59.25"
-                    Point2="-123.5,59.25"
-                    Point3="-123.5,63.25" />
-                  <mssgle:LineSegment
-                    End="-123.5,111" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-117.55638671875,64.25,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
-          TopLeft="341.5,429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-149.5,102.5"
-              Start="0,0"
-              End="-149.5,95">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,47.25"
-                    Point2="0,51.25"
-                    Point3="-4,51.25" />
-                  <mssgle:LineSegment
-                    End="-145.5,51.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-145.5,51.25"
-                    Point2="-149.5,51.25"
-                    Point3="-149.5,55.25" />
-                  <mssgle:LineSegment
-                    End="-149.5,95" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
-          TopLeft="482.5,268.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="210.5,132.5"
-              Start="0,0"
-              End="210.5,125">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,50.1099476439791" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,50.1099476439791"
-                    Point2="0,54.1099476439791"
-                    Point3="4,54.1099476439791" />
-                  <mssgle:LineSegment
-                    End="206.5,54.1099476439791" />
-                  <mssgle:CubicBezierSegment
-                    Point1="206.5,54.1099476439791"
-                    Point2="210.5,54.1099476439791"
-                    Point3="210.5,58.1099476439791" />
-                  <mssgle:LineSegment
-                    End="210.5,125" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="57.05861328125,59.1099476439791,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
-          TopLeft="693,443">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="26.5,60.5"
-              Start="0,0"
-              End="26.5,53">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.25"
-                    Point2="0,30.25"
-                    Point3="4,30.25" />
-                  <mssgle:LineSegment
-                    End="22.5,30.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="22.5,30.25"
-                    Point2="26.5,30.25"
-                    Point3="26.5,34.25" />
-                  <mssgle:LineSegment
-                    End="26.5,53" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimMethodDelivery]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\Lookup 1">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimCompany]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence DimMethodDelivery\Data Flow Task-Insert,Update\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\Row Count 1"
-          TopLeft="272,417" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\Row Count"
-          TopLeft="628,431" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\OLE DB Destination"
-          TopLeft="209.5,509.5" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\OLE DB Source"
-          TopLeft="390.5,69.5" />
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\Lookup"
-          TopLeft="418.5,149.5" />
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\OLE DB Command"
-          TopLeft="728.5,529.5" />
-        <EdgeLayout
-          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
-          TopLeft="465.5,111.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="9.5,38"
-              Start="0,0"
-              End="9.5,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15"
-                    Point2="0,19"
-                    Point3="4,19" />
-                  <mssgle:LineSegment
-                    End="5.5,19" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.5,19"
-                    Point2="9.5,19"
-                    Point3="9.5,23" />
-                  <mssgle:LineSegment
-                    End="9.5,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="122,42"
-          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\Lookup 1"
-          TopLeft="391.5,236.5" />
-        <EdgeLayout
-          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
-          TopLeft="475,191.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-22.5,45"
-              Start="0,0"
-              End="-22.5,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="-4,22.5" />
-                  <mssgle:LineSegment
-                    End="-18.5,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-18.5,22.5"
-                    Point2="-22.5,22.5"
-                    Point3="-22.5,26.5" />
-                  <mssgle:LineSegment
-                    End="-22.5,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-59.44138671875,27.5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
-          TopLeft="452.5,278.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-111,138.5"
-              Start="0,0"
-              End="-111,131">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,65.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,65.25"
-                    Point2="0,69.25"
-                    Point3="-4,69.25" />
-                  <mssgle:LineSegment
-                    End="-107,69.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-107,69.25"
-                    Point2="-111,69.25"
-                    Point3="-111,73.25" />
-                  <mssgle:LineSegment
-                    End="-111,131" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-111.30638671875,74.25,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
-          TopLeft="341.5,459">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-46.5,50.5"
-              Start="0,0"
-              End="-46.5,43">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.25"
-                    Point2="0,25.25"
-                    Point3="-4,25.25" />
-                  <mssgle:LineSegment
-                    End="-42.5,25.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-42.5,25.25"
-                    Point2="-46.5,25.25"
-                    Point3="-46.5,29.25" />
-                  <mssgle:LineSegment
-                    End="-46.5,43" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
-          TopLeft="471.5,278.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="221.5,152.5"
-              Start="0,0"
-              End="221.5,145">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,58.1844660194175" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,58.1844660194175"
-                    Point2="0,62.1844660194175"
-                    Point3="4,62.1844660194175" />
-                  <mssgle:LineSegment
-                    End="217.5,62.1844660194175" />
-                  <mssgle:CubicBezierSegment
-                    Point1="217.5,62.1844660194175"
-                    Point2="221.5,62.1844660194175"
-                    Point3="221.5,66.1844660194175" />
-                  <mssgle:LineSegment
-                    End="221.5,145" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="62.55861328125,67.1844660194175,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
-          TopLeft="693,473">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="118.5,56.5"
-              Start="0,0"
-              End="118.5,49">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.25"
-                    Point2="0,28.25"
-                    Point3="4,28.25" />
-                  <mssgle:LineSegment
-                    End="114.5,28.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="114.5,28.25"
-                    Point2="118.5,28.25"
-                    Point3="118.5,32.25" />
-                  <mssgle:LineSegment
-                    End="118.5,49" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimCompany]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence DimPaymentMethods\Data Flow Task-Insert,Update\Lookup 1">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimMethodPayment]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
