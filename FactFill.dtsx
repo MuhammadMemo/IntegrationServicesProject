@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="462"
-  DTS:VersionGUID="{E5CCEE04-949E-4C87-AB9F-E010CA1BF8B5}">
+  DTS:VersionBuild="463"
+  DTS:VersionGUID="{715C149C-BAC7-4500-BEDD-F32C54E8758D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1527,7 +1527,7 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\FactSales\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerKeySource]};#{Package\FactSales\Data Flow Task-Insert,Update\1103:invalid};</property>
+                      name="ParameterMap">#{Package\FactSales\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerKeySource]};#{Package\FactSales\Data Flow Task-Insert,Update\764:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3072,7 +3072,7 @@ where [refTable].[ProductAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\FactSales\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductKeySource]};#{Package\FactSales\Data Flow Task-Insert,Update\1103:invalid};</property>
+                      name="ParameterMap">#{Package\FactSales\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductKeySource]};#{Package\FactSales\Data Flow Task-Insert,Update\764:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5392,75 +5392,75 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   name="Derived Column Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Derived Column 1.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output12]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup GeographyKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup FactSales.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodDeliveryKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodDeliveryKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup FactSales.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup UnitKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimensionKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup EmployeeKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CustomerKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup EmployeeKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup UnitKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CustomerKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup BrancheKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimensionKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup BrancheKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CompanyKey.Outputs[Lookup Match Output]" />
-                <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output13]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup GeographyKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output12]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup BrancheKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CompanyKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimensionKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup BrancheKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CustomerKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CustomerKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup EmployeeKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup UnitKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup UnitKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimensionKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup FactSales.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodDeliveryKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodDeliveryKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup FactSales.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup GeographyKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup EmployeeKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
@@ -5472,12 +5472,12 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   name="OLE DB Source Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]" />
                 <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
                   name="Row Count Output 1"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Row Count.Outputs[Row Count Output 1]" />
                 <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   name="Row Count Output 1"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Row Count 1.Outputs[Row Count Output 1]" />
@@ -5874,7 +5874,7 @@ where [refTable].[Companykey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\FactSales 1\Data Flow Task-Delete\994:invalid};</property>
+                      name="ParameterMap">#{Package\FactSales 1\Data Flow Task-Delete\765:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6032,7 +6032,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\FactSales 1\Data Flow Task-Delete\991:invalid};#{Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Match Output].Columns[CompanyName]};</property>
+                      name="ParameterMap">#{Package\FactSales 1\Data Flow Task-Delete\766:invalid};#{Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Match Output].Columns[CompanyName]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6611,7 +6611,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -6674,7 +6674,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -7090,140 +7090,10 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="420,396"
-          Size="420,439"
+          PanelSize="420,408"
+          Size="420,452"
           Id="Package\FactSales"
           TopLeft="1019.19047619047,30.7619047619048" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\Sequence Container\Execute SQL Task 1"
-          TopLeft="23.5,74.5" />
-        <EdgeLayout
-          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
-          TopLeft="107,50.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,24"
-              Start="0,0"
-              End="0,16.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Sequence Container\Execute SQL Task"
-          TopLeft="23,8.5" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="220,163"
-          Size="220,206"
-          Id="Package\Sequence Container"
-          TopLeft="1467,27.5714285714285" />
-        <NodeLayout
-          Size="193,42"
-          Id="Package\Sequence Container 1\Execute Package DimFill"
-          TopLeft="5.50000000000001,5.5" />
-        <NodeLayout
-          Size="162,42"
-          Id="Package\Sequence Container 1\Execute Batch No"
-          TopLeft="19,81.5" />
-        <EdgeLayout
-          Id="Package\Sequence Container 1.PrecedenceConstraints[Constraint]"
-          TopLeft="101,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34"
-              Start="0,0"
-              End="0,26.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="226,161"
-          Size="226,204"
-          Id="Package\Sequence Container 1"
-          TopLeft="1465,264" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="1577.5,233.571428571428">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30.4285714285715"
-              Start="0,0"
-              End="0,22.9285714285715">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.9285714285715" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="1465,366">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-25.8095238095273,-115.738095238095"
-              Start="0,0"
-              End="-18.3095238095273,-115.738095238095">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-8.90476190476363,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-8.90476190476363,0"
-                    Point2="-12.9047619047636,0"
-                    Point3="-12.9047619047636,-4" />
-                  <mssgle:LineSegment
-                    End="-12.9047619047636,-111.738095238095" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-12.9047619047636,-111.738095238095"
-                    Point2="-12.9047619047636,-115.738095238095"
-                    Point3="-16.9047619047636,-115.738095238095" />
-                  <mssgle:LineSegment
-                    End="-18.3095238095273,-115.738095238095" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="185,42"
           Id="Package\FactSales 1\Data Flow Task-Delete"
@@ -7364,33 +7234,151 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           PanelSize="413,408"
           Size="413,452"
           Id="Package\FactSales 1"
-          TopLeft="573,33" />
+          TopLeft="573,30" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Sequence Container\Execute SQL Task"
+          TopLeft="23,8.5" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Sequence Container\Execute SQL Task 1"
+          TopLeft="23.5,74.5" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1019.19047619047,250.261904761905">
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="107,50.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-33.1904761904727,8.73809523809524"
+              EndConnector="0,24"
               Start="0,0"
-              End="-25.6904761904727,8.73809523809524">
+              End="0,16.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-12.5952380952364,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-12.5952380952364,0"
-                    Point2="-16.5952380952364,0"
-                    Point3="-16.5952380952364,4" />
+                    End="0,16.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="220,163"
+          Size="220,206"
+          Id="Package\Sequence Container"
+          TopLeft="1467,27.5714285714285" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Sequence Container 1\Execute Batch No"
+          TopLeft="19,81.5" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Sequence Container 1\Execute Package DimFill"
+          TopLeft="5.50000000000001,5.5" />
+        <EdgeLayout
+          Id="Package\Sequence Container 1.PrecedenceConstraints[Constraint]"
+          TopLeft="101,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-16.5952380952364,4.73809523809524" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-16.5952380952364,4.73809523809524"
-                    Point2="-16.5952380952364,8.73809523809524"
-                    Point3="-20.5952380952364,8.73809523809524" />
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="226,161"
+          Size="226,204"
+          Id="Package\Sequence Container 1"
+          TopLeft="1465,264" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="1577.5,233.571428571428">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.4285714285715"
+              Start="0,0"
+              End="0,22.9285714285715">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-25.6904761904727,8.73809523809524" />
+                    End="0,22.9285714285715" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="1465,366">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-25.80952380953,-109.238095238095"
+              Start="0,0"
+              End="-18.30952380953,-109.238095238095">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-8.904761904765,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.904761904765,0"
+                    Point2="-12.904761904765,0"
+                    Point3="-12.904761904765,-4" />
+                  <mssgle:LineSegment
+                    End="-12.904761904765,-105.238095238095" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.904761904765,-105.238095238095"
+                    Point2="-12.904761904765,-109.238095238095"
+                    Point3="-16.904761904765,-109.238095238095" />
+                  <mssgle:LineSegment
+                    End="-18.30952380953,-109.238095238095" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="1019.19047619047,256.380952380952">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-33.19047619047,0"
+              Start="0,0"
+              End="-25.69047619047,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-25.69047619047,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7488,7 +7476,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           Id="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey"
           TopLeft="1050,222" />
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
           TopLeft="966.777777777777,396.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7524,7 +7512,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
           TopLeft="775.666666666667,144.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7548,7 +7536,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output12]"
           TopLeft="1125.11111111111,46.6111111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7572,7 +7560,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
           TopLeft="392.222222222222,51.4444444444444">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7596,7 +7584,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
           TopLeft="1141.77777777777,147.722222222222">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7620,7 +7608,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
           TopLeft="108.388888888889,73.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7656,7 +7644,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
           TopLeft="769.5,48.6666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7680,7 +7668,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
           TopLeft="386.444444444445,144.777777777777">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7726,7 +7714,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
           TopLeft="1221.27777777778,495.055555555555">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7760,7 +7748,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
           TopLeft="668.158572479765,486.277777777778">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7852,7 +7840,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output12]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
           TopLeft="1776.72222222222,166.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7888,7 +7876,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
           TopLeft="387.5,263">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7924,7 +7912,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
           TopLeft="666,241.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7948,7 +7936,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
           TopLeft="1050,242">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7972,7 +7960,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
           TopLeft="1518,146.777777777777">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8022,6 +8010,106 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCar]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimMethodPayment]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimPromotion]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimMethodAcquisition]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactSales\Data Flow Task-Insert,Update\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\FactSales\Data Flow Task-Insert,Update\Lookup CompanyKey">
     <Properties>
@@ -8115,25 +8203,15 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey">
+    design-time-name="Package\FactSales\Data Flow Task-Insert,Update\OLE DB Destination">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimMethodPayment]</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -8184,14 +8262,6 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\FactSales\Data Flow Task-Insert,Update\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey">
     <Properties>
       <Property>
@@ -8211,19 +8281,6 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FactSales\Data Flow Task-Insert,Update\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -8279,81 +8336,12 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[DimGeography]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimCar]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimPromotion]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimMethodAcquisition]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -8486,6 +8474,29 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[_DWFactSales]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source">
     <Properties>
       <Property>
@@ -8504,7 +8515,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -8514,30 +8525,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[_DWFactSales]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
