@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="463"
-  DTS:VersionGUID="{715C149C-BAC7-4500-BEDD-F32C54E8758D}">
+  DTS:VersionBuild="467"
+  DTS:VersionGUID="{372587E0-DCB4-41C8-8501-B113B04FDC59}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5989,13 +5989,13 @@ where [refTable].[Companykey] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [_DWFactSales]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  InventTranceKey,  CompanyKeySource from _DWFactSales</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [_DWFactSales]) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select  InventTranceKey,  CompanyKeySource from _DWFactSales) [refTable]
 where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -6027,12 +6027,12 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="InventTranceKey" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CompanyKeySource" dataType="DT_WSTR" length="4" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductKeySource" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrancheKeySource" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CustomerKeySource" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DimensionKeySource" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StatusKeySource" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TypeKeySource" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MethodAcquisitionKeySource" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MethodDeliveryKeySource" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MethodPaymentKeySource" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PromotionKeySource" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UnitKeySource" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CarKeySource" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EmployeeKeySource" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GeographyKeySource" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="OrderDateAlternativeKeySource" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductionDateAlternativeKeySource" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ShippingDateAlternativeKeySource" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="OrderDateSource" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductionDateSource" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ShippingDateSource" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SalesOrderNumber" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SalesOrderLineNumberSource" dataType="DT_NUMERIC" length="0" precision="28" scale="12" codePage="0"/&gt;&lt;referenceColumn name="UnitPriceSource" dataType="DT_NUMERIC" length="0" precision="28" scale="12" codePage="0"/&gt;&lt;referenceColumn name="SALESQTYSource" dataType="DT_NUMERIC" length="0" precision="28" scale="12" codePage="0"/&gt;&lt;referenceColumn name="DiscountPercentSource" dataType="DT_NUMERIC" length="0" precision="28" scale="12" codePage="0"/&gt;&lt;referenceColumn name="DiscountAmountSource" dataType="DT_NUMERIC" length="0" precision="28" scale="12" codePage="0"/&gt;&lt;referenceColumn name="LinePercentDiscountSource" dataType="DT_NUMERIC" length="0" precision="28" scale="12" codePage="0"/&gt;&lt;referenceColumn name="LineAmountSource" dataType="DT_NUMERIC" length="0" precision="28" scale="12" codePage="0"/&gt;&lt;referenceColumn name="AmountAfterTaxSource" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TaxAmountSource" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PaymentSource" dataType="DT_NUMERIC" length="0" precision="38" scale="12" codePage="0"/&gt;&lt;referenceColumn name="MODIFIEDDATETIME" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="InventTranceKey" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CompanyKeySource" dataType="DT_WSTR" length="4" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\FactSales 1\Data Flow Task-Delete\766:invalid};#{Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Match Output].Columns[CompanyName]};</property>
+                      name="ParameterMap">#{Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[InventTranceKey]};#{Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Match Output].Columns[CompanyName]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6277,7 +6277,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select InventTranceKey,CompanyKey  from  FactSales  where IsDeleted=0</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -6294,7 +6294,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">0</property>
+                      typeConverter="AccessMode">2</property>
                     <property
                       dataType="System.String"
                       description="The mappings between the parameters in the SQL command and variables."
@@ -6344,155 +6344,6 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                           refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyKey]"
                           dataType="ui1"
                           name="CompanyKey" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductKey]"
-                          dataType="i4"
-                          name="ProductKey" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BrancheKey]"
-                          dataType="ui1"
-                          name="BrancheKey" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GeographyKey]"
-                          dataType="i4"
-                          name="GeographyKey" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerKey]"
-                          dataType="i4"
-                          name="CustomerKey" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PromotionKey]"
-                          dataType="i4"
-                          name="PromotionKey" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DimensionKey]"
-                          dataType="i4"
-                          name="DimensionKey" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UnitKey]"
-                          dataType="i4"
-                          name="UnitKey" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmployeeKey]"
-                          dataType="i4"
-                          name="EmployeeKey" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StatusKey]"
-                          dataType="ui1"
-                          name="StatusKey" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TypeKey]"
-                          dataType="ui1"
-                          name="TypeKey" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CarKey]"
-                          dataType="i2"
-                          name="CarKey" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MethodAcquisitionKey]"
-                          dataType="ui1"
-                          name="MethodAcquisitionKey" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MethodDeliverykey]"
-                          dataType="ui1"
-                          name="MethodDeliverykey" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PaymentMethodKey]"
-                          dataType="ui1"
-                          name="PaymentMethodKey" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderDateAlternativeKey]"
-                          dataType="i4"
-                          name="OrderDateAlternativeKey" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductionDateAlternativeKey]"
-                          dataType="i4"
-                          name="ProductionDateAlternativeKey" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ShippingDateAlternativeKey]"
-                          dataType="i4"
-                          name="ShippingDateAlternativeKey" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderNumber]"
-                          dataType="wstr"
-                          length="20"
-                          name="SalesOrderNumber" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderLineNumber]"
-                          dataType="numeric"
-                          name="SalesOrderLineNumber"
-                          precision="18" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]"
-                          dataType="wstr"
-                          length="10"
-                          name="OrderDate" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductionDate]"
-                          dataType="wstr"
-                          length="10"
-                          name="ProductionDate" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ShippingDate]"
-                          dataType="wstr"
-                          length="10"
-                          name="ShippingDate" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
-                          dataType="numeric"
-                          name="UnitPrice"
-                          precision="28"
-                          scale="12" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesQty]"
-                          dataType="numeric"
-                          name="SalesQty"
-                          precision="28"
-                          scale="12" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DiscountPercent]"
-                          dataType="numeric"
-                          name="DiscountPercent"
-                          precision="28"
-                          scale="12" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DiscountAmount]"
-                          dataType="numeric"
-                          name="DiscountAmount"
-                          precision="28"
-                          scale="12" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LineAmount]"
-                          dataType="numeric"
-                          name="LineAmount"
-                          precision="28"
-                          scale="12" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AmountAfterTax]"
-                          dataType="numeric"
-                          name="AmountAfterTax"
-                          precision="28"
-                          scale="12" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TaxAmount]"
-                          dataType="numeric"
-                          name="TaxAmount"
-                          precision="28"
-                          scale="12" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Payment]"
-                          dataType="numeric"
-                          name="Payment"
-                          precision="28"
-                          scale="12" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IsDeleted]"
-                          dataType="bool"
-                          name="IsDeleted" />
-                        <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastupdateDate]"
-                          dataType="dbTimeStamp"
-                          name="LastupdateDate" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -6877,7 +6728,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
-              SQLTask:SqlStatementSource="SELECT     isnull( MAX(Batch),0) + 1 AS ModifiedDate&#xA;FROM            LogTable  "
+              SQLTask:SqlStatementSource="SELECT     isnull( MAX(Batch),0)  AS ModifiedDate&#xA;FROM            LogTable  "
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
                 SQLTask:ResultName="0"
@@ -7396,6 +7247,26 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="149,42"
+          Id="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey"
+          TopLeft="1702.22222222222,124.833333333333" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey"
+          TopLeft="283,221" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion"
+          TopLeft="203.444444444445,126.611111111111" />
+        <NodeLayout
+          Size="219,42"
+          Id="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey"
+          TopLeft="1050,222" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\FactSales\Data Flow Task-Insert,Update\OLE DB Source"
+          TopLeft="1684.94444444444,26.3888888888889" />
+        <NodeLayout
           Size="177,42"
           Id="Package\FactSales\Data Flow Task-Insert,Update\Lookup CompanyKey"
           TopLeft="1125.11111111111,25.2777777777778" />
@@ -7412,17 +7283,9 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           Id="Package\FactSales\Data Flow Task-Insert,Update\Lookup UnitKey"
           TopLeft="988.777777777775,126.722222222222" />
         <NodeLayout
-          Size="209,42"
-          Id="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey"
-          TopLeft="283,221" />
-        <NodeLayout
-          Size="139,42"
-          Id="Package\FactSales\Data Flow Task-Insert,Update\Row Count 1"
-          TopLeft="598.658572479765,444.277777777778" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\FactSales\Data Flow Task-Insert,Update\Row Count"
-          TopLeft="1156.27777777778,453.055555555555" />
+          Size="171,42"
+          Id="Package\FactSales\Data Flow Task-Insert,Update\OLE DB Destination"
+          TopLeft="547.111111111111,542.666666666667" />
         <NodeLayout
           Size="160,42"
           Id="Package\FactSales\Data Flow Task-Insert,Update\Lookup FactSales"
@@ -7432,29 +7295,17 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           Id="Package\FactSales\Data Flow Task-Insert,Update\Lookup CustomerKey"
           TopLeft="19.3888888888889,31.5" />
         <NodeLayout
-          Size="166,42"
-          Id="Package\FactSales\Data Flow Task-Insert,Update\OLE DB Command"
-          TopLeft="1165.55555555556,546.666666666667" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\FactSales\Data Flow Task-Insert,Update\OLE DB Source"
-          TopLeft="1684.94444444444,26.3888888888889" />
+          Size="130,42"
+          Id="Package\FactSales\Data Flow Task-Insert,Update\Row Count"
+          TopLeft="1156.27777777778,453.055555555555" />
         <NodeLayout
           Size="169,42"
           Id="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey"
           TopLeft="392.222222222222,29.3888888888889" />
         <NodeLayout
-          Size="171,42"
-          Id="Package\FactSales\Data Flow Task-Insert,Update\OLE DB Destination"
-          TopLeft="547.111111111111,542.666666666667" />
-        <NodeLayout
           Size="172,42"
           Id="Package\FactSales\Data Flow Task-Insert,Update\Lookup BrancheKey"
           TopLeft="769.5,25.9444444444444" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\FactSales\Data Flow Task-Insert,Update\Derived Column 1"
-          TopLeft="1412.55555555556,29.3888888888889" />
         <NodeLayout
           Size="183,42"
           Id="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimensionKey"
@@ -7464,74 +7315,170 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           Id="Package\FactSales\Data Flow Task-Insert,Update\Lookup GeographyKey"
           TopLeft="1453.22222222222,223.166666666667" />
         <NodeLayout
-          Size="149,42"
-          Id="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey"
-          TopLeft="1702.22222222222,124.833333333333" />
+          Size="166,42"
+          Id="Package\FactSales\Data Flow Task-Insert,Update\OLE DB Command"
+          TopLeft="1165.55555555556,546.666666666667" />
         <NodeLayout
-          Size="183,42"
-          Id="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion"
-          TopLeft="203.444444444445,126.611111111111" />
+          Size="163,42"
+          Id="Package\FactSales\Data Flow Task-Insert,Update\Derived Column 1"
+          TopLeft="1412.55555555556,29.3888888888889" />
         <NodeLayout
-          Size="219,42"
-          Id="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey"
-          TopLeft="1050,222" />
+          Size="139,42"
+          Id="Package\FactSales\Data Flow Task-Insert,Update\Row Count 1"
+          TopLeft="598.658572479765,444.277777777778" />
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
-          TopLeft="966.777777777777,396.666666666667">
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+          TopLeft="668.158572479765,486.277777777778">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="254.5,56.3888888888889"
+              EndConnector="-35.5474613686536,56.388888888889"
               Start="0,0"
-              End="254.5,48.8888888888889">
+              End="-35.5474613686536,48.888888888889">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.8905390539054" />
+                    End="0,24.1944444444445" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.8905390539054"
-                    Point2="0,22.8905390539054"
-                    Point3="4,22.8905390539054" />
+                    Point1="0,24.1944444444445"
+                    Point2="0,28.1944444444445"
+                    Point3="-4,28.1944444444445" />
                   <mssgle:LineSegment
-                    End="250.5,22.8905390539054" />
+                    End="-31.5474613686536,28.1944444444445" />
                   <mssgle:CubicBezierSegment
-                    Point1="250.5,22.8905390539054"
-                    Point2="254.5,22.8905390539054"
-                    Point3="254.5,26.8905390539054" />
+                    Point1="-31.5474613686536,28.1944444444445"
+                    Point2="-35.5474613686536,28.1944444444445"
+                    Point3="-35.5474613686536,32.1944444444445" />
                   <mssgle:LineSegment
-                    End="254.5,48.8888888888889" />
+                    End="-35.5474613686536,48.888888888889" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="79.05861328125,27.8905390539054,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
-          TopLeft="775.666666666667,144.833333333333">
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+          TopLeft="1221.27777777778,495.055555555555">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="213.111111111108,0"
+              EndConnector="27.2777777777783,51.6111111111114"
               Start="0,0"
-              End="205.611111111108,0">
+              End="27.2777777777783,44.1111111111114">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="205.611111111108,0" />
+                    End="0,21.8055555555557" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.8055555555557"
+                    Point2="0,25.8055555555557"
+                    Point3="4,25.8055555555557" />
+                  <mssgle:LineSegment
+                    End="23.2777777777783,25.8055555555557" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.2777777777783,25.8055555555557"
+                    Point2="27.2777777777783,25.8055555555557"
+                    Point3="27.2777777777783,29.8055555555557" />
+                  <mssgle:LineSegment
+                    End="27.2777777777783,44.1111111111114" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="54.614168836804,5,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+          TopLeft="1684.94444444444,48.8888888888889">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-109.38888888888,0"
+              Start="0,0"
+              End="-101.88888888888,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-101.88888888888,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
+          TopLeft="916.111111111111,396.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-247.952538631346,47.6111111111116"
+              Start="0,0"
+              End="-247.952538631346,40.1111111111116">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.327282728273" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.327282728273"
+                    Point2="0,19.327282728273"
+                    Point3="-4,19.327282728273" />
+                  <mssgle:LineSegment
+                    End="-243.952538631346,19.327282728273" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-243.952538631346,19.327282728273"
+                    Point2="-247.952538631346,19.327282728273"
+                    Point3="-247.952538631346,23.327282728273" />
+                  <mssgle:LineSegment
+                    End="-247.952538631346,40.1111111111116" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-179.782656034423,24.327282728273,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output13]"
+          TopLeft="1453.22222222222,243.583333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-184.22222222222,0"
+              Start="0,0"
+              End="-176.72222222222,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-176.72222222222,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-136.55249782986,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7560,50 +7507,50 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
-          TopLeft="392.222222222222,51.4444444444444">
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
+          TopLeft="386.444444444445,144.777777777777">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-194.833333333333,0"
+              EndConnector="206.222222222222,0"
               Start="0,0"
-              End="-187.333333333333,0">
+              End="198.722222222222,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-187.333333333333,0" />
+                    End="198.722222222222,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-141.858053385416,5,96.3827734375,11.609375"
+              BoundingBox="51.169724392361,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
-          TopLeft="1141.77777777777,147.722222222222">
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
+          TopLeft="769.5,48.6666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="197.222222222222,0"
+              EndConnector="-208.277777777778,0"
               Start="0,0"
-              End="189.722222222222,0">
+              End="-200.777777777778,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="189.722222222222,0" />
+                    End="-200.777777777778,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="46.669724392361,5,96.3827734375,11.609375"
+              BoundingBox="-148.580275607639,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7644,234 +7591,182 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
-          TopLeft="769.5,48.6666666666667">
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
+          TopLeft="1141.77777777777,147.722222222222">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-208.277777777778,0"
+              EndConnector="197.222222222222,0"
               Start="0,0"
-              End="-200.777777777778,0">
+              End="189.722222222222,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-200.777777777778,0" />
+                    End="189.722222222222,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-148.580275607639,5,96.3827734375,11.609375"
+              BoundingBox="46.669724392361,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
-          TopLeft="386.444444444445,144.777777777777">
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
+          TopLeft="392.222222222222,51.4444444444444">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="206.222222222222,0"
+              EndConnector="-194.833333333333,0"
               Start="0,0"
-              End="198.722222222222,0">
+              End="-187.333333333333,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="198.722222222222,0" />
+                    End="-187.333333333333,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="51.169724392361,5,96.3827734375,11.609375"
+              BoundingBox="-141.858053385416,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Derived Column Output]"
-          TopLeft="1412.55555555556,48.3333333333333">
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
+          TopLeft="1518,146.777777777777">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-110.444444444445,0"
+              EndConnector="184.222222222223,0"
               Start="0,0"
-              End="-102.944444444445,0">
+              End="176.722222222223,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-102.944444444445,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
-          TopLeft="1221.27777777778,495.055555555555">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="27.2777777777783,51.6111111111114"
-              Start="0,0"
-              End="27.2777777777783,44.1111111111114">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.8055555555557" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.8055555555557"
-                    Point2="0,25.8055555555557"
-                    Point3="4,25.8055555555557" />
-                  <mssgle:LineSegment
-                    End="23.2777777777783,25.8055555555557" />
-                  <mssgle:CubicBezierSegment
-                    Point1="23.2777777777783,25.8055555555557"
-                    Point2="27.2777777777783,25.8055555555557"
-                    Point3="27.2777777777783,29.8055555555557" />
-                  <mssgle:LineSegment
-                    End="27.2777777777783,44.1111111111114" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
-          TopLeft="668.158572479765,486.277777777778">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-35.5474613686536,56.388888888889"
-              Start="0,0"
-              End="-35.5474613686536,48.888888888889">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.1944444444445" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.1944444444445"
-                    Point2="0,28.1944444444445"
-                    Point3="-4,28.1944444444445" />
-                  <mssgle:LineSegment
-                    End="-31.5474613686536,28.1944444444445" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-31.5474613686536,28.1944444444445"
-                    Point2="-35.5474613686536,28.1944444444445"
-                    Point3="-35.5474613686536,32.1944444444445" />
-                  <mssgle:LineSegment
-                    End="-35.5474613686536,48.888888888889" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
-          TopLeft="1684.94444444444,48.8888888888889">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-109.38888888888,0"
-              Start="0,0"
-              End="-101.88888888888,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-101.88888888888,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
-          TopLeft="916.111111111111,396.666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-247.952538631346,47.6111111111116"
-              Start="0,0"
-              End="-247.952538631346,40.1111111111116">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.327282728273" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.327282728273"
-                    Point2="0,19.327282728273"
-                    Point3="-4,19.327282728273" />
-                  <mssgle:LineSegment
-                    End="-243.952538631346,19.327282728273" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-243.952538631346,19.327282728273"
-                    Point2="-247.952538631346,19.327282728273"
-                    Point3="-247.952538631346,23.327282728273" />
-                  <mssgle:LineSegment
-                    End="-247.952538631346,40.1111111111116" />
+                    End="176.722222222223,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-179.782656034423,24.327282728273,111.6127734375,11.609375"
+              BoundingBox="40.1697243923615,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
-          TopLeft="1776.72222222222,166.833333333333">
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
+          TopLeft="775.666666666667,144.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-231,56.3333333333333"
+              EndConnector="213.111111111108,0"
               Start="0,0"
-              End="-231,48.8333333333333">
+              End="205.611111111108,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.1666666666667" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.1666666666667"
-                    Point2="0,28.1666666666667"
-                    Point3="-4,28.1666666666667" />
-                  <mssgle:LineSegment
-                    End="-227,28.1666666666667" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-227,28.1666666666667"
-                    Point2="-231,28.1666666666667"
-                    Point3="-231,32.1666666666667" />
-                  <mssgle:LineSegment
-                    End="-231,48.8333333333333" />
+                    End="205.611111111108,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-163.69138671875,33.1666666666667,96.3827734375,11.609375"
+              BoundingBox="54.614168836804,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
+          TopLeft="966.777777777777,396.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="254.5,56.3888888888889"
+              Start="0,0"
+              End="254.5,48.8888888888889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.8905390539054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.8905390539054"
+                    Point2="0,22.8905390539054"
+                    Point3="4,22.8905390539054" />
+                  <mssgle:LineSegment
+                    End="250.5,22.8905390539054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="250.5,22.8905390539054"
+                    Point2="254.5,22.8905390539054"
+                    Point3="254.5,26.8905390539054" />
+                  <mssgle:LineSegment
+                    End="254.5,48.8888888888889" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="79.05861328125,27.8905390539054,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
+          TopLeft="1050,242">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-178,0"
+              Start="0,0"
+              End="-170.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-170.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-133.44138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
+          TopLeft="666,241.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-174,0"
+              Start="0,0"
+              End="-166.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-166.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-131.44138671875,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7912,98 +7807,62 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
-          TopLeft="666,241.5">
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          TopLeft="1776.72222222222,166.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-174,0"
+              EndConnector="-231,56.3333333333333"
               Start="0,0"
-              End="-166.5,0">
+              End="-231,48.8333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-166.5,0" />
+                    End="0,24.1666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.1666666666667"
+                    Point2="0,28.1666666666667"
+                    Point3="-4,28.1666666666667" />
+                  <mssgle:LineSegment
+                    End="-227,28.1666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-227,28.1666666666667"
+                    Point2="-231,28.1666666666667"
+                    Point3="-231,32.1666666666667" />
+                  <mssgle:LineSegment
+                    End="-231,48.8333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-131.44138671875,5,96.3827734375,11.609375"
+              BoundingBox="-163.69138671875,33.1666666666667,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
-          TopLeft="1050,242">
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Derived Column Output]"
+          TopLeft="1412.55555555556,48.3333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-178,0"
+              EndConnector="-110.444444444445,0"
               Start="0,0"
-              End="-170.5,0">
+              End="-102.944444444445,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-170.5,0" />
+                    End="-102.944444444445,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-133.44138671875,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
-          TopLeft="1518,146.777777777777">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="184.222222222223,0"
-              Start="0,0"
-              End="176.722222222223,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="176.722222222223,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="40.1697243923615,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output13]"
-          TopLeft="1453.22222222222,243.583333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-184.22222222222,0"
-              Start="0,0"
-              End="-176.72222222222,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-176.72222222222,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-136.55249782986,5,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8359,13 +8218,47 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150,42"
-          Id="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source"
-          TopLeft="767,65" />
+          Size="166,42"
+          Id="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command"
+          TopLeft="752,436" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource"
+          TopLeft="745,244" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\FactSales 1\Data Flow Task-Delete\Row Count"
+          TopLeft="768.5,353.5" />
         <NodeLayout
           Size="160,42"
           Id="Package\FactSales 1\Data Flow Task-Delete\Lookup Company"
           TopLeft="765,161" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source"
+          TopLeft="767,65" />
+        <EdgeLayout
+          Id="Package\FactSales 1\Data Flow Task-Delete.Paths[Row Count Output 1]"
+          TopLeft="834.25,395.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.5"
+              Start="0,0"
+              End="0,33">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\FactSales 1\Data Flow Task-Delete.Paths[OLE DB Source Output]"
           TopLeft="843.5,107">
@@ -8388,42 +8281,6 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="192,42"
-          Id="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource"
-          TopLeft="745,244" />
-        <EdgeLayout
-          Id="Package\FactSales 1\Data Flow Task-Delete.Paths[Lookup Match Output]"
-          TopLeft="843,203">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41"
-              Start="0,0"
-              End="0,33.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,10.9453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command"
-          TopLeft="752,436" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\FactSales 1\Data Flow Task-Delete\Row Count"
-          TopLeft="768.5,353.5" />
         <EdgeLayout
           Id="Package\FactSales 1\Data Flow Task-Delete.Paths[Lookup No Match Output]"
           TopLeft="837.25,286">
@@ -8449,25 +8306,27 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales 1\Data Flow Task-Delete.Paths[Row Count Output 1]"
-          TopLeft="834.25,395.5">
+          Id="Package\FactSales 1\Data Flow Task-Delete.Paths[Lookup Match Output]"
+          TopLeft="843,203">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.5"
+              EndConnector="0,41"
               Start="0,0"
-              End="0,33">
+              End="0,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33" />
+                    End="0,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,10.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8479,17 +8338,17 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[_DWFactSales]</Value>
+          type="q3:string"></Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
