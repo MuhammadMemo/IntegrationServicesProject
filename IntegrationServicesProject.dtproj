@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">RPT-SRV</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAACAAAAAAADZgAAwAAAABAAAAC+2PFo6dlpYTBQXKb3pIsTAAAAAASAAACgAAAAEAAAALJXtf016jqyKWhAw+WevEqIAAAATd1loVlDqSLJERwTAdf8CmabsGVrEp/jlz3VvrlOZwwwQKWTpb7w/9EShkf8nn+yZZwYJHCKn8AVqyN8ZSD1K6jfa9OyDZOa5xolff9+tj7qOWhgR7OSt04ZAZAXKHUFQrkiYIAZmhdofKpPaPOOszTVUzQ2C6fu7P1cZ/9bfoEhENn0Z7oLCxQAAADrps89+QY7jG8YSzZjSegQH6wEbg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA38RsPSX5/E6WHl7zuz5NNAAAAAACAAAAAAADZgAAwAAAABAAAAAtEkWyR+92bXaLBU0EZK69AAAAAASAAACgAAAAEAAAALrqp/VRwPN/ciHuWVUdbxKIAAAAjimVt4pFSbXCZF/379ejL2eXB57XEf94QgyH0PZmloe6QNno08lp13AAeABmzcEJprvWKLdQU0/5kefka+pzw/mMC6mBlg5qRYO9YXjrTCMFwzPwJhP33T6AcH//uMok58V0PQli2h8t+XUvqAGHDFvUaNelrTSy2LCz/eqCOmpwx7Il0jyGMhQAAAD+Uu+r1AZxGNrktrLB9zt4OLBnjw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -39,6 +39,8 @@
           <SSIS:ConnectionManager SSIS:Name="mffco-srv.DynamicsAx1.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="orcl.AXIOM.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="orcl.AXIOM1.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="DimDateValue.sql.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="DimValue.sql.conmgr" />
         </SSIS:ConnectionManagers>
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters>
@@ -604,6 +606,66 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.DimDateValue.sql.ConnectByProxy">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.DimDateValue.sql.ConnectionString">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">E:\SSIS Projects\DW\DataWarehouse\Script\DimDateValue.sql</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.DimValue.sql.ConnectByProxy">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.DimValue.sql.ConnectionString">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">E:\SSIS Projects\DW\DataWarehouse\Script\DimValue.sql</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
           </SSIS:ProjectConnectionParameters>
           <SSIS:PackageInfo>
             <SSIS:PackageMetaData SSIS:Name="UpdateSSASDB.dtsx">
@@ -733,10 +795,10 @@
                 <SSIS:Property SSIS:Name="Name">DimFill</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">720</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">864</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{B2EB5BD1-7050-48F4-827C-917CA9A3C0EE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{1865146D-763C-403D-B945-57E62B241A69}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -899,10 +961,10 @@
                 <SSIS:Property SSIS:Name="Name">FactFill</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">364</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">414</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{98D7C34C-D28E-416F-9162-F71756A18655}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{DF41712D-F66D-491A-BCD1-4E90A5CA14ED}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
