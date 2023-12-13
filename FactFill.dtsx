@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="521"
-  DTS:VersionGUID="{08F3EDA8-0BA8-42CD-AEAC-68074A24BCE3}">
+  DTS:VersionBuild="522"
+  DTS:VersionGUID="{E5ED9450-BDE1-4671-8E98-5FE3879A825F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -525,6 +525,23 @@
     </DTS:SelectedLogProviders>
   </DTS:LoggingOptions>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Analysis Services Processing Task"
+      DTS:CreationName="Microsoft.DTSProcessingTask"
+      DTS:Description="Analysis Services Processing Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{7F6716B2-249E-46E4-88AB-8DC9DFBF569F}"
+      DTS:ExecutableType="Microsoft.DTSProcessingTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Analysis Services Processing Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ASProcessingData
+          ConnectionName=""
+          ProcessingCommands="" />
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\FactSales"
       DTS:CreationName="STOCK:SEQUENCE"
@@ -9812,6 +9829,14 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
       DTS:To="Package\FactSalesCommission 1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{86D93D17-1AB3-4850-A045-514FF93E10BF}"
+      DTS:From="Package\FactSalesCommission 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Analysis Services Processing Task" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -10587,6 +10612,44 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                     Point3="-28.6587301587291,-40.2857142857144" />
                   <mssgle:LineSegment
                     End="-41.8174603174582,-40.2857142857144" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="237,42"
+          Id="Package\Analysis Services Processing Task"
+          TopLeft="891.428571428571,525.714285714286" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="978.690476190476,428.380952380952">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31.2380952380955,97.3333333333336"
+              Start="0,0"
+              End="31.2380952380955,89.8333333333336">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.6666666666668" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.6666666666668"
+                    Point2="0,48.6666666666668"
+                    Point3="4,48.6666666666668" />
+                  <mssgle:LineSegment
+                    End="27.2380952380955,48.6666666666668" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.2380952380955,48.6666666666668"
+                    Point2="31.2380952380955,48.6666666666668"
+                    Point3="31.2380952380955,52.6666666666668" />
+                  <mssgle:LineSegment
+                    End="31.2380952380955,89.8333333333336" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
