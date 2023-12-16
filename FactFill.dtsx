@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="534"
-  DTS:VersionGUID="{68E76B96-9C86-4991-81EF-9A0ED39BD73A}">
+  DTS:VersionBuild="539"
+  DTS:VersionGUID="{A6CF7C58-5DA6-4D0C-BBA4-A3A62B16A1B6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,6 +25,18 @@
         <DTS:ConnectionManager
           DTS:FileUsageType="1"
           DTS:ConnectionString="C:\Users\ism01\Desktop\log" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[mffco-srv.MffcoSales]"
+      DTS:CreationName="MSOLAP100"
+      DTS:DTSID="{03E453E5-23BC-46C4-8CBC-1F9B43D519E2}"
+      DTS:ObjectName="mffco-srv.MffcoSales">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Data Source=mffco-srv;Initial Catalog=MffcoSales;Provider=MSOLAP.8;Integrated Security=SSPI;Impersonation Level=Impersonate;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -42,7 +54,7 @@
   </DTS:ConnectionManagers>
   <DTS:LogProviders>
     <DTS:LogProvider
-      DTS:ConfigString="Mffco-srv DataWarehouse sa"
+      DTS:ConfigString="Mffco-srv DataWarehouse"
       DTS:CreationName="Microsoft.LogProviderSQLServer"
       DTS:Description="Writes log entries for events to a SQL Server database"
       DTS:DTSID="{255998A5-3733-4786-B4C6-79FD9AC2D742}"
@@ -1047,7 +1059,7 @@ where [refTable].[BrancheAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                     <connection
                       refId="Package\FactSales\Data Flow Task-Insert,Update\Lookup BrancheKey.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -1221,7 +1233,7 @@ where [refTable].[CarAlternativeKey] = ? and [refTable].[CompanyKey] = ?</proper
                     <connection
                       refId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -1395,7 +1407,7 @@ where [refTable].[CompanyName] = ?</property>
                     <connection
                       refId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CompanyKey.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -1553,7 +1565,7 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                     <connection
                       refId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CustomerKey.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -1727,7 +1739,7 @@ where [refTable].[DimensionAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
                     <connection
                       refId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimensionKey.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -1901,7 +1913,7 @@ where [refTable].[PromotionAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
                     <connection
                       refId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -2074,7 +2086,7 @@ where [refTable].[EmployeeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                     <connection
                       refId="Package\FactSales\Data Flow Task-Insert,Update\Lookup EmployeeKey.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -2248,7 +2260,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKey] = ?</property
                     <connection
                       refId="Package\FactSales\Data Flow Task-Insert,Update\Lookup FactSales.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -2406,7 +2418,7 @@ where [refTable].[GeographyAlternativeKey] = ? and [refTable].[CompanyKey] = ?</
                     <connection
                       refId="Package\FactSales\Data Flow Task-Insert,Update\Lookup GeographyKey.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -2579,7 +2591,7 @@ where [refTable].[MethodAcquisitionAlternativeKey] = ? and [refTable].[CompanyKe
                     <connection
                       refId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -2752,7 +2764,7 @@ where [refTable].[MethodDeliveryAlternativeKey] = ? and [refTable].[CompanyKey] 
                     <connection
                       refId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodDeliveryKey.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -2925,7 +2937,7 @@ where [refTable].[MethodPaymentAlternativeKey] = ? and [refTable].[CompanyKey] =
                     <connection
                       refId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -3098,7 +3110,7 @@ where [refTable].[ProductAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                     <connection
                       refId="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -3272,7 +3284,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                     <connection
                       refId="Package\FactSales\Data Flow Task-Insert,Update\Lookup UnitKey.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -3437,7 +3449,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                     <connection
                       refId="Package\FactSales\Data Flow Task-Insert,Update\OLE DB Command.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -4153,7 +4165,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                     <connection
                       refId="Package\FactSales\Data Flow Task-Insert,Update\OLE DB Destination.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -5441,29 +5453,29 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Derived Column 1.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output13]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup BrancheKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output12]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CustomerKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output12]"
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup EmployeeKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup UnitKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup GeographyKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup BrancheKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CompanyKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimensionKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CustomerKey.Inputs[Lookup Input]"
@@ -5471,9 +5483,9 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey.Inputs[Lookup Input]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimensionKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup BrancheKey.Outputs[Lookup Match Output]" />
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup UnitKey.Inputs[Lookup Input]"
@@ -5481,34 +5493,34 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimensionKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodDeliveryKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup FactSales.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup GeographyKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup EmployeeKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
                   name="Lookup Match Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup FactSales.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodDeliveryKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodDeliveryKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
@@ -5561,7 +5573,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -5624,7 +5636,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -5922,7 +5934,7 @@ where [refTable].[Companykey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\FactSales 1\Data Flow Task-Delete\770:invalid};</property>
+                      name="ParameterMap">#{Package\FactSales 1\Data Flow Task-Delete\803:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5936,7 +5948,7 @@ where [refTable].[Companykey] = ?</property>
                     <connection
                       refId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -6214,7 +6226,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                     <connection
                       refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -6352,7 +6364,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                     <connection
                       refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -6828,7 +6840,7 @@ where [refTable].[BrancheAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                     <connection
                       refId="Package\FactSalesCommission\Data Flow Task-Insert,Update\Lookup BrancheKey.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -7002,7 +7014,7 @@ where [refTable].[CompanyName] = ?</property>
                     <connection
                       refId="Package\FactSalesCommission\Data Flow Task-Insert,Update\Lookup CompanyKey.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -7160,7 +7172,7 @@ where [refTable].[EmployeeAlternativeKey] = ?</property>
                     <connection
                       refId="Package\FactSalesCommission\Data Flow Task-Insert,Update\Lookup EmployeeKey.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -7318,7 +7330,7 @@ where [refTable].[SalesCommissionAlternativeKey] = ? and [refTable].[CompanyKey]
                     <connection
                       refId="Package\FactSalesCommission\Data Flow Task-Insert,Update\Lookup FactSalesCommission.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -7449,7 +7461,7 @@ where [refTable].[SalesCommissionAlternativeKey] = ? and [refTable].[CompanyKey]
                     <connection
                       refId="Package\FactSalesCommission\Data Flow Task-Insert,Update\OLE DB Command.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -7828,7 +7840,7 @@ where [refTable].[SalesCommissionAlternativeKey] = ? and [refTable].[CompanyKey]
                     <connection
                       refId="Package\FactSalesCommission\Data Flow Task-Insert,Update\OLE DB Destination.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -8944,7 +8956,7 @@ where [refTable].[Companykey] = ?</property>
                     <connection
                       refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
                       name="OleDbConnection" />
                   </connections>
@@ -9221,7 +9233,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                     <connection
                       refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -9357,7 +9369,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                     <connection
                       refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse sa]"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -9804,8 +9816,8 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           <DTS:Variables />
           <DTS:ObjectData>
             <ASProcessingData
-              ConnectionName="mffco-srv.MffcoTabularProject"
-              ProcessingCommands="{&#xA;  &quot;sequence&quot;: {&#xA;    &quot;operations&quot;: [&#xA;      {&#xA;        &quot;refresh&quot;: {&#xA;          &quot;type&quot;: &quot;full&quot;,&#xA;          &quot;objects&quot;: [&#xA;            {&#xA;              &quot;database&quot;: &quot;MffcoTabularProject&quot;&#xA;            }&#xA;          ]&#xA;        }&#xA;      }&#xA;    ]&#xA;  }&#xA;}" />
+              ConnectionName="mffco-srv.MffcoSales"
+              ProcessingCommands="{&#xA;  &quot;sequence&quot;: {&#xA;    &quot;operations&quot;: [&#xA;      {&#xA;        &quot;refresh&quot;: {&#xA;          &quot;type&quot;: &quot;automatic&quot;,&#xA;          &quot;objects&quot;: [&#xA;            {&#xA;              &quot;database&quot;: &quot;MffcoSales&quot;&#xA;            }&#xA;          ]&#xA;        }&#xA;      }&#xA;    ]&#xA;  }&#xA;}" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -10932,6 +10944,10 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
     </LayoutInfo>
   </Package>
   <ConnectionManager
+    design-time-name="Package.ConnectionManagers[mffco-srv.MffcoSales]">
+    <ProjectReferenceName></ProjectReferenceName>
+  </ConnectionManager>
+  <ConnectionManager
     design-time-name="Package.ConnectionManagers[mffco-srv.MffcoTabularProject]">
     <ProjectReferenceName></ProjectReferenceName>
   </ConnectionManager>
@@ -10975,7 +10991,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         <NodeLayout
           Size="171,42"
           Id="Package\FactSales\Data Flow Task-Insert,Update\OLE DB Destination"
-          TopLeft="547.111111111111,542.666666666667" />
+          TopLeft="546.111111111111,542.666666666667" />
         <NodeLayout
           Size="153,42"
           Id="Package\FactSales\Data Flow Task-Insert,Update\Lookup UnitKey"
@@ -11026,9 +11042,9 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-35.5474613686536,56.388888888889"
+              EndConnector="-36.547461368654,56.388888888889"
               Start="0,0"
-              End="-35.5474613686536,48.888888888889">
+              End="-36.547461368654,48.888888888889">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -11039,13 +11055,13 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                     Point2="0,28.1944444444445"
                     Point3="-4,28.1944444444445" />
                   <mssgle:LineSegment
-                    End="-31.5474613686536,28.1944444444445" />
+                    End="-32.547461368654,28.1944444444445" />
                   <mssgle:CubicBezierSegment
-                    Point1="-31.5474613686536,28.1944444444445"
-                    Point2="-35.5474613686536,28.1944444444445"
-                    Point3="-35.5474613686536,32.1944444444445" />
+                    Point1="-32.547461368654,28.1944444444445"
+                    Point2="-36.547461368654,28.1944444444445"
+                    Point3="-36.547461368654,32.1944444444445" />
                   <mssgle:LineSegment
-                    End="-35.5474613686536,48.888888888889" />
+                    End="-36.547461368654,48.888888888889" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11154,6 +11170,30 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         </EdgeLayout>
         <EdgeLayout
           Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output13]"
+          TopLeft="769.5,48.6666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-208.277777777778,0"
+              Start="0,0"
+              End="-200.777777777778,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-200.777777777778,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-148.580275607639,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output12]"
           TopLeft="108.388888888889,73.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11189,7 +11229,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output12]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
           TopLeft="1141.77777777777,147.722222222222">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11213,7 +11253,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
           TopLeft="1453.22222222222,243.583333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11237,7 +11277,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
           TopLeft="1125.11111111111,46.6111111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11261,7 +11301,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
           TopLeft="386.444444444445,144.777777777777">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11281,30 +11321,6 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="51.169724392361,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
-          TopLeft="769.5,48.6666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-208.277777777778,0"
-              Start="0,0"
-              End="-200.777777777778,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-200.777777777778,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-148.580275607639,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -11334,25 +11350,25 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         </EdgeLayout>
         <EdgeLayout
           Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
-          TopLeft="1050,242">
+          TopLeft="666,241.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-178,0"
+              EndConnector="-174,0"
               Start="0,0"
-              End="-170.5,0">
+              End="-166.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-170.5,0" />
+                    End="-166.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-133.44138671875,5,96.3827734375,11.609375"
+              BoundingBox="-131.44138671875,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -11382,30 +11398,6 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         </EdgeLayout>
         <EdgeLayout
           Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
-          TopLeft="666,241.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-174,0"
-              Start="0,0"
-              End="-166.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-166.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-131.44138671875,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
           TopLeft="387.5,263">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11441,7 +11433,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
           TopLeft="1776.72222222222,166.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11477,7 +11469,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
           TopLeft="1518,146.777777777777">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11501,7 +11493,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
           TopLeft="966.777777777777,396.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11533,6 +11525,30 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="79.05861328125,27.8905390539054,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          TopLeft="1050,242">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-178,0"
+              Start="0,0"
+              End="-170.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-170.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-133.44138671875,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -12161,7 +12177,9 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12195,7 +12213,9 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12217,7 +12237,9 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
