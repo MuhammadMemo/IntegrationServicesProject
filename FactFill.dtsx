@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="552"
-  DTS:VersionGUID="{A9A567E3-ECC0-449B-9740-945DB11FD5BC}">
+  DTS:VersionBuild="556"
+  DTS:VersionGUID="{5AE19774-22F3-4BFD-AC68-7E8A07DE8BA4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5741,20 +5741,20 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\FactSales 1"
+      DTS:refId="Package\FactSales Delete"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence FactSales"
       DTS:DTSID="{bd8610d4-f708-42d0-a199-cda00943342f}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="FactSales 1">
+      DTS:ObjectName="FactSales Delete">
       <DTS:Variables />
       <DTS:LoggingOptions
         DTS:FilterKind="0"
         DTS:LoggingMode="2" />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\FactSales 1\Data Flow Task-Delete"
+          DTS:refId="Package\FactSales Delete\Data Flow Task-Delete"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{48949186-d17d-49ae-9061-f3344a9b953d}"
@@ -5866,7 +5866,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
               version="1">
               <components>
                 <component
-                  refId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company"
+                  refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
                   description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -5922,7 +5922,7 @@ where [refTable].[Companykey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\FactSales 1\Data Flow Task-Delete\770:invalid};</property>
+                      name="ParameterMap">#{Package\FactSales Delete\Data Flow Task-Delete\770:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5934,7 +5934,7 @@ where [refTable].[Companykey] = ?</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Connections[OleDbConnection]"
+                      refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
                       connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
@@ -5942,14 +5942,14 @@ where [refTable].[Companykey] = ?</property>
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Inputs[Lookup Input]"
+                      refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company.Inputs[Lookup Input]"
                       name="Lookup Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Inputs[Lookup Input].Columns[CompanyKey]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company.Inputs[Lookup Input].Columns[CompanyKey]"
                           cachedDataType="ui1"
                           cachedName="CompanyKey"
-                          lineageId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]">
+                          lineageId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -5967,18 +5967,18 @@ where [refTable].[Companykey] = ?</property>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Match Output]"
+                      refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Match Output]"
                       errorOrTruncationOperation="Lookup"
                       exclusionGroup="1"
                       name="Lookup Match Output"
-                      synchronousInputId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Inputs[Lookup Input]">
+                      synchronousInputId="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Match Output].Columns[CompanyName]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Match Output].Columns[CompanyName]"
                           dataType="wstr"
                           errorOrTruncationOperation="Copy Column"
                           length="10"
-                          lineageId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Match Output].Columns[CompanyName]"
+                          lineageId="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Match Output].Columns[CompanyName]"
                           name="CompanyName"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -5992,30 +5992,30 @@ where [refTable].[Companykey] = ?</property>
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Outputs[Lookup No Match Output]"
+                      refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company.Outputs[Lookup No Match Output]"
                       description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                       exclusionGroup="1"
                       name="Lookup No Match Output"
-                      synchronousInputId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Inputs[Lookup Input]">
+                      synchronousInputId="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Error Output]"
+                      refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Lookup Error Output"
-                      synchronousInputId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Inputs[Lookup Input]">
+                      synchronousInputId="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          lineageId="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -6024,7 +6024,7 @@ where [refTable].[Companykey] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource"
+                  refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup FactSalesSource"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
                   description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -6080,7 +6080,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[InventTranceKey]};#{Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Match Output].Columns[CompanyName]};</property>
+                      name="ParameterMap">#{Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[InventTranceKey]};#{Package\FactSales Delete\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Match Output].Columns[CompanyName]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6092,7 +6092,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource.Connections[OleDbConnection]"
+                      refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup FactSalesSource.Connections[OleDbConnection]"
                       connectionManagerID="{155A0EFD-3698-446D-862B-8BB7B74DA5D9}:external"
                       connectionManagerRefId="Project.ConnectionManagers[mffco-srv.DynamicsAx1]"
                       description="Connection manager used to access lookup data."
@@ -6100,15 +6100,15 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource.Inputs[Lookup Input]"
+                      refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup FactSalesSource.Inputs[Lookup Input]"
                       name="Lookup Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource.Inputs[Lookup Input].Columns[InventTranceKey]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup FactSalesSource.Inputs[Lookup Input].Columns[InventTranceKey]"
                           cachedDataType="wstr"
                           cachedLength="20"
                           cachedName="InventTranceKey"
-                          lineageId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[InventTranceKey]">
+                          lineageId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[InventTranceKey]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -6121,11 +6121,11 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource.Inputs[Lookup Input].Columns[CompanyName]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup FactSalesSource.Inputs[Lookup Input].Columns[CompanyName]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="CompanyName"
-                          lineageId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Match Output].Columns[CompanyName]">
+                          lineageId="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Match Output].Columns[CompanyName]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -6143,38 +6143,38 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource.Outputs[Lookup Match Output]"
+                      refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup FactSalesSource.Outputs[Lookup Match Output]"
                       errorOrTruncationOperation="Lookup"
                       exclusionGroup="1"
                       name="Lookup Match Output"
-                      synchronousInputId="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource.Inputs[Lookup Input]">
+                      synchronousInputId="Package\FactSales Delete\Data Flow Task-Delete\Lookup FactSalesSource.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource.Outputs[Lookup No Match Output]"
+                      refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup FactSalesSource.Outputs[Lookup No Match Output]"
                       description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                       exclusionGroup="1"
                       name="Lookup No Match Output"
-                      synchronousInputId="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource.Inputs[Lookup Input]">
+                      synchronousInputId="Package\FactSales Delete\Data Flow Task-Delete\Lookup FactSalesSource.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource.Outputs[Lookup Error Output]"
+                      refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup FactSalesSource.Outputs[Lookup Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Lookup Error Output"
-                      synchronousInputId="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource.Inputs[Lookup Input]">
+                      synchronousInputId="Package\FactSales Delete\Data Flow Task-Delete\Lookup FactSalesSource.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup FactSalesSource.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          lineageId="Package\FactSales Delete\Data Flow Task-Delete\Lookup FactSalesSource.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\Lookup FactSalesSource.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\FactSales Delete\Data Flow Task-Delete\Lookup FactSalesSource.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -6183,7 +6183,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                   </outputs>
                 </component>
                 <component
-                  refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command"
+                  refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Command"
                   componentClassID="Microsoft.OLEDBCommand"
                   contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
                   description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
@@ -6208,7 +6208,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command.Connections[OleDbConnection]"
+                      refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Command.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
                       connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="The OLE DB runtime connection used to access the database."
@@ -6216,30 +6216,30 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input]"
+                      refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input]"
                       errorOrTruncationOperation="Command Execution"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Command Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].Columns[InventTranceKey]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].Columns[InventTranceKey]"
                           cachedDataType="wstr"
                           cachedLength="20"
                           cachedName="InventTranceKey"
-                          externalMetadataColumnId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[InventTranceKey]" />
+                          externalMetadataColumnId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[InventTranceKey]" />
                         <inputColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].Columns[CompanyKey]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].Columns[CompanyKey]"
                           cachedDataType="ui1"
                           cachedName="CompanyKey"
-                          externalMetadataColumnId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]" />
+                          externalMetadataColumnId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                           dataType="wstr"
                           length="20"
                           name="Param_0">
@@ -6251,7 +6251,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           dataType="ui1"
                           name="Param_1">
                           <properties>
@@ -6266,29 +6266,29 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Output]"
+                      refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Output]"
                       exclusionGroup="1"
                       name="OLE DB Command Output"
-                      synchronousInputId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input]">
+                      synchronousInputId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Command Error Output"
-                      synchronousInputId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input]">
+                      synchronousInputId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          lineageId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -6297,7 +6297,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                   </outputs>
                 </component>
                 <component
-                  refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source"
+                  refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
                   description="OLE DB Source"
@@ -6346,7 +6346,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Connections[OleDbConnection]"
+                      refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
                       connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="The OLE DB runtime connection used to access the database."
@@ -6354,69 +6354,69 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output]"
+                      refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output]"
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[InventTranceKey]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[InventTranceKey]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InventTranceKey]"
+                          externalMetadataColumnId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InventTranceKey]"
                           length="20"
-                          lineageId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[InventTranceKey]"
+                          lineageId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[InventTranceKey]"
                           name="InventTranceKey"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]"
                           dataType="ui1"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyKey]"
-                          lineageId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]"
+                          externalMetadataColumnId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyKey]"
+                          lineageId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]"
                           name="CompanyKey"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InventTranceKey]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[InventTranceKey]"
                           dataType="wstr"
                           length="20"
                           name="InventTranceKey" />
                         <externalMetadataColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyKey]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyKey]"
                           dataType="ui1"
                           name="CompanyKey" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output]"
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                         <outputColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InventTranceKey]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InventTranceKey]"
                           dataType="wstr"
                           length="20"
-                          lineageId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InventTranceKey]"
+                          lineageId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[InventTranceKey]"
                           name="InventTranceKey" />
                         <outputColumn
-                          refId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyKey]"
+                          refId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyKey]"
                           dataType="ui1"
-                          lineageId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyKey]"
+                          lineageId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyKey]"
                           name="CompanyKey" />
                       </outputColumns>
                       <externalMetadataColumns />
@@ -6424,7 +6424,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                   </outputs>
                 </component>
                 <component
-                  refId="Package\FactSales 1\Data Flow Task-Delete\Row Count"
+                  refId="Package\FactSales Delete\Data Flow Task-Delete\Row Count"
                   componentClassID="Microsoft.RowCount"
                   contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
@@ -6437,7 +6437,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                   </properties>
                   <inputs>
                     <input
-                      refId="Package\FactSales 1\Data Flow Task-Delete\Row Count.Inputs[Row Count Input 1]"
+                      refId="Package\FactSales Delete\Data Flow Task-Delete\Row Count.Inputs[Row Count Input 1]"
                       hasSideEffects="true"
                       name="Row Count Input 1">
                       <externalMetadataColumns />
@@ -6445,9 +6445,9 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\FactSales 1\Data Flow Task-Delete\Row Count.Outputs[Row Count Output 1]"
+                      refId="Package\FactSales Delete\Data Flow Task-Delete\Row Count.Outputs[Row Count Output 1]"
                       name="Row Count Output 1"
-                      synchronousInputId="Package\FactSales 1\Data Flow Task-Delete\Row Count.Inputs[Row Count Input 1]">
+                      synchronousInputId="Package\FactSales Delete\Data Flow Task-Delete\Row Count.Inputs[Row Count Input 1]">
                       <externalMetadataColumns />
                     </output>
                   </outputs>
@@ -6455,31 +6455,31 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
               </components>
               <paths>
                 <path
-                  refId="Package\FactSales 1\Data Flow Task-Delete.Paths[Lookup Match Output]"
-                  endId="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource.Inputs[Lookup Input]"
+                  refId="Package\FactSales Delete\Data Flow Task-Delete.Paths[Lookup Match Output]"
+                  endId="Package\FactSales Delete\Data Flow Task-Delete\Lookup FactSalesSource.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Match Output]" />
+                  startId="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactSales 1\Data Flow Task-Delete.Paths[Lookup No Match Output]"
-                  endId="Package\FactSales 1\Data Flow Task-Delete\Row Count.Inputs[Row Count Input 1]"
+                  refId="Package\FactSales Delete\Data Flow Task-Delete.Paths[Lookup No Match Output]"
+                  endId="Package\FactSales Delete\Data Flow Task-Delete\Row Count.Inputs[Row Count Input 1]"
                   name="Lookup No Match Output"
-                  startId="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource.Outputs[Lookup No Match Output]" />
+                  startId="Package\FactSales Delete\Data Flow Task-Delete\Lookup FactSalesSource.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\FactSales 1\Data Flow Task-Delete.Paths[OLE DB Source Output]"
-                  endId="Package\FactSales 1\Data Flow Task-Delete\Lookup Company.Inputs[Lookup Input]"
+                  refId="Package\FactSales Delete\Data Flow Task-Delete.Paths[OLE DB Source Output]"
+                  endId="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company.Inputs[Lookup Input]"
                   name="OLE DB Source Output"
-                  startId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output]" />
+                  startId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output]" />
                 <path
-                  refId="Package\FactSales 1\Data Flow Task-Delete.Paths[Row Count Output 1]"
-                  endId="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input]"
+                  refId="Package\FactSales Delete\Data Flow Task-Delete.Paths[Row Count Output 1]"
+                  endId="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input]"
                   name="Row Count Output 1"
-                  startId="Package\FactSales 1\Data Flow Task-Delete\Row Count.Outputs[Row Count Output 1]" />
+                  startId="Package\FactSales Delete\Data Flow Task-Delete\Row Count.Outputs[Row Count Output 1]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\FactSales 1\Expression - Set Start date"
+          DTS:refId="Package\FactSales Delete\Expression - Set Start date"
           DTS:CreationName="Microsoft.ExpressionTask"
           DTS:Description="Expression Task"
           DTS:DTSID="{33ea1eed-308e-421d-b8b6-ff405d9dedde}"
@@ -6498,7 +6498,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\FactSales 1\Log Task Failure"
+          DTS:refId="Package\FactSales Delete\Log Task Failure"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{463cd123-fb3c-4aa7-920b-e888c5870945}"
@@ -6549,7 +6549,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\FactSales 1\Log Task Success"
+          DTS:refId="Package\FactSales Delete\Log Task Success"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{7e8df95b-5f64-43d0-a8e4-13889f507264}"
@@ -6602,29 +6602,29 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\FactSales 1.PrecedenceConstraints[Constraint]"
+          DTS:refId="Package\FactSales Delete.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
           DTS:DTSID="{D1703349-B152-458D-9672-79656F0E3E22}"
-          DTS:From="Package\FactSales 1\Expression - Set Start date"
+          DTS:From="Package\FactSales Delete\Expression - Set Start date"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\FactSales 1\Data Flow Task-Delete" />
+          DTS:To="Package\FactSales Delete\Data Flow Task-Delete" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\FactSales 1.PrecedenceConstraints[Constraint 2]"
+          DTS:refId="Package\FactSales Delete.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
           DTS:DTSID="{e0913a07-9529-4633-affc-21cdc4fc178f}"
-          DTS:From="Package\FactSales 1\Data Flow Task-Delete"
+          DTS:From="Package\FactSales Delete\Data Flow Task-Delete"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
-          DTS:To="Package\FactSales 1\Log Task Success" />
+          DTS:To="Package\FactSales Delete\Log Task Success" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\FactSales 1.PrecedenceConstraints[Constraint 3]"
+          DTS:refId="Package\FactSales Delete.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
           DTS:DTSID="{135a3de6-3cb6-4454-b7b1-846067238285}"
-          DTS:From="Package\FactSales 1\Data Flow Task-Delete"
+          DTS:From="Package\FactSales Delete\Data Flow Task-Delete"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
-          DTS:To="Package\FactSales 1\Log Task Failure"
+          DTS:To="Package\FactSales Delete\Log Task Failure"
           DTS:Value="1" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
@@ -8745,20 +8745,20 @@ where [refTable].[SalesCommissionAlternativeKey] = ? and [refTable].[CompanyKey]
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\FactSalesCommission 1"
+      DTS:refId="Package\FactSalesCommission Delete"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence FactSales"
       DTS:DTSID="{ba572782-23c1-4885-81c1-9c5e0dc6b135}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="FactSalesCommission 1">
+      DTS:ObjectName="FactSalesCommission Delete">
       <DTS:Variables />
       <DTS:LoggingOptions
         DTS:FilterKind="0"
         DTS:LoggingMode="2" />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\FactSalesCommission 1\Data Flow Task-Delete"
+          DTS:refId="Package\FactSalesCommission Delete\Data Flow Task-Delete"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{9f3d1513-cedf-49aa-80d6-1698cacdec0f}"
@@ -8870,7 +8870,7 @@ where [refTable].[SalesCommissionAlternativeKey] = ? and [refTable].[CompanyKey]
               version="1">
               <components>
                 <component
-                  refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup"
+                  refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
                   description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -8926,7 +8926,7 @@ where [refTable].[Companykey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]};</property>
+                      name="ParameterMap">#{Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -8938,7 +8938,7 @@ where [refTable].[Companykey] = ?</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Connections[OleDbConnection]"
+                      refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
                       connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
@@ -8946,14 +8946,14 @@ where [refTable].[Companykey] = ?</property>
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Inputs[Lookup Input]"
+                      refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup.Inputs[Lookup Input]"
                       name="Lookup Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Inputs[Lookup Input].Columns[CompanyKey]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup.Inputs[Lookup Input].Columns[CompanyKey]"
                           cachedDataType="ui1"
                           cachedName="CompanyKey"
-                          lineageId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]">
+                          lineageId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -8971,18 +8971,18 @@ where [refTable].[Companykey] = ?</property>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Outputs[Lookup Match Output]"
+                      refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup.Outputs[Lookup Match Output]"
                       errorOrTruncationOperation="Lookup"
                       exclusionGroup="1"
                       name="Lookup Match Output"
-                      synchronousInputId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Inputs[Lookup Input]">
+                      synchronousInputId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Outputs[Lookup Match Output].Columns[CompanyAlternativeKey]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup.Outputs[Lookup Match Output].Columns[CompanyAlternativeKey]"
                           dataType="wstr"
                           errorOrTruncationOperation="Copy Column"
                           length="5"
-                          lineageId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Outputs[Lookup Match Output].Columns[CompanyAlternativeKey]"
+                          lineageId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup.Outputs[Lookup Match Output].Columns[CompanyAlternativeKey]"
                           name="CompanyAlternativeKey"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -8996,30 +8996,30 @@ where [refTable].[Companykey] = ?</property>
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Outputs[Lookup No Match Output]"
+                      refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup.Outputs[Lookup No Match Output]"
                       description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                       exclusionGroup="1"
                       name="Lookup No Match Output"
-                      synchronousInputId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Inputs[Lookup Input]">
+                      synchronousInputId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Outputs[Lookup Error Output]"
+                      refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup.Outputs[Lookup Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Lookup Error Output"
-                      synchronousInputId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Inputs[Lookup Input]">
+                      synchronousInputId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          lineageId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -9028,7 +9028,7 @@ where [refTable].[Companykey] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup 1"
+                  refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup 1"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
                   description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -9084,7 +9084,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesCommissionAlternativeKey]};#{Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Outputs[Lookup Match Output].Columns[CompanyAlternativeKey]};</property>
+                      name="ParameterMap">#{Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesCommissionAlternativeKey]};#{Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup.Outputs[Lookup Match Output].Columns[CompanyAlternativeKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -9096,7 +9096,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup 1.Connections[OleDbConnection]"
+                      refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup 1.Connections[OleDbConnection]"
                       connectionManagerID="{155A0EFD-3698-446D-862B-8BB7B74DA5D9}:external"
                       connectionManagerRefId="Project.ConnectionManagers[mffco-srv.DynamicsAx1]"
                       description="Connection manager used to access lookup data."
@@ -9104,15 +9104,15 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup 1.Inputs[Lookup Input]"
+                      refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup 1.Inputs[Lookup Input]"
                       name="Lookup Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup 1.Inputs[Lookup Input].Columns[CompanyAlternativeKey]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup 1.Inputs[Lookup Input].Columns[CompanyAlternativeKey]"
                           cachedDataType="wstr"
                           cachedLength="5"
                           cachedName="CompanyAlternativeKey"
-                          lineageId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Outputs[Lookup Match Output].Columns[CompanyAlternativeKey]">
+                          lineageId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup.Outputs[Lookup Match Output].Columns[CompanyAlternativeKey]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -9125,10 +9125,10 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup 1.Inputs[Lookup Input].Columns[SalesCommissionAlternativeKey]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup 1.Inputs[Lookup Input].Columns[SalesCommissionAlternativeKey]"
                           cachedDataType="i8"
                           cachedName="SalesCommissionAlternativeKey"
-                          lineageId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesCommissionAlternativeKey]">
+                          lineageId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesCommissionAlternativeKey]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -9146,38 +9146,38 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup 1.Outputs[Lookup Match Output]"
+                      refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup 1.Outputs[Lookup Match Output]"
                       errorOrTruncationOperation="Lookup"
                       exclusionGroup="1"
                       name="Lookup Match Output"
-                      synchronousInputId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup 1.Inputs[Lookup Input]">
+                      synchronousInputId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup 1.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup 1.Outputs[Lookup No Match Output]"
+                      refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup 1.Outputs[Lookup No Match Output]"
                       description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                       exclusionGroup="1"
                       name="Lookup No Match Output"
-                      synchronousInputId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup 1.Inputs[Lookup Input]">
+                      synchronousInputId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup 1.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup 1.Outputs[Lookup Error Output]"
+                      refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup 1.Outputs[Lookup Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Lookup Error Output"
-                      synchronousInputId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup 1.Inputs[Lookup Input]">
+                      synchronousInputId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup 1.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          lineageId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -9186,7 +9186,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                   </outputs>
                 </component>
                 <component
-                  refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command"
+                  refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Command"
                   componentClassID="Microsoft.OLEDBCommand"
                   contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
                   description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
@@ -9203,9 +9203,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[FactSalesCommission]
-   SET 
-      [IsDeleted] =1
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">delete  [dbo].[FactSalesCommission]
 
  WHERE   [SalesCommissionAlternativeKey] =?	    and [CompanyKey] = ?</property>
                     <property
@@ -9215,7 +9213,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command.Connections[OleDbConnection]"
+                      refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Command.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
                       connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="The OLE DB runtime connection used to access the database."
@@ -9223,29 +9221,29 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input]"
+                      refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input]"
                       errorOrTruncationOperation="Command Execution"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Command Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].Columns[SalesCommissionAlternativeKey]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].Columns[SalesCommissionAlternativeKey]"
                           cachedDataType="i8"
                           cachedName="SalesCommissionAlternativeKey"
-                          externalMetadataColumnId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesCommissionAlternativeKey]" />
+                          externalMetadataColumnId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesCommissionAlternativeKey]" />
                         <inputColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].Columns[CompanyKey]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].Columns[CompanyKey]"
                           cachedDataType="ui1"
                           cachedName="CompanyKey"
-                          externalMetadataColumnId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]" />
+                          externalMetadataColumnId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                           dataType="i8"
                           name="Param_0">
                           <properties>
@@ -9256,7 +9254,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           dataType="ui1"
                           name="Param_1">
                           <properties>
@@ -9271,29 +9269,29 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Output]"
+                      refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Output]"
                       exclusionGroup="1"
                       name="OLE DB Command Output"
-                      synchronousInputId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input]">
+                      synchronousInputId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Command Error Output"
-                      synchronousInputId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input]">
+                      synchronousInputId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          lineageId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -9302,7 +9300,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                   </outputs>
                 </component>
                 <component
-                  refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source"
+                  refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
                   description="OLE DB Source"
@@ -9351,7 +9349,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Connections[OleDbConnection]"
+                      refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
                       connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="The OLE DB runtime connection used to access the database."
@@ -9359,65 +9357,65 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output]"
+                      refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output]"
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]"
                           dataType="ui1"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyKey]"
-                          lineageId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]"
+                          externalMetadataColumnId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyKey]"
+                          lineageId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyKey]"
                           name="CompanyKey"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesCommissionAlternativeKey]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesCommissionAlternativeKey]"
                           dataType="i8"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesCommissionAlternativeKey]"
-                          lineageId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesCommissionAlternativeKey]"
+                          externalMetadataColumnId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesCommissionAlternativeKey]"
+                          lineageId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesCommissionAlternativeKey]"
                           name="SalesCommissionAlternativeKey"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyKey]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyKey]"
                           dataType="ui1"
                           name="CompanyKey" />
                         <externalMetadataColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesCommissionAlternativeKey]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesCommissionAlternativeKey]"
                           dataType="i8"
                           name="SalesCommissionAlternativeKey" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output]"
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyKey]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyKey]"
                           dataType="ui1"
-                          lineageId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyKey]"
+                          lineageId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyKey]"
                           name="CompanyKey" />
                         <outputColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesCommissionAlternativeKey]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesCommissionAlternativeKey]"
                           dataType="i8"
-                          lineageId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesCommissionAlternativeKey]"
+                          lineageId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesCommissionAlternativeKey]"
                           name="SalesCommissionAlternativeKey" />
                         <outputColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -9426,7 +9424,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                   </outputs>
                 </component>
                 <component
-                  refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Row Count"
+                  refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Row Count"
                   componentClassID="Microsoft.RowCount"
                   contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
@@ -9439,7 +9437,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                   </properties>
                   <inputs>
                     <input
-                      refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Row Count.Inputs[Row Count Input 1]"
+                      refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Row Count.Inputs[Row Count Input 1]"
                       hasSideEffects="true"
                       name="Row Count Input 1">
                       <externalMetadataColumns />
@@ -9447,9 +9445,9 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\FactSalesCommission 1\Data Flow Task-Delete\Row Count.Outputs[Row Count Output 1]"
+                      refId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Row Count.Outputs[Row Count Output 1]"
                       name="Row Count Output 1"
-                      synchronousInputId="Package\FactSalesCommission 1\Data Flow Task-Delete\Row Count.Inputs[Row Count Input 1]">
+                      synchronousInputId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Row Count.Inputs[Row Count Input 1]">
                       <externalMetadataColumns />
                     </output>
                   </outputs>
@@ -9457,31 +9455,31 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
               </components>
               <paths>
                 <path
-                  refId="Package\FactSalesCommission 1\Data Flow Task-Delete.Paths[Lookup Match Output]"
-                  endId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup 1.Inputs[Lookup Input]"
+                  refId="Package\FactSalesCommission Delete\Data Flow Task-Delete.Paths[Lookup Match Output]"
+                  endId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup 1.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Outputs[Lookup Match Output]" />
+                  startId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactSalesCommission 1\Data Flow Task-Delete.Paths[Lookup No Match Output]"
-                  endId="Package\FactSalesCommission 1\Data Flow Task-Delete\Row Count.Inputs[Row Count Input 1]"
+                  refId="Package\FactSalesCommission Delete\Data Flow Task-Delete.Paths[Lookup No Match Output]"
+                  endId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Row Count.Inputs[Row Count Input 1]"
                   name="Lookup No Match Output"
-                  startId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup 1.Outputs[Lookup No Match Output]" />
+                  startId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup 1.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\FactSalesCommission 1\Data Flow Task-Delete.Paths[OLE DB Source Output]"
-                  endId="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup.Inputs[Lookup Input]"
+                  refId="Package\FactSalesCommission Delete\Data Flow Task-Delete.Paths[OLE DB Source Output]"
+                  endId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup.Inputs[Lookup Input]"
                   name="OLE DB Source Output"
-                  startId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output]" />
+                  startId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source.Outputs[OLE DB Source Output]" />
                 <path
-                  refId="Package\FactSalesCommission 1\Data Flow Task-Delete.Paths[Row Count Output 1]"
-                  endId="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input]"
+                  refId="Package\FactSalesCommission Delete\Data Flow Task-Delete.Paths[Row Count Output 1]"
+                  endId="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Command.Inputs[OLE DB Command Input]"
                   name="Row Count Output 1"
-                  startId="Package\FactSalesCommission 1\Data Flow Task-Delete\Row Count.Outputs[Row Count Output 1]" />
+                  startId="Package\FactSalesCommission Delete\Data Flow Task-Delete\Row Count.Outputs[Row Count Output 1]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\FactSalesCommission 1\Expression - Set Start date"
+          DTS:refId="Package\FactSalesCommission Delete\Expression - Set Start date"
           DTS:CreationName="Microsoft.ExpressionTask"
           DTS:Description="Expression Task"
           DTS:DTSID="{5390b606-6026-4707-865b-0b0dc1b08c1a}"
@@ -9500,7 +9498,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\FactSalesCommission 1\Log Task Failure"
+          DTS:refId="Package\FactSalesCommission Delete\Log Task Failure"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{f30e9f9e-00b7-45fb-aa5a-8f9d3d23fc8d}"
@@ -9551,7 +9549,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\FactSalesCommission 1\Log Task Success"
+          DTS:refId="Package\FactSalesCommission Delete\Log Task Success"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{7a221eba-323f-46bf-a925-78e669d8ec4d}"
@@ -9604,29 +9602,29 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\FactSalesCommission 1.PrecedenceConstraints[Constraint]"
+          DTS:refId="Package\FactSalesCommission Delete.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
           DTS:DTSID="{7BC443F0-1B73-4773-AD2B-15C3BF581CA9}"
-          DTS:From="Package\FactSalesCommission 1\Expression - Set Start date"
+          DTS:From="Package\FactSalesCommission Delete\Expression - Set Start date"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\FactSalesCommission 1\Data Flow Task-Delete" />
+          DTS:To="Package\FactSalesCommission Delete\Data Flow Task-Delete" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\FactSalesCommission 1.PrecedenceConstraints[Constraint 2]"
+          DTS:refId="Package\FactSalesCommission Delete.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
           DTS:DTSID="{58886cdd-75e0-47ae-9f28-6c4c2eb6eb3b}"
-          DTS:From="Package\FactSalesCommission 1\Data Flow Task-Delete"
+          DTS:From="Package\FactSalesCommission Delete\Data Flow Task-Delete"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
-          DTS:To="Package\FactSalesCommission 1\Log Task Success" />
+          DTS:To="Package\FactSalesCommission Delete\Log Task Success" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\FactSalesCommission 1.PrecedenceConstraints[Constraint 3]"
+          DTS:refId="Package\FactSalesCommission Delete.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
           DTS:DTSID="{91e53066-d836-4bce-ba82-e1acc544ac9a}"
-          DTS:From="Package\FactSalesCommission 1\Data Flow Task-Delete"
+          DTS:From="Package\FactSalesCommission Delete\Data Flow Task-Delete"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
-          DTS:To="Package\FactSalesCommission 1\Log Task Failure"
+          DTS:To="Package\FactSalesCommission Delete\Log Task Failure"
           DTS:Value="1" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
@@ -9955,40 +9953,40 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{D6773934-4442-441D-990B-A6FF51542CF6}"
+      DTS:DTSID="{E53D8AAB-7033-4370-B690-D651A4220600}"
       DTS:From="Package\Sequence Container 1"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\FactSales" />
+      DTS:To="Package\FactSales Delete" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{A7BCD668-A6D2-4996-84EF-47B0F07E21A8}"
-      DTS:From="Package\FactSales"
+      DTS:DTSID="{B0FA920E-2B35-4697-9EDF-DA2690B806FE}"
+      DTS:From="Package\FactSales Delete"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\FactSales 1" />
+      DTS:To="Package\FactSalesCommission Delete" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{1AA722CA-C30D-4916-8A43-815D2B94D9FB}"
-      DTS:From="Package\FactSales 1"
+      DTS:DTSID="{EE9233D9-09B8-4736-9774-227A8C89E777}"
+      DTS:From="Package\FactSalesCommission Delete"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
-      DTS:To="Package\FactSalesCommission" />
+      DTS:To="Package\FactSales" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{4BE75F04-E51B-45AF-B721-5E4C702B9144}"
-      DTS:From="Package\FactSalesCommission"
+      DTS:DTSID="{2DF7CD52-EE81-4B84-A257-4829EEA40495}"
+      DTS:From="Package\FactSales"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
-      DTS:To="Package\FactSalesCommission 1" />
+      DTS:To="Package\FactSalesCommission" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{633A2F6C-E5E0-4554-8FA5-215D0286060F}"
-      DTS:From="Package\FactSalesCommission 1"
+      DTS:DTSID="{4AA90121-2DFD-4D15-8229-36B751F89B10}"
+      DTS:From="Package\FactSalesCommission"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
       DTS:To="Package\Sequence Container 2" />
@@ -10145,25 +10143,25 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           PanelSize="420,409"
           Size="420,452"
           Id="Package\FactSales"
-          TopLeft="2151.47619047618,68.1904761904763" />
+          TopLeft="1735.76190476189,28" />
         <NodeLayout
           Size="185,42"
-          Id="Package\FactSales 1\Data Flow Task-Delete"
+          Id="Package\FactSales Delete\Data Flow Task-Delete"
           TopLeft="212.5,107.5" />
         <NodeLayout
           Size="205,42"
-          Id="Package\FactSales 1\Expression - Set Start date"
+          Id="Package\FactSales Delete\Expression - Set Start date"
           TopLeft="202.5,5.5" />
         <NodeLayout
           Size="156,42"
-          Id="Package\FactSales 1\Log Task Failure"
+          Id="Package\FactSales Delete\Log Task Failure"
           TopLeft="227,209.5" />
         <NodeLayout
           Size="161,42"
-          Id="Package\FactSales 1\Log Task Success"
+          Id="Package\FactSales Delete\Log Task Success"
           TopLeft="5.50000000000006,209.5" />
         <EdgeLayout
-          Id="Package\FactSales 1.PrecedenceConstraints[Constraint]"
+          Id="Package\FactSales Delete.PrecedenceConstraints[Constraint]"
           TopLeft="305,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10185,7 +10183,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales 1.PrecedenceConstraints[Constraint 2]"
+          Id="Package\FactSales Delete.PrecedenceConstraints[Constraint 2]"
           TopLeft="275.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10219,7 +10217,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales 1.PrecedenceConstraints[Constraint 3]"
+          Id="Package\FactSales Delete.PrecedenceConstraints[Constraint 3]"
           TopLeft="334.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10257,10 +10255,10 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="413,307"
-          Size="413,350"
-          Id="Package\FactSales 1"
-          TopLeft="1701,68.8571428571428" />
+          PanelSize="413,283"
+          Size="413,327"
+          Id="Package\FactSales Delete"
+          TopLeft="2175.28571428571,22.9523809523809" />
         <NodeLayout
           Size="220,42"
           Id="Package\FactSalesCommission\Data Flow Task-Insert,Update"
@@ -10401,25 +10399,25 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           PanelSize="420,409"
           Size="420,452"
           Id="Package\FactSalesCommission"
-          TopLeft="1234.50793650793,67.6666666666666" />
+          TopLeft="1288.79365079364,31.7619047619046" />
         <NodeLayout
           Size="185,42"
-          Id="Package\FactSalesCommission 1\Data Flow Task-Delete"
+          Id="Package\FactSalesCommission Delete\Data Flow Task-Delete"
           TopLeft="212.5,107.5" />
         <NodeLayout
           Size="205,42"
-          Id="Package\FactSalesCommission 1\Expression - Set Start date"
+          Id="Package\FactSalesCommission Delete\Expression - Set Start date"
           TopLeft="202.5,5.5" />
         <NodeLayout
           Size="156,42"
-          Id="Package\FactSalesCommission 1\Log Task Failure"
+          Id="Package\FactSalesCommission Delete\Log Task Failure"
           TopLeft="227,209.5" />
         <NodeLayout
           Size="161,42"
-          Id="Package\FactSalesCommission 1\Log Task Success"
+          Id="Package\FactSalesCommission Delete\Log Task Success"
           TopLeft="5.50000000000006,209.5" />
         <EdgeLayout
-          Id="Package\FactSalesCommission 1.PrecedenceConstraints[Constraint]"
+          Id="Package\FactSalesCommission Delete.PrecedenceConstraints[Constraint]"
           TopLeft="305,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10441,7 +10439,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSalesCommission 1.PrecedenceConstraints[Constraint 2]"
+          Id="Package\FactSalesCommission Delete.PrecedenceConstraints[Constraint 2]"
           TopLeft="275.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10475,7 +10473,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSalesCommission 1.PrecedenceConstraints[Constraint 3]"
+          Id="Package\FactSalesCommission Delete.PrecedenceConstraints[Constraint 3]"
           TopLeft="334.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10515,8 +10513,8 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           IsExpanded="True"
           PanelSize="413,307"
           Size="413,350"
-          Id="Package\FactSalesCommission 1"
-          TopLeft="772.190476190476,78.3809523809522" />
+          Id="Package\FactSalesCommission Delete"
+          TopLeft="2175.04761904762,375.333333333333" />
         <NodeLayout
           Size="163,42"
           Id="Package\Sequence Container\Execute SQL Task"
@@ -10553,7 +10551,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           PanelSize="220,163"
           Size="220,206"
           Id="Package\Sequence Container"
-          TopLeft="2603.57142857143,6.42857142857136" />
+          TopLeft="2603.57142857143,17.6666666666665" />
         <NodeLayout
           Size="162,42"
           Id="Package\Sequence Container 1\Execute Batch No"
@@ -10616,7 +10614,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           PanelSize="204,212"
           Size="204,255"
           Id="Package\Sequence Container 1"
-          TopLeft="2615.85714285714,241.428571428571" />
+          TopLeft="2615.85714285714,252.666666666666" />
         <NodeLayout
           Size="237,42"
           Id="Package\Sequence Container 2\Analysis Services Processing Task"
@@ -10628,7 +10626,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         <NodeLayout
           Size="156,42"
           Id="Package\Sequence Container 2\Log Task Failure"
-          TopLeft="226.857142857143,204.571428571429" />
+          TopLeft="227,209.5" />
         <NodeLayout
           Size="161,42"
           Id="Package\Sequence Container 2\Log Task Success"
@@ -10695,46 +10693,46 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-38.3095238095237,55.0714285714287"
+              EndConnector="-38.1666666666667,60"
               Start="0,0"
-              End="-38.3095238095237,47.5714285714287">
+              End="-38.1666666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.2501496826728" />
+                    End="0,20.2414082145851" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.2501496826728"
-                    Point2="0,22.2501496826728"
-                    Point3="-4,22.2501496826728" />
+                    Point1="0,20.2414082145851"
+                    Point2="0,24.2414082145851"
+                    Point3="-4,24.2414082145851" />
                   <mssgle:LineSegment
-                    End="-34.3095238095237,22.2501496826728" />
+                    End="-34.1666666666667,24.2414082145851" />
                   <mssgle:CubicBezierSegment
-                    Point1="-34.3095238095237,22.2501496826728"
-                    Point2="-38.3095238095237,22.2501496826728"
-                    Point3="-38.3095238095237,26.2501496826728" />
+                    Point1="-34.1666666666667,24.2414082145851"
+                    Point2="-38.1666666666667,24.2414082145851"
+                    Point3="-38.1666666666667,28.2414082145851" />
                   <mssgle:LineSegment
-                    End="-38.3095238095237,47.5714285714287" />
+                    End="-38.1666666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-34.3961095610119,27.2501496826728,30.4826953125,9.7490234375"
+              BoundingBox="-34.3246809895833,29.2414082145851,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="429,307"
+          PanelSize="429,306"
           Size="429,350"
           Id="Package\Sequence Container 2"
-          TopLeft="232.857142857143,110" />
+          TopLeft="281.428571428572,31.2380952380951" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="2715.71428571429,212.428571428571">
+          TopLeft="2715.71428571429,223.666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -10756,30 +10754,30 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="2615.85714285714,368.928571428571">
+          TopLeft="2615.85714285714,380.166666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-44.3809523809587,-74.7380952380952"
+              EndConnector="-27.5714285714262,-193.714285714285"
               Start="0,0"
-              End="-36.8809523809587,-74.7380952380952">
+              End="-20.0714285714262,-193.714285714285">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-18.1904761904793,0" />
+                    End="-9.78571428571308,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-18.1904761904793,0"
-                    Point2="-22.1904761904793,0"
-                    Point3="-22.1904761904793,-4" />
+                    Point1="-9.78571428571308,0"
+                    Point2="-13.7857142857131,0"
+                    Point3="-13.7857142857131,-4" />
                   <mssgle:LineSegment
-                    End="-22.1904761904793,-70.7380952380952" />
+                    End="-13.7857142857131,-189.714285714285" />
                   <mssgle:CubicBezierSegment
-                    Point1="-22.1904761904793,-70.7380952380952"
-                    Point2="-22.1904761904793,-74.7380952380952"
-                    Point3="-26.1904761904793,-74.7380952380952" />
+                    Point1="-13.7857142857131,-189.714285714285"
+                    Point2="-13.7857142857131,-193.714285714285"
+                    Point3="-17.7857142857131,-193.714285714285" />
                   <mssgle:LineSegment
-                    End="-36.8809523809587,-74.7380952380952" />
+                    End="-20.0714285714262,-193.714285714285" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10790,30 +10788,18 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="2151.47619047618,294.190476190476">
+          TopLeft="2381.66666666667,349.952380952381">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-37.476190476184,-50.3333333333334"
+              EndConnector="0,25.3809523809522"
               Start="0,0"
-              End="-29.976190476184,-50.3333333333334">
+              End="0,17.8809523809522">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-14.738095238092,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-14.738095238092,0"
-                    Point2="-18.738095238092,0"
-                    Point3="-18.738095238092,-4" />
-                  <mssgle:LineSegment
-                    End="-18.738095238092,-46.3333333333334" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-18.738095238092,-46.3333333333334"
-                    Point2="-18.738095238092,-50.3333333333334"
-                    Point3="-22.738095238092,-50.3333333333334" />
-                  <mssgle:LineSegment
-                    End="-29.976190476184,-50.3333333333334" />
+                    End="0,17.8809523809522" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10824,30 +10810,24 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="1701,243.857142857143">
+          TopLeft="2175.04761904762,550.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-46.4920634920659,49.8095238095238"
+              EndConnector="-229.285714285725,-70.3333333333331"
               Start="0,0"
-              End="-38.9920634920659,49.8095238095238">
+              End="-229.285714285725,-62.8333333333331">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-19.2460317460329,0" />
+                    End="-225.285714285725,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-19.2460317460329,0"
-                    Point2="-23.2460317460329,0"
-                    Point3="-23.2460317460329,4" />
+                    Point1="-225.285714285725,0"
+                    Point2="-229.285714285725,0"
+                    Point3="-229.285714285725,-4" />
                   <mssgle:LineSegment
-                    End="-23.2460317460329,45.8095238095238" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-23.2460317460329,45.8095238095238"
-                    Point2="-23.2460317460329,49.8095238095238"
-                    Point3="-27.2460317460329,49.8095238095238" />
-                  <mssgle:LineSegment
-                    End="-38.9920634920659,49.8095238095238" />
+                    End="-229.285714285725,-62.8333333333331" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10858,30 +10838,18 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="1234.50793650793,293.666666666667">
+          TopLeft="1735.76190476189,255.880952380952">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-49.3174603174582,-40.2857142857144"
+              EndConnector="-26.9682539682494,0"
               Start="0,0"
-              End="-41.8174603174582,-40.2857142857144">
+              End="-19.4682539682494,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-20.6587301587291,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-20.6587301587291,0"
-                    Point2="-24.6587301587291,0"
-                    Point3="-24.6587301587291,-4" />
-                  <mssgle:LineSegment
-                    End="-24.6587301587291,-36.2857142857144" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-24.6587301587291,-36.2857142857144"
-                    Point2="-24.6587301587291,-40.2857142857144"
-                    Point3="-28.6587301587291,-40.2857142857144" />
-                  <mssgle:LineSegment
-                    End="-41.8174603174582,-40.2857142857144" />
+                    End="-19.4682539682494,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10892,30 +10860,30 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="772.190476190476,253.380952380952">
+          TopLeft="1288.79365079364,257.761904761905">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-110.333333333333,31.6190476190477"
+              EndConnector="-578.365079365073,-51.5238095238095"
               Start="0,0"
-              End="-102.833333333333,31.6190476190477">
+              End="-570.865079365073,-51.5238095238095">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-51.1666666666665,0" />
+                    End="-285.182539682536,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-51.1666666666665,0"
-                    Point2="-55.1666666666665,0"
-                    Point3="-55.1666666666665,4" />
+                    Point1="-285.182539682536,0"
+                    Point2="-289.182539682536,0"
+                    Point3="-289.182539682536,-4" />
                   <mssgle:LineSegment
-                    End="-55.1666666666665,27.6190476190477" />
+                    End="-289.182539682536,-47.5238095238095" />
                   <mssgle:CubicBezierSegment
-                    Point1="-55.1666666666665,27.6190476190477"
-                    Point2="-55.1666666666665,31.6190476190477"
-                    Point3="-59.1666666666665,31.6190476190477" />
+                    Point1="-289.182539682536,-47.5238095238095"
+                    Point2="-289.182539682536,-51.5238095238095"
+                    Point3="-293.182539682536,-51.5238095238095" />
                   <mssgle:LineSegment
-                    End="-102.833333333333,31.6190476190477" />
+                    End="-570.865079365073,-51.5238095238095" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11895,32 +11863,32 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\FactSales 1\Data Flow Task-Delete">
+    design-time-name="Package\FactSales Delete\Data Flow Task-Delete">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="166,42"
-          Id="Package\FactSales 1\Data Flow Task-Delete\OLE DB Command"
+          Id="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Command"
           TopLeft="752,436" />
         <NodeLayout
           Size="192,42"
-          Id="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource"
+          Id="Package\FactSales Delete\Data Flow Task-Delete\Lookup FactSalesSource"
           TopLeft="745,244" />
         <NodeLayout
           Size="130,42"
-          Id="Package\FactSales 1\Data Flow Task-Delete\Row Count"
+          Id="Package\FactSales Delete\Data Flow Task-Delete\Row Count"
           TopLeft="768.5,353.5" />
         <NodeLayout
           Size="160,42"
-          Id="Package\FactSales 1\Data Flow Task-Delete\Lookup Company"
+          Id="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company"
           TopLeft="765,161" />
         <NodeLayout
           Size="150,42"
-          Id="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source"
+          Id="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source"
           TopLeft="767,65" />
         <EdgeLayout
-          Id="Package\FactSales 1\Data Flow Task-Delete.Paths[Row Count Output 1]"
+          Id="Package\FactSales Delete\Data Flow Task-Delete.Paths[Row Count Output 1]"
           TopLeft="834.25,395.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11942,7 +11910,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales 1\Data Flow Task-Delete.Paths[OLE DB Source Output]"
+          Id="Package\FactSales Delete\Data Flow Task-Delete.Paths[OLE DB Source Output]"
           TopLeft="843.5,107">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11964,7 +11932,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales 1\Data Flow Task-Delete.Paths[Lookup No Match Output]"
+          Id="Package\FactSales Delete\Data Flow Task-Delete.Paths[Lookup No Match Output]"
           TopLeft="837.25,286">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11988,7 +11956,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales 1\Data Flow Task-Delete.Paths[Lookup Match Output]"
+          Id="Package\FactSales Delete\Data Flow Task-Delete.Paths[Lookup Match Output]"
           TopLeft="843,203">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12015,7 +11983,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\FactSales 1\Data Flow Task-Delete\Lookup FactSalesSource">
+    design-time-name="Package\FactSales Delete\Data Flow Task-Delete\Lookup FactSalesSource">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -12038,7 +12006,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\FactSales 1\Data Flow Task-Delete\OLE DB Source">
+    design-time-name="Package\FactSales Delete\Data Flow Task-Delete\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -12051,7 +12019,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\FactSales 1\Data Flow Task-Delete\Lookup Company">
+    design-time-name="Package\FactSales Delete\Data Flow Task-Delete\Lookup Company">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -12477,32 +12445,32 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\FactSalesCommission 1\Data Flow Task-Delete">
+    design-time-name="Package\FactSalesCommission Delete\Data Flow Task-Delete">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="166,42"
-          Id="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Command"
+          Id="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Command"
           TopLeft="571,500" />
         <NodeLayout
           Size="122,42"
-          Id="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup 1"
+          Id="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup 1"
           TopLeft="710,281" />
         <NodeLayout
           Size="130,42"
-          Id="Package\FactSalesCommission 1\Data Flow Task-Delete\Row Count"
+          Id="Package\FactSalesCommission Delete\Data Flow Task-Delete\Row Count"
           TopLeft="511,368" />
         <NodeLayout
           Size="113,42"
-          Id="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup"
+          Id="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup"
           TopLeft="613,173" />
         <NodeLayout
           Size="150,42"
-          Id="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source"
+          Id="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source"
           TopLeft="664,74" />
         <EdgeLayout
-          Id="Package\FactSalesCommission 1\Data Flow Task-Delete.Paths[Row Count Output 1]"
+          Id="Package\FactSalesCommission Delete\Data Flow Task-Delete.Paths[Row Count Output 1]"
           TopLeft="576,410">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12532,13 +12500,11 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSalesCommission 1\Data Flow Task-Delete.Paths[OLE DB Source Output]"
+          Id="Package\FactSalesCommission Delete\Data Flow Task-Delete.Paths[OLE DB Source Output]"
           TopLeft="739,116">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12568,13 +12534,11 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSalesCommission 1\Data Flow Task-Delete.Paths[Lookup No Match Output]"
+          Id="Package\FactSalesCommission Delete\Data Flow Task-Delete.Paths[Lookup No Match Output]"
           TopLeft="771,323">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12610,7 +12574,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSalesCommission 1\Data Flow Task-Delete.Paths[Lookup Match Output]"
+          Id="Package\FactSalesCommission Delete\Data Flow Task-Delete.Paths[Lookup Match Output]"
           TopLeft="669.5,215">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12649,7 +12613,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup 1">
+    design-time-name="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup 1">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -12672,7 +12636,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\FactSalesCommission 1\Data Flow Task-Delete\OLE DB Source">
+    design-time-name="Package\FactSalesCommission Delete\Data Flow Task-Delete\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -12680,7 +12644,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\FactSalesCommission 1\Data Flow Task-Delete\Lookup">
+    design-time-name="Package\FactSalesCommission Delete\Data Flow Task-Delete\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
