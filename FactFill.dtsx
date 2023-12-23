@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="564"
-  DTS:VersionGUID="{75188B1D-DA52-4D02-B43B-95FD995CF43A}">
+  DTS:VersionBuild="576"
+  DTS:VersionGUID="{D30D3A77-61AD-4EC5-8C12-1C6B972464A7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -537,6 +537,1381 @@
     </DTS:SelectedLogProviders>
   </DTS:LoggingOptions>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FactFinance"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence FactSales"
+      DTS:DTSID="{f442674c-2c0c-4a2e-a53f-28ca09a620e3}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FactFinance">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="2" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\FactFinance\Data Flow Task-Insert,Update"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{9860c519-29ce-4b22-aebf-81c26610f923}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task-Insert,Update"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0">
+            <DTS:Property
+              DTS:DataType="8"
+              DTS:Name="EventFilter">5,7,OnError,19,OnExecStatusChanged,13,OnInformation,25,OnPipelinePostEndOfRowset,10,OnProgress</DTS:Property>
+            <DTS:Property
+              DTS:EventName="OnError"
+              DTS:Name="ColumnFilter">
+              <DTS:Property
+                DTS:Name="Computer">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="Operator">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceName">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="ExecutionID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="MessageText">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="DataBytes">-1</DTS:Property>
+            </DTS:Property>
+            <DTS:Property
+              DTS:EventName="OnExecStatusChanged"
+              DTS:Name="ColumnFilter">
+              <DTS:Property
+                DTS:Name="Computer">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="Operator">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceName">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="ExecutionID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="MessageText">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="DataBytes">-1</DTS:Property>
+            </DTS:Property>
+            <DTS:Property
+              DTS:EventName="OnInformation"
+              DTS:Name="ColumnFilter">
+              <DTS:Property
+                DTS:Name="Computer">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="Operator">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceName">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="ExecutionID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="MessageText">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="DataBytes">-1</DTS:Property>
+            </DTS:Property>
+            <DTS:Property
+              DTS:EventName="OnPipelinePostEndOfRowset"
+              DTS:Name="ColumnFilter">
+              <DTS:Property
+                DTS:Name="Computer">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="Operator">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceName">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="ExecutionID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="MessageText">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="DataBytes">-1</DTS:Property>
+            </DTS:Property>
+            <DTS:Property
+              DTS:EventName="OnProgress"
+              DTS:Name="ColumnFilter">
+              <DTS:Property
+                DTS:Name="Computer">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="Operator">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceName">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="SourceID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="ExecutionID">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="MessageText">-1</DTS:Property>
+              <DTS:Property
+                DTS:Name="DataBytes">-1</DTS:Property>
+            </DTS:Property>
+          </DTS:LoggingOptions>
+          <DTS:ObjectData>
+            <pipeline
+              defaultBufferMaxRows="100000"
+              defaultBufferSize="12485760"
+              version="1">
+              <components>
+                <component
+                  refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimCompany]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimCompany]) [refTable]
+where [refTable].[CompanyAlternativeKey] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Companykey" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CompanyAlternativeKey" dataType="DT_WSTR" length="5" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CompanyName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Desc" dataType="DT_NTEXT" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[CompanyName]"
+                          cachedDataType="wstr"
+                          cachedLength="4"
+                          cachedName="CompanyName"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CompanyAlternativeKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]"
+                          dataType="ui1"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]"
+                          name="Companykey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">Companykey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup 1"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[FactFinance]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[FactFinance]) [refTable]
+where [refTable].[Id] = ? and [refTable].[CompanyKey] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Id" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CompanyKey" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AccountKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FinancialDateAlternativeKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TransTypeKey" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FinancialDate" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Amount" dataType="DT_NUMERIC" length="0" precision="18" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LastupdateDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]};#{Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input].Columns[Companykey]"
+                          cachedDataType="ui1"
+                          cachedName="Companykey"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CompanyKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input].Columns[ID]"
+                          cachedDataType="i8"
+                          cachedName="ID"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">Id</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">   update [dbo].[FactFinance] set 
+	AccountKey = ?
+	,FinancialDateAlternativeKey= ?
+	,TransTypeKey =?
+	,FinancialDate =?
+	,Amount =?
+	where Id  =? and CompanyKey =? </property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[AccountKey]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="AccountKey"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountKey]" />
+                        <inputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[FinancialDateAlternativeKey]"
+                          cachedDataType="i4"
+                          cachedName="FinancialDateAlternativeKey"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[FinancialDateAlternativeKey]" />
+                        <inputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[TransTypeKey]"
+                          cachedDataType="i4"
+                          cachedName="TransTypeKey"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransTypeKey]" />
+                        <inputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[FinancialDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="FinancialDate"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[FinancialDate]" />
+                        <inputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[Amount]"
+                          cachedDataType="numeric"
+                          cachedName="Amount"
+                          cachedPrecision="28"
+                          cachedScale="12"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Amount]" />
+                        <inputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[ID]"
+                          cachedDataType="i8"
+                          cachedName="ID"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]" />
+                        <inputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[Companykey]"
+                          cachedDataType="ui1"
+                          cachedName="Companykey"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="i4"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="i4"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="ui1"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          dataType="wstr"
+                          length="10"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          dataType="numeric"
+                          name="Param_4"
+                          precision="18">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          dataType="i8"
+                          name="Param_5">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          dataType="ui1"
+                          name="Param_6">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[FactFinance]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID]"
+                          cachedDataType="i8"
+                          cachedName="ID"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]" />
+                        <inputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AccountKey]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="AccountKey"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountKey]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountKey]" />
+                        <inputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TransTypeKey]"
+                          cachedDataType="i4"
+                          cachedName="TransTypeKey"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransTypeKey]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransTypeKey]" />
+                        <inputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FinancialDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="FinancialDate"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FinancialDate]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[FinancialDate]" />
+                        <inputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Amount]"
+                          cachedDataType="numeric"
+                          cachedName="Amount"
+                          cachedPrecision="28"
+                          cachedScale="12"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Amount]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Amount]" />
+                        <inputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FinancialDateAlternativeKey]"
+                          cachedDataType="i4"
+                          cachedName="FinancialDateAlternativeKey"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FinancialDateAlternativeKey]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[FinancialDateAlternativeKey]" />
+                        <inputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Companykey]"
+                          cachedDataType="ui1"
+                          cachedName="Companykey"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                          dataType="i8"
+                          name="Id" />
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                          dataType="ui1"
+                          name="CompanyKey" />
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountKey]"
+                          dataType="i4"
+                          name="AccountKey" />
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FinancialDateAlternativeKey]"
+                          dataType="i4"
+                          name="FinancialDateAlternativeKey" />
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransTypeKey]"
+                          dataType="ui1"
+                          name="TransTypeKey" />
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FinancialDate]"
+                          dataType="wstr"
+                          length="10"
+                          name="FinancialDate" />
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Amount]"
+                          dataType="numeric"
+                          name="Amount"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastupdateDate]"
+                          dataType="dbTimeStamp"
+                          name="LastupdateDate" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from _DWFactFinance where MODIFIEDDATETIME&gt;?</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"0:Input",{7A563E21-82B9-4A8A-AE5B-CC70DB6E5F89};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{155A0EFD-3698-446D-862B-8BB7B74DA5D9}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[mffco-srv.DynamicsAx1]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODIFIEDDATETIME]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MODIFIEDDATETIME]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[MODIFIEDDATETIME]"
+                          name="MODIFIEDDATETIME"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]"
+                          name="ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountKey]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AccountKey]"
+                          length="30"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountKey]"
+                          name="AccountKey"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransTypeKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TransTypeKey]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[TransTypeKey]"
+                          name="TransTypeKey"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[FinancialDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FinancialDate]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[FinancialDate]"
+                          name="FinancialDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Amount]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Amount]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Amount]"
+                          name="Amount"
+                          precision="28"
+                          scale="12"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[FinancialDateAlternativeKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FinancialDateAlternativeKey]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[FinancialDateAlternativeKey]"
+                          name="FinancialDateAlternativeKey"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
+                          length="4"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
+                          name="CompanyName"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MODIFIEDDATETIME]"
+                          dataType="dbTimeStamp"
+                          name="MODIFIEDDATETIME" />
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                          dataType="i8"
+                          name="ID" />
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AccountKey]"
+                          dataType="wstr"
+                          length="30"
+                          name="AccountKey" />
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TransTypeKey]"
+                          dataType="i4"
+                          name="TransTypeKey" />
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FinancialDate]"
+                          dataType="dbTimeStamp"
+                          name="FinancialDate" />
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Amount]"
+                          dataType="numeric"
+                          name="Amount"
+                          precision="28"
+                          scale="12" />
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FinancialDateAlternativeKey]"
+                          dataType="i4"
+                          name="FinancialDateAlternativeKey" />
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
+                          dataType="wstr"
+                          length="4"
+                          name="CompanyName" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID]"
+                          dataType="i8"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID]"
+                          name="ID" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AccountKey]"
+                          dataType="wstr"
+                          length="30"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AccountKey]"
+                          name="AccountKey" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TransTypeKey]"
+                          dataType="i4"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TransTypeKey]"
+                          name="TransTypeKey" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FinancialDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FinancialDate]"
+                          name="FinancialDate" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Amount]"
+                          dataType="numeric"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Amount]"
+                          name="Amount"
+                          precision="28"
+                          scale="12" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FinancialDateAlternativeKey]"
+                          dataType="i4"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FinancialDateAlternativeKey]"
+                          name="FinancialDateAlternativeKey" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyName]"
+                          dataType="wstr"
+                          length="4"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyName]"
+                          name="CompanyName" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MODIFIEDDATETIME]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MODIFIEDDATETIME]"
+                          name="MODIFIEDDATETIME" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FactFinance\Data Flow Task-Insert,Update\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::InsertCount</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\FactFinance\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FactFinance\Data Flow Task-Insert,Update\Row Count 1"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count 1">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::UpdateCount</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FactFinance\Data Flow Task-Insert,Update\Row Count 1.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\FactFinance\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\FactFinance\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+                  endId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactFinance\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+                  endId="Package\FactFinance\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactFinance\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
+                  endId="Package\FactFinance\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
+                  name="Lookup No Match Output"
+                  startId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\FactFinance\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+                  endId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\FactFinance\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+                  endId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\FactFinance\Data Flow Task-Insert,Update\Row Count.Outputs[Row Count Output 1]" />
+                <path
+                  refId="Package\FactFinance\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+                  endId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="Row Count Output 1"
+                  startId="Package\FactFinance\Data Flow Task-Insert,Update\Row Count 1.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FactFinance\Expression - Set Start date"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{db846322-79b3-4448-a56b-fa75eacc8b6f}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Expression - Set Start date"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::StartPakage]=getdate()" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FactFinance\Log Task Failure"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5258f34b-44c2-4a63-8255-1eefa6b29d44}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Task Failure"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status,Batch)&#xA;      VALUES ('FactFinance',?,?,?,?,?,?,GETDATE(),22,'Failure',?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::InsertCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::UpdateCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::MachineName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::DeleteCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::StartPakage"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Batch"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FactFinance\Log Task Success"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{a55c62a0-df61-48d7-ab89-0a11359ce601}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Task Success"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
+              SQLTask:SqlStatementSource=" INSERT INTO [dbo].[LogTable]&#xA;              (TableName,&#xA;               Pakage,&#xA;               MachineName,&#xA;               IsInserted,&#xA;  IsUpdated,&#xA; IsDeleted,&#xA; StartPakage,&#xA;ModifiedDate ,TableNo,&#xA;Status,Batch)&#xA;      VALUES ('FactFinance',?,?,?,?,?,?,GETDATE(),22,'Success',?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::InsertCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::UpdateCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::MachineName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::DeleteCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::StartPakage"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::Batch"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\FactFinance\TimeStamp Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{2e1b09bd-399d-480a-a9e1-e5b167b7bc85}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TimeStamp Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0"
+            DTS:LoggingMode="2" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
+              SQLTask:SqlStatementSource="SELECT      Max(ModifiedDate) AS ModifiedDate&#xA;FROM            LogTable where [TableName] ='FactFinance' and Status='Success'"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::LastModifaydate" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FactFinance.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{81106dc9-cf1d-42cf-8479-9cc748da98bc}"
+          DTS:From="Package\FactFinance\Expression - Set Start date"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\FactFinance\TimeStamp Task" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FactFinance.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{31f9a87a-20c9-42bc-8edf-1d9a7fdd1696}"
+          DTS:From="Package\FactFinance\TimeStamp Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\FactFinance\Data Flow Task-Insert,Update" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FactFinance.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{894580d3-d9a8-4f2d-a37e-303fa426a77c}"
+          DTS:From="Package\FactFinance\Data Flow Task-Insert,Update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\FactFinance\Log Task Success" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\FactFinance.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{510a1e5f-2cd0-4c60-9410-52952ff376b2}"
+          DTS:From="Package\FactFinance\Data Flow Task-Insert,Update"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\FactFinance\Log Task Failure"
+          DTS:Value="1" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\FactSales"
       DTS:CreationName="STOCK:SEQUENCE"
@@ -5497,74 +6872,74 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Derived Column 1.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output13]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup BrancheKey.Inputs[Lookup Input]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup GeographyKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CompanyKey.Outputs[Lookup Match Output]" />
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output12]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimensionKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup BrancheKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CustomerKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup EmployeeKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup UnitKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CustomerKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup GeographyKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup UnitKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimensionKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup EmployeeKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup FactSales.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodDeliveryKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodDeliveryKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup FactSales.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup GeographyKey.Inputs[Lookup Input]"
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey.Outputs[Lookup Match Output]" />
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodDeliveryKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodDeliveryKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup FactSales.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup UnitKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimensionKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup EmployeeKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CustomerKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup EmployeeKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup UnitKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CustomerKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup BrancheKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimensionKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup BrancheKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CompanyKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup GeographyKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
@@ -5617,7 +6992,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -5680,7 +7055,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -5978,7 +7353,7 @@ where [refTable].[Companykey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\FactSales Delete\Data Flow Task-Delete\770:invalid};</property>
+                      name="ParameterMap">#{Package\FactSales Delete\Data Flow Task-Delete\793:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -8621,7 +9996,7 @@ where [refTable].[SalesCommissionAlternativeKey] = ? and [refTable].[CompanyKey]
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -8684,7 +10059,7 @@ where [refTable].[SalesCommissionAlternativeKey] = ? and [refTable].[CompanyKey]
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -9886,7 +11261,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -9931,7 +11306,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -10041,10 +11416,18 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{4AA90121-2DFD-4D15-8229-36B751F89B10}"
+      DTS:DTSID="{B1DA0631-B95E-47D7-9775-C35687A0037D}"
       DTS:From="Package\FactSalesCommission"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
+      DTS:To="Package\FactFinance" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{574603DC-BCF6-42E4-8E48-AEB082647F85}"
+      DTS:From="Package\FactFinance"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
       DTS:To="Package\Sequence Container 2" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -10058,7 +11441,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="220,42"
           Id="Package\FactSales\Data Flow Task-Insert,Update"
@@ -10914,32 +12297,195 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="220,42"
+          Id="Package\FactFinance\Data Flow Task-Insert,Update"
+          TopLeft="195,209.5" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\FactFinance\Expression - Set Start date"
+          TopLeft="202.5,5.5" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\FactFinance\Log Task Failure"
+          TopLeft="227,311.5" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\FactFinance\Log Task Success"
+          TopLeft="5.50000000000006,311.5" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\FactFinance\TimeStamp Task"
+          TopLeft="226.5,107.5" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="1288.79365079364,257.761904761905">
+          Id="Package\FactFinance.PrecedenceConstraints[Constraint]"
+          TopLeft="305,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-578.365079365068,-51.5238095238095"
+              EndConnector="0,60"
               Start="0,0"
-              End="-570.865079365068,-51.5238095238095">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-285.182539682534,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-285.182539682534,0"
-                    Point2="-289.182539682534,0"
-                    Point3="-289.182539682534,-4" />
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactFinance.PrecedenceConstraints[Constraint 1]"
+          TopLeft="305,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-289.182539682534,-47.5238095238095" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-289.182539682534,-47.5238095238095"
-                    Point2="-289.182539682534,-51.5238095238095"
-                    Point3="-293.182539682534,-51.5238095238095" />
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactFinance.PrecedenceConstraints[Constraint 2]"
+          TopLeft="269.666666666667,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-183.666666666667,60"
+              Start="0,0"
+              End="-183.666666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-570.865079365068,-51.5238095238095" />
+                    End="0,20.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2599277978339"
+                    Point2="0,24.2599277978339"
+                    Point3="-4,24.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-179.666666666667,24.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-179.666666666667,24.2599277978339"
+                    Point2="-183.666666666667,24.2599277978339"
+                    Point3="-183.666666666667,28.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-183.666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactFinance.PrecedenceConstraints[Constraint 3]"
+          TopLeft="340.333333333333,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35.3333333333333,60"
+              Start="0,0"
+              End="-35.3333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2599277978339"
+                    Point2="0,24.2599277978339"
+                    Point3="-4,24.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-31.3333333333333,24.2599277978339" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-31.3333333333333,24.2599277978339"
+                    Point2="-35.3333333333333,24.2599277978339"
+                    Point3="-35.3333333333333,28.2599277978339" />
+                  <mssgle:LineSegment
+                    End="-35.3333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-32.9080143229166,29.2599277978339,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="420,409"
+          Size="420,452"
+          Id="Package\FactFinance"
+          TopLeft="810.57142857143,31.6666666666665" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="1288.79365079364,257.714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-58.2222222222101,0"
+              Start="0,0"
+              End="-50.7222222222101,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-50.7222222222101,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="810.57142857143,257.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-100.142857142858,-51.4285714285714"
+              Start="0,0"
+              End="-92.6428571428578,-51.4285714285714">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-46.0714285714289,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-46.0714285714289,0"
+                    Point2="-50.0714285714289,0"
+                    Point3="-50.0714285714289,-4" />
+                  <mssgle:LineSegment
+                    End="-50.0714285714289,-47.4285714285714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-50.0714285714289,-47.4285714285714"
+                    Point2="-50.0714285714289,-51.4285714285714"
+                    Point3="-54.0714285714289,-51.4285714285714" />
+                  <mssgle:LineSegment
+                    End="-92.6428571428578,-51.4285714285714" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11167,7 +12713,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output13]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
           TopLeft="1125.11111111111,46.6111111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11191,7 +12737,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output12]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
           TopLeft="386.444444444445,144.777777777777">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11215,7 +12761,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
           TopLeft="769.5,48.6666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11239,7 +12785,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
           TopLeft="108.388888888889,73.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11275,7 +12821,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
           TopLeft="1141.77777777777,147.722222222222">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11299,7 +12845,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
           TopLeft="1453.22222222222,243.583333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11323,7 +12869,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
           TopLeft="392.222222222222,51.4444444444444">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11347,7 +12893,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output13]"
           TopLeft="1776.72222222222,166.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11383,7 +12929,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
           TopLeft="775.666666666667,144.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11407,7 +12953,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
           TopLeft="1518,146.777777777777">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11431,7 +12977,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
           TopLeft="966.777777777777,396.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11467,7 +13013,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
           TopLeft="1050,242">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11491,7 +13037,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
           TopLeft="666,241.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11515,7 +13061,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output12]"
           TopLeft="387.5,263">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11662,14 +13208,6 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         <Value
           type="q4:string">0</Value>
       </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FactSales\Data Flow Task-Insert,Update\OLE DB Source">
-    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -11867,6 +13405,14 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         <Value
           type="q4:string">0</Value>
       </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactSales\Data Flow Task-Insert,Update\OLE DB Source">
+    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -12733,6 +14279,307 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\FactFinance\Data Flow Task-Insert,Update">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source"
+          TopLeft="681,31" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\FactFinance\Data Flow Task-Insert,Update\Lookup"
+          TopLeft="637.5,113.5" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1"
+          TopLeft="633.5,252.5" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination"
+          TopLeft="169.5,421.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command"
+          TopLeft="890.5,434.5" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\FactFinance\Data Flow Task-Insert,Update\Row Count"
+          TopLeft="373.5,319.5" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\FactFinance\Data Flow Task-Insert,Update\Row Count 1"
+          TopLeft="826.5,339.5" />
+        <EdgeLayout
+          Id="Package\FactFinance\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+          TopLeft="756,73">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-62,40.5"
+              Start="0,0"
+              End="-62,33">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.25"
+                    Point2="0,20.25"
+                    Point3="-4,20.25" />
+                  <mssgle:LineSegment
+                    End="-58,20.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-58,20.25"
+                    Point2="-62,20.25"
+                    Point3="-62,24.25" />
+                  <mssgle:LineSegment
+                    End="-62,33" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactFinance\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          TopLeft="694.25,155.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,97"
+              Start="0,0"
+              End="0,89.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,89.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,38.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactFinance\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
+          TopLeft="694.5,294.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-256,25"
+              Start="0,0"
+              End="-256,17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.5"
+                    Point2="0,12.5"
+                    Point3="-4,12.5" />
+                  <mssgle:LineSegment
+                    End="-252,12.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-252,12.5"
+                    Point2="-256,12.5"
+                    Point3="-256,16.5" />
+                  <mssgle:LineSegment
+                    End="-256,17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-183.80638671875,17.5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactFinance\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+          TopLeft="713.5,294.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="182.5,45"
+              Start="0,0"
+              End="182.5,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.3495145631068" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.3495145631068"
+                    Point2="0,18.3495145631068"
+                    Point3="4,18.3495145631068" />
+                  <mssgle:LineSegment
+                    End="178.5,18.3495145631068" />
+                  <mssgle:CubicBezierSegment
+                    Point1="178.5,18.3495145631068"
+                    Point2="182.5,18.3495145631068"
+                    Point3="182.5,22.3495145631068" />
+                  <mssgle:LineSegment
+                    End="182.5,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="43.05861328125,23.3495145631068,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactFinance\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+          TopLeft="438.5,361.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-183.5,60"
+              Start="0,0"
+              End="-183.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-179.5,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-179.5,30"
+                    Point2="-183.5,30"
+                    Point3="-183.5,34" />
+                  <mssgle:LineSegment
+                    End="-183.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactFinance\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+          TopLeft="896,381.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="77.5,53"
+              Start="0,0"
+              End="77.5,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="4,26.5" />
+                  <mssgle:LineSegment
+                    End="73.5,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="73.5,26.5"
+                    Point2="77.5,26.5"
+                    Point3="77.5,30.5" />
+                  <mssgle:LineSegment
+                    End="77.5,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactFinance\Data Flow Task-Insert,Update\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCompany]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[FactFinance]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
