@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="581"
-  DTS:VersionGUID="{84AC98F3-8D80-4904-9F3B-452EA51355F3}">
+  DTS:VersionBuild="583"
+  DTS:VersionGUID="{03AACA23-A4F4-474A-AF67-55EBDB76DDC2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1184,6 +1184,7 @@ where [refTable].[AccountAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
 	,TransTypeKey =?
 	,FinancialDate =?
 	,Amount =?
+,PostingType=?
 	where Id  =? and CompanyKey =? </property>
                     <property
                       dataType="System.Int32"
@@ -1240,16 +1241,22 @@ where [refTable].[AccountAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                           externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                           lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Amount]" />
                         <inputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[PostingType]"
+                          cachedDataType="i4"
+                          cachedName="PostingType"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostingType]" />
+                        <inputColumn
                           refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[ID]"
                           cachedDataType="i8"
                           cachedName="ID"
-                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                           lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID]" />
                         <inputColumn
                           refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[Companykey]"
                           cachedDataType="ui1"
                           cachedName="Companykey"
-                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                           lineageId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]" />
                       </inputColumns>
                       <externalMetadataColumns
@@ -1313,7 +1320,7 @@ where [refTable].[AccountAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                          dataType="i8"
+                          dataType="i4"
                           name="Param_5">
                           <properties>
                             <property
@@ -1324,8 +1331,19 @@ where [refTable].[AccountAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                          dataType="ui1"
+                          dataType="i8"
                           name="Param_6">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          dataType="ui1"
+                          name="Param_7">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -1484,6 +1502,12 @@ where [refTable].[AccountAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                           cachedName="AccountKey"
                           externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountKey]"
                           lineageId="Package\FactFinance\Data Flow Task-Insert,Update\Lookup 2.Outputs[Lookup Match Output].Columns[AccountKey]" />
+                        <inputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PostingType]"
+                          cachedDataType="i4"
+                          cachedName="PostingType"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostingType]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostingType]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1521,6 +1545,10 @@ where [refTable].[AccountAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                           refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastupdateDate]"
                           dataType="dbTimeStamp"
                           name="LastupdateDate" />
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostingType]"
+                          dataType="i4"
+                          name="PostingType" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1686,6 +1714,15 @@ where [refTable].[AccountAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                           lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
                           name="CompanyName"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostingType]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostingType]"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostingType]"
+                          name="PostingType"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1725,6 +1762,10 @@ where [refTable].[AccountAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                           dataType="wstr"
                           length="4"
                           name="CompanyName" />
+                        <externalMetadataColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostingType]"
+                          dataType="i4"
+                          name="PostingType" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1760,6 +1801,11 @@ where [refTable].[AccountAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                           name="Amount"
                           precision="28"
                           scale="12" />
+                        <outputColumn
+                          refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostingType]"
+                          dataType="i4"
+                          lineageId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostingType]"
+                          name="PostingType" />
                         <outputColumn
                           refId="Package\FactFinance\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FinancialDateAlternativeKey]"
                           dataType="i4"
