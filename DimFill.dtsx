@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="55"
-  DTS:VersionGUID="{9F97592E-8BE9-4737-9D82-AB4C6841B03D}">
+  DTS:VersionBuild="76"
+  DTS:VersionGUID="{7F1ED36B-6514-4CD7-9FEC-BE2A11368C24}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -2121,6 +2121,10 @@ UPDATE [dbo].[DimAccountCategory]
                           refId="Package\Container DimAccountCategory\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatLasteTime]"
                           dataType="dbTimeStamp"
                           name="UpdatLasteTime" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimAccountCategory\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SortGroup]"
+                          dataType="i4"
+                          name="SortGroup" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -2620,20 +2624,20 @@ UPDATE [dbo].[DimAccountCategory]
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Container DimAccountCategory 1"
+      DTS:refId="Package\Container DimBank"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
       DTS:DTSID="{3dc55849-f544-4bab-9487-59a37866f964}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Container DimAccountCategory 1">
+      DTS:ObjectName="Container DimBank">
       <DTS:Variables />
       <DTS:LoggingOptions
         DTS:FilterKind="0"
         DTS:LoggingMode="1" />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update"
+          DTS:refId="Package\Container DimBank\Data Flow Task-Insert,Update"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{26b5fa59-4c3c-4b8d-b632-5d2d676530d5}"
@@ -2650,7 +2654,7 @@ UPDATE [dbo].[DimAccountCategory]
               version="1">
               <components>
                 <component
-                  refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup"
+                  refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
                   description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -2706,7 +2710,7 @@ where [refTable].[BankAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankAlternativeKey]};#{Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                      name="ParameterMap">#{Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankAlternativeKey]};#{Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[Companykey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2718,7 +2722,7 @@ where [refTable].[BankAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup.Connections[OleDbConnection]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
                       connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
@@ -2726,14 +2730,14 @@ where [refTable].[BankAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
                       name="Lookup Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[Companykey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[Companykey]"
                           cachedDataType="ui1"
                           cachedName="Companykey"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[Companykey]">
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[Companykey]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -2746,11 +2750,11 @@ where [refTable].[BankAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[BankAlternativeKey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[BankAlternativeKey]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="BankAlternativeKey"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankAlternativeKey]">
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankAlternativeKey]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -2768,38 +2772,38 @@ where [refTable].[BankAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]"
                       errorOrTruncationOperation="Lookup"
                       exclusionGroup="1"
                       name="Lookup Match Output"
-                      synchronousInputId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      synchronousInputId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup No Match Output]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup No Match Output]"
                       description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                       exclusionGroup="1"
                       name="Lookup No Match Output"
-                      synchronousInputId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      synchronousInputId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Lookup Error Output"
-                      synchronousInputId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      synchronousInputId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -2808,7 +2812,7 @@ where [refTable].[BankAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1"
+                  refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
                   description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -2864,7 +2868,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]};</property>
+                      name="ParameterMap">#{Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2876,7 +2880,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Connections[OleDbConnection]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
                       connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
@@ -2884,15 +2888,15 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]"
                       name="Lookup Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input].Columns[CompanyName]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input].Columns[CompanyName]"
                           cachedDataType="wstr"
                           cachedLength="4"
                           cachedName="CompanyName"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]">
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -2910,17 +2914,17 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output]"
                       errorOrTruncationOperation="Lookup"
                       exclusionGroup="1"
                       name="Lookup Match Output"
-                      synchronousInputId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]">
+                      synchronousInputId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[Companykey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[Companykey]"
                           dataType="ui1"
                           errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[Companykey]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[Companykey]"
                           name="Companykey"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -2934,30 +2938,30 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup No Match Output]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup No Match Output]"
                       description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                       exclusionGroup="1"
                       name="Lookup No Match Output"
-                      synchronousInputId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]">
+                      synchronousInputId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Lookup Error Output"
-                      synchronousInputId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]">
+                      synchronousInputId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -2966,7 +2970,323 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command"
+                  refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup 2"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimBranche]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimBranche]) [refTable]
+where [refTable].[BrancheAlternativeKey] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CompanyKey" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrancheKey" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrancheAlternativeKey" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrancheSort" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BrancheName" dataType="DT_WSTR" length="150" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UpdatLasteTime" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BrancheKey]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Inputs[Lookup Input].Columns[BrancheKey]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="BrancheKey"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BrancheKey]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">BrancheAlternativeKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Outputs[Lookup Match Output].Columns[BrancheKey]"
+                          dataType="ui1"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Outputs[Lookup Match Output].Columns[BrancheKey]"
+                          name="BrancheKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">BrancheKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup 3"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimAccount]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimAccount]) [refTable]
+where [refTable].[AccountAlternativeKey] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CompanyKey" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AccountKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AccountAlternativeKey" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AccountName" dataType="DT_WSTR" length="60" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AccountType" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AccountGroup" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UpdatLasteTime" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountKey]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3.Inputs[Lookup Input].Columns[AccountKey]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="AccountKey"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountKey]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">AccountAlternativeKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3.Outputs[Lookup Match Output].Columns[AccountKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3.Outputs[Lookup Match Output].Columns[AccountKey]"
+                          name="AccountKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">AccountKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command"
                   componentClassID="Microsoft.OLEDBCommand"
                   contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
                   description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
@@ -2999,7 +3319,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Connections[OleDbConnection]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
                       connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="The OLE DB runtime connection used to access the database."
@@ -3007,65 +3327,63 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
                       errorOrTruncationOperation="Command Execution"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Command Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[BnakName]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[BnakName]"
                           cachedDataType="wstr"
                           cachedLength="150"
                           cachedName="BnakName"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BnakName]" />
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BnakName]" />
                         <inputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[BankGroupName]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[BankGroupName]"
                           cachedDataType="wstr"
                           cachedLength="60"
                           cachedName="BankGroupName"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankGroupName]" />
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankGroupName]" />
                         <inputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[BrancheKey]"
-                          cachedDataType="wstr"
-                          cachedLength="30"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[BrancheKey]"
+                          cachedDataType="ui1"
                           cachedName="BrancheKey"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BrancheKey]" />
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Outputs[Lookup Match Output].Columns[BrancheKey]" />
                         <inputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[AccountKey]"
-                          cachedDataType="wstr"
-                          cachedLength="30"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[AccountKey]"
+                          cachedDataType="i4"
                           cachedName="AccountKey"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountKey]" />
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3.Outputs[Lookup Match Output].Columns[AccountKey]" />
                         <inputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[CurrencyCode]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[CurrencyCode]"
                           cachedDataType="wstr"
                           cachedLength="3"
                           cachedName="CurrencyCode"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrencyCode]" />
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrencyCode]" />
                         <inputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[BankAlternativeKey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[BankAlternativeKey]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="BankAlternativeKey"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankAlternativeKey]" />
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankAlternativeKey]" />
                         <inputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[Companykey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[Companykey]"
                           cachedDataType="ui1"
                           cachedName="Companykey"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[Companykey]" />
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[Companykey]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                           dataType="wstr"
                           length="150"
                           name="Param_0">
@@ -3077,7 +3395,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           dataType="wstr"
                           length="100"
                           name="Param_1">
@@ -3089,7 +3407,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                           dataType="ui1"
                           name="Param_2">
                           <properties>
@@ -3100,7 +3418,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                           dataType="i4"
                           name="Param_3">
                           <properties>
@@ -3111,7 +3429,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                           dataType="wstr"
                           length="20"
                           name="Param_4">
@@ -3123,7 +3441,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                           dataType="wstr"
                           length="10"
                           name="Param_5">
@@ -3135,7 +3453,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                           dataType="ui1"
                           name="Param_6">
                           <properties>
@@ -3150,29 +3468,29 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Output]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Output]"
                       exclusionGroup="1"
                       name="OLE DB Command Output"
-                      synchronousInputId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]">
+                      synchronousInputId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Command Error Output"
-                      synchronousInputId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]">
+                      synchronousInputId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -3181,7 +3499,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination"
+                  refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
@@ -3238,7 +3556,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Connections[OleDbConnection]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
                       connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="The OLE DB runtime connection used to access the database."
@@ -3246,101 +3564,99 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BankAlternativeKey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BankAlternativeKey]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="BankAlternativeKey"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BankAlternativeKey]"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankAlternativeKey]" />
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BankAlternativeKey]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankAlternativeKey]" />
                         <inputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AccountKey]"
-                          cachedDataType="wstr"
-                          cachedLength="30"
-                          cachedName="AccountKey"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountKey]"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountKey]" />
-                        <inputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BankGroupName]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BankGroupName]"
                           cachedDataType="wstr"
                           cachedLength="60"
                           cachedName="BankGroupName"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BankGroupName]"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankGroupName]" />
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BankGroupName]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankGroupName]" />
                         <inputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BrancheKey]"
-                          cachedDataType="wstr"
-                          cachedLength="30"
-                          cachedName="BrancheKey"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BrancheKey]"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BrancheKey]" />
-                        <inputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CurrencyCode]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CurrencyCode]"
                           cachedDataType="wstr"
                           cachedLength="3"
                           cachedName="CurrencyCode"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrencyCode]"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrencyCode]" />
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrencyCode]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrencyCode]" />
                         <inputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BnakName]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BnakName]"
                           cachedDataType="wstr"
                           cachedLength="150"
                           cachedName="BnakName"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BnakName]"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BnakName]" />
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BnakName]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BnakName]" />
                         <inputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Companykey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Companykey]"
                           cachedDataType="ui1"
                           cachedName="Companykey"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[Companykey]" />
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[Companykey]" />
+                        <inputColumn
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BrancheKey]"
+                          cachedDataType="ui1"
+                          cachedName="BrancheKey"
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BrancheKey]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Outputs[Lookup Match Output].Columns[BrancheKey]" />
+                        <inputColumn
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AccountKey]"
+                          cachedDataType="i4"
+                          cachedName="AccountKey"
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountKey]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3.Outputs[Lookup Match Output].Columns[AccountKey]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
                           dataType="ui1"
                           name="CompanyKey" />
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BankKey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BankKey]"
                           dataType="i4"
                           name="BankKey" />
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BankAlternativeKey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BankAlternativeKey]"
                           dataType="wstr"
                           length="10"
                           name="BankAlternativeKey" />
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BnakName]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BnakName]"
                           dataType="wstr"
                           length="150"
                           name="BnakName" />
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BankGroupName]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BankGroupName]"
                           dataType="wstr"
                           length="100"
                           name="BankGroupName" />
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BrancheKey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BrancheKey]"
                           dataType="ui1"
                           name="BrancheKey" />
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountKey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountKey]"
                           dataType="i4"
                           name="AccountKey" />
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrencyCode]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrencyCode]"
                           dataType="wstr"
                           length="20"
                           name="CurrencyCode" />
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatLasteTime]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatLasteTime]"
                           dataType="dbTimeStamp"
                           name="UpdatLasteTime" />
                       </externalMetadataColumns>
@@ -3348,22 +3664,22 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -3372,7 +3688,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source"
+                  refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
                   description="OLE DB Source"
@@ -3421,7 +3737,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Connections[OleDbConnection]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Connections[OleDbConnection]"
                       connectionManagerID="{155A0EFD-3698-446D-862B-8BB7B74DA5D9}:external"
                       connectionManagerRefId="Project.ConnectionManagers[mffco-srv.DynamicsAx1]"
                       description="The OLE DB runtime connection used to access the database."
@@ -3429,176 +3745,176 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]"
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankAlternativeKey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankAlternativeKey]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BankAlternativeKey]"
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BankAlternativeKey]"
                           length="10"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankAlternativeKey]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankAlternativeKey]"
                           name="BankAlternativeKey"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountKey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountKey]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AccountKey]"
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AccountKey]"
                           length="30"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountKey]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountKey]"
                           name="AccountKey"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankGroupName]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankGroupName]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BankGroupName]"
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BankGroupName]"
                           length="60"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankGroupName]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankGroupName]"
                           name="BankGroupName"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BrancheKey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BrancheKey]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BrancheKey]"
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BrancheKey]"
                           length="30"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BrancheKey]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BrancheKey]"
                           name="BrancheKey"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrencyCode]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrencyCode]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CurrencyCode]"
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CurrencyCode]"
                           length="3"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrencyCode]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrencyCode]"
                           name="CurrencyCode"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BnakName]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BnakName]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BnakName]"
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BnakName]"
                           length="150"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BnakName]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BnakName]"
                           name="BnakName"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
                           length="4"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CompanyName]"
                           name="CompanyName"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BankAlternativeKey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BankAlternativeKey]"
                           dataType="wstr"
                           length="10"
                           name="BankAlternativeKey" />
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AccountKey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AccountKey]"
                           dataType="wstr"
                           length="30"
                           name="AccountKey" />
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BankGroupName]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BankGroupName]"
                           dataType="wstr"
                           length="60"
                           name="BankGroupName" />
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BrancheKey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BrancheKey]"
                           dataType="wstr"
                           length="30"
                           name="BrancheKey" />
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CurrencyCode]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CurrencyCode]"
                           dataType="wstr"
                           length="3"
                           name="CurrencyCode" />
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BnakName]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BnakName]"
                           dataType="wstr"
                           length="150"
                           name="BnakName" />
                         <externalMetadataColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CompanyName]"
                           dataType="wstr"
                           length="4"
                           name="CompanyName" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output]"
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BankAlternativeKey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BankAlternativeKey]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BankAlternativeKey]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BankAlternativeKey]"
                           name="BankAlternativeKey" />
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AccountKey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AccountKey]"
                           dataType="wstr"
                           length="30"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AccountKey]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AccountKey]"
                           name="AccountKey" />
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BankGroupName]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BankGroupName]"
                           dataType="wstr"
                           length="60"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BankGroupName]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BankGroupName]"
                           name="BankGroupName" />
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BrancheKey]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BrancheKey]"
                           dataType="wstr"
                           length="30"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BrancheKey]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BrancheKey]"
                           name="BrancheKey" />
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CurrencyCode]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CurrencyCode]"
                           dataType="wstr"
                           length="3"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CurrencyCode]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CurrencyCode]"
                           name="CurrencyCode" />
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BnakName]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BnakName]"
                           dataType="wstr"
                           length="150"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BnakName]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BnakName]"
                           name="BnakName" />
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyName]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyName]"
                           dataType="wstr"
                           length="4"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyName]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CompanyName]"
                           name="CompanyName" />
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -3607,7 +3923,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Row Count Insert"
+                  refId="Package\Container DimBank\Data Flow Task-Insert,Update\Row Count Insert"
                   componentClassID="Microsoft.RowCount"
                   contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
@@ -3620,7 +3936,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </properties>
                   <inputs>
                     <input
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Row Count Insert.Inputs[Row Count Input 1]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Row Count Insert.Inputs[Row Count Input 1]"
                       hasSideEffects="true"
                       name="Row Count Input 1">
                       <externalMetadataColumns />
@@ -3628,15 +3944,15 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Row Count Insert.Outputs[Row Count Output 1]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Row Count Insert.Outputs[Row Count Output 1]"
                       name="Row Count Output 1"
-                      synchronousInputId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Row Count Insert.Inputs[Row Count Input 1]">
+                      synchronousInputId="Package\Container DimBank\Data Flow Task-Insert,Update\Row Count Insert.Inputs[Row Count Input 1]">
                       <externalMetadataColumns />
                     </output>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Row Count Update"
+                  refId="Package\Container DimBank\Data Flow Task-Insert,Update\Row Count Update"
                   componentClassID="Microsoft.RowCount"
                   contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
@@ -3649,7 +3965,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </properties>
                   <inputs>
                     <input
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Row Count Update.Inputs[Row Count Input 1]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Row Count Update.Inputs[Row Count Input 1]"
                       hasSideEffects="true"
                       name="Row Count Input 1">
                       <externalMetadataColumns />
@@ -3657,9 +3973,9 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Row Count Update.Outputs[Row Count Output 1]"
+                      refId="Package\Container DimBank\Data Flow Task-Insert,Update\Row Count Update.Outputs[Row Count Output 1]"
                       name="Row Count Output 1"
-                      synchronousInputId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Row Count Update.Inputs[Row Count Input 1]">
+                      synchronousInputId="Package\Container DimBank\Data Flow Task-Insert,Update\Row Count Update.Inputs[Row Count Input 1]">
                       <externalMetadataColumns />
                     </output>
                   </outputs>
@@ -3667,41 +3983,51 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
               </components>
               <paths>
                 <path
-                  refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
-                  endId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
+                  refId="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+                  endId="Package\Container DimBank\Data Flow Task-Insert,Update\Row Count Update.Inputs[Row Count Input 1]"
                   name="Lookup Match Output"
-                  startId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output]" />
+                  startId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
-                  endId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Row Count Update.Inputs[Row Count Input 1]"
+                  refId="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+                  endId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]" />
+                  startId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
-                  endId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Row Count Insert.Inputs[Row Count Input 1]"
+                  refId="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
+                  endId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
+                  endId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
+                  endId="Package\Container DimBank\Data Flow Task-Insert,Update\Row Count Insert.Inputs[Row Count Input 1]"
                   name="Lookup No Match Output"
-                  startId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup No Match Output]" />
+                  startId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
-                  endId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]"
+                  refId="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+                  endId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]"
                   name="OLE DB Source Output"
-                  startId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]" />
+                  startId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]" />
                 <path
-                  refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
-                  endId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+                  endId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   name="Row Count Output 1"
-                  startId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Row Count Insert.Outputs[Row Count Output 1]" />
+                  startId="Package\Container DimBank\Data Flow Task-Insert,Update\Row Count Insert.Outputs[Row Count Output 1]" />
                 <path
-                  refId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
-                  endId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
+                  refId="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+                  endId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
                   name="Row Count Output 1"
-                  startId="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Row Count Update.Outputs[Row Count Output 1]" />
+                  startId="Package\Container DimBank\Data Flow Task-Insert,Update\Row Count Update.Outputs[Row Count Output 1]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimAccountCategory 1\Expression - Set Start date"
+          DTS:refId="Package\Container DimBank\Expression - Set Start date"
           DTS:CreationName="Microsoft.ExpressionTask"
           DTS:Description="Expression Task"
           DTS:DTSID="{bb506548-cc66-4c8c-953e-0e74ef4709cd}"
@@ -3720,7 +4046,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimAccountCategory 1\Log Task Failure"
+          DTS:refId="Package\Container DimBank\Log Task Failure"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{36d2a1c4-e5a2-4be7-bf66-49efbaf8dcf1}"
@@ -3783,7 +4109,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimAccountCategory 1\Log Task Success"
+          DTS:refId="Package\Container DimBank\Log Task Success"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{4039d6ca-8247-448f-ab8d-f83db0b6fd1c}"
@@ -3846,7 +4172,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimAccountCategory 1\TimeStamp Task"
+          DTS:refId="Package\Container DimBank\TimeStamp Task"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{7690e46d-831e-4714-b1bc-2e465e2ca264}"
@@ -3873,38 +4199,38 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Container DimAccountCategory 1.PrecedenceConstraints[Constraint]"
+          DTS:refId="Package\Container DimBank.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
           DTS:DTSID="{a4f7e948-b987-49f0-ad5e-2781a4464b9d}"
-          DTS:From="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update"
+          DTS:From="Package\Container DimBank\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Container DimAccountCategory 1\Log Task Success" />
+          DTS:To="Package\Container DimBank\Log Task Success" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Container DimAccountCategory 1.PrecedenceConstraints[Constraint 1]"
+          DTS:refId="Package\Container DimBank.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
           DTS:DTSID="{e5a5e19b-2616-4284-812c-a9c3b1919254}"
-          DTS:From="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update"
+          DTS:From="Package\Container DimBank\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Container DimAccountCategory 1\Log Task Failure"
+          DTS:To="Package\Container DimBank\Log Task Failure"
           DTS:Value="1" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Container DimAccountCategory 1.PrecedenceConstraints[Constraint 2]"
+          DTS:refId="Package\Container DimBank.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
           DTS:DTSID="{5fee7399-8840-43d7-8584-7cf0ef1d07e8}"
-          DTS:From="Package\Container DimAccountCategory 1\Expression - Set Start date"
+          DTS:From="Package\Container DimBank\Expression - Set Start date"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
-          DTS:To="Package\Container DimAccountCategory 1\TimeStamp Task" />
+          DTS:To="Package\Container DimBank\TimeStamp Task" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Container DimAccountCategory 1.PrecedenceConstraints[Constraint 3]"
+          DTS:refId="Package\Container DimBank.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
           DTS:DTSID="{60b18d08-4208-4658-922c-017e3f0cba68}"
-          DTS:From="Package\Container DimAccountCategory 1\TimeStamp Task"
+          DTS:From="Package\Container DimBank\TimeStamp Task"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
-          DTS:To="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update" />
+          DTS:To="Package\Container DimBank\Data Flow Task-Insert,Update" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -32226,7 +32552,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       DTS:From="Package\Container DimAccountCategory"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 20"
-      DTS:To="Package\Container DimAccountCategory 1" />
+      DTS:To="Package\Container DimBank" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
@@ -32523,7 +32849,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-32.9080143229166,29.2599277978339,30.4826953125,9.7490234375"
+              BoundingBox="-32.9080143229167,29.2599277978339,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -35548,26 +35874,26 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <NodeLayout
           Size="220,42"
-          Id="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update"
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update"
           TopLeft="195,209.5" />
         <NodeLayout
           Size="205,42"
-          Id="Package\Container DimAccountCategory 1\Expression - Set Start date"
+          Id="Package\Container DimBank\Expression - Set Start date"
           TopLeft="202.5,5.5" />
         <NodeLayout
           Size="156,42"
-          Id="Package\Container DimAccountCategory 1\Log Task Failure"
+          Id="Package\Container DimBank\Log Task Failure"
           TopLeft="227,311.5" />
         <NodeLayout
           Size="161,42"
-          Id="Package\Container DimAccountCategory 1\Log Task Success"
+          Id="Package\Container DimBank\Log Task Success"
           TopLeft="5.50000000000006,311.5" />
         <NodeLayout
           Size="157,42"
-          Id="Package\Container DimAccountCategory 1\TimeStamp Task"
+          Id="Package\Container DimBank\TimeStamp Task"
           TopLeft="226.5,107.5" />
         <EdgeLayout
-          Id="Package\Container DimAccountCategory 1.PrecedenceConstraints[Constraint]"
+          Id="Package\Container DimBank.PrecedenceConstraints[Constraint]"
           TopLeft="269.666666666667,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -35601,7 +35927,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Container DimAccountCategory 1.PrecedenceConstraints[Constraint 1]"
+          Id="Package\Container DimBank.PrecedenceConstraints[Constraint 1]"
           TopLeft="340.333333333333,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -35632,12 +35958,12 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-32.9080143229166,29.2599277978339,30.4826953125,9.7490234375"
+              BoundingBox="-32.9080143229167,29.2599277978339,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Container DimAccountCategory 1.PrecedenceConstraints[Constraint 2]"
+          Id="Package\Container DimBank.PrecedenceConstraints[Constraint 2]"
           TopLeft="305,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -35659,7 +35985,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Container DimAccountCategory 1.PrecedenceConstraints[Constraint 3]"
+          Id="Package\Container DimBank.PrecedenceConstraints[Constraint 3]"
           TopLeft="305,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -35685,7 +36011,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           IsExpanded="True"
           PanelSize="420,409"
           Size="420,452"
-          Id="Package\Container DimAccountCategory 1"
+          Id="Package\Container DimBank"
           TopLeft="359,1129" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 20]"
@@ -36093,9 +36419,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -36129,9 +36453,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -36165,9 +36487,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39226,9 +39546,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39262,9 +39580,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39298,9 +39614,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39334,9 +39648,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39358,9 +39670,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39394,9 +39704,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39430,9 +39738,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39466,9 +39772,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39502,9 +39806,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39538,9 +39840,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39562,9 +39862,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39682,9 +39980,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -39718,9 +40014,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -41494,56 +41788,56 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update">
+    design-time-name="Package\Container DimBank\Data Flow Task-Insert,Update">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="167,42"
-          Id="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Row Count Update"
-          TopLeft="673,289" />
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update\Row Count Update"
+          TopLeft="649,427" />
         <NodeLayout
           Size="122,42"
-          Id="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1"
-          TopLeft="481.5,137.5" />
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1"
+          TopLeft="460.5,99.5" />
         <NodeLayout
           Size="161,42"
-          Id="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Row Count Insert"
-          TopLeft="221.5,319" />
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update\Row Count Insert"
+          TopLeft="200.5,371" />
         <NodeLayout
           Size="113,42"
-          Id="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup"
-          TopLeft="465.5,250.5" />
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup"
+          TopLeft="482.5,350.5" />
         <NodeLayout
           Size="150,42"
-          Id="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source"
-          TopLeft="536.5,55.5" />
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source"
+          TopLeft="629.5,25.5" />
         <EdgeLayout
-          Id="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
-          TopLeft="611.5,97.5">
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+          TopLeft="704.5,67.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-69,40"
+              EndConnector="-183,32"
               Start="0,0"
-              End="-69,32.5">
+              End="-183,24.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16" />
+                    End="0,12" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16"
-                    Point2="0,20"
-                    Point3="-4,20" />
+                    Point1="0,12"
+                    Point2="0,16"
+                    Point3="-4,16" />
                   <mssgle:LineSegment
-                    End="-65,20" />
+                    End="-179,16" />
                   <mssgle:CubicBezierSegment
-                    Point1="-65,20"
-                    Point2="-69,20"
-                    Point3="-69,24" />
+                    Point1="-179,16"
+                    Point2="-183,16"
+                    Point3="-183,20" />
                   <mssgle:LineSegment
-                    End="-69,32.5" />
+                    End="-183,24.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -41553,147 +41847,111 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
-          TopLeft="522,292.5">
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
+          TopLeft="482.5,371.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-220,26.5"
+              EndConnector="-121,20.5"
               Start="0,0"
-              End="-220,19">
+              End="-113.5,20.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.25" />
+                    End="-56.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.25"
-                    Point2="0,13.25"
-                    Point3="-4,13.25" />
+                    Point1="-56.5,0"
+                    Point2="-60.5,0"
+                    Point3="-60.5,4" />
                   <mssgle:LineSegment
-                    End="-216,13.25" />
+                    End="-60.5,16.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-216,13.25"
-                    Point2="-220,13.25"
-                    Point3="-220,17.25" />
+                    Point1="-60.5,16.5"
+                    Point2="-60.5,20.5"
+                    Point3="-64.5,20.5" />
                   <mssgle:LineSegment
-                    End="-220,19" />
+                    End="-113.5,20.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-165.80638671875,18.25,111.6127734375,11.609375"
+              BoundingBox="-116.30638671875,-17.609375,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
-          TopLeft="578.5,271.5">
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          TopLeft="539,392.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="94.5,38.5"
+              EndConnector="193.5,34.5"
               Start="0,0"
-              End="87,38.5">
+              End="193.5,27">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="43.25,0" />
+                    End="0,13.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="43.25,0"
-                    Point2="47.25,0"
-                    Point3="47.25,4" />
+                    Point1="0,13.25"
+                    Point2="0,17.25"
+                    Point3="4,17.25" />
                   <mssgle:LineSegment
-                    End="47.25,34.5" />
+                    End="189.5,17.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="47.25,34.5"
-                    Point2="47.25,38.5"
-                    Point3="51.25,38.5" />
+                    Point1="189.5,17.25"
+                    Point2="193.5,17.25"
+                    Point3="193.5,21.25" />
                   <mssgle:LineSegment
-                    End="87,38.5" />
+                    End="193.5,27" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-0.941386718750003,-17.609375,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
-          TopLeft="542.5,179.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-20.5,71"
-              Start="0,0"
-              End="-20.5,63.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5"
-                    Point2="0,35.5"
-                    Point3="-4,35.5" />
-                  <mssgle:LineSegment
-                    End="-16.5,35.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-16.5,35.5"
-                    Point2="-20.5,35.5"
-                    Point3="-20.5,39.5" />
-                  <mssgle:LineSegment
-                    End="-20.5,63.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-58.44138671875,40.5,96.3827734375,11.609375"
+              BoundingBox="48.55861328125,22.25,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="166,42"
-          Id="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Command"
-          TopLeft="682.5,372.5" />
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command"
+          TopLeft="659.5,552.5" />
         <NodeLayout
           Size="171,42"
-          Id="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination"
-          TopLeft="164.5,388.5" />
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination"
+          TopLeft="172.5,524.5" />
         <EdgeLayout
-          Id="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
-          TopLeft="302,361">
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+          TopLeft="281,413">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-52,27.5"
+              EndConnector="-23,111.5"
               Start="0,0"
-              End="-52,20">
+              End="-23,104">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.75" />
+                    End="0,51.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.75"
-                    Point2="0,13.75"
-                    Point3="-4,13.75" />
+                    Point1="0,51.75"
+                    Point2="0,55.75"
+                    Point3="-4,55.75" />
                   <mssgle:LineSegment
-                    End="-48,13.75" />
+                    End="-19,55.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="-48,13.75"
-                    Point2="-52,13.75"
-                    Point3="-52,17.75" />
+                    Point1="-19,55.75"
+                    Point2="-23,55.75"
+                    Point3="-23,59.75" />
                   <mssgle:LineSegment
-                    End="-52,20" />
+                    End="-23,104" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -41703,44 +41961,160 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
-          TopLeft="756.5,331">
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+          TopLeft="732.5,469">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="9,41.5"
+              EndConnector="10,83.5"
               Start="0,0"
-              End="9,34">
+              End="10,76">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.75" />
+                    End="0,37.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.75"
-                    Point2="0,20.75"
-                    Point3="4,20.75" />
+                    Point1="0,37.75"
+                    Point2="0,41.75"
+                    Point3="4,41.75" />
                   <mssgle:LineSegment
-                    End="5,20.75" />
+                    End="6,41.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="5,20.75"
-                    Point2="9,20.75"
-                    Point3="9,24.75" />
+                    Point1="6,41.75"
+                    Point2="10,41.75"
+                    Point3="10,45.75" />
                   <mssgle:LineSegment
-                    End="9,34" />
+                    End="10,76" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2"
+          TopLeft="495.5,237.5" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3"
+          TopLeft="251.5,246.5" />
+        <EdgeLayout
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+          TopLeft="495.5,258.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-122,9"
+              Start="0,0"
+              End="-114.5,9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-57,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-57,0"
+                    Point2="-61,0"
+                    Point3="-61,4" />
+                  <mssgle:LineSegment
+                    End="-61,5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-61,5"
+                    Point2="-61,9"
+                    Point3="-65,9" />
+                  <mssgle:LineSegment
+                    End="-114.5,9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-109.19138671875,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
+          TopLeft="312.5,288.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="226.5,62"
+              Start="0,0"
+              End="226.5,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27"
+                    Point2="0,31"
+                    Point3="4,31" />
+                  <mssgle:LineSegment
+                    End="222.5,31" />
+                  <mssgle:CubicBezierSegment
+                    Point1="222.5,31"
+                    Point2="226.5,31"
+                    Point3="226.5,35" />
+                  <mssgle:LineSegment
+                    End="226.5,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="65.05861328125,36,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
+          TopLeft="521.5,141.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="35,96"
+              Start="0,0"
+              End="35,88.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44"
+                    Point2="0,48"
+                    Point3="4,48" />
+                  <mssgle:LineSegment
+                    End="31,48" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31,48"
+                    Point2="35,48"
+                    Point3="35,52" />
+                  <mssgle:LineSegment
+                    End="35,88.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-39.5600390625,53,114.120078125,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup 1">
+    design-time-name="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -41763,7 +42137,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\Lookup">
+    design-time-name="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -41786,7 +42160,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Source">
+    design-time-name="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -41794,7 +42168,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Container DimAccountCategory 1\Data Flow Task-Insert,Update\OLE DB Destination">
+    design-time-name="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -41803,6 +42177,52 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimBranche]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimAccount]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
