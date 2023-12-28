@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="612"
-  DTS:VersionGUID="{06E925B4-8CFB-458D-8051-B7AD933D075D}">
+  DTS:VersionBuild="631"
+  DTS:VersionGUID="{5D1B9198-1726-442F-B03E-294EE6C3AD83}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -728,7 +728,7 @@ where [refTable].[Id] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PymentTranceAlternativeKey]};</property>
+                      name="ParameterMap">#{Package\FactBank\Data Flow Task-Insert,Update\310:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -755,7 +755,7 @@ where [refTable].[Id] = ?</property>
                           refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup 3.Inputs[Lookup Input].Columns[PymentTranceAlternativeKey]"
                           cachedDataType="i8"
                           cachedName="PymentTranceAlternativeKey"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PymentTranceAlternativeKey]">
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\310:invalid">
                           <properties>
                             <property
                               dataType="System.String"
@@ -813,11 +813,185 @@ where [refTable].[Id] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank"
+                  refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
                   description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-                  name="Lookup Bank"
+                  name="Lookup AccountOffset"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimAccount]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimAccount]) [refTable]
+where [refTable].[AccountAlternativeKey] = ? and [refTable].[CompanyKey] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CompanyKey" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AccountKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AccountAlternativeKey" dataType="DT_WSTR" length="30" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AccountName" dataType="DT_WSTR" length="60" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AccountType" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AccountGroup" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UpdatLasteTime" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[OffsetAccount]};#{Package\FactBank\Data Flow Task-Insert,Update\Lookup Company.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Inputs[Lookup Input].Columns[Companykey]"
+                          cachedDataType="ui1"
+                          cachedName="Companykey"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Company.Outputs[Lookup Match Output].Columns[Companykey]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CompanyKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Inputs[Lookup Input].Columns[OffsetAccount]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="OffsetAccount"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[OffsetAccount]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">AccountAlternativeKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Outputs[Lookup Match Output].Columns[AccountOffsetKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Outputs[Lookup Match Output].Columns[AccountOffsetKey]"
+                          name="AccountOffsetKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">AccountKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup BankOffset"
                   usesDispositions="true"
                   version="6">
                   <properties>
@@ -881,7 +1055,7 @@ where [refTable].[BankAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Connections[OleDbConnection]"
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
                       connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
@@ -889,11 +1063,11 @@ where [refTable].[BankAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Inputs[Lookup Input]"
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Inputs[Lookup Input]"
                       name="Lookup Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Inputs[Lookup Input].Columns[Companykey]"
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Inputs[Lookup Input].Columns[Companykey]"
                           cachedDataType="ui1"
                           cachedName="Companykey"
                           lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Company.Outputs[Lookup Match Output].Columns[Companykey]">
@@ -909,7 +1083,7 @@ where [refTable].[BankAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Inputs[Lookup Input].Columns[OffsetAccount]"
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Inputs[Lookup Input].Columns[OffsetAccount]"
                           cachedDataType="wstr"
                           cachedLength="30"
                           cachedName="OffsetAccount"
@@ -931,18 +1105,18 @@ where [refTable].[BankAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Outputs[Lookup Match Output]"
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Outputs[Lookup Match Output]"
                       errorOrTruncationOperation="Lookup"
                       exclusionGroup="1"
                       name="Lookup Match Output"
-                      synchronousInputId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Inputs[Lookup Input]">
+                      synchronousInputId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Outputs[Lookup Match Output].Columns[BankKey]"
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Outputs[Lookup Match Output].Columns[BankOffsetKey]"
                           dataType="i4"
                           errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Outputs[Lookup Match Output].Columns[BankKey]"
-                          name="BankKey"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Outputs[Lookup Match Output].Columns[BankOffsetKey]"
+                          name="BankOffsetKey"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -955,30 +1129,30 @@ where [refTable].[BankAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Outputs[Lookup No Match Output]"
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Outputs[Lookup No Match Output]"
                       description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                       exclusionGroup="1"
                       name="Lookup No Match Output"
-                      synchronousInputId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Inputs[Lookup Input]">
+                      synchronousInputId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Outputs[Lookup Error Output]"
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Outputs[Lookup Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Lookup Error Output"
-                      synchronousInputId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Inputs[Lookup Input]">
+                      synchronousInputId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -1145,11 +1319,11 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer"
+                  refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
                   description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-                  name="Lookup Customer"
+                  name="Lookup CustomerOffset"
                   usesDispositions="true"
                   version="6">
                   <properties>
@@ -1201,7 +1375,7 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerKey]};#{Package\FactBank\Data Flow Task-Insert,Update\Lookup Company.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                      name="ParameterMap">#{Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[OffsetAccount]};#{Package\FactBank\Data Flow Task-Insert,Update\Lookup Company.Outputs[Lookup Match Output].Columns[Companykey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1213,7 +1387,7 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Connections[OleDbConnection]"
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
                       connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
@@ -1221,11 +1395,28 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Inputs[Lookup Input]"
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Inputs[Lookup Input]"
                       name="Lookup Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Inputs[Lookup Input].Columns[Companykey]"
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Inputs[Lookup Input].Columns[OffsetAccount]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="OffsetAccount"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[OffsetAccount]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CustomerAlternativeKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Inputs[Lookup Input].Columns[Companykey]"
                           cachedDataType="ui1"
                           cachedName="Companykey"
                           lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Company.Outputs[Lookup Match Output].Columns[Companykey]">
@@ -1240,41 +1431,24 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                               name="CopyFromReferenceColumn" />
                           </properties>
                         </inputColumn>
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Inputs[Lookup Input].Columns[CustomerKey]"
-                          cachedDataType="wstr"
-                          cachedLength="30"
-                          cachedName="CustomerKey"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerKey]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">CustomerAlternativeKey</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Outputs[Lookup Match Output]"
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Outputs[Lookup Match Output]"
                       errorOrTruncationOperation="Lookup"
                       exclusionGroup="1"
                       name="Lookup Match Output"
-                      synchronousInputId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Inputs[Lookup Input]">
+                      synchronousInputId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Outputs[Lookup Match Output].Columns[CustomerKey]"
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Outputs[Lookup Match Output].Columns[CustomerOffsetKey]"
                           dataType="i4"
                           errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Outputs[Lookup Match Output].Columns[CustomerKey]"
-                          name="CustomerKey"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Outputs[Lookup Match Output].Columns[CustomerOffsetKey]"
+                          name="CustomerOffsetKey"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -1287,30 +1461,204 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Outputs[Lookup No Match Output]"
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Outputs[Lookup No Match Output]"
                       description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                       exclusionGroup="1"
                       name="Lookup No Match Output"
-                      synchronousInputId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Inputs[Lookup Input]">
+                      synchronousInputId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Outputs[Lookup Error Output]"
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Outputs[Lookup Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Lookup Error Output"
-                      synchronousInputId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Inputs[Lookup Input]">
+                      synchronousInputId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup VendorOffset"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimVendor]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimVendor]) [refTable]
+where [refTable].[VendorAlternativeKey] = ? and [refTable].[CompanyKey] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CompanyKey" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VendorKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VendorAlternativeKey" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VendorName" dataType="DT_WSTR" length="150" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VendorGroup" dataType="DT_WSTR" length="150" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VendorType" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UpdatLasteTime" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[OffsetAccount]};#{Package\FactBank\Data Flow Task-Insert,Update\Lookup Company.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Inputs[Lookup Input].Columns[OffsetAccount]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="OffsetAccount"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[OffsetAccount]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">VendorAlternativeKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Inputs[Lookup Input].Columns[Companykey]"
+                          cachedDataType="ui1"
+                          cachedName="Companykey"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Company.Outputs[Lookup Match Output].Columns[Companykey]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CompanyKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Outputs[Lookup Match Output].Columns[VendorOffsetKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Outputs[Lookup Match Output].Columns[VendorOffsetKey]"
+                          name="VendorOffsetKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">VendorKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -1376,7 +1724,7 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                           cachedDataType="i4"
                           cachedName="CustomerKey"
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Outputs[Lookup Match Output].Columns[CustomerKey]" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\339:invalid" />
                         <inputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[OffsetAccount]"
                           cachedDataType="wstr"
@@ -1391,11 +1739,11 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                           lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PaymentDateAlternativeKey]" />
                         <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[offsetaccounttype]"
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[OffsetAccountType]"
                           cachedDataType="i4"
-                          cachedName="offsetaccounttype"
+                          cachedName="OffsetAccountType"
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[offsetaccounttype]" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[OffsetAccountType]" />
                         <inputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[PaymentDate]"
                           cachedDataType="dbTimeStamp"
@@ -1451,7 +1799,7 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                           cachedDataType="i8"
                           cachedName="PymentTranceAlternativeKey"
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PymentTranceAlternativeKey]" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\310:invalid" />
                         <inputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[Companykey]"
                           cachedDataType="ui1"
@@ -1791,13 +2139,13 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                           cachedDataType="i8"
                           cachedName="PymentTranceAlternativeKey"
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PymentTranceAlternativeKey]" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\310:invalid" />
                         <inputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CustomerKey]"
                           cachedDataType="i4"
                           cachedName="CustomerKey"
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerKey]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Outputs[Lookup Match Output].Columns[CustomerKey]" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\339:invalid" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1916,7 +2264,7 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from _DWFactBankCustomer where MODIFIEDDATETIME&gt;?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from _DWFactBank  where MODIFIEDDATETIME&gt;?</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -2033,15 +2381,6 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                           name="txt"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[offsetaccounttype]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[offsetaccounttype]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[offsetaccounttype]"
-                          name="offsetaccounttype"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[voucher]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
@@ -2050,15 +2389,6 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                           length="20"
                           lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[voucher]"
                           name="voucher"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PymentTranceAlternativeKey]"
-                          dataType="i8"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PymentTranceAlternativeKey]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PymentTranceAlternativeKey]"
-                          name="PymentTranceAlternativeKey"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[journalNum]"
@@ -2091,14 +2421,32 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                           name="salesid"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerKey]"
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                          name="id"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountNum]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerKey]"
+                          externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AccountNum]"
                           length="30"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[CustomerKey]"
-                          name="CustomerKey"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[AccountNum]"
+                          name="AccountNum"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[OffsetAccountType]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OffsetAccountType]"
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[OffsetAccountType]"
+                          name="OffsetAccountType"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -2144,18 +2492,10 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                           length="150"
                           name="txt" />
                         <externalMetadataColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[offsetaccounttype]"
-                          dataType="i4"
-                          name="offsetaccounttype" />
-                        <externalMetadataColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[voucher]"
                           dataType="wstr"
                           length="20"
                           name="voucher" />
-                        <externalMetadataColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PymentTranceAlternativeKey]"
-                          dataType="i8"
-                          name="PymentTranceAlternativeKey" />
                         <externalMetadataColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[journalNum]"
                           dataType="wstr"
@@ -2172,10 +2512,18 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                           length="20"
                           name="salesid" />
                         <externalMetadataColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CustomerKey]"
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                          dataType="i8"
+                          name="id" />
+                        <externalMetadataColumn
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AccountNum]"
                           dataType="wstr"
                           length="30"
-                          name="CustomerKey" />
+                          name="AccountNum" />
+                        <externalMetadataColumn
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OffsetAccountType]"
+                          dataType="i4"
+                          name="OffsetAccountType" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -2184,10 +2532,10 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PymentTranceAlternativeKey]"
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
                           dataType="i8"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PymentTranceAlternativeKey]"
-                          name="PymentTranceAlternativeKey" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
+                          name="id" />
                         <outputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PaymentDate]"
                           dataType="dbTimeStamp"
@@ -2212,11 +2560,11 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                           precision="28"
                           scale="12" />
                         <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerKey]"
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AccountNum]"
                           dataType="wstr"
                           length="30"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CustomerKey]"
-                          name="CustomerKey" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AccountNum]"
+                          name="AccountNum" />
                         <outputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AmountDebit]"
                           dataType="numeric"
@@ -2238,10 +2586,10 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                           lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[txt]"
                           name="txt" />
                         <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[offsetaccounttype]"
+                          refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OffsetAccountType]"
                           dataType="i4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[offsetaccounttype]"
-                          name="offsetaccounttype" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OffsetAccountType]"
+                          name="OffsetAccountType" />
                         <outputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OffsetAccount]"
                           dataType="wstr"
@@ -2350,24 +2698,29 @@ where [refTable].[CustomerAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
               <paths>
                 <path
                   refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Inputs[Lookup Input]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Company.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Inputs[Lookup Input]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Outputs[Lookup Match Output]" />
+                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Lookup 3.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
                   endId="Package\FactBank\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
                   name="Lookup Match Output"
                   startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup 3.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
                   endId="Package\FactBank\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
@@ -2896,13 +3249,13 @@ where [refTable].[Companykey] = ?</property>
                       description="Specifies the SQL statement that generates the lookup table."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select     PymentTranceAlternativeKey ,CompanyName  from _DWFactBankCustomer</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select     id ,CompanyName  from _DWFactBank</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select     PymentTranceAlternativeKey ,CompanyName  from _DWFactBankCustomer) [refTable]
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select     id ,CompanyName  from _DWFactBank) [refTable]
 where [refTable].[CompanyName] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -2934,7 +3287,7 @@ where [refTable].[CompanyName] = ?</property>
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PymentTranceAlternativeKey" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CompanyName" dataType="DT_WSTR" length="4" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="id" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CompanyName" dataType="DT_WSTR" length="4" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -3042,7 +3395,7 @@ where [refTable].[CompanyName] = ?</property>
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">delete  [dbo].FactBankCustomer
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">delete  [dbo].FactBank
 
  WHERE   id =?	    and [CompanyKey] = ?</property>
                     <property
@@ -3163,7 +3516,7 @@ where [refTable].[CompanyName] = ?</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  CompanyKey,Id  from FactBankCustomer</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  CompanyKey,Id  from FactBank</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -16568,9 +16921,9 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           Text="Group "
           ParentId="Package"
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="1379,1010"
-          Size="1379,1053"
+          Size="1379,43"
           Id="a6d0a6e5-72d8-4ca5-9090-874b5a4d3a13"
           TopLeft="1681.5,26.1666666666666">
           <GroupLayout.ChildrenIds>
@@ -16711,9 +17064,9 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           Text="Group 2"
           ParentId="Package"
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="230,550"
-          Size="230,593"
+          Size="76,43"
           Id="f64aaa9c-1e63-446f-a1ec-56a3cff5b359"
           TopLeft="3083.40476190476,19.5">
           <GroupLayout.ChildrenIds>
@@ -16724,30 +17077,18 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         </GroupLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="3101,430.5">
+          TopLeft="3083.40476190476,44.3333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-58,-191"
+              EndConnector="-22.9047619047642,0"
               Start="0,0"
-              End="-50.5,-191">
+              End="-15.4047619047642,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-25,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-25,0"
-                    Point2="-29,0"
-                    Point3="-29,-4" />
-                  <mssgle:LineSegment
-                    End="-29,-187" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-29,-187"
-                    Point2="-29,-191"
-                    Point3="-33,-191" />
-                  <mssgle:LineSegment
-                    End="-50.5,-191" />
+                    End="-15.4047619047642,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16758,30 +17099,30 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="1687,538">
+          TopLeft="1681.5,47.6666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-70,-232"
+              EndConnector="-64.4999999999991,258.333333333333"
               Start="0,0"
-              End="-62.5,-232">
+              End="-56.9999999999991,258.333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-31,0" />
+                    End="-28.2499999999995,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-31,0"
-                    Point2="-35,0"
-                    Point3="-35,-4" />
+                    Point1="-28.2499999999995,0"
+                    Point2="-32.2499999999995,0"
+                    Point3="-32.2499999999995,4" />
                   <mssgle:LineSegment
-                    End="-35,-228" />
+                    End="-32.2499999999995,254.333333333333" />
                   <mssgle:CubicBezierSegment
-                    Point1="-35,-228"
-                    Point2="-35,-232"
-                    Point3="-39,-232" />
+                    Point1="-32.2499999999995,254.333333333333"
+                    Point2="-32.2499999999995,258.333333333333"
+                    Point3="-36.2499999999995,258.333333333333" />
                   <mssgle:LineSegment
-                    End="-62.5,-232" />
+                    End="-56.9999999999991,258.333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17333,35 +17674,35 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="413,306"
-          Size="413,350"
+          Size="413,349"
           Id="Package\FactBank Delete"
-          TopLeft="481.738095238095,487.166666666667" />
+          TopLeft="469.738095238095,551.166666666667" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
           TopLeft="690.071428571428,459.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="65.6666666666667,27.6666666666666"
+              EndConnector="53.6666666666667,91.6666666666665"
               Start="0,0"
-              End="65.6666666666667,20.1666666666666">
+              End="53.6666666666667,84.1666666666665">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.5359382537385" />
+                    End="0,50.7877472262421" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.5359382537385"
-                    Point2="0,16.5359382537385"
-                    Point3="4,16.5359382537385" />
+                    Point1="0,50.7877472262421"
+                    Point2="0,54.7877472262421"
+                    Point3="4,54.7877472262421" />
                   <mssgle:LineSegment
-                    End="61.6666666666667,16.5359382537385" />
+                    End="49.6666666666667,54.7877472262421" />
                   <mssgle:CubicBezierSegment
-                    Point1="61.6666666666667,16.5359382537385"
-                    Point2="65.6666666666667,16.5359382537385"
-                    Point3="65.6666666666667,20.5359382537385" />
+                    Point1="49.6666666666667,54.7877472262421"
+                    Point2="53.6666666666667,54.7877472262421"
+                    Point3="53.6666666666667,58.7877472262421" />
                   <mssgle:LineSegment
-                    End="65.6666666666667,20.1666666666666" />
+                    End="53.6666666666667,84.1666666666665" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17372,30 +17713,30 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="620.738095238095,487.166666666667">
+          TopLeft="608.738095238095,551.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-326.42857142857,-26.0000000000002"
+              EndConnector="-314.42857142857,-90.0000000000002"
               Start="0,0"
-              End="-326.42857142857,-18.5000000000002">
+              End="-314.42857142857,-82.5000000000002">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-9.00103925173886" />
+                    End="0,-41.003597409865" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-9.00103925173886"
-                    Point2="0,-13.0010392517389"
-                    Point3="-4,-13.0010392517389" />
+                    Point1="0,-41.003597409865"
+                    Point2="0,-45.003597409865"
+                    Point3="-4,-45.003597409865" />
                   <mssgle:LineSegment
-                    End="-322.42857142857,-13.0010392517389" />
+                    End="-310.42857142857,-45.003597409865" />
                   <mssgle:CubicBezierSegment
-                    Point1="-322.42857142857,-13.0010392517389"
-                    Point2="-326.42857142857,-13.0010392517389"
-                    Point3="-326.42857142857,-17.0010392517389" />
+                    Point1="-310.42857142857,-45.003597409865"
+                    Point2="-314.42857142857,-45.003597409865"
+                    Point3="-314.42857142857,-49.003597409865" />
                   <mssgle:LineSegment
-                    End="-326.42857142857,-18.5000000000002" />
+                    End="-314.42857142857,-82.5000000000002" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17409,8 +17750,8 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           ParentId="Package"
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="905,949"
-          Size="905,992"
+          PanelSize="905,956"
+          Size="905,999"
           Id="59414c17-93b1-40e0-86c1-457d1d56165b"
           TopLeft="717.261904761905,29.5">
           <GroupLayout.ChildrenIds>
@@ -19795,53 +20136,53 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         <NodeLayout
           Size="139,42"
           Id="Package\FactBank\Data Flow Task-Insert,Update\Row Count 1"
-          TopLeft="795.5,366.5" />
+          TopLeft="825.5,477.5" />
         <NodeLayout
           Size="150,42"
           Id="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source"
-          TopLeft="681,31" />
+          TopLeft="501,23" />
         <NodeLayout
           Size="130,42"
           Id="Package\FactBank\Data Flow Task-Insert,Update\Row Count"
-          TopLeft="334.5,380.5" />
+          TopLeft="332.5,487.5" />
         <NodeLayout
           Size="160,42"
           Id="Package\FactBank\Data Flow Task-Insert,Update\Lookup Company"
-          TopLeft="600.5,117.5" />
+          TopLeft="507.5,106.5" />
         <NodeLayout
-          Size="161,42"
-          Id="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer"
-          TopLeft="552.5,287.5" />
+          Size="182,42"
+          Id="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset"
+          TopLeft="740.5,280.5" />
         <NodeLayout
-          Size="140,42"
-          Id="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank"
-          TopLeft="545.5,206.5" />
+          Size="168,42"
+          Id="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset"
+          TopLeft="628.5,181.5" />
         <EdgeLayout
           Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
-          TopLeft="756,73">
+          TopLeft="576,65">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-75.5,44.5"
+              EndConnector="11.5,41.5"
               Start="0,0"
-              End="-75.5,37">
+              End="11.5,34">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.25" />
+                    End="0,16.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.25"
-                    Point2="0,22.25"
-                    Point3="-4,22.25" />
+                    Point1="0,16.75"
+                    Point2="0,20.75"
+                    Point3="4,20.75" />
                   <mssgle:LineSegment
-                    End="-71.5,22.25" />
+                    End="7.5,20.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="-71.5,22.25"
-                    Point2="-75.5,22.25"
-                    Point3="-75.5,26.25" />
+                    Point1="7.5,20.75"
+                    Point2="11.5,20.75"
+                    Point3="11.5,24.75" />
                   <mssgle:LineSegment
-                    End="-75.5,37" />
+                    End="11.5,34" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -19852,183 +20193,159 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         </EdgeLayout>
         <EdgeLayout
           Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
-          TopLeft="680.5,159.5">
+          TopLeft="587.5,148.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-65,47"
+              EndConnector="125,33"
               Start="0,0"
-              End="-65,39.5">
+              End="125,25.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.5" />
+                    End="0,12.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.5"
-                    Point2="0,23.5"
-                    Point3="-4,23.5" />
+                    Point1="0,12.5"
+                    Point2="0,16.5"
+                    Point3="4,16.5" />
                   <mssgle:LineSegment
-                    End="-61,23.5" />
+                    End="121,16.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-61,23.5"
-                    Point2="-65,23.5"
-                    Point3="-65,27.5" />
+                    Point1="121,16.5"
+                    Point2="125,16.5"
+                    Point3="125,20.5" />
                   <mssgle:LineSegment
-                    End="-65,39.5" />
+                    End="125,25.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-80.69138671875,28.5,96.3827734375,11.609375"
+              BoundingBox="14.30861328125,21.5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
-          TopLeft="615.5,248.5">
+          TopLeft="712.5,223.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="17.5,39"
+              EndConnector="119,57"
               Start="0,0"
-              End="17.5,31.5">
+              End="119,49.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.5" />
+                    End="0,24.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.5"
-                    Point2="0,19.5"
-                    Point3="4,19.5" />
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="4,28.5" />
                   <mssgle:LineSegment
-                    End="13.5,19.5" />
+                    End="115,28.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="13.5,19.5"
-                    Point2="17.5,19.5"
-                    Point3="17.5,23.5" />
+                    Point1="115,28.5"
+                    Point2="119,28.5"
+                    Point3="119,32.5" />
                   <mssgle:LineSegment
-                    End="17.5,31.5" />
+                    End="119,49.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-39.44138671875,24.5,96.3827734375,11.609375"
+              BoundingBox="11.30861328125,33.5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="122,42"
           Id="Package\FactBank\Data Flow Task-Insert,Update\Lookup 3"
-          TopLeft="555,361" />
-        <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
-          TopLeft="633,329.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-17,31.5"
-              Start="0,0"
-              End="-17,24">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.75"
-                    Point2="0,15.75"
-                    Point3="-4,15.75" />
-                  <mssgle:LineSegment
-                    End="-13,15.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13,15.75"
-                    Point2="-17,15.75"
-                    Point3="-17,19.75" />
-                  <mssgle:LineSegment
-                    End="-17,24" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-56.69138671875,20.75,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="552,502" />
         <EdgeLayout
           Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
-          TopLeft="555,382">
+          TopLeft="552,523">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-90.5,19.5"
+              EndConnector="-89.5,-14.5"
               Start="0,0"
-              End="-83,19.5">
+              End="-82,-14.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-41.25,0" />
+                    End="-40.75,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-41.25,0"
-                    Point2="-45.25,0"
-                    Point3="-45.25,4" />
+                    Point1="-40.75,0"
+                    Point2="-44.75,0"
+                    Point3="-44.75,-4" />
                   <mssgle:LineSegment
-                    End="-45.25,15.5" />
+                    End="-44.75,-10.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-45.25,15.5"
-                    Point2="-45.25,19.5"
-                    Point3="-49.25,19.5" />
+                    Point1="-44.75,-10.5"
+                    Point2="-44.75,-14.5"
+                    Point3="-48.75,-14.5" />
                   <mssgle:LineSegment
-                    End="-83,19.5" />
+                    End="-82,-14.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-101.05638671875,-17.609375,111.6127734375,11.609375"
+              BoundingBox="-100.55638671875,1,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
-          TopLeft="677,384.75">
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
+          TopLeft="674,523">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="118.5,0"
+              EndConnector="151.5,-24.5"
               Start="0,0"
-              End="111,0">
+              End="144,-24.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="111,0" />
+                    End="71.75,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="71.75,0"
+                    Point2="75.75,0"
+                    Point3="75.75,-4" />
+                  <mssgle:LineSegment
+                    End="75.75,-20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="75.75,-20.5"
+                    Point2="75.75,-24.5"
+                    Point3="79.75,-24.5" />
+                  <mssgle:LineSegment
+                    End="144,-24.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="7.30861328125,5,96.3827734375,11.609375"
+              BoundingBox="27.55861328125,1,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="171,42"
           Id="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination"
-          TopLeft="262.5,467.5" />
+          TopLeft="260.5,574.5" />
         <EdgeLayout
           Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
-          TopLeft="399.5,422.5">
+          TopLeft="397.5,529.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -20057,45 +20374,130 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-33.75,27.5,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="166,42"
           Id="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command"
-          TopLeft="851,496" />
+          TopLeft="849,603" />
         <EdgeLayout
           Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
-          TopLeft="865,408.5">
+          TopLeft="895,519.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="69,87.5"
+              EndConnector="37,83.5"
               Start="0,0"
-              End="69,80">
+              End="37,76">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.75" />
+                    End="0,37.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39.75"
-                    Point2="0,43.75"
-                    Point3="4,43.75" />
+                    Point1="0,37.75"
+                    Point2="0,41.75"
+                    Point3="4,41.75" />
                   <mssgle:LineSegment
-                    End="65,43.75" />
+                    End="33,41.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="65,43.75"
-                    Point2="69,43.75"
-                    Point3="69,47.75" />
+                    Point1="33,41.75"
+                    Point2="37,41.75"
+                    Point3="37,45.75" />
                   <mssgle:LineSegment
-                    End="69,80" />
+                    End="37,76" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="10.5,46.75,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="178,42"
+          Id="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset"
+          TopLeft="733.5,356.5" />
+        <EdgeLayout
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
+          TopLeft="831.5,322.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9,34"
+              Start="0,0"
+              End="-9,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13"
+                    Point2="0,17"
+                    Point3="-4,17" />
+                  <mssgle:LineSegment
+                    End="-5,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5,17"
+                    Point2="-9,17"
+                    Point3="-9,21" />
+                  <mssgle:LineSegment
+                    End="-9,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-52.69138671875,22,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="OffsetAccount"
+          ParentId="Package\FactBank\Data Flow Task-Insert,Update"
+          FontInfo="{assembly:Null}"
+          Size="105,60"
+          Id="5e1bae2c-2f0e-4bb7-b545-349dc9999a25"
+          TopLeft="891,40" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset"
+          TopLeft="587,415" />
+        <EdgeLayout
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
+          TopLeft="733.5,377.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-51.5,37.5"
+              Start="0,0"
+              End="-51.5,30">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-47.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-47.5,0"
+                    Point2="-51.5,0"
+                    Point3="-51.5,4" />
+                  <mssgle:LineSegment
+                    End="-51.5,30" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-99.69138671875,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -20133,7 +20535,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer">
+    design-time-name="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -20143,7 +20545,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimCustomer]</Value>
+          type="q3:string">[dbo].[DimAccount]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -20156,7 +20558,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank">
+    design-time-name="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -20332,33 +20734,33 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         <NodeLayout
           Size="166,42"
           Id="Package\FactBank Delete\Data Flow Task-Delete\OLE DB Command"
-          TopLeft="1102,473" />
+          TopLeft="737,448" />
         <EdgeLayout
           Id="Package\FactBank Delete\Data Flow Task-Delete.Paths[Row Count Output 1]"
           TopLeft="1097,371.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="88,101.5"
+              EndConnector="-277,76.5"
               Start="0,0"
-              End="88,94">
+              End="-277,69">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.75" />
+                    End="0,34.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,46.75"
-                    Point2="0,50.75"
-                    Point3="4,50.75" />
+                    Point1="0,34.25"
+                    Point2="0,38.25"
+                    Point3="-4,38.25" />
                   <mssgle:LineSegment
-                    End="84,50.75" />
+                    End="-273,38.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="84,50.75"
-                    Point2="88,50.75"
-                    Point3="88,54.75" />
+                    Point1="-273,38.25"
+                    Point2="-277,38.25"
+                    Point3="-277,42.25" />
                   <mssgle:LineSegment
-                    End="88,94" />
+                    End="-277,69" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -20413,6 +20815,52 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[DimCompany]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimVendor]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCustomer]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
