@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="89"
-  DTS:VersionGUID="{39FB949C-007D-4842-A951-E4E132310652}">
+  DTS:VersionBuild="96"
+  DTS:VersionGUID="{BDB97AE4-601F-43C9-8B80-DD2CD339BB21}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -4054,7 +4054,7 @@ where [refTable].[AccountAlternativeKey] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -4117,7 +4117,7 @@ where [refTable].[AccountAlternativeKey] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -6175,7 +6175,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -6237,7 +6237,7 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -11462,19 +11462,19 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Container DimProduct SCD"
+      DTS:refId="Package\Container DimProduct"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
       DTS:DTSID="{d7d096c0-0da4-4857-99ea-dff816f0b138}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Container DimProduct SCD">
+      DTS:ObjectName="Container DimProduct">
       <DTS:Variables />
       <DTS:LoggingOptions
         DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update"
+          DTS:refId="Package\Container DimProduct\Data Flow Task-Insert,Update"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{071c823b-69f2-4f36-9ca2-f0e2a1a0a174}"
@@ -11490,7 +11490,7 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
               version="1">
               <components>
                 <component
-                  refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion"
+                  refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion"
                   componentClassID="Microsoft.DataConvert"
                   contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Data Conversion"
@@ -11498,24 +11498,24 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]"
                       name="Data Conversion Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input].Columns[SalesPrice]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input].Columns[SalesPrice]"
                           cachedDataType="numeric"
                           cachedName="SalesPrice"
                           cachedPrecision="38"
                           cachedScale="12"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesPrice]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesPrice]"
                           name="SalesPrice" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input].Columns[PurchasePrice]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input].Columns[PurchasePrice]"
                           cachedDataType="numeric"
                           cachedName="PurchasePrice"
                           cachedPrecision="38"
                           cachedScale="12"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PurchasePrice]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PurchasePrice]"
                           name="PurchasePrice" />
                       </inputColumns>
                       <externalMetadataColumns />
@@ -11523,17 +11523,17 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output]"
                       exclusionGroup="1"
                       name="Data Conversion Output"
-                      synchronousInputId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]">
+                      synchronousInputId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[SalesPriceConvert]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[SalesPriceConvert]"
                           dataType="cy"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[SalesPriceConvert]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[SalesPriceConvert]"
                           name="SalesPriceConvert"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -11541,7 +11541,7 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesPrice]}</property>
+                              name="SourceInputColumnLineageID">#{Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesPrice]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -11549,11 +11549,11 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[PurchasePriceConvert]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[PurchasePriceConvert]"
                           dataType="cy"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[PurchasePriceConvert]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[PurchasePriceConvert]"
                           name="PurchasePriceConvert"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -11561,7 +11561,7 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PurchasePrice]}</property>
+                              name="SourceInputColumnLineageID">#{Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PurchasePrice]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -11572,22 +11572,22 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Data Conversion Error Output"
-                      synchronousInputId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]">
+                      synchronousInputId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -11596,7 +11596,7 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1"
+                  refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
@@ -11653,7 +11653,7 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Connections[OleDbConnection]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
                       connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="The OLE DB runtime connection used to access the database."
@@ -11661,155 +11661,155 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Companykey]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Companykey]"
                           cachedDataType="ui1"
                           cachedName="Companykey"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[ProductsAlternativeKey]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[ProductsAlternativeKey]"
                           cachedDataType="wstr"
                           cachedLength="30"
                           cachedName="ProductsAlternativeKey"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductAlternativeKey]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductsAlternativeKey]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductAlternativeKey]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductsAlternativeKey]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[ProductName]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[ProductName]"
                           cachedDataType="wstr"
                           cachedLength="150"
                           cachedName="ProductName"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Category]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Category]"
                           cachedDataType="wstr"
                           cachedLength="150"
                           cachedName="Category"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Category]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Category]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[SubCategory]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[SubCategory]"
                           cachedDataType="wstr"
                           cachedLength="150"
                           cachedName="SubCategory"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[SubCategory]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SubCategory]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[SubCategory]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SubCategory]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[StatusCategory]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[StatusCategory]"
                           cachedDataType="wstr"
                           cachedLength="11"
                           cachedName="StatusCategory"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[StatusCategory]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusCategory]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[StatusCategory]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusCategory]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[StatusProduct]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[StatusProduct]"
                           cachedDataType="wstr"
                           cachedLength="30"
                           cachedName="StatusProduct"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[StatusProduct]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusProduct]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[StatusProduct]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusProduct]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[ProductLine]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[ProductLine]"
                           cachedDataType="wstr"
                           cachedLength="60"
                           cachedName="ProductLine"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductLine]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductLine]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductLine]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductLine]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[GroupType]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[GroupType]"
                           cachedDataType="wstr"
                           cachedLength="13"
                           cachedName="GroupType"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[GroupType]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupType]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[GroupType]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupType]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[SalesPriceConvert]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[SalesPriceConvert]"
                           cachedDataType="cy"
                           cachedName="SalesPriceConvert"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[SalesPrice]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[SalesPriceConvert]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[SalesPrice]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[SalesPriceConvert]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[PurchasePriceConvert]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[PurchasePriceConvert]"
                           cachedDataType="cy"
                           cachedName="PurchasePriceConvert"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[PurchasePrice]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[PurchasePriceConvert]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[PurchasePrice]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[PurchasePriceConvert]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
                           dataType="ui1"
                           name="CompanyKey" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductKey]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductKey]"
                           dataType="i4"
                           name="ProductKey" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductAlternativeKey]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductAlternativeKey]"
                           dataType="wstr"
                           length="50"
                           name="ProductAlternativeKey" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
                           dataType="wstr"
                           length="150"
                           name="ProductName" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
                           dataType="wstr"
                           length="150"
                           name="Category" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[SubCategory]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[SubCategory]"
                           dataType="wstr"
                           length="150"
                           name="SubCategory" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[StatusCategory]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[StatusCategory]"
                           dataType="wstr"
                           length="50"
                           name="StatusCategory" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[StatusProduct]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[StatusProduct]"
                           dataType="wstr"
                           length="30"
                           name="StatusProduct" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductLine]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductLine]"
                           dataType="wstr"
                           length="100"
                           name="ProductLine" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[GroupType]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[GroupType]"
                           dataType="wstr"
                           length="50"
                           name="GroupType" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[SalesPrice]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[SalesPrice]"
                           dataType="cy"
                           name="SalesPrice" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[PurchasePrice]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[PurchasePrice]"
                           dataType="cy"
                           name="PurchasePrice" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[StartDate]"
                           dataType="dbTimeStamp"
                           name="StartDate" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[EndDate]"
                           dataType="dbTimeStamp"
                           name="EndDate" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
                           dataType="bool"
                           name="Status" />
                       </externalMetadataColumns>
@@ -11817,22 +11817,22 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -11841,7 +11841,7 @@ where GeographyAlternativeKey =? and  CompanyKey = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup"
+                  refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
                   description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -11897,7 +11897,7 @@ where [refTable].[CompanyName] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATAAREAID]};</property>
+                      name="ParameterMap">#{Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATAAREAID]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -11909,7 +11909,7 @@ where [refTable].[CompanyName] = ?</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Connections[OleDbConnection]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
                       connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
@@ -11917,15 +11917,15 @@ where [refTable].[CompanyName] = ?</property>
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
                       name="Lookup Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[DATAAREAID]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[DATAAREAID]"
                           cachedDataType="wstr"
                           cachedLength="4"
                           cachedName="DATAAREAID"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATAAREAID]">
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATAAREAID]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -11943,17 +11943,17 @@ where [refTable].[CompanyName] = ?</property>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]"
                       errorOrTruncationOperation="Lookup"
                       exclusionGroup="1"
                       name="Lookup Match Output"
-                      synchronousInputId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      synchronousInputId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]"
                           dataType="ui1"
                           errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]"
                           name="Companykey"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -11967,30 +11967,30 @@ where [refTable].[CompanyName] = ?</property>
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup No Match Output]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup No Match Output]"
                       description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                       exclusionGroup="1"
                       name="Lookup No Match Output"
-                      synchronousInputId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      synchronousInputId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Lookup Error Output"
-                      synchronousInputId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
+                      synchronousInputId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -11999,7 +11999,7 @@ where [refTable].[CompanyName] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1"
+                  refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
                   description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -12055,7 +12055,7 @@ where [refTable].[ProductAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductsAlternativeKey]};#{Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                      name="ParameterMap">#{Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductsAlternativeKey]};#{Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -12067,7 +12067,7 @@ where [refTable].[ProductAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1.Connections[OleDbConnection]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
                       connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="Connection manager used to access lookup data."
@@ -12075,15 +12075,15 @@ where [refTable].[ProductAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]"
                       name="Lookup Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input].Columns[ProductsAlternativeKey]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input].Columns[ProductsAlternativeKey]"
                           cachedDataType="wstr"
                           cachedLength="30"
                           cachedName="ProductsAlternativeKey"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductsAlternativeKey]">
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductsAlternativeKey]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -12096,10 +12096,10 @@ where [refTable].[ProductAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input].Columns[Companykey]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input].Columns[Companykey]"
                           cachedDataType="ui1"
                           cachedName="Companykey"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]">
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -12117,38 +12117,38 @@ where [refTable].[ProductAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output]"
                       errorOrTruncationOperation="Lookup"
                       exclusionGroup="1"
                       name="Lookup Match Output"
-                      synchronousInputId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]">
+                      synchronousInputId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup No Match Output]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup No Match Output]"
                       description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                       exclusionGroup="1"
                       name="Lookup No Match Output"
-                      synchronousInputId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]">
+                      synchronousInputId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Lookup Error Output"
-                      synchronousInputId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]">
+                      synchronousInputId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -12157,11 +12157,11 @@ where [refTable].[ProductAlternativeKey] = ? and [refTable].[CompanyKey] = ?</pr
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4"
+                  refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command"
                   componentClassID="Microsoft.OLEDBCommand"
                   contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
                   description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-                  name="OLE DB Command 4"
+                  name="OLE DB Command"
                   usesDispositions="true"
                   version="2">
                   <properties>
@@ -12192,7 +12192,7 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Connections[OleDbConnection]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Connections[OleDbConnection]"
                       connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
                       connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="The OLE DB runtime connection used to access the database."
@@ -12200,91 +12200,91 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
                       errorOrTruncationOperation="Command Execution"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Command Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].Columns[Category]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[Category]"
                           cachedDataType="wstr"
                           cachedLength="150"
                           cachedName="Category"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Category]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Category]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].Columns[GroupType]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[GroupType]"
                           cachedDataType="wstr"
                           cachedLength="13"
                           cachedName="GroupType"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupType]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupType]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].Columns[ProductLine]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[ProductLine]"
                           cachedDataType="wstr"
                           cachedLength="60"
                           cachedName="ProductLine"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductLine]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductLine]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].Columns[ProductName]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[ProductName]"
                           cachedDataType="wstr"
                           cachedLength="150"
                           cachedName="ProductName"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].Columns[PurchasePriceConvert]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[PurchasePriceConvert]"
                           cachedDataType="cy"
                           cachedName="PurchasePriceConvert"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[PurchasePriceConvert]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[PurchasePriceConvert]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].Columns[SalesPriceConvert]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[SalesPriceConvert]"
                           cachedDataType="cy"
                           cachedName="SalesPriceConvert"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[SalesPriceConvert]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output].Columns[SalesPriceConvert]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].Columns[StatusCategory]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[StatusCategory]"
                           cachedDataType="wstr"
                           cachedLength="11"
                           cachedName="StatusCategory"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusCategory]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusCategory]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].Columns[StatusProduct]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[StatusProduct]"
                           cachedDataType="wstr"
                           cachedLength="30"
                           cachedName="StatusProduct"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusProduct]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusProduct]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].Columns[SubCategory]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[SubCategory]"
                           cachedDataType="wstr"
                           cachedLength="150"
                           cachedName="SubCategory"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SubCategory]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SubCategory]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].Columns[ProductsAlternativeKey]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[ProductsAlternativeKey]"
                           cachedDataType="wstr"
                           cachedLength="30"
                           cachedName="ProductsAlternativeKey"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductsAlternativeKey]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductsAlternativeKey]" />
                         <inputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].Columns[Companykey]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[Companykey]"
                           cachedDataType="ui1"
                           cachedName="Companykey"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]" />
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                           dataType="wstr"
                           length="150"
                           name="Param_0">
@@ -12296,7 +12296,7 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           dataType="wstr"
                           length="50"
                           name="Param_1">
@@ -12308,22 +12308,10 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                           dataType="wstr"
                           length="100"
                           name="Param_2">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">1</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          dataType="wstr"
-                          length="150"
-                          name="Param_3">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -12332,9 +12320,10 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                          dataType="cy"
-                          name="Param_4">
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          dataType="wstr"
+                          length="150"
+                          name="Param_3">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -12343,7 +12332,18 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          dataType="cy"
+                          name="Param_4">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                           dataType="cy"
                           name="Param_5">
                           <properties>
@@ -12354,7 +12354,7 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                           dataType="wstr"
                           length="50"
                           name="Param_6">
@@ -12362,11 +12362,11 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                             <property
                               dataType="System.Int32"
                               description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">17</property>
+                              name="DBParamInfoFlags">65</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                           dataType="wstr"
                           length="30"
                           name="Param_7">
@@ -12378,7 +12378,7 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
                           dataType="wstr"
                           length="150"
                           name="Param_8">
@@ -12390,7 +12390,7 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
                           dataType="wstr"
                           length="50"
                           name="Param_9">
@@ -12398,11 +12398,11 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                             <property
                               dataType="System.Int32"
                               description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
+                              name="DBParamInfoFlags">1</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
                           dataType="ui1"
                           name="Param_10">
                           <properties>
@@ -12417,29 +12417,29 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Outputs[OLE DB Command Output]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Output]"
                       exclusionGroup="1"
                       name="OLE DB Command Output"
-                      synchronousInputId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input]">
+                      synchronousInputId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Outputs[OLE DB Command Error Output]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Command Error Output"
-                      synchronousInputId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input]">
+                      synchronousInputId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -12448,7 +12448,7 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source"
+                  refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
                   description="OLE DB Source"
@@ -12472,7 +12472,7 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from _DWProducts  where DATEADD("HOUR",2 ,MODIFIEDDATETIME)  &gt;?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from _DWProducts  where  MODIFIEDDATETIME &gt;?</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -12497,7 +12497,7 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Connections[OleDbConnection]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Connections[OleDbConnection]"
                       connectionManagerID="{155A0EFD-3698-446D-862B-8BB7B74DA5D9}:external"
                       connectionManagerRefId="Project.ConnectionManagers[mffco-srv.DynamicsAx1]"
                       description="The OLE DB runtime connection used to access the database."
@@ -12505,270 +12505,270 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]"
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATAAREAID]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATAAREAID]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATAAREAID]"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATAAREAID]"
                           length="4"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATAAREAID]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATAAREAID]"
                           name="DATAAREAID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesPrice]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesPrice]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesPrice]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesPrice]"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesPrice]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesPrice]"
                           name="SalesPrice"
                           precision="38"
                           scale="12"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductsAlternativeKey]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductsAlternativeKey]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductsAlternativeKey]"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductsAlternativeKey]"
                           length="30"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductsAlternativeKey]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductsAlternativeKey]"
                           name="ProductsAlternativeKey"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
                           length="150"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductName]"
                           name="ProductName"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Category]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Category]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Category]"
                           length="150"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Category]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Category]"
                           name="Category"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PurchasePrice]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PurchasePrice]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PurchasePrice]"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PurchasePrice]"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PurchasePrice]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[PurchasePrice]"
                           name="PurchasePrice"
                           precision="38"
                           scale="12"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SubCategory]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SubCategory]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SubCategory]"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SubCategory]"
                           length="150"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SubCategory]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[SubCategory]"
                           name="SubCategory"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusCategory]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusCategory]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StatusCategory]"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StatusCategory]"
                           length="11"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusCategory]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusCategory]"
                           name="StatusCategory"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusProduct]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusProduct]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StatusProduct]"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StatusProduct]"
                           length="30"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusProduct]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[StatusProduct]"
                           name="StatusProduct"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupType]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupType]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GroupType]"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GroupType]"
                           length="13"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupType]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupType]"
                           name="GroupType"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductLine]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductLine]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductLine]"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductLine]"
                           length="60"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductLine]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductLine]"
                           name="ProductLine"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATAAREAID]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATAAREAID]"
                           dataType="wstr"
                           length="4"
                           name="DATAAREAID" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesPrice]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesPrice]"
                           dataType="numeric"
                           name="SalesPrice"
                           precision="38"
                           scale="12" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductsAlternativeKey]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductsAlternativeKey]"
                           dataType="wstr"
                           length="30"
                           name="ProductsAlternativeKey" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
                           dataType="wstr"
                           length="150"
                           name="ProductName" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Category]"
                           dataType="wstr"
                           length="150"
                           name="Category" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PurchasePrice]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PurchasePrice]"
                           dataType="numeric"
                           name="PurchasePrice"
                           precision="38"
                           scale="12" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MODIFIEDDATETIME]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MODIFIEDDATETIME]"
                           dataType="dbTimeStamp"
                           name="MODIFIEDDATETIME" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SubCategory]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SubCategory]"
                           dataType="wstr"
                           length="150"
                           name="SubCategory" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StatusCategory]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StatusCategory]"
                           dataType="wstr"
                           length="11"
                           name="StatusCategory" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StatusProduct]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StatusProduct]"
                           dataType="wstr"
                           length="30"
                           name="StatusProduct" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GroupType]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GroupType]"
                           dataType="wstr"
                           length="13"
                           name="GroupType" />
                         <externalMetadataColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductLine]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductLine]"
                           dataType="wstr"
                           length="60"
                           name="ProductLine" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output]"
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductsAlternativeKey]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductsAlternativeKey]"
                           dataType="wstr"
                           length="30"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductsAlternativeKey]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductsAlternativeKey]"
                           name="ProductsAlternativeKey" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductName]"
                           dataType="wstr"
                           length="150"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductName]"
                           name="ProductName" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATAAREAID]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATAAREAID]"
                           dataType="wstr"
                           length="4"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATAAREAID]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATAAREAID]"
                           name="DATAAREAID" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Category]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Category]"
                           dataType="wstr"
                           length="150"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Category]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Category]"
                           name="Category" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SubCategory]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SubCategory]"
                           dataType="wstr"
                           length="150"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SubCategory]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SubCategory]"
                           name="SubCategory" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StatusCategory]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StatusCategory]"
                           dataType="wstr"
                           length="11"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StatusCategory]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StatusCategory]"
                           name="StatusCategory" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StatusProduct]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StatusProduct]"
                           dataType="wstr"
                           length="30"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StatusProduct]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StatusProduct]"
                           name="StatusProduct" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductLine]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductLine]"
                           dataType="wstr"
                           length="60"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductLine]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductLine]"
                           name="ProductLine" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GroupType]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GroupType]"
                           dataType="wstr"
                           length="13"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GroupType]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GroupType]"
                           name="GroupType" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesPrice]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesPrice]"
                           dataType="numeric"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesPrice]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesPrice]"
                           name="SalesPrice"
                           precision="38"
                           scale="12" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PurchasePrice]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PurchasePrice]"
                           dataType="numeric"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PurchasePrice]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PurchasePrice]"
                           name="PurchasePrice"
                           precision="38"
                           scale="12" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -12777,7 +12777,7 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Row Count New 1"
+                  refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Row Count New 1"
                   componentClassID="Microsoft.RowCount"
                   contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
@@ -12790,7 +12790,7 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                   </properties>
                   <inputs>
                     <input
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Row Count New 1.Inputs[Row Count Input 1]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Row Count New 1.Inputs[Row Count Input 1]"
                       hasSideEffects="true"
                       name="Row Count Input 1">
                       <externalMetadataColumns />
@@ -12798,15 +12798,15 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Row Count New 1.Outputs[Row Count Output 1]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Row Count New 1.Outputs[Row Count Output 1]"
                       name="Row Count Output 1"
-                      synchronousInputId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Row Count New 1.Inputs[Row Count Input 1]">
+                      synchronousInputId="Package\Container DimProduct\Data Flow Task-Insert,Update\Row Count New 1.Inputs[Row Count Input 1]">
                       <externalMetadataColumns />
                     </output>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Row Count Update 1"
+                  refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Row Count Update 1"
                   componentClassID="Microsoft.RowCount"
                   contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
@@ -12819,7 +12819,7 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                   </properties>
                   <inputs>
                     <input
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Row Count Update 1.Inputs[Row Count Input 1]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Row Count Update 1.Inputs[Row Count Input 1]"
                       hasSideEffects="true"
                       name="Row Count Input 1">
                       <externalMetadataColumns />
@@ -12827,9 +12827,9 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Row Count Update 1.Outputs[Row Count Output 1]"
+                      refId="Package\Container DimProduct\Data Flow Task-Insert,Update\Row Count Update 1.Outputs[Row Count Output 1]"
                       name="Row Count Output 1"
-                      synchronousInputId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Row Count Update 1.Inputs[Row Count Input 1]">
+                      synchronousInputId="Package\Container DimProduct\Data Flow Task-Insert,Update\Row Count Update 1.Inputs[Row Count Input 1]">
                       <externalMetadataColumns />
                     </output>
                   </outputs>
@@ -12837,46 +12837,46 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
               </components>
               <paths>
                 <path
-                  refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Data Conversion Output]"
-                  endId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]"
+                  refId="Package\Container DimProduct\Data Flow Task-Insert,Update.Paths[Data Conversion Output]"
+                  endId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1.Inputs[Lookup Input]"
                   name="Data Conversion Output"
-                  startId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output]" />
+                  startId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Outputs[Data Conversion Output]" />
                 <path
-                  refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
-                  endId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]"
+                  refId="Package\Container DimProduct\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+                  endId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion.Inputs[Data Conversion Input]"
                   name="Lookup Match Output"
-                  startId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]" />
+                  startId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
-                  endId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Row Count New 1.Inputs[Row Count Input 1]"
+                  refId="Package\Container DimProduct\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+                  endId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
                   name="Lookup Match Output"
-                  startId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output]" />
+                  startId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
-                  endId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Inputs[OLE DB Command Input]"
+                  refId="Package\Container DimProduct\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
+                  endId="Package\Container DimProduct\Data Flow Task-Insert,Update\Row Count New 1.Inputs[Row Count Input 1]"
                   name="Lookup No Match Output"
-                  startId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup No Match Output]" />
+                  startId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[OLE DB Command Output]"
-                  endId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Row Count Update 1.Inputs[Row Count Input 1]"
+                  refId="Package\Container DimProduct\Data Flow Task-Insert,Update.Paths[OLE DB Command Output]"
+                  endId="Package\Container DimProduct\Data Flow Task-Insert,Update\Row Count Update 1.Inputs[Row Count Input 1]"
                   name="OLE DB Command Output"
-                  startId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4.Outputs[OLE DB Command Output]" />
+                  startId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command.Outputs[OLE DB Command Output]" />
                 <path
-                  refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
-                  endId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
+                  refId="Package\Container DimProduct\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+                  endId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
                   name="OLE DB Source Output"
-                  startId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]" />
+                  startId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]" />
                 <path
-                  refId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
-                  endId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input]"
+                  refId="Package\Container DimProduct\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+                  endId="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1.Inputs[OLE DB Destination Input]"
                   name="Row Count Output 1"
-                  startId="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Row Count New 1.Outputs[Row Count Output 1]" />
+                  startId="Package\Container DimProduct\Data Flow Task-Insert,Update\Row Count New 1.Outputs[Row Count Output 1]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimProduct SCD\Expression - Set Start date"
+          DTS:refId="Package\Container DimProduct\Expression - Set Start date"
           DTS:CreationName="Microsoft.ExpressionTask"
           DTS:Description="Expression Task"
           DTS:DTSID="{a0e16c6f-9702-41ca-bd86-4dd7665c5529}"
@@ -12894,7 +12894,7 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimProduct SCD\Log Task Failure"
+          DTS:refId="Package\Container DimProduct\Log Task Failure"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{d0a1b276-5f64-4da5-93f2-7d9565f4df38}"
@@ -12956,7 +12956,7 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimProduct SCD\Log Task Success"
+          DTS:refId="Package\Container DimProduct\Log Task Success"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{7c6f9833-c397-43b9-afe5-5770cfa19bb8}"
@@ -13018,7 +13018,7 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Container DimProduct SCD\TimeStamp Task"
+          DTS:refId="Package\Container DimProduct\TimeStamp Task"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{2ca63c81-c4bc-4949-8319-32aa1a3b7e6b}"
@@ -13044,37 +13044,37 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Container DimProduct SCD.PrecedenceConstraints[Constraint]"
+          DTS:refId="Package\Container DimProduct.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
           DTS:DTSID="{cf97046f-4fa0-42e4-8b19-7ae1fd195daa}"
-          DTS:From="Package\Container DimProduct SCD\Data Flow Task-Insert,Update"
+          DTS:From="Package\Container DimProduct\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Container DimProduct SCD\Log Task Success" />
+          DTS:To="Package\Container DimProduct\Log Task Success" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Container DimProduct SCD.PrecedenceConstraints[Constraint 1]"
+          DTS:refId="Package\Container DimProduct.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
           DTS:DTSID="{347b04b5-ada7-4ff2-b676-edc269e4afa1}"
-          DTS:From="Package\Container DimProduct SCD\Expression - Set Start date"
+          DTS:From="Package\Container DimProduct\Expression - Set Start date"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Container DimProduct SCD\TimeStamp Task" />
+          DTS:To="Package\Container DimProduct\TimeStamp Task" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Container DimProduct SCD.PrecedenceConstraints[Constraint 2]"
+          DTS:refId="Package\Container DimProduct.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
           DTS:DTSID="{3672c100-36d3-42b7-b1d3-772ebc41ed02}"
-          DTS:From="Package\Container DimProduct SCD\TimeStamp Task"
+          DTS:From="Package\Container DimProduct\TimeStamp Task"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
-          DTS:To="Package\Container DimProduct SCD\Data Flow Task-Insert,Update" />
+          DTS:To="Package\Container DimProduct\Data Flow Task-Insert,Update" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Container DimProduct SCD.PrecedenceConstraints[Constraint 3]"
+          DTS:refId="Package\Container DimProduct.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
           DTS:DTSID="{a59f8d27-08ea-4d95-a9f1-d05f23e4b83d}"
-          DTS:From="Package\Container DimProduct SCD\Data Flow Task-Insert,Update"
+          DTS:From="Package\Container DimProduct\Data Flow Task-Insert,Update"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
-          DTS:To="Package\Container DimProduct SCD\Log Task Failure"
+          DTS:To="Package\Container DimProduct\Log Task Failure"
           DTS:Value="1" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
@@ -17693,7 +17693,7 @@ where [refTable].[EmployeeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\385:invalid};#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\367:invalid};</property>
+                      name="ParameterMap">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\788:invalid};#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\789:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -23007,7 +23007,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -23069,7 +23069,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -24383,7 +24383,7 @@ where [refTable].[CompanyName] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\791:invalid};</property>
+                      name="ParameterMap">#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\790:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -24541,7 +24541,7 @@ where [refTable].[MethodAcquisitionAlternativeKey] = ? and [refTable].[CompanyKe
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\792:invalid};#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                      name="ParameterMap">#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\791:invalid};#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -31282,7 +31282,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{b5bfd8fc-5756-4954-a940-a152f8afee12}"
-      DTS:From="Package\Container DimProduct SCD"
+      DTS:From="Package\Container DimProduct"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Container DimBranches" />
@@ -31301,7 +31301,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       DTS:From="Package\Container DimCampany"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 10"
-      DTS:To="Package\Container DimProduct SCD" />
+      DTS:To="Package\Container DimProduct" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
       DTS:CreationName=""
@@ -32704,26 +32704,26 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           TopLeft="808.02380952381,608.54761904762" />
         <NodeLayout
           Size="220,42"
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update"
+          Id="Package\Container DimProduct\Data Flow Task-Insert,Update"
           TopLeft="195,209.5" />
         <NodeLayout
           Size="205,42"
-          Id="Package\Container DimProduct SCD\Expression - Set Start date"
+          Id="Package\Container DimProduct\Expression - Set Start date"
           TopLeft="202.5,5.5" />
         <NodeLayout
           Size="156,42"
-          Id="Package\Container DimProduct SCD\Log Task Failure"
+          Id="Package\Container DimProduct\Log Task Failure"
           TopLeft="227,311.5" />
         <NodeLayout
           Size="161,42"
-          Id="Package\Container DimProduct SCD\Log Task Success"
+          Id="Package\Container DimProduct\Log Task Success"
           TopLeft="5.50000000000006,311.5" />
         <NodeLayout
           Size="157,42"
-          Id="Package\Container DimProduct SCD\TimeStamp Task"
+          Id="Package\Container DimProduct\TimeStamp Task"
           TopLeft="226.5,107.5" />
         <EdgeLayout
-          Id="Package\Container DimProduct SCD.PrecedenceConstraints[Constraint]"
+          Id="Package\Container DimProduct.PrecedenceConstraints[Constraint]"
           TopLeft="269.666666666667,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -32757,7 +32757,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Container DimProduct SCD.PrecedenceConstraints[Constraint 1]"
+          Id="Package\Container DimProduct.PrecedenceConstraints[Constraint 1]"
           TopLeft="305,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -32779,7 +32779,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Container DimProduct SCD.PrecedenceConstraints[Constraint 2]"
+          Id="Package\Container DimProduct.PrecedenceConstraints[Constraint 2]"
           TopLeft="305,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -32801,7 +32801,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Container DimProduct SCD.PrecedenceConstraints[Constraint 3]"
+          Id="Package\Container DimProduct.PrecedenceConstraints[Constraint 3]"
           TopLeft="340.333333333333,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -32840,8 +32840,8 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="420,408"
-          Size="420,452"
-          Id="Package\Container DimProduct SCD"
+          Size="420,451"
+          Id="Package\Container DimProduct"
           TopLeft="2620.85714285714,136.690476190476" />
         <NodeLayout
           Size="220,42"
@@ -34400,7 +34400,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           TopLeft="1263.90476190476,610.92857142857" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="2620.85714285714,362.565476190476">
+          TopLeft="2620.85714285714,362.315476190476">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -34444,7 +34444,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="3073.25,362.732142857143">
+          TopLeft="3073.25,362.482142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -37455,86 +37455,40 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Container DimProduct SCD\Data Flow Task-Insert,Update">
+    design-time-name="Package\Container DimProduct\Data Flow Task-Insert,Update">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="176,42"
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Row Count Update 1"
-          TopLeft="1217.5,621.5" />
+          Size="122,42"
+          Id="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1"
+          TopLeft="938.75,402.5" />
         <NodeLayout
           Size="150,42"
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source"
+          Id="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source"
           TopLeft="917.5,124.5" />
         <NodeLayout
+          Size="176,42"
+          Id="Package\Container DimProduct\Data Flow Task-Insert,Update\Row Count Update 1"
+          TopLeft="1217.5,621.5" />
+        <NodeLayout
           Size="113,42"
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup"
+          Id="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup"
           TopLeft="936,226.5" />
         <NodeLayout
           Size="156,42"
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Data Conversion"
+          Id="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion"
           TopLeft="914.5,328.5" />
-        <EdgeLayout
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
-          TopLeft="992.5,166.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
-          TopLeft="992.5,268.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="172,42"
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Insert Destination 1"
-          TopLeft="610.5,579.5" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Command 4"
-          TopLeft="1141,532.5" />
         <NodeLayout
           Size="154,42"
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Row Count New 1"
+          Id="Package\Container DimProduct\Data Flow Task-Insert,Update\Row Count New 1"
           TopLeft="609,448" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1"
+          TopLeft="610.5,579.5" />
         <EdgeLayout
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+          Id="Package\Container DimProduct\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
           TopLeft="686,490">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -37568,57 +37522,19 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[OLE DB Command Output]"
-          TopLeft="1228.5,574.5">
+          Id="Package\Container DimProduct\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
+          TopLeft="992.5,166.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="77,46.9999999999999"
+              EndConnector="0,60"
               Start="0,0"
-              End="77,39.4999999999999">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.4999999999999" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.4999999999999"
-                    Point2="0,23.4999999999999"
-                    Point3="4,23.4999999999999" />
-                  <mssgle:LineSegment
-                    End="73,23.4999999999999" />
-                  <mssgle:CubicBezierSegment
-                    Point1="73,23.4999999999999"
-                    Point2="77,23.4999999999999"
-                    Point3="77,27.4999999999999" />
-                  <mssgle:LineSegment
-                    End="77,39.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="122,42"
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1"
-          TopLeft="938.75,402.5" />
-        <EdgeLayout
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Data Conversion Output]"
-          TopLeft="996.125,370.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32.0000000000001"
-              Start="0,0"
-              End="0,24.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.5000000000001" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -37628,7 +37544,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+          Id="Package\Container DimProduct\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
           TopLeft="938.75,423.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -37659,54 +37575,174 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-136.06638671875,-17.609375,96.3827734375,11.609375"
+              BoundingBox="-143.68138671875,-17.609375,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Container DimProduct SCD\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
-          TopLeft="999.75,444.5">
+          Id="Package\Container DimProduct\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          TopLeft="992.5,268.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="228.75,87.9999999999999"
+              EndConnector="0,60"
               Start="0,0"
-              End="228.75,80.4999999999999">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.9999999999999" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.9999999999999"
-                    Point2="0,43.9999999999999"
-                    Point3="4,43.9999999999999" />
-                  <mssgle:LineSegment
-                    End="224.75,43.9999999999999" />
-                  <mssgle:CubicBezierSegment
-                    Point1="224.75,43.9999999999999"
-                    Point2="228.75,43.9999999999999"
-                    Point3="228.75,47.9999999999999" />
-                  <mssgle:LineSegment
-                    End="228.75,80.4999999999999" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="58.56861328125,48.9999999999999,111.6127734375,11.609375"
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Container DimProduct\Data Flow Task-Insert,Update.Paths[Data Conversion Output]"
+          TopLeft="996.125,370.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.0000000000001"
+              Start="0,0"
+              End="0,24.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command"
+          TopLeft="1080.86298421808,480.004518072289" />
+        <EdgeLayout
+          Id="Package\Container DimProduct\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+          TopLeft="999.75,444.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="164.112984218078,35.5045180722892"
+              Start="0,0"
+              End="164.112984218078,28.0045180722892">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.7522590361446" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.7522590361446"
+                    Point2="0,17.7522590361446"
+                    Point3="4,17.7522590361446" />
+                  <mssgle:LineSegment
+                    End="160.112984218078,17.7522590361446" />
+                  <mssgle:CubicBezierSegment
+                    Point1="160.112984218078,17.7522590361446"
+                    Point2="164.112984218078,17.7522590361446"
+                    Point3="164.112984218078,21.7522590361446" />
+                  <mssgle:LineSegment
+                    End="164.112984218078,28.0045180722892" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="33.8651053902888,22.7522590361446,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Container DimProduct\Data Flow Task-Insert,Update.Paths[OLE DB Command Output]"
+          TopLeft="1163.86298421808,522.004518072289">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="141.637015781922,99.4954819277109"
+              Start="0,0"
+              End="141.637015781922,91.9954819277109">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.7477409638554" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.7477409638554"
+                    Point2="0,49.7477409638554"
+                    Point3="4,49.7477409638554" />
+                  <mssgle:LineSegment
+                    End="137.637015781922,49.7477409638554" />
+                  <mssgle:CubicBezierSegment
+                    Point1="137.637015781922,49.7477409638554"
+                    Point2="141.637015781922,49.7477409638554"
+                    Point3="141.637015781922,53.7477409638554" />
+                  <mssgle:LineSegment
+                    End="141.637015781922,91.9954819277109" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\OLE DB Source">
+    design-time-name="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimProduct]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Container DimProduct\Data Flow Task-Insert,Update\Insert Destination 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -38010,9 +38046,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -38046,9 +38080,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -38070,9 +38102,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -38178,9 +38208,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -38492,13 +38520,13 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="107,42"
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2"
-          TopLeft="781,406" />
+          Size="223,54"
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Script Component Clean Name"
+          TopLeft="1291.72727272727,125.545454545455" />
         <NodeLayout
-          Size="139,42"
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Row Count 1"
-          TopLeft="432,487" />
+          Size="159,42"
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source 1"
+          TopLeft="669,34" />
         <NodeLayout
           Size="108,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Merge"
@@ -38507,6 +38535,10 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           Size="171,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Destination"
           TopLeft="555,582" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Row Count 1"
+          TopLeft="432,487" />
         <NodeLayout
           Size="130,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Row Count"
@@ -38524,10 +38556,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Lookup"
           TopLeft="782,482" />
         <NodeLayout
-          Size="223,54"
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Script Component Clean Name"
-          TopLeft="1291.72727272727,125.545454545455" />
-        <NodeLayout
           Size="166,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Command"
           TopLeft="963,578" />
@@ -38544,6 +38572,10 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Lookup Company"
           TopLeft="242,133" />
         <NodeLayout
+          Size="107,42"
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Sort 2"
+          TopLeft="781,406" />
+        <NodeLayout
           Size="150,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source"
           TopLeft="859,35" />
@@ -38555,10 +38587,98 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           Size="154,42"
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\Derived Column"
           TopLeft="1053,70" />
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update\OLE DB Source 1"
-          TopLeft="669,34" />
+        <EdgeLayout
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          TopLeft="895,503.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="223,0"
+              Start="0,0"
+              End="215.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="215.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="59.55861328125,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Derived Column Output1]"
+          TopLeft="460,95">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-58,59"
+              Start="0,0"
+              End="-50.5,59">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-25,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25,0"
+                    Point2="-29,0"
+                    Point3="-29,4" />
+                  <mssgle:LineSegment
+                    End="-29,55" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29,55"
+                    Point2="-29,59"
+                    Point3="-33,59" />
+                  <mssgle:LineSegment
+                    End="-50.5,59" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Derived Column Output]"
+          TopLeft="1207,91">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84.72727272727,61.545454545455"
+              Start="0,0"
+              End="77.22727272727,61.545454545455">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="38.363636363635,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38.363636363635,0"
+                    Point2="42.363636363635,0"
+                    Point3="42.363636363635,4" />
+                  <mssgle:LineSegment
+                    End="42.363636363635,57.545454545455" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42.363636363635,57.545454545455"
+                    Point2="42.363636363635,61.545454545455"
+                    Point3="46.363636363635,61.545454545455" />
+                  <mssgle:LineSegment
+                    End="77.22727272727,61.545454545455" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Data Conversion Output1]"
           TopLeft="483,251">
@@ -38967,98 +39087,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             <mssgm:EdgeLabel
               BoundingBox="-8.94138671875,32.5,96.3827734375,11.609375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
-          TopLeft="895,503.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="223,0"
-              Start="0,0"
-              End="215.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="215.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="59.55861328125,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Derived Column Output1]"
-          TopLeft="460,95">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-58,59"
-              Start="0,0"
-              End="-50.5,59">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-25,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-25,0"
-                    Point2="-29,0"
-                    Point3="-29,4" />
-                  <mssgle:LineSegment
-                    End="-29,55" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-29,55"
-                    Point2="-29,59"
-                    Point3="-33,59" />
-                  <mssgle:LineSegment
-                    End="-50.5,59" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence DimEmployee\Data Flow Task-Insert,Update.Paths[Derived Column Output]"
-          TopLeft="1207,91">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="84.72727272727,61.545454545455"
-              Start="0,0"
-              End="77.22727272727,61.545454545455">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="38.363636363635,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="38.363636363635,0"
-                    Point2="42.363636363635,0"
-                    Point3="42.363636363635,4" />
-                  <mssgle:LineSegment
-                    End="42.363636363635,57.545454545455" />
-                  <mssgle:CubicBezierSegment
-                    Point1="42.363636363635,57.545454545455"
-                    Point2="42.363636363635,61.545454545455"
-                    Point3="46.363636363635,61.545454545455" />
-                  <mssgle:LineSegment
-                    End="77.22727272727,61.545454545455" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -40803,29 +40831,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
   <PipelineComponentMetadata
     design-time-name="Package\Sequence DimUnit\Data Flow Task-Insert,Update\OLE DB Source">
     <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Container DimProduct SCD\Data Flow Task-Insert,Update\Lookup 1">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimProduct]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
