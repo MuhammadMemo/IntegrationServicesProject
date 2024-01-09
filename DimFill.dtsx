@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="128"
-  DTS:VersionGUID="{8D6B2F3C-73EA-4267-B397-E9480B68C848}">
+  DTS:VersionBuild="130"
+  DTS:VersionGUID="{B4EBD501-391A-4EE0-8A37-3FA80A7CF144}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -3305,13 +3305,12 @@ where [refTable].[AccountAlternativeKey] = ?</property>
                       name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimBank]
    SET 
-     
        [BnakName] =?
       ,[BankGroupName] = ?
       ,[BrancheKey] = ?
       ,[AccountKey] = ?
       ,[CurrencyCode] = ?
- WHERE  [BankAlternativeKey] = ?	and   [CompanyKey] = ?</property>
+ WHERE  [BankAlternativeKey] = ? and   [CompanyKey] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3348,13 +3347,6 @@ where [refTable].[AccountAlternativeKey] = ?</property>
                           externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BankGroupName]" />
                         <inputColumn
-                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[BrancheKey]"
-                          cachedDataType="wstr"
-                          cachedLength="30"
-                          cachedName="BrancheKey"
-                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[BrancheKey]" />
-                        <inputColumn
                           refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[AccountKey]"
                           cachedDataType="i4"
                           cachedName="AccountKey"
@@ -3380,6 +3372,12 @@ where [refTable].[AccountAlternativeKey] = ?</property>
                           cachedName="Companykey"
                           externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                           lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[Companykey]" />
+                        <inputColumn
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[BrancheKey]"
+                          cachedDataType="ui1"
+                          cachedName="BrancheKey"
+                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 2.Outputs[Lookup Match Output].Columns[BrancheKey]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -12923,7 +12921,7 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -12985,7 +12983,7 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -17714,7 +17712,7 @@ where [refTable].[EmployeeAlternativeKey] = ? and [refTable].[CompanyKey] = ?</p
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\788:invalid};#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\789:invalid};</property>
+                      name="ParameterMap">#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\868:invalid};#{Package\Sequence DimEmployee\Data Flow Task-Insert,Update\869:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -24404,7 +24402,7 @@ where [refTable].[CompanyName] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\790:invalid};</property>
+                      name="ParameterMap">#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\870:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -24562,7 +24560,7 @@ where [refTable].[MethodAcquisitionAlternativeKey] = ? and [refTable].[CompanyKe
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\791:invalid};#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]};</property>
+                      name="ParameterMap">#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\871:invalid};#{Package\Sequence DimMethodAcquisition\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output].Columns[Companykey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -31924,6 +31922,40 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           Id="Package\Container DimBranches\TimeStamp Task"
           TopLeft="225,107.5" />
         <EdgeLayout
+          Id="Package\Container DimBranches.PrecedenceConstraints[Constraint]"
+          TopLeft="268.166666666667,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-168,73.666666666667"
+              Start="0,0"
+              End="-168,66.166666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.785800240674" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.785800240674"
+                    Point2="0,29.785800240674"
+                    Point3="-4,29.785800240674" />
+                  <mssgle:LineSegment
+                    End="-164,29.785800240674" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-164,29.785800240674"
+                    Point2="-168,29.785800240674"
+                    Point3="-168,33.785800240674" />
+                  <mssgle:LineSegment
+                    End="-168,66.166666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Container DimBranches.PrecedenceConstraints[Constraint 1]"
           TopLeft="338.833333333333,251.5">
           <EdgeLayout.Curve>
@@ -31995,40 +32027,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Container DimBranches.PrecedenceConstraints[Constraint]"
-          TopLeft="268.166666666667,251.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-168,73.666666666667"
-              Start="0,0"
-              End="-168,66.166666666667">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.785800240674" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.785800240674"
-                    Point2="0,29.785800240674"
-                    Point3="-4,29.785800240674" />
-                  <mssgle:LineSegment
-                    End="-164,29.785800240674" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-164,29.785800240674"
-                    Point2="-168,29.785800240674"
-                    Point3="-168,33.785800240674" />
-                  <mssgle:LineSegment
-                    End="-168,66.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35938,7 +35936,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -35948,7 +35946,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -36038,13 +36036,13 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           Id="Package\Container DimBranches\Data Flow Task-Insert,Update\Row Count Insert"
           TopLeft="369.5,350" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\Container DimBranches\Data Flow Task-Insert,Update\OLE DB Source"
-          TopLeft="538.5,69.5" />
-        <NodeLayout
           Size="171,42"
           Id="Package\Container DimBranches\Data Flow Task-Insert,Update\OLE DB Destination"
           TopLeft="335.5,441.5" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Container DimBranches\Data Flow Task-Insert,Update\Lookup"
+          TopLeft="579,256" />
         <NodeLayout
           Size="166,42"
           Id="Package\Container DimBranches\Data Flow Task-Insert,Update\OLE DB Command"
@@ -36054,9 +36052,9 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           Id="Package\Container DimBranches\Data Flow Task-Insert,Update\CompanyId"
           TopLeft="543.5,155.5" />
         <NodeLayout
-          Size="113,42"
-          Id="Package\Container DimBranches\Data Flow Task-Insert,Update\Lookup"
-          TopLeft="579,256" />
+          Size="150,42"
+          Id="Package\Container DimBranches\Data Flow Task-Insert,Update\OLE DB Source"
+          TopLeft="538.5,69.5" />
         <EdgeLayout
           Id="Package\Container DimBranches\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
           TopLeft="450,392">
@@ -36088,7 +36086,9 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -36122,7 +36122,9 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -36144,7 +36146,9 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -36259,14 +36263,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Container DimBranches\Data Flow Task-Insert,Update\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Container DimBranches\Data Flow Task-Insert,Update\OLE DB Destination">
     <Properties>
       <Property>
@@ -36276,6 +36272,14 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Container DimBranches\Data Flow Task-Insert,Update\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -37517,13 +37521,13 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           Id="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source"
           TopLeft="917.5,124.5" />
         <NodeLayout
-          Size="176,42"
-          Id="Package\Container DimProduct\Data Flow Task-Insert,Update\Row Count Update 1"
-          TopLeft="1217.5,621.5" />
-        <NodeLayout
           Size="113,42"
           Id="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup"
           TopLeft="936,226.5" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Container DimProduct\Data Flow Task-Insert,Update\Row Count Update 1"
+          TopLeft="1217.5,621.5" />
         <NodeLayout
           Size="156,42"
           Id="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion"
@@ -37567,7 +37571,9 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -37589,7 +37595,9 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -37623,7 +37631,9 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -37741,7 +37751,9 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
