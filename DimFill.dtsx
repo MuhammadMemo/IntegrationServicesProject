@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="135"
-  DTS:VersionGUID="{97DAF3C4-B87B-41BB-B033-9F87AD57572F}">
+  DTS:VersionBuild="136"
+  DTS:VersionGUID="{BEAB8E45-A9D1-46EA-A4C4-908C77600562}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -1314,7 +1314,7 @@ where [refTable].[CompanyName] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -1377,7 +1377,7 @@ where [refTable].[CompanyName] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -2444,7 +2444,7 @@ UPDATE [dbo].[DimAccountCategory]
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -2507,7 +2507,7 @@ UPDATE [dbo].[DimAccountCategory]
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -3150,7 +3150,7 @@ where [refTable].[AccountAlternativeKey] = ?</property>
      
       [BnakName] = ?
       ,[BankGroupName] = ?
-      ,[BrancheNmae] = 	?
+      ,[BrancheName] = ?
       ,[AccountKey] =	?
       ,[CurrencyCode] =  ?
  WHERE		[BankAlternativeKey] =? 	and	  [CompanyKey] =  ?</property>
@@ -3450,13 +3450,6 @@ where [refTable].[AccountAlternativeKey] = ?</property>
                           externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
                           lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1.Outputs[Lookup Match Output].Columns[Companykey]" />
                         <inputColumn
-                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Branchename]"
-                          cachedDataType="wstr"
-                          cachedLength="150"
-                          cachedName="Branchename"
-                          externalMetadataColumnId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BrancheNmae]"
-                          lineageId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output].Columns[Branchename]" />
-                        <inputColumn
                           refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AccountKey]"
                           cachedDataType="i4"
                           cachedName="AccountKey"
@@ -3489,11 +3482,6 @@ where [refTable].[AccountAlternativeKey] = ?</property>
                           length="100"
                           name="BankGroupName" />
                         <externalMetadataColumn
-                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BrancheNmae]"
-                          dataType="wstr"
-                          length="150"
-                          name="BrancheNmae" />
-                        <externalMetadataColumn
                           refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AccountKey]"
                           dataType="i4"
                           name="AccountKey" />
@@ -3506,6 +3494,11 @@ where [refTable].[AccountAlternativeKey] = ?</property>
                           refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatLasteTime]"
                           dataType="dbTimeStamp"
                           name="UpdatLasteTime" />
+                        <externalMetadataColumn
+                          refId="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BrancheName]"
+                          dataType="wstr"
+                          length="150"
+                          name="BrancheName" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -12769,7 +12762,7 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -12831,7 +12824,7 @@ WHERE ProductAlternativeKey=? and [CompanyKey] = ?</property>
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -30967,7 +30960,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -31029,7 +31022,7 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0" />
@@ -35437,29 +35430,105 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="161,42"
-          Id="Package\Container DimBank\Data Flow Task-Insert,Update\Row Count Insert"
-          TopLeft="200.5,371" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source"
-          TopLeft="629.5,25.5" />
-        <NodeLayout
-          Size="122,42"
-          Id="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1"
-          TopLeft="763.5,163.5" />
+          Size="167,42"
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update\Row Count Update"
+          TopLeft="649,427" />
         <NodeLayout
           Size="122,42"
           Id="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3"
           TopLeft="764.5,275.5" />
         <NodeLayout
-          Size="167,42"
-          Id="Package\Container DimBank\Data Flow Task-Insert,Update\Row Count Update"
-          TopLeft="649,427" />
+          Size="122,42"
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 1"
+          TopLeft="763.5,163.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command"
+          TopLeft="724,543" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update\Row Count Insert"
+          TopLeft="200.5,371" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination"
+          TopLeft="234,504" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source"
+          TopLeft="629.5,25.5" />
         <NodeLayout
           Size="113,42"
           Id="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup"
           TopLeft="444.5,308.5" />
+        <EdgeLayout
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+          TopLeft="281,413">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="38.5,91"
+              Start="0,0"
+              End="38.5,83.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.5"
+                    Point2="0,45.5"
+                    Point3="4,45.5" />
+                  <mssgle:LineSegment
+                    End="34.5,45.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.5,45.5"
+                    Point2="38.5,45.5"
+                    Point3="38.5,49.5" />
+                  <mssgle:LineSegment
+                    End="38.5,83.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+          TopLeft="732.5,469">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74.5,74"
+              Start="0,0"
+              End="74.5,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33"
+                    Point2="0,37"
+                    Point3="4,37" />
+                  <mssgle:LineSegment
+                    End="70.5,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="70.5,37"
+                    Point2="74.5,37"
+                    Point3="74.5,41" />
+                  <mssgle:LineSegment
+                    End="74.5,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
           TopLeft="704.5,67.5">
@@ -35527,6 +35596,30 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-97.30638671875,-17.609375,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
+          TopLeft="825,205.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70"
+              Start="0,0"
+              End="0,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,25.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -35602,112 +35695,27 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
-          TopLeft="825,205.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,70"
-              Start="0,0"
-              End="0,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,25.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Command"
-          TopLeft="724,543" />
-        <EdgeLayout
-          Id="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
-          TopLeft="732.5,469">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="74.5,74"
-              Start="0,0"
-              End="74.5,66.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33"
-                    Point2="0,37"
-                    Point3="4,37" />
-                  <mssgle:LineSegment
-                    End="70.5,37" />
-                  <mssgle:CubicBezierSegment
-                    Point1="70.5,37"
-                    Point2="74.5,37"
-                    Point3="74.5,41" />
-                  <mssgle:LineSegment
-                    End="74.5,66.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination"
-          TopLeft="234,504" />
-        <EdgeLayout
-          Id="Package\Container DimBank\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
-          TopLeft="281,413">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="38.5,91"
-              Start="0,0"
-              End="38.5,83.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41.5"
-                    Point2="0,45.5"
-                    Point3="4,45.5" />
-                  <mssgle:LineSegment
-                    End="34.5,45.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="34.5,45.5"
-                    Point2="38.5,45.5"
-                    Point3="38.5,49.5" />
-                  <mssgle:LineSegment
-                    End="38.5,83.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source">
+    design-time-name="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3">
     <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimAccount]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -35737,23 +35745,21 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Container DimBank\Data Flow Task-Insert,Update\Lookup 3">
+    design-time-name="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination">
     <Properties>
       <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimAccount]</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q2:string">Table</Value>
       </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Source">
+    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -40684,19 +40690,6 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Container DimBank\Data Flow Task-Insert,Update\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
