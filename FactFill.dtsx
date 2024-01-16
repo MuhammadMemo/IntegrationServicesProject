@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="819"
-  DTS:VersionGUID="{5EE1D760-4E69-45B6-949B-1623406EF87D}">
+  DTS:VersionBuild="866"
+  DTS:VersionGUID="{BA883D2B-C337-42BD-BD0A-A2F0672298AC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -131,6 +131,174 @@
               DTS:DTSID="{33F67CD2-071F-423C-A2C5-8D140B777C8F}"
               DTS:CreationName="" />
           </DTS:CacheColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{5EA289B2-A72C-4657-9436-B95BF0C13799}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\ism01\Desktop\pay.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MODIFIEDDATETIME"
+              DTS:DTSID="{7F43E210-552E-49DF-B6CB-36DA847C2281}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CompanyName"
+              DTS:DTSID="{D1FB5220-3C91-4BAE-AB12-036A79927952}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PaymentDate"
+              DTS:DTSID="{9724DCFB-C920-4231-945E-C07E11339B86}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PaymentDateAlternativeKey"
+              DTS:DTSID="{0BCDC884-5FA2-4595-9196-A068F1F06879}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="28"
+              DTS:DataScale="12"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LineNum"
+              DTS:DTSID="{44E0D30A-7628-40C0-9289-05040249C005}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="28"
+              DTS:DataScale="12"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AmountDebit"
+              DTS:DTSID="{EF61A448-3553-48F0-BDB2-11BD614F61EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="28"
+              DTS:DataScale="12"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AmountCredit"
+              DTS:DTSID="{21708F13-7742-460E-B0BB-799CF8211456}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="150"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="txt"
+              DTS:DTSID="{D38A382D-B6B1-4E4D-A3E8-61AE603F3686}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="voucher"
+              DTS:DTSID="{33F3F6CE-DEF7-4DF8-92A9-B6461875F472}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="journalNum"
+              DTS:DTSID="{D5813C91-ECF4-499A-9446-CFDAFA69844E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OffsetAccount"
+              DTS:DTSID="{7F7F4238-DB51-49C0-A11F-B3E737F7AB16}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="salesid"
+              DTS:DTSID="{13A51675-0CC2-4870-8E65-F62FDC7D322B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{395565AA-FB63-43CD-A597-6028D18FCD38}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AccountNum"
+              DTS:DTSID="{8E0EEAFB-8711-4C7D-A714-6F3F1181EEBF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OffsetAccountType"
+              DTS:DTSID="{088D0F3D-BF5A-48B4-BF49-E2CE7DFD0EC5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AccountType"
+              DTS:DTSID="{73F7DE0E-80C3-478F-A81D-A7CCF04204CA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="17"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Companykey"
+              DTS:DTSID="{F261CE92-D8DB-4987-9C8B-2AE4FC62165B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -836,8 +1004,7 @@
           </DTS:LoggingOptions>
           <DTS:ObjectData>
             <pipeline
-              defaultBufferMaxRows="1000000"
-              defaultBufferSize="124857600"
+              defaultBufferSize="12485760"
               version="1">
               <components>
                 <component
@@ -1243,7 +1410,7 @@ where [refTable].[Id] = ? and [refTable].[CompanyKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination};#{Package\FactBank\Data Flow Task-Insert,Update\866:invalid};</property>
+                      name="ParameterMap">#{Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination};#{Package\FactBank\Data Flow Task-Insert,Update\1284:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1270,7 +1437,7 @@ where [refTable].[Id] = ? and [refTable].[CompanyKey] = ?</property>
                           refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[id]"
                           cachedDataType="i8"
                           cachedName="id"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[id]">
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[id]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -1286,7 +1453,7 @@ where [refTable].[Id] = ? and [refTable].[CompanyKey] = ?</property>
                           refId="Package\FactBank\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input].Columns[Companykey]"
                           cachedDataType="ui1"
                           cachedName="Companykey"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Companykey]">
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Companykey]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -2953,44 +3120,45 @@ UPDATE [dbo].[FactBank]
                           cachedDataType="i4"
                           cachedName="AcountAcountKey"
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[AcountAcountKey]" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AcountAcountKey]" />
                         <inputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[AccountOffsetKey]"
                           cachedDataType="i4"
                           cachedName="AccountOffsetKey"
+                          cachedSortKeyPosition="1"
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[AccountOffsetKey]" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AccountOffsetKey]" />
                         <inputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[PaymentDateAlternativeKey]"
                           cachedDataType="i4"
                           cachedName="PaymentDateAlternativeKey"
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[PaymentDateAlternativeKey]" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[PaymentDateAlternativeKey]" />
                         <inputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[AccountType]"
                           cachedDataType="i4"
                           cachedName="AccountType"
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[AccountType]" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AccountType]" />
                         <inputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[OffsetAccountType]"
                           cachedDataType="i4"
                           cachedName="OffsetAccountType"
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[OffsetAccountType]" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[OffsetAccountType]" />
                         <inputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[PaymentDate]"
                           cachedDataType="dbTimeStamp"
                           cachedName="PaymentDate"
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[PaymentDate]" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[PaymentDate]" />
                         <inputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[journalNum]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="journalNum"
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[journalNum]" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[journalNum]" />
                         <inputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[AmountDebit]"
                           cachedDataType="numeric"
@@ -2998,7 +3166,7 @@ UPDATE [dbo].[FactBank]
                           cachedPrecision="28"
                           cachedScale="12"
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[AmountDebit]" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AmountDebit]" />
                         <inputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[AmountCredit]"
                           cachedDataType="numeric"
@@ -3006,40 +3174,40 @@ UPDATE [dbo].[FactBank]
                           cachedPrecision="28"
                           cachedScale="12"
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[AmountCredit]" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AmountCredit]" />
                         <inputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[salesid]"
                           cachedDataType="wstr"
                           cachedLength="20"
                           cachedName="salesid"
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[salesid]" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[salesid]" />
                         <inputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[voucher]"
                           cachedDataType="wstr"
                           cachedLength="20"
                           cachedName="voucher"
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[voucher]" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[voucher]" />
                         <inputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[txt]"
                           cachedDataType="wstr"
                           cachedLength="150"
                           cachedName="txt"
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[txt]" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[txt]" />
                         <inputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[id]"
                           cachedDataType="i8"
                           cachedName="id"
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[id]" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[id]" />
                         <inputColumn
                           refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].Columns[Companykey]"
                           cachedDataType="ui1"
                           cachedName="Companykey"
                           externalMetadataColumnId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1].Columns[Companykey]" />
+                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Companykey]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3306,7 +3474,7 @@ UPDATE [dbo].[FactBank]
                     <input
                       refId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
-                      errorRowDisposition="RedirectRow"
+                      errorRowDisposition="IgnoreFailure"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
@@ -3525,7 +3693,7 @@ UPDATE [dbo].[FactBank]
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  * from _DWFactBank  where MODIFIEDDATETIME&gt;?</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  * from _DWFactBank    where MODIFIEDDATETIME&gt;?</property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -3969,752 +4137,6 @@ UPDATE [dbo].[FactBank]
                       refId="Package\FactBank\Data Flow Task-Insert,Update\Row Count 1.Outputs[Row Count Output 1]"
                       name="Row Count Output 1"
                       synchronousInputId="Package\FactBank\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]">
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling"
-                  componentClassID="Microsoft.RowSampling"
-                  contactInfo="Row Sampling;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                  description="Randomly samples a specific number of rows from an input data flow. For example, use it randomly select products to feature on your Web site."
-                  name="Row Sampling">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the number of rows in the sample."
-                      expressionType="Notify"
-                      name="SamplingValue">10</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the seed for the random number generator."
-                      name="SamplingSeed">0</property>
-                  </properties>
-                  <inputs>
-                    <input
-                      refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1]"
-                      name="Row Sampling Input 1">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[MODIFIEDDATETIME]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="MODIFIEDDATETIME"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[MODIFIEDDATETIME]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[CompanyName]"
-                          cachedDataType="wstr"
-                          cachedLength="4"
-                          cachedName="CompanyName"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[CompanyName]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[PaymentDate]"
-                          cachedDataType="dbTimeStamp"
-                          cachedName="PaymentDate"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[PaymentDate]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[PaymentDateAlternativeKey]"
-                          cachedDataType="i4"
-                          cachedName="PaymentDateAlternativeKey"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[PaymentDateAlternativeKey]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[LineNum]"
-                          cachedDataType="numeric"
-                          cachedName="LineNum"
-                          cachedPrecision="28"
-                          cachedScale="12"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[LineNum]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[AmountDebit]"
-                          cachedDataType="numeric"
-                          cachedName="AmountDebit"
-                          cachedPrecision="28"
-                          cachedScale="12"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AmountDebit]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[AmountCredit]"
-                          cachedDataType="numeric"
-                          cachedName="AmountCredit"
-                          cachedPrecision="28"
-                          cachedScale="12"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AmountCredit]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[txt]"
-                          cachedDataType="wstr"
-                          cachedLength="150"
-                          cachedName="txt"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[txt]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[voucher]"
-                          cachedDataType="wstr"
-                          cachedLength="20"
-                          cachedName="voucher"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[voucher]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[journalNum]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="journalNum"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[journalNum]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[OffsetAccount]"
-                          cachedDataType="wstr"
-                          cachedLength="30"
-                          cachedName="OffsetAccount"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[OffsetAccount]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[salesid]"
-                          cachedDataType="wstr"
-                          cachedLength="20"
-                          cachedName="salesid"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[salesid]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[id]"
-                          cachedDataType="i8"
-                          cachedName="id"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[id]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[AccountNum]"
-                          cachedDataType="wstr"
-                          cachedLength="30"
-                          cachedName="AccountNum"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AccountNum]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[OffsetAccountType]"
-                          cachedDataType="i4"
-                          cachedName="OffsetAccountType"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[OffsetAccountType]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[AccountType]"
-                          cachedDataType="i4"
-                          cachedName="AccountType"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AccountType]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[Companykey]"
-                          cachedDataType="ui1"
-                          cachedName="Companykey"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Companykey]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[AccountOffsetKey]"
-                          cachedDataType="i4"
-                          cachedName="AccountOffsetKey"
-                          cachedSortKeyPosition="1"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AccountOffsetKey]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[AcountAcountKey]"
-                          cachedDataType="i4"
-                          cachedName="AcountAcountKey"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AcountAcountKey]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[ErrorCode]"
-                          cachedDataType="i4"
-                          cachedName="ErrorCode"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
-                        <inputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1].Columns[ErrorColumn]"
-                          cachedDataType="i4"
-                          cachedName="ErrorColumn"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output]"
-                      name="Sampling Selected Output">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Output for rows in the sample"
-                          name="Selected">true</property>
-                      </properties>
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[MODIFIEDDATETIME]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[MODIFIEDDATETIME]"
-                          name="MODIFIEDDATETIME">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[MODIFIEDDATETIME]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[CompanyName]"
-                          dataType="wstr"
-                          length="4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[CompanyName]"
-                          name="CompanyName">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[CompanyName]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[PaymentDate]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[PaymentDate]"
-                          name="PaymentDate">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[PaymentDate]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[PaymentDateAlternativeKey]"
-                          dataType="i4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[PaymentDateAlternativeKey]"
-                          name="PaymentDateAlternativeKey">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[PaymentDateAlternativeKey]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[LineNum]"
-                          dataType="numeric"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[LineNum]"
-                          name="LineNum"
-                          precision="28"
-                          scale="12">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[LineNum]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[AmountDebit]"
-                          dataType="numeric"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[AmountDebit]"
-                          name="AmountDebit"
-                          precision="28"
-                          scale="12">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AmountDebit]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[AmountCredit]"
-                          dataType="numeric"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[AmountCredit]"
-                          name="AmountCredit"
-                          precision="28"
-                          scale="12">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AmountCredit]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[txt]"
-                          dataType="wstr"
-                          length="150"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[txt]"
-                          name="txt">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[txt]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[voucher]"
-                          dataType="wstr"
-                          length="20"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[voucher]"
-                          name="voucher">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[voucher]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[journalNum]"
-                          dataType="wstr"
-                          length="10"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[journalNum]"
-                          name="journalNum">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[journalNum]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[OffsetAccount]"
-                          dataType="wstr"
-                          length="30"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[OffsetAccount]"
-                          name="OffsetAccount">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[OffsetAccount]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[salesid]"
-                          dataType="wstr"
-                          length="20"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[salesid]"
-                          name="salesid">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[salesid]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[id]"
-                          dataType="i8"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[id]"
-                          name="id">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[id]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[AccountNum]"
-                          dataType="wstr"
-                          length="30"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[AccountNum]"
-                          name="AccountNum">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AccountNum]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[OffsetAccountType]"
-                          dataType="i4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[OffsetAccountType]"
-                          name="OffsetAccountType">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[OffsetAccountType]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[AccountType]"
-                          dataType="i4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[AccountType]"
-                          name="AccountType">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AccountType]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[Companykey]"
-                          dataType="ui1"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[Companykey]"
-                          name="Companykey">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Companykey]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[AccountOffsetKey]"
-                          dataType="i4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[AccountOffsetKey]"
-                          name="AccountOffsetKey">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AccountOffsetKey]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[AcountAcountKey]"
-                          dataType="i4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[AcountAcountKey]"
-                          name="AcountAcountKey">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AcountAcountKey]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[ErrorCode]"
-                          name="ErrorCode">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Selected Output].Columns[ErrorColumn]"
-                          name="ErrorColumn">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]}</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output]"
-                      name="Sampling Unselected Output">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Output for rows in the sample"
-                          name="Selected">false</property>
-                      </properties>
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[MODIFIEDDATETIME]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[MODIFIEDDATETIME]"
-                          name="MODIFIEDDATETIME">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[MODIFIEDDATETIME]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[CompanyName]"
-                          dataType="wstr"
-                          length="4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[CompanyName]"
-                          name="CompanyName">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[CompanyName]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[PaymentDate]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[PaymentDate]"
-                          name="PaymentDate">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[PaymentDate]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[PaymentDateAlternativeKey]"
-                          dataType="i4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[PaymentDateAlternativeKey]"
-                          name="PaymentDateAlternativeKey">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[PaymentDateAlternativeKey]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[LineNum]"
-                          dataType="numeric"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[LineNum]"
-                          name="LineNum"
-                          precision="28"
-                          scale="12">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[LineNum]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[AmountDebit]"
-                          dataType="numeric"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[AmountDebit]"
-                          name="AmountDebit"
-                          precision="28"
-                          scale="12">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AmountDebit]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[AmountCredit]"
-                          dataType="numeric"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[AmountCredit]"
-                          name="AmountCredit"
-                          precision="28"
-                          scale="12">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AmountCredit]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[txt]"
-                          dataType="wstr"
-                          length="150"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[txt]"
-                          name="txt">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[txt]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[voucher]"
-                          dataType="wstr"
-                          length="20"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[voucher]"
-                          name="voucher">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[voucher]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[journalNum]"
-                          dataType="wstr"
-                          length="10"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[journalNum]"
-                          name="journalNum">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[journalNum]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[OffsetAccount]"
-                          dataType="wstr"
-                          length="30"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[OffsetAccount]"
-                          name="OffsetAccount">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[OffsetAccount]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[salesid]"
-                          dataType="wstr"
-                          length="20"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[salesid]"
-                          name="salesid">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[salesid]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[id]"
-                          dataType="i8"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[id]"
-                          name="id">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[id]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[AccountNum]"
-                          dataType="wstr"
-                          length="30"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[AccountNum]"
-                          name="AccountNum">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AccountNum]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[OffsetAccountType]"
-                          dataType="i4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[OffsetAccountType]"
-                          name="OffsetAccountType">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[OffsetAccountType]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[AccountType]"
-                          dataType="i4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[AccountType]"
-                          name="AccountType">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AccountType]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[Companykey]"
-                          dataType="ui1"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[Companykey]"
-                          name="Companykey">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[Companykey]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[AccountOffsetKey]"
-                          dataType="i4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[AccountOffsetKey]"
-                          name="AccountOffsetKey">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AccountOffsetKey]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[AcountAcountKey]"
-                          dataType="i4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[AcountAcountKey]"
-                          name="AcountAcountKey">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output].Columns[AcountAcountKey]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[ErrorCode]"
-                          name="ErrorCode">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Outputs[Sampling Unselected Output].Columns[ErrorColumn]"
-                          name="ErrorColumn">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Input column lineage ID"
-                              name="InputColumnLineageID">#{Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]}</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
                       <externalMetadataColumns />
                     </output>
                   </outputs>
@@ -7722,19 +7144,19 @@ UPDATE [dbo].[FactBank]
                   startId="Package\FactBank\Data Flow Task-Insert,Update\Conditional Split 1.Outputs[Ledger]" />
                 <path
                   refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Conditional Split.Inputs[Conditional Split Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Company.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
                   endId="Package\FactBank\Data Flow Task-Insert,Update\Union All 1.Inputs[Union All Input 1]"
                   name="Lookup Match Output"
                   startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All 1.Inputs[Union All Input 2]"
+                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All 1.Inputs[Union All Input 3]"
                   name="Lookup Match Output"
-                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Outputs[Lookup Match Output]" />
+                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Conditional Split.Inputs[Conditional Split Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Company.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
                   endId="Package\FactBank\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
@@ -7742,9 +7164,9 @@ UPDATE [dbo].[FactBank]
                   startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All 1.Inputs[Union All Input 3]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All 1.Inputs[Union All Input 2]"
                   name="Lookup Match Output"
-                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Outputs[Lookup Match Output]" />
+                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
                   endId="Package\FactBank\Data Flow Task-Insert,Update\Union All 1.Inputs[Union All Input 4]"
@@ -7752,34 +7174,29 @@ UPDATE [dbo].[FactBank]
                   startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
                   endId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 2]"
                   name="Lookup Match Output"
                   startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Account.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
                   endId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 3]"
                   name="Lookup Match Output"
                   startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Vendor.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
+                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
                   endId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 4]"
                   name="Lookup Match Output"
                   startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Outputs[Lookup Match Output]" />
                 <path
+                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Outputs[Lookup Match Output]" />
+                <path
                   refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
                   name="Lookup No Match Output"
                   startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup No Match Output]" />
-                <path
-                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[OLE DB Destination Error Output]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling.Inputs[Row Sampling Input 1]"
-                  name="OLE DB Destination Error Output"
-                  startId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination.Outputs[OLE DB Destination Error Output]" />
                 <path
                   refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
                   endId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Company.Inputs[Lookup Input]"
@@ -7787,17 +7204,17 @@ UPDATE [dbo].[FactBank]
                   startId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Source.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
-                  name="Row Count Output 1"
-                  startId="Package\FactBank\Data Flow Task-Insert,Update\Row Count.Outputs[Row Count Output 1]" />
-                <path
-                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
                   endId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   name="Row Count Output 1"
                   startId="Package\FactBank\Data Flow Task-Insert,Update\Row Count 1.Outputs[Row Count Output 1]" />
                 <path
+                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="Row Count Output 1"
+                  startId="Package\FactBank\Data Flow Task-Insert,Update\Row Count.Outputs[Row Count Output 1]" />
+                <path
                   refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Sort Output]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
                   name="Sort Output"
                   startId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Outputs[Sort Output]" />
                 <path
@@ -7807,19 +7224,19 @@ UPDATE [dbo].[FactBank]
                   startId="Package\FactBank\Data Flow Task-Insert,Update\Union All 1.Outputs[Union All Output 1]" />
                 <path
                   refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Union All Output 11]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Lookup.Inputs[Lookup Input]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Sort.Inputs[Sort Input]"
                   name="Union All Output 1"
                   startId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Outputs[Union All Output 1]" />
                 <path
                   refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Vend]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Vendor.Inputs[Lookup Input]"
-                  name="Vend"
-                  startId="Package\FactBank\Data Flow Task-Insert,Update\Conditional Split 1.Outputs[Vend]" />
-                <path
-                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Vend1]"
                   endId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Inputs[Lookup Input]"
                   name="Vend"
                   startId="Package\FactBank\Data Flow Task-Insert,Update\Conditional Split.Outputs[Vend]" />
+                <path
+                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Vend1]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Vendor.Inputs[Lookup Input]"
+                  name="Vend"
+                  startId="Package\FactBank\Data Flow Task-Insert,Update\Conditional Split 1.Outputs[Vend]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -7852,7 +7269,7 @@ UPDATE [dbo].[FactBank]
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -7915,7 +7332,7 @@ UPDATE [dbo].[FactBank]
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -16344,29 +15761,29 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Derived Column 1.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output13]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup FactSales.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output12]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup EmployeeKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup GeographyKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output12]"
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup FactSales.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodDeliveryKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodDeliveryKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup FactSales.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup UnitKey.Inputs[Lookup Input]"
@@ -16374,9 +15791,9 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimensionKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey.Inputs[Lookup Input]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodDeliveryKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup EmployeeKey.Outputs[Lookup Match Output]" />
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CustomerKey.Inputs[Lookup Input]"
@@ -16384,34 +15801,34 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup EmployeeKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup UnitKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CustomerKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup BrancheKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimensionKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup BrancheKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CompanyKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup GeographyKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup EmployeeKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup UnitKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CustomerKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
@@ -16825,7 +16242,7 @@ where [refTable].[Companykey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\FactSales Delete\Data Flow Task-Delete\867:invalid};</property>
+                      name="ParameterMap">#{Package\FactSales Delete\Data Flow Task-Delete\1285:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -20409,7 +19826,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -20460,7 +19877,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -21077,24 +20494,24 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{F6896690-1048-43AD-8BC5-3515A29D2390}"
+      DTS:DTSID="{62ED7995-9072-4140-A517-99A7457C5FDF}"
       DTS:From="Package\FactSales"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
-      DTS:To="Package\FactBank" />
+      DTS:To="Package\FactBank Delete" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{90437815-D7DF-4418-9692-719BE1573E2C}"
-      DTS:From="Package\FactBank"
+      DTS:DTSID="{CECBF0EE-9F5C-4201-AF5B-965868FF3522}"
+      DTS:From="Package\FactBank Delete"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
-      DTS:To="Package\FactBank Delete" />
+      DTS:To="Package\FactBank" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{926A0C1D-42F3-4F28-BFBD-01DCECF9FB58}"
-      DTS:From="Package\FactBank Delete"
+      DTS:DTSID="{82A266C5-0052-4088-9AF6-AB12AE3272E0}"
+      DTS:From="Package\FactBank"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
       DTS:To="Package\FactSalesCommission" />
@@ -21520,30 +20937,30 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           TopLeft="104.5,404.166666666667" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="1973,616.5">
+          TopLeft="2023,629.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-137,-44"
+              EndConnector="-187,-57"
               Start="0,0"
-              End="-129.5,-44">
+              End="-179.5,-57">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-64.5,0" />
+                    End="-89.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-64.5,0"
-                    Point2="-68.5,0"
-                    Point3="-68.5,-4" />
+                    Point1="-89.5,0"
+                    Point2="-93.5,0"
+                    Point3="-93.5,-4" />
                   <mssgle:LineSegment
-                    End="-68.5,-40" />
+                    End="-93.5,-53" />
                   <mssgle:CubicBezierSegment
-                    Point1="-68.5,-40"
-                    Point2="-68.5,-44"
-                    Point3="-72.5,-44" />
+                    Point1="-93.5,-53"
+                    Point2="-93.5,-57"
+                    Point3="-97.5,-57" />
                   <mssgle:LineSegment
-                    End="-129.5,-44" />
+                    End="-179.5,-57" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21578,40 +20995,6 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                     Point3="-21.166666666666,-355.333333333333" />
                   <mssgle:LineSegment
                     End="-10.166666666666,-355.333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="1423,1995.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-88,-155.5"
-              Start="0,0"
-              End="-80.5,-155.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-40,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-40,0"
-                    Point2="-44,0"
-                    Point3="-44,-4" />
-                  <mssgle:LineSegment
-                    End="-44,-151.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-44,-151.5"
-                    Point2="-44,-155.5"
-                    Point3="-48,-155.5" />
-                  <mssgle:LineSegment
-                    End="-80.5,-155.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21860,7 +21243,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           PanelSize="446,867"
           Size="446,910"
           Id="f64aaa9c-1e63-446f-a1ec-56a3cff5b359"
-          TopLeft="1954.73809523809,346.499999999999">
+          TopLeft="2004.73809523809,358.999999999999">
           <GroupLayout.ChildrenIds>
             <s:String>Package\Sequence Container 1</s:String>
             <s:String>Package\Execute SQL Task</s:String>
@@ -22153,6 +21536,121 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
+          Size="185,42"
+          Id="Package\FactBank Delete\Data Flow Task-Delete"
+          TopLeft="212.5,107.5" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\FactBank Delete\Expression - Set Start date"
+          TopLeft="202.5,5.5" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\FactBank Delete\Log Task Failure"
+          TopLeft="227,209.5" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\FactBank Delete\Log Task Success"
+          TopLeft="5.50000000000006,209.5" />
+        <EdgeLayout
+          Id="Package\FactBank Delete.PrecedenceConstraints[Constraint]"
+          TopLeft="305,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactBank Delete.PrecedenceConstraints[Constraint 2]"
+          TopLeft="275.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-189.5,60"
+              Start="0,0"
+              End="-189.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3086816720257" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.3086816720257"
+                    Point2="0,24.3086816720257"
+                    Point3="-4,24.3086816720257" />
+                  <mssgle:LineSegment
+                    End="-185.5,24.3086816720257" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-185.5,24.3086816720257"
+                    Point2="-189.5,24.3086816720257"
+                    Point3="-189.5,28.3086816720257" />
+                  <mssgle:LineSegment
+                    End="-189.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactBank Delete.PrecedenceConstraints[Constraint 3]"
+          TopLeft="334.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-29.5,60"
+              Start="0,0"
+              End="-29.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3086816720257" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.3086816720257"
+                    Point2="0,24.3086816720257"
+                    Point3="-4,24.3086816720257" />
+                  <mssgle:LineSegment
+                    End="-25.5,24.3086816720257" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.5,24.3086816720257"
+                    Point2="-29.5,24.3086816720257"
+                    Point3="-29.5,28.3086816720257" />
+                  <mssgle:LineSegment
+                    End="-29.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-29.99134765625,29.3086816720257,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="413,306"
+          Size="413,349"
+          Id="Package\FactBank Delete"
+          TopLeft="23.2857142857154,944.214285714286" />
+        <NodeLayout
           Size="220,42"
           Id="Package\FactBank\Data Flow Task-Insert,Update"
           TopLeft="195,211.5" />
@@ -22282,7 +21780,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-32.9080143229167,29.2599277978339,30.4826953125,9.7490234375"
+              BoundingBox="-32.9080143229166,29.2599277978339,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -22292,21 +21790,33 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           PanelSize="420,411"
           Size="420,454"
           Id="Package\FactBank"
-          TopLeft="5.50000000000017,904.5" />
+          TopLeft="8.35714285714266,1371.64285714286" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="215.5,844.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="14.2857142857152,99.7142857142858"
               Start="0,0"
-              End="0,52.5">
+              End="14.2857142857152,92.2142857142858">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,45.8571428571429" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.8571428571429"
+                    Point2="0,49.8571428571429"
+                    Point3="4,49.8571428571429" />
+                  <mssgle:LineSegment
+                    End="10.2857142857152,49.8571428571429" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.2857142857152,49.8571428571429"
+                    Point2="14.2857142857152,49.8571428571429"
+                    Point3="14.2857142857152,53.8571428571429" />
+                  <mssgle:LineSegment
+                    End="14.2857142857152,92.2142857142858" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -22315,135 +21825,32 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="185,42"
-          Id="Package\FactBank Delete\Data Flow Task-Delete"
-          TopLeft="212.5,107.5" />
-        <NodeLayout
-          Size="205,42"
-          Id="Package\FactBank Delete\Expression - Set Start date"
-          TopLeft="202.5,5.5" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\FactBank Delete\Log Task Failure"
-          TopLeft="227,209.5" />
-        <NodeLayout
-          Size="161,42"
-          Id="Package\FactBank Delete\Log Task Success"
-          TopLeft="5.50000000000006,209.5" />
-        <EdgeLayout
-          Id="Package\FactBank Delete.PrecedenceConstraints[Constraint]"
-          TopLeft="305,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactBank Delete.PrecedenceConstraints[Constraint 2]"
-          TopLeft="275.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-189.5,60"
-              Start="0,0"
-              End="-189.5,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.3086816720257" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.3086816720257"
-                    Point2="0,24.3086816720257"
-                    Point3="-4,24.3086816720257" />
-                  <mssgle:LineSegment
-                    End="-185.5,24.3086816720257" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-185.5,24.3086816720257"
-                    Point2="-189.5,24.3086816720257"
-                    Point3="-189.5,28.3086816720257" />
-                  <mssgle:LineSegment
-                    End="-189.5,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactBank Delete.PrecedenceConstraints[Constraint 3]"
-          TopLeft="334.5,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-29.5,60"
-              Start="0,0"
-              End="-29.5,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.3086816720257" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.3086816720257"
-                    Point2="0,24.3086816720257"
-                    Point3="-4,24.3086816720257" />
-                  <mssgle:LineSegment
-                    End="-25.5,24.3086816720257" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-25.5,24.3086816720257"
-                    Point2="-29.5,24.3086816720257"
-                    Point3="-29.5,28.3086816720257" />
-                  <mssgle:LineSegment
-                    End="-29.5,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-29.99134765625,29.3086816720257,30.4826953125,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="413,306"
-          Size="413,349"
-          Id="Package\FactBank Delete"
-          TopLeft="9.00000000000023,1418.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="215.5,1358.5">
+          TopLeft="229.785714285715,1293.21428571429">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="-11.4285714285727,78.4285714285716"
               Start="0,0"
-              End="0,52.5">
+              End="-11.4285714285727,70.9285714285716">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,35.2142857142858" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.2142857142858"
+                    Point2="0,39.2142857142858"
+                    Point3="-4,39.2142857142858" />
+                  <mssgle:LineSegment
+                    End="-7.4285714285727,39.2142857142858" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.4285714285727,39.2142857142858"
+                    Point2="-11.4285714285727,39.2142857142858"
+                    Point3="-11.4285714285727,43.2142857142858" />
+                  <mssgle:LineSegment
+                    End="-11.4285714285727,70.9285714285716" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -22457,17 +21864,17 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           ParentId="Package"
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="431,1823"
-          Size="431,1866"
+          PanelSize="444,1881"
+          Size="444,1924"
           Id="a6d0a6e5-72d8-4ca5-9090-874b5a4d3a13"
           TopLeft="1413.83333333333,360.166666666667">
           <GroupLayout.ChildrenIds>
             <s:String>Package\FactSales</s:String>
             <s:String>Package\FactSales Delete</s:String>
             <s:String>Package.PrecedenceConstraints[Constraint 2]</s:String>
+            <s:String>Package\FactBank Delete</s:String>
             <s:String>Package\FactBank</s:String>
             <s:String>Package.PrecedenceConstraints[Constraint 3]</s:String>
-            <s:String>Package\FactBank Delete</s:String>
             <s:String>Package.PrecedenceConstraints[Constraint 4]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
@@ -22915,6 +22322,40 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             <s:String>Package.PrecedenceConstraints[Constraint 7]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="1422,2002">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-87,-162"
+              Start="0,0"
+              End="-79.5,-162">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-39.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-39.5,0"
+                    Point2="-43.5,0"
+                    Point3="-43.5,-4" />
+                  <mssgle:LineSegment
+                    End="-43.5,-158" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-43.5,-158"
+                    Point2="-43.5,-162"
+                    Point3="-47.5,-162" />
+                  <mssgle:LineSegment
+                    End="-79.5,-162" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -22944,6 +22385,10 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           Id="Package\FactBank\Data Flow Task-Insert,Update\Row Count 1"
           TopLeft="73.1190476190476,725.341269841269" />
         <NodeLayout
+          Size="171,42"
+          Id="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination"
+          TopLeft="150.926395939086,822.392978482446" />
+        <NodeLayout
           Size="130,42"
           Id="Package\FactBank\Data Flow Task-Insert,Update\Row Count"
           TopLeft="519.785714285715,741.055555555555" />
@@ -22952,36 +22397,14 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           Id="Package\FactBank\Data Flow Task-Insert,Update\Lookup Company"
           TopLeft="2203.5,365.293650793651" />
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Union All Output 11]"
-          TopLeft="405.880952380953,382">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,299.904761904762"
-              Start="0,0"
-              End="0,292.404761904762">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,292.404761904762" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Union All Output 1]"
-          TopLeft="1229,326">
+          TopLeft="1229,331">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-124,22"
+              EndConnector="-124,17"
               Start="0,0"
-              End="-116.5,22">
+              End="-116.5,17">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -22992,13 +22415,13 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                     Point2="-62,0"
                     Point3="-62,4" />
                   <mssgle:LineSegment
-                    End="-62,18" />
+                    End="-62,13" />
                   <mssgle:CubicBezierSegment
-                    Point1="-62,18"
-                    Point2="-62,22"
-                    Point3="-66,22" />
+                    Point1="-62,13"
+                    Point2="-62,17"
+                    Point3="-66,17" />
                   <mssgle:LineSegment
-                    End="-116.5,22" />
+                    End="-116.5,17" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -23008,7 +22431,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
           TopLeft="584.785714285715,783.055555555555">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23042,6 +22465,40 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Row Count Output 1]"
+          TopLeft="142.619047619048,767.341269841269">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="93.8073483200388,55.0517086411768"
+              Start="0,0"
+              End="93.8073483200388,47.5517086411768">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5258543205884" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5258543205884"
+                    Point2="0,27.5258543205884"
+                    Point3="4,27.5258543205884" />
+                  <mssgle:LineSegment
+                    End="89.8073483200388,27.5258543205884" />
+                  <mssgle:CubicBezierSegment
+                    Point1="89.8073483200388,27.5258543205884"
+                    Point2="93.8073483200388,27.5258543205884"
+                    Point3="93.8073483200388,31.5258543205884" />
+                  <mssgle:LineSegment
+                    End="93.8073483200388,47.5517086411768" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[OLE DB Source Output]"
           TopLeft="2281.72619047619,254.68253968254">
           <EdgeLayout.Curve>
@@ -23064,14 +22521,14 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
           TopLeft="2203.5,386.293650793651">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-132.5,-56.293650793651"
+              EndConnector="-132.5,-51.293650793651"
               Start="0,0"
-              End="-125,-56.293650793651">
+              End="-125,-51.293650793651">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -23082,13 +22539,13 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
                     Point2="-66.25,0"
                     Point3="-66.25,-4" />
                   <mssgle:LineSegment
-                    End="-66.25,-52.293650793651" />
+                    End="-66.25,-47.293650793651" />
                   <mssgle:CubicBezierSegment
-                    Point1="-66.25,-52.293650793651"
-                    Point2="-66.25,-56.293650793651"
-                    Point3="-70.25,-56.293650793651" />
+                    Point1="-66.25,-47.293650793651"
+                    Point2="-66.25,-51.293650793651"
+                    Point3="-70.25,-51.293650793651" />
                   <mssgle:LineSegment
-                    End="-125,-56.293650793651" />
+                    End="-125,-51.293650793651" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -23156,7 +22613,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           Id="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset"
           TopLeft="404.071428571429,333.214285714286" />
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Vend1]"
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Vend]"
           TopLeft="835.357142857143,193.214285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23187,7 +22644,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-168.83236235119,88.251670378619,23.71234375,9.7490234375"
+              BoundingBox="-168.832362351191,88.251670378619,23.71234375,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -23295,7 +22752,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-174.679359188989,-46.11320754717,23.1682421875,9.7490234375"
+              BoundingBox="-174.679359188988,-46.11320754717,23.1682421875,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -23304,7 +22761,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           Id="Package\FactBank\Data Flow Task-Insert,Update\Union All 1"
           TopLeft="71.1507936507937,147.436507936508" />
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
           TopLeft="455.833333333333,65.2142857142856">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23335,12 +22792,12 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-208.032656560019,38.3542976939205,96.3827734375,11.609375"
+              BoundingBox="-208.03265656002,38.3542976939205,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
           TopLeft="390.214285714286,222.785714285714">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23376,7 +22833,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
           TopLeft="464.738095238096,333.214285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23452,24 +22909,24 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           ParentId="Package\FactBank\Data Flow Task-Insert,Update"
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="935,442"
-          Size="935,485"
+          PanelSize="935,474"
+          Size="935,517"
           Id="53ce06df-789d-4f8e-9378-60827e34c7f1"
-          TopLeft="1158.21428571429,115.277777777777">
+          TopLeft="1158.21428571429,119.563492063491">
           <GroupLayout.ChildrenIds>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update\Conditional Split</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset</s:String>
-            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Vend1]</s:String>
+            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Vend]</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Ledger]</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Cust]</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Bank]</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update\Union All 1</s:String>
-            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]</s:String>
-            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]</s:String>
+            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]</s:String>
+            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
@@ -23484,7 +22941,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         <NodeLayout
           Size="150,42"
           Id="Package\FactBank\Data Flow Task-Insert,Update\Lookup Vendor"
-          TopLeft="302.928571428571,357.5" />
+          TopLeft="290.071428571428,363.214285714286" />
         <NodeLayout
           Size="161,42"
           Id="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer"
@@ -23525,7 +22982,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-165.369835379464,-57.8813559322033,23.1682421875,9.7490234375"
+              BoundingBox="-165.369835379465,-57.8813559322033,23.1682421875,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -23566,38 +23023,38 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Vend]"
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Vend1]"
           TopLeft="695.071428571429,203.214285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-293.476190476191,154.285714285715"
+              EndConnector="-306.333333333334,160"
               Start="0,0"
-              End="-293.476190476191,146.785714285715">
+              End="-306.333333333334,152.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,87.5944214097252" />
+                    End="0,90.9868073878626" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,87.5944214097252"
-                    Point2="0,91.5944214097252"
-                    Point3="-4,91.5944214097252" />
+                    Point1="0,90.9868073878626"
+                    Point2="0,94.9868073878626"
+                    Point3="-4,94.9868073878626" />
                   <mssgle:LineSegment
-                    End="-289.476190476191,91.5944214097252" />
+                    End="-302.333333333334,94.9868073878626" />
                   <mssgle:CubicBezierSegment
-                    Point1="-289.476190476191,91.5944214097252"
-                    Point2="-293.476190476191,91.5944214097252"
-                    Point3="-293.476190476191,95.5944214097252" />
+                    Point1="-302.333333333334,94.9868073878626"
+                    Point2="-306.333333333334,94.9868073878626"
+                    Point3="-306.333333333334,98.9868073878626" />
                   <mssgle:LineSegment
-                    End="-293.476190476191,146.785714285715" />
+                    End="-306.333333333334,152.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-158.594267113096,96.5944214097252,23.71234375,9.7490234375"
+              BoundingBox="-165.022838541667,99.9868073878626,23.71234375,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -23607,33 +23064,33 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-150.071428571429,-30.9047619047618"
+              EndConnector="-150.071428571429,-30.9047619047624"
               Start="0,0"
-              End="-142.571428571429,-30.9047619047618">
+              End="-142.571428571429,-30.9047619047624">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-59.3328964613369,0" />
+                    End="-59.332896461337,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-59.3328964613369,0"
-                    Point2="-63.3328964613369,0"
-                    Point3="-63.3328964613369,-4" />
+                    Point1="-59.332896461337,0"
+                    Point2="-63.332896461337,0"
+                    Point3="-63.332896461337,-4" />
                   <mssgle:LineSegment
-                    End="-63.3328964613369,-26.9047619047618" />
+                    End="-63.332896461337,-26.9047619047624" />
                   <mssgle:CubicBezierSegment
-                    Point1="-63.3328964613369,-26.9047619047618"
-                    Point2="-63.3328964613369,-30.9047619047618"
-                    Point3="-67.3328964613369,-30.9047619047618" />
+                    Point1="-63.332896461337,-26.9047619047624"
+                    Point2="-63.332896461337,-30.9047619047624"
+                    Point3="-67.332896461337,-30.9047619047624" />
                   <mssgle:LineSegment
-                    End="-142.571428571429,-30.9047619047618" />
+                    End="-142.571428571429,-30.9047619047624" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-73.8618027113369,1,21.0578125,9.5537109375"
+              BoundingBox="-73.861802711337,1,21.0578125,9.5537109375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -23642,7 +23099,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           Id="Package\FactBank\Data Flow Task-Insert,Update\Union All"
           TopLeft="15.9999999999999,173.785714285714" />
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
           TopLeft="343.5,55.2142857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23678,7 +23135,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
           TopLeft="297.928571428572,217.071428571429">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23714,67 +23171,67 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
-          TopLeft="354.261904761904,357.5">
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+          TopLeft="341.404761904761,363.214285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-258.928571428571,-141.714285714286"
+              EndConnector="-264.904761904762,-147.428571428572"
               Start="0,0"
-              End="-258.928571428571,-134.214285714286">
+              End="-264.904761904762,-139.928571428572">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-66.6372779798847" />
+                    End="0,-55.9050131926123" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-66.6372779798847"
-                    Point2="0,-70.6372779798847"
-                    Point3="-4,-70.6372779798847" />
+                    Point1="0,-55.9050131926123"
+                    Point2="0,-59.9050131926123"
+                    Point3="-4,-59.9050131926123" />
                   <mssgle:LineSegment
-                    End="-254.928571428571,-70.6372779798847" />
+                    End="-260.904761904762,-59.9050131926123" />
                   <mssgle:CubicBezierSegment
-                    Point1="-254.928571428571,-70.6372779798847"
-                    Point2="-258.928571428571,-70.6372779798847"
-                    Point3="-258.928571428571,-74.6372779798847" />
+                    Point1="-260.904761904762,-59.9050131926123"
+                    Point2="-264.904761904762,-59.9050131926123"
+                    Point3="-264.904761904762,-63.9050131926123" />
                   <mssgle:LineSegment
-                    End="-258.928571428571,-134.214285714286" />
+                    End="-264.904761904762,-139.928571428572" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-177.655672433036,-65.6372779798847,96.3827734375,11.609375"
+              BoundingBox="-180.643767671131,-54.9050131926123,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
           TopLeft="302,145.642857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-165,43.4761904761905"
+              EndConnector="-165,43.4761904761903"
               Start="0,0"
-              End="-157.5,43.4761904761905">
+              End="-157.5,43.4761904761903">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-91.3669724770644,0" />
+                    End="-91.3669724770643,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-91.3669724770644,0"
-                    Point2="-95.3669724770644,0"
-                    Point3="-95.3669724770644,4" />
+                    Point1="-91.3669724770643,0"
+                    Point2="-95.3669724770643,0"
+                    Point3="-95.3669724770643,4" />
                   <mssgle:LineSegment
-                    End="-95.3669724770644,39.4761904761905" />
+                    End="-95.3669724770643,39.4761904761903" />
                   <mssgle:CubicBezierSegment
-                    Point1="-95.3669724770644,39.4761904761905"
-                    Point2="-95.3669724770644,43.4761904761905"
-                    Point3="-99.3669724770644,43.4761904761905" />
+                    Point1="-95.3669724770643,39.4761904761903"
+                    Point2="-95.3669724770643,43.4761904761903"
+                    Point3="-99.3669724770643,43.4761904761903" />
                   <mssgle:LineSegment
-                    End="-157.5,43.4761904761905" />
+                    End="-157.5,43.4761904761903" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -23785,13 +23242,51 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="98,42"
+          Id="Package\FactBank\Data Flow Task-Insert,Update\Sort"
+          TopLeft="26.2857142857141,421.142857142857" />
+        <EdgeLayout
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Union All Output 11]"
+          TopLeft="57.6666666666666,215.785714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.6190476190475,205.357142857143"
+              Start="0,0"
+              End="17.6190476190475,197.857142857143">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,79.7508739221626" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,79.7508739221626"
+                    Point2="0,83.7508739221626"
+                    Point3="4,83.7508739221626" />
+                  <mssgle:LineSegment
+                    End="13.6190476190475,83.7508739221626" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.6190476190475,83.7508739221626"
+                    Point2="17.6190476190475,83.7508739221626"
+                    Point3="17.6190476190475,87.7508739221626" />
+                  <mssgle:LineSegment
+                    End="17.6190476190475,197.857142857143" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <GroupLayout
           Text="Group 2"
           ParentId="Package\FactBank\Data Flow Task-Insert,Update"
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="798,455"
-          Size="798,498"
+          PanelSize="798,518"
+          Size="798,561"
           Id="5167000b-69a4-42c9-8890-9daed65698cb"
           TopLeft="327.68253968254,122.769841269842">
           <GroupLayout.ChildrenIds>
@@ -23802,45 +23297,31 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             <s:String>Package\FactBank\Data Flow Task-Insert,Update\Conditional Split 1</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Bank1]</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Ledger1]</s:String>
-            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Vend]</s:String>
+            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Vend1]</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Cust1]</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update\Union All</s:String>
+            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output]</s:String>
-            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]</s:String>
+            <s:String>Package\FactBank\Data Flow Task-Insert,Update\Sort</s:String>
+            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Union All Output 11]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination"
-          TopLeft="150.926395939086,822.392978482446" />
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Row Count Output 11]"
-          TopLeft="142.619047619048,767.341269841269">
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Sort Output]"
+          TopLeft="405.130952380953,629">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="93.8073483200388,55.0517086411768"
+              EndConnector="0,52.904761904762"
               Start="0,0"
-              End="93.8073483200388,47.5517086411768">
+              End="0,45.404761904762">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.5258543205884" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.5258543205884"
-                    Point2="0,27.5258543205884"
-                    Point3="4,27.5258543205884" />
-                  <mssgle:LineSegment
-                    End="89.8073483200388,27.5258543205884" />
-                  <mssgle:CubicBezierSegment
-                    Point1="89.8073483200388,27.5258543205884"
-                    Point2="93.8073483200388,27.5258543205884"
-                    Point3="93.8073483200388,31.5258543205884" />
-                  <mssgle:LineSegment
-                    End="93.8073483200388,47.5517086411768" />
+                    End="0,45.404761904762" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -23849,117 +23330,39 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="98,42"
-          Id="Package\FactBank\Data Flow Task-Insert,Update\Sort"
-          TopLeft="157.142857142857,621.428571428571" />
         <EdgeLayout
           Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
           TopLeft="350.761904761905,702.904761904762">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-95.6190476190478,-60.4761904761906"
+              EndConnector="-138.642857142857,43.4365079365069"
               Start="0,0"
-              End="-88.1190476190478,-60.4761904761906">
+              End="-131.142857142857,43.4365079365069">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-43.8095238095239,0" />
+                    End="-65.3214285714287,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-43.8095238095239,0"
-                    Point2="-47.8095238095239,0"
-                    Point3="-47.8095238095239,-4" />
+                    Point1="-65.3214285714287,0"
+                    Point2="-69.3214285714287,0"
+                    Point3="-69.3214285714287,4" />
                   <mssgle:LineSegment
-                    End="-47.8095238095239,-56.4761904761906" />
+                    End="-69.3214285714287,39.4365079365069" />
                   <mssgle:CubicBezierSegment
-                    Point1="-47.8095238095239,-56.4761904761906"
-                    Point2="-47.8095238095239,-60.4761904761906"
-                    Point3="-51.8095238095239,-60.4761904761906" />
+                    Point1="-69.3214285714287,39.4365079365069"
+                    Point2="-69.3214285714287,43.4365079365069"
+                    Point3="-73.3214285714287,43.4365079365069" />
                   <mssgle:LineSegment
-                    End="-88.1190476190478,-60.4761904761906" />
+                    End="-131.142857142857,43.4365079365069" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-103.615910528274,1,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Sort Output]"
-          TopLeft="206.142857142857,663.428571428571">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-63.5238095238096,61.912698412698"
-              Start="0,0"
-              End="-63.5238095238096,54.412698412698">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.956349206349" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.956349206349"
-                    Point2="0,30.956349206349"
-                    Point3="-4,30.956349206349" />
-                  <mssgle:LineSegment
-                    End="-59.5238095238096,30.956349206349" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-59.5238095238096,30.956349206349"
-                    Point2="-63.5238095238096,30.956349206349"
-                    Point3="-63.5238095238096,34.956349206349" />
-                  <mssgle:LineSegment
-                    End="-63.5238095238096,54.412698412698" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="146,42"
-          Id="Package\FactBank\Data Flow Task-Insert,Update\Row Sampling"
-          TopLeft="441.428571428571,842.857142857143" />
-        <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[OLE DB Destination Error Output]"
-          TopLeft="321.926395939086,843.392978482446">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="119.502175489485,20.4641643746967"
-              Start="0,0"
-              End="112.002175489485,20.4641643746967">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="55.7510877447425,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="55.7510877447425,0"
-                    Point2="59.7510877447425,0"
-                    Point3="59.7510877447425,4" />
-                  <mssgle:LineSegment
-                    End="59.7510877447425,16.4641643746967" />
-                  <mssgle:CubicBezierSegment
-                    Point1="59.7510877447425,16.4641643746967"
-                    Point2="59.7510877447425,20.4641643746967"
-                    Point3="63.7510877447425,20.4641643746967" />
-                  <mssgle:LineSegment
-                    End="112.002175489485,20.4641643746967" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-22.1189513177575,-22,163.740078125,16"
+              BoundingBox="-125.127815290179,-17.609375,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -23972,7 +23375,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -23982,7 +23385,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -24113,29 +23516,6 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\FactBank\Data Flow Task-Insert,Update\Lookup Account">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimAccount]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\FactBank\Data Flow Task-Insert,Update\Lookup Vendor">
     <Properties>
       <Property>
@@ -24159,6 +23539,19 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\FactBank\Data Flow Task-Insert,Update\Lookup Company">
     <Properties>
       <Property>
@@ -24170,6 +23563,29 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[DimCompany]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactBank\Data Flow Task-Insert,Update\Lookup Account">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimAccount]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -24260,7 +23676,9 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24282,7 +23700,9 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24917,126 +24337,6 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         </EdgeLayout>
         <EdgeLayout
           Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output13]"
-          TopLeft="1770.16666666666,295.277777777777">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-231,56.3333333333333"
-              Start="0,0"
-              End="-231,48.8333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.1666666666667" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.1666666666667"
-                    Point2="0,28.1666666666667"
-                    Point3="-4,28.1666666666667" />
-                  <mssgle:LineSegment
-                    End="-227,28.1666666666667" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-227,28.1666666666667"
-                    Point2="-231,28.1666666666667"
-                    Point3="-231,32.1666666666667" />
-                  <mssgle:LineSegment
-                    End="-231,48.8333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-163.69138671875,33.1666666666667,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output12]"
-          TopLeft="380.944444444444,391.444444444444">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="553.944444444444,91.6666666666665"
-              Start="0,0"
-              End="553.944444444444,84.1666666666665">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.8333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41.8333333333333"
-                    Point2="0,45.8333333333333"
-                    Point3="4,45.8333333333333" />
-                  <mssgle:LineSegment
-                    End="549.944444444444,45.8333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="549.944444444444,45.8333333333333"
-                    Point2="553.944444444444,45.8333333333333"
-                    Point3="553.944444444444,49.8333333333333" />
-                  <mssgle:LineSegment
-                    End="553.944444444444,84.1666666666665" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="228.780835503472,50.8333333333333,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
-          TopLeft="659.444444444444,369.944444444444">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-174,0"
-              Start="0,0"
-              End="-166.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-166.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-131.44138671875,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
-          TopLeft="1043.44444444444,370.444444444444">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-178,0"
-              Start="0,0"
-              End="-170.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-170.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-133.44138671875,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
           TopLeft="960.222222222221,525.111111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25072,7 +24372,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output12]"
           TopLeft="1511.44444444444,275.222222222221">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25092,6 +24392,126 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="40.1697243923615,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
+          TopLeft="1770.16666666666,295.277777777777">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-231,56.3333333333333"
+              Start="0,0"
+              End="-231,48.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.1666666666667"
+                    Point2="0,28.1666666666667"
+                    Point3="-4,28.1666666666667" />
+                  <mssgle:LineSegment
+                    End="-227,28.1666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-227,28.1666666666667"
+                    Point2="-231,28.1666666666667"
+                    Point3="-231,32.1666666666667" />
+                  <mssgle:LineSegment
+                    End="-231,48.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-163.69138671875,33.1666666666667,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
+          TopLeft="380.944444444444,391.444444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="553.944444444444,91.6666666666665"
+              Start="0,0"
+              End="553.944444444444,84.1666666666665">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.8333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.8333333333333"
+                    Point2="0,45.8333333333333"
+                    Point3="4,45.8333333333333" />
+                  <mssgle:LineSegment
+                    End="549.944444444444,45.8333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="549.944444444444,45.8333333333333"
+                    Point2="553.944444444444,45.8333333333333"
+                    Point3="553.944444444444,49.8333333333333" />
+                  <mssgle:LineSegment
+                    End="553.944444444444,84.1666666666665" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="228.780835503472,50.8333333333333,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
+          TopLeft="659.444444444444,369.944444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-174,0"
+              Start="0,0"
+              End="-166.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-166.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-131.44138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
+          TopLeft="1043.44444444444,370.444444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-178,0"
+              Start="0,0"
+              End="-170.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-170.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-133.44138671875,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -25121,78 +24541,6 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         </EdgeLayout>
         <EdgeLayout
           Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
-          TopLeft="1446.66666666666,372.027777777777">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-184.22222222222,0"
-              Start="0,0"
-              End="-176.72222222222,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-176.72222222222,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-136.55249782986,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
-          TopLeft="385.666666666666,179.888888888889">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-194.833333333333,0"
-              Start="0,0"
-              End="-187.333333333333,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-187.333333333333,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-141.858053385416,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
-          TopLeft="1135.22222222221,276.166666666666">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="197.222222222222,0"
-              Start="0,0"
-              End="189.722222222222,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="189.722222222222,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="46.669724392361,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
           TopLeft="101.833333333333,201.944444444444">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25228,7 +24576,31 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
+          TopLeft="385.666666666666,179.888888888889">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-194.833333333333,0"
+              Start="0,0"
+              End="-187.333333333333,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-187.333333333333,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-141.858053385416,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
           TopLeft="762.944444444444,177.111111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25252,7 +24624,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
           TopLeft="379.888888888889,273.222222222221">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25276,7 +24648,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
           TopLeft="1118.55555555555,175.055555555555">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -25296,6 +24668,54 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-136.246942274305,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+          TopLeft="1446.66666666666,372.027777777777">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-184.22222222222,0"
+              Start="0,0"
+              End="-176.72222222222,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-176.72222222222,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-136.55249782986,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          TopLeft="1135.22222222221,276.166666666666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="197.222222222222,0"
+              Start="0,0"
+              End="189.722222222222,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="189.722222222222,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="46.669724392361,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -26475,19 +25895,6 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
