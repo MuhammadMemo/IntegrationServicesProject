@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="868"
-  DTS:VersionGUID="{A3E51745-EC35-487A-86DC-6A59F9B244B0}">
+  DTS:VersionBuild="873"
+  DTS:VersionGUID="{CD04258C-2A4F-44AF-B6BD-E4278601F511}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1410,7 +1410,7 @@ where [refTable].[Id] = ? and [refTable].[CompanyKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination};#{Package\FactBank\Data Flow Task-Insert,Update\1284:invalid};</property>
+                      name="ParameterMap">#{Package\FactBank\Data Flow Task-Insert,Update\OLE DB Destination};#{Package\FactBank\Data Flow Task-Insert,Update\978:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -7144,54 +7144,54 @@ UPDATE [dbo].[FactBank]
                   startId="Package\FactBank\Data Flow Task-Insert,Update\Conditional Split 1.Outputs[Ledger]" />
                 <path
                   refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All 1.Inputs[Union All Input 1]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1]"
                   name="Lookup Match Output"
-                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Outputs[Lookup Match Output]" />
+                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All 1.Inputs[Union All Input 3]"
-                  name="Lookup Match Output"
-                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Conditional Split.Inputs[Conditional Split Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Company.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
-                  name="Lookup Match Output"
-                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All 1.Inputs[Union All Input 2]"
-                  name="Lookup Match Output"
-                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All 1.Inputs[Union All Input 4]"
-                  name="Lookup Match Output"
-                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 2]"
-                  name="Lookup Match Output"
-                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Account.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 3]"
-                  name="Lookup Match Output"
-                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Vendor.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
                   endId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 4]"
                   name="Lookup Match Output"
                   startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Customer.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
-                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 1]"
+                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 3]"
                   name="Lookup Match Output"
-                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Bank.Outputs[Lookup Match Output]" />
+                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Vendor.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All 1.Inputs[Union All Input 4]"
+                  name="Lookup Match Output"
+                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup CustomerOffset.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All.Inputs[Union All Input 2]"
+                  name="Lookup Match Output"
+                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Account.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Conditional Split.Inputs[Conditional Split Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup Company.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All 1.Inputs[Union All Input 3]"
+                  name="Lookup Match Output"
+                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup VendorOffset.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All 1.Inputs[Union All Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup BankOffset.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
+                  endId="Package\FactBank\Data Flow Task-Insert,Update\Union All 1.Inputs[Union All Input 2]"
+                  name="Lookup Match Output"
+                  startId="Package\FactBank\Data Flow Task-Insert,Update\Lookup AccountOffset.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
                   endId="Package\FactBank\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
@@ -7269,7 +7269,7 @@ UPDATE [dbo].[FactBank]
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -7332,7 +7332,7 @@ UPDATE [dbo].[FactBank]
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -15761,74 +15761,74 @@ where [refTable].[UnitAlternativeKey] = ? and [refTable].[CompanyKey] = ?</prope
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Derived Column 1.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output13]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup FactSales.Outputs[Lookup Match Output]" />
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CustomerKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output12]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup EmployeeKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup GeographyKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup FactSales.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodDeliveryKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup UnitKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimensionKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodDeliveryKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CustomerKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup BrancheKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimensionKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup BrancheKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CompanyKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup GeographyKey.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup EmployeeKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup UnitKey.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
-                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion.Inputs[Lookup Input]"
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CustomerKey.Outputs[Lookup Match Output]" />
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup GeographyKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup BrancheKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CompanyKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimensionKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimPromotion.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CustomerKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup ProductKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup BrancheKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup UnitKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup DimensionKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodDeliveryKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup FactSales.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodPaymentKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup GeographyKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup CarKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup EmployeeKey.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Row Count.Inputs[Row Count Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup FactSales.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
+                  endId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodDeliveryKey.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\FactSales\Data Flow Task-Insert,Update\Lookup MethodAcquisitionKey.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
                   endId="Package\FactSales\Data Flow Task-Insert,Update\Row Count 1.Inputs[Row Count Input 1]"
@@ -16242,7 +16242,7 @@ where [refTable].[Companykey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\FactSales Delete\Data Flow Task-Delete\1285:invalid};</property>
+                      name="ParameterMap">#{Package\FactSales Delete\Data Flow Task-Delete\979:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -16826,7 +16826,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -16877,7 +16877,7 @@ where [refTable].[InventTranceKey] = ? and [refTable].[CompanyKeySource] = ?</pr
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -19826,7 +19826,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Failure"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -19877,7 +19877,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Task Success"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:LoggingOptions
             DTS:FilterKind="0"
@@ -19964,15 +19964,13 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           DTS:refId="Package\Sequence Container\Execute SQL Task"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{20D76171-EF4F-469C-AD15-F433EEF37232}"
+          DTS:DTSID="{EBBDCE89-0BFA-446C-850C-923282366938}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Execute SQL Task"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
-          <DTS:LoggingOptions
-            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}"
@@ -20003,12 +20001,12 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{47374EEB-4C44-4667-90C7-761630E53389}"
+          DTS:DTSID="{8DDA87BB-B930-4131-B5D6-CAC16BB850C9}"
           DTS:From="Package\Sequence Container\Execute SQL Task"
           DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 2"
+          DTS:ObjectName="Constraint"
           DTS:To="Package\Sequence Container\Execute SQL Task 1" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
@@ -21004,6 +21002,40 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="1422,2002">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-87,-162"
+              Start="0,0"
+              End="-79.5,-162">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-39.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-39.5,0"
+                    Point2="-43.5,0"
+                    Point3="-43.5,-4" />
+                  <mssgle:LineSegment
+                    End="-43.5,-158" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-43.5,-158"
+                    Point2="-43.5,-162"
+                    Point3="-47.5,-162" />
+                  <mssgle:LineSegment
+                    End="-79.5,-162" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
           TopLeft="312.25,1138.16666666667">
           <EdgeLayout.Curve>
@@ -21129,27 +21161,39 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="163,42"
-          Id="Package\Sequence Container\Execute SQL Task"
-          TopLeft="31.3333333333335,51.8333333333333" />
-        <NodeLayout
           Size="172,42"
           Id="Package\Sequence Container\Execute SQL Task 1"
           TopLeft="26.8333333333335,174.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Sequence Container\Execute SQL Task"
+          TopLeft="49.666666666667,54.3333333333334" />
         <EdgeLayout
-          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
-          TopLeft="112.833333333333,93.8333333333333">
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="131.166666666667,96.3333333333334">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,80.6666666666667"
+              EndConnector="-18.3333333333335,78.1666666666666"
               Start="0,0"
-              End="0,73.1666666666667">
+              End="-18.3333333333335,70.6666666666666">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,73.1666666666667" />
+                    End="0,35.0833333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.0833333333333"
+                    Point2="0,39.0833333333333"
+                    Point3="-4,39.0833333333333" />
+                  <mssgle:LineSegment
+                    End="-14.3333333333335,39.0833333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14.3333333333335,39.0833333333333"
+                    Point2="-18.3333333333335,39.0833333333333"
+                    Point3="-18.3333333333335,43.0833333333333" />
+                  <mssgle:LineSegment
+                    End="-18.3333333333335,70.6666666666666" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21161,8 +21205,8 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="220,271"
-          Size="220,314"
+          PanelSize="263,271"
+          Size="263,314"
           Id="Package\Sequence Container"
           TopLeft="142.166666666667,439.166666666667" />
         <EdgeLayout
@@ -21171,62 +21215,62 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-69.833333333333,373.333333333334"
+              EndConnector="-41.1666666666663,373.333333333334"
               Start="0,0"
-              End="-69.833333333333,365.833333333334">
+              End="-41.1666666666663,365.833333333334">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,183.247674693751" />
+                    End="0,183.520566013281" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,183.247674693751"
-                    Point2="0,187.247674693751"
-                    Point3="-4,187.247674693751" />
+                    Point1="0,183.520566013281"
+                    Point2="0,187.520566013281"
+                    Point3="-4,187.520566013281" />
                   <mssgle:LineSegment
-                    End="-65.833333333333,187.247674693751" />
+                    End="-37.1666666666663,187.520566013281" />
                   <mssgle:CubicBezierSegment
-                    Point1="-65.833333333333,187.247674693751"
-                    Point2="-69.833333333333,187.247674693751"
-                    Point3="-69.833333333333,191.247674693751" />
+                    Point1="-37.1666666666663,187.520566013281"
+                    Point2="-41.1666666666663,187.520566013281"
+                    Point3="-41.1666666666663,191.520566013281" />
                   <mssgle:LineSegment
-                    End="-69.833333333333,365.833333333334" />
+                    End="-41.1666666666663,365.833333333334" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-42.9166666666665,192.247674693751,16,16"
+              BoundingBox="-28.5833333333332,192.520566013281,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="216.833333333333,439.166666666667">
+          TopLeft="231.166666666667,439.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-96.9999999999983,-84.3333333333333"
+              EndConnector="-111.333333333332,-84.3333333333335"
               Start="0,0"
-              End="-96.9999999999983,-76.8333333333333">
+              End="-111.333333333332,-76.8333333333335">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-30.0986762936221" />
+                    End="0,-30.0393046107332" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-30.0986762936221"
-                    Point2="0,-34.0986762936221"
-                    Point3="-4,-34.0986762936221" />
+                    Point1="0,-30.0393046107332"
+                    Point2="0,-34.0393046107332"
+                    Point3="-4,-34.0393046107332" />
                   <mssgle:LineSegment
-                    End="-92.9999999999983,-34.0986762936221" />
+                    End="-107.333333333332,-34.0393046107332" />
                   <mssgle:CubicBezierSegment
-                    Point1="-92.9999999999983,-34.0986762936221"
-                    Point2="-96.9999999999983,-34.0986762936221"
-                    Point3="-96.9999999999983,-38.0986762936221" />
+                    Point1="-107.333333333332,-34.0393046107332"
+                    Point2="-111.333333333332,-34.0393046107332"
+                    Point3="-111.333333333332,-38.0393046107332" />
                   <mssgle:LineSegment
-                    End="-96.9999999999983,-76.8333333333333" />
+                    End="-111.333333333332,-76.8333333333335" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -22322,40 +22366,6 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             <s:String>Package.PrecedenceConstraints[Constraint 7]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="1422,2002">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-87,-162"
-              Start="0,0"
-              End="-79.5,-162">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-39.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-39.5,0"
-                    Point2="-43.5,0"
-                    Point3="-43.5,-4" />
-                  <mssgle:LineSegment
-                    End="-43.5,-158" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-43.5,-158"
-                    Point2="-43.5,-162"
-                    Point3="-47.5,-162" />
-                  <mssgle:LineSegment
-                    End="-79.5,-162" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -22397,37 +22407,27 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           Id="Package\FactBank\Data Flow Task-Insert,Update\Lookup Company"
           TopLeft="2203.5,365.293650793651" />
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Union All Output 1]"
-          TopLeft="1229,331">
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Sort Output]"
+          TopLeft="405.130952380953,629">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-124,17"
+              EndConnector="0,52.904761904762"
               Start="0,0"
-              End="-116.5,17">
+              End="0,45.404761904762">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-58,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-58,0"
-                    Point2="-62,0"
-                    Point3="-62,4" />
-                  <mssgle:LineSegment
-                    End="-62,13" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-62,13"
-                    Point2="-62,17"
-                    Point3="-66,17" />
-                  <mssgle:LineSegment
-                    End="-116.5,17" />
+                    End="0,45.404761904762" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22461,7 +22461,9 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22495,7 +22497,9 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -22517,11 +22521,85 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
+          TopLeft="350.761904761905,702.904761904762">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-138.642857142857,43.4365079365069"
+              Start="0,0"
+              End="-131.142857142857,43.4365079365069">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-65.3214285714287,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-65.3214285714287,0"
+                    Point2="-69.3214285714287,0"
+                    Point3="-69.3214285714287,4" />
+                  <mssgle:LineSegment
+                    End="-69.3214285714287,39.4365079365069" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-69.3214285714287,39.4365079365069"
+                    Point2="-69.3214285714287,43.4365079365069"
+                    Point3="-73.3214285714287,43.4365079365069" />
+                  <mssgle:LineSegment
+                    End="-131.142857142857,43.4365079365069" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-125.127815290179,-17.609375,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
+          TopLeft="463.761904761905,702.904761904762">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="56.0238095238095,59.1507936507934"
+              Start="0,0"
+              End="48.5238095238095,59.1507936507934">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="24.0119047619047,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24.0119047619047,0"
+                    Point2="28.0119047619047,0"
+                    Point3="28.0119047619047,4" />
+                  <mssgle:LineSegment
+                    End="28.0119047619047,55.1507936507934" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28.0119047619047,55.1507936507934"
+                    Point2="28.0119047619047,59.1507936507934"
+                    Point3="32.0119047619047,59.1507936507934" />
+                  <mssgle:LineSegment
+                    End="48.5238095238095,59.1507936507934" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-20.1794819568453,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
           TopLeft="2203.5,386.293650793651">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22557,38 +22635,38 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
-          TopLeft="463.761904761905,702.904761904762">
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Union All Output 1]"
+          TopLeft="1229,331">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="56.0238095238095,59.1507936507934"
+              EndConnector="-124,17"
               Start="0,0"
-              End="48.5238095238095,59.1507936507934">
+              End="-116.5,17">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="24.0119047619047,0" />
+                    End="-58,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="24.0119047619047,0"
-                    Point2="28.0119047619047,0"
-                    Point3="28.0119047619047,4" />
+                    Point1="-58,0"
+                    Point2="-62,0"
+                    Point3="-62,4" />
                   <mssgle:LineSegment
-                    End="28.0119047619047,55.1507936507934" />
+                    End="-62,13" />
                   <mssgle:CubicBezierSegment
-                    Point1="28.0119047619047,55.1507936507934"
-                    Point2="28.0119047619047,59.1507936507934"
-                    Point3="32.0119047619047,59.1507936507934" />
+                    Point1="-62,13"
+                    Point2="-62,17"
+                    Point3="-66,17" />
                   <mssgle:LineSegment
-                    End="48.5238095238095,59.1507936507934" />
+                    End="-116.5,17" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-20.1794819568453,-17.609375,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -22761,7 +22839,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           Id="Package\FactBank\Data Flow Task-Insert,Update\Union All 1"
           TopLeft="71.1507936507937,147.436507936508" />
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
           TopLeft="455.833333333333,65.2142857142856">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22797,7 +22875,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
           TopLeft="390.214285714286,222.785714285714">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22833,7 +22911,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
           TopLeft="464.738095238096,333.214285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22869,7 +22947,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
           TopLeft="387.5,149.928571428571">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -22924,10 +23002,10 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Cust]</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Bank]</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update\Union All 1</s:String>
-            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]</s:String>
-            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]</s:String>
-            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]</s:String>
-            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]</s:String>
+            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output]</s:String>
+            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]</s:String>
+            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]</s:String>
+            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
         <NodeLayout
@@ -23099,7 +23177,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           Id="Package\FactBank\Data Flow Task-Insert,Update\Union All"
           TopLeft="15.9999999999999,173.785714285714" />
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
           TopLeft="343.5,55.2142857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23135,7 +23213,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
           TopLeft="297.928571428572,217.071428571429">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23171,7 +23249,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
           TopLeft="341.404761904761,363.214285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23207,7 +23285,7 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
           TopLeft="302,145.642857142857">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -23277,7 +23355,9 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
@@ -23300,72 +23380,14 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
             <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Vend1]</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Cust1]</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update\Union All</s:String>
-            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]</s:String>
-            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]</s:String>
-            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]</s:String>
-            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output]</s:String>
+            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]</s:String>
+            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]</s:String>
+            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]</s:String>
+            <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update\Sort</s:String>
             <s:String>Package\FactBank\Data Flow Task-Insert,Update.Paths[Union All Output 11]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
-        <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Sort Output]"
-          TopLeft="405.130952380953,629">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52.904761904762"
-              Start="0,0"
-              End="0,45.404761904762">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.404761904762" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactBank\Data Flow Task-Insert,Update.Paths[Lookup No Match Output]"
-          TopLeft="350.761904761905,702.904761904762">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-138.642857142857,43.4365079365069"
-              Start="0,0"
-              End="-131.142857142857,43.4365079365069">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-65.3214285714287,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-65.3214285714287,0"
-                    Point2="-69.3214285714287,0"
-                    Point3="-69.3214285714287,4" />
-                  <mssgle:LineSegment
-                    End="-69.3214285714287,39.4365079365069" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-69.3214285714287,39.4365079365069"
-                    Point2="-69.3214285714287,43.4365079365069"
-                    Point3="-73.3214285714287,43.4365079365069" />
-                  <mssgle:LineSegment
-                    End="-131.142857142857,43.4365079365069" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-125.127815290179,-17.609375,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -23516,6 +23538,29 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\FactBank\Data Flow Task-Insert,Update\Lookup Account">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimAccount]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\FactBank\Data Flow Task-Insert,Update\Lookup Vendor">
     <Properties>
       <Property>
@@ -23563,29 +23608,6 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[DimCompany]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FactBank\Data Flow Task-Insert,Update\Lookup Account">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimAccount]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -24337,210 +24359,6 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
         </EdgeLayout>
         <EdgeLayout
           Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output13]"
-          TopLeft="960.222222222221,525.111111111111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="254.5,56.3888888888889"
-              Start="0,0"
-              End="254.5,48.8888888888889">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.8905390539054" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.8905390539054"
-                    Point2="0,22.8905390539054"
-                    Point3="4,22.8905390539054" />
-                  <mssgle:LineSegment
-                    End="250.5,22.8905390539054" />
-                  <mssgle:CubicBezierSegment
-                    Point1="250.5,22.8905390539054"
-                    Point2="254.5,22.8905390539054"
-                    Point3="254.5,26.8905390539054" />
-                  <mssgle:LineSegment
-                    End="254.5,48.8888888888889" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="79.05861328125,27.8905390539054,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output12]"
-          TopLeft="1511.44444444444,275.222222222221">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="184.222222222223,0"
-              Start="0,0"
-              End="176.722222222223,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="176.722222222223,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="40.1697243923615,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
-          TopLeft="1770.16666666666,295.277777777777">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-231,56.3333333333333"
-              Start="0,0"
-              End="-231,48.8333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.1666666666667" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.1666666666667"
-                    Point2="0,28.1666666666667"
-                    Point3="-4,28.1666666666667" />
-                  <mssgle:LineSegment
-                    End="-227,28.1666666666667" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-227,28.1666666666667"
-                    Point2="-231,28.1666666666667"
-                    Point3="-231,32.1666666666667" />
-                  <mssgle:LineSegment
-                    End="-231,48.8333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-163.69138671875,33.1666666666667,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
-          TopLeft="380.944444444444,391.444444444444">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="553.944444444444,91.6666666666665"
-              Start="0,0"
-              End="553.944444444444,84.1666666666665">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.8333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41.8333333333333"
-                    Point2="0,45.8333333333333"
-                    Point3="4,45.8333333333333" />
-                  <mssgle:LineSegment
-                    End="549.944444444444,45.8333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="549.944444444444,45.8333333333333"
-                    Point2="553.944444444444,45.8333333333333"
-                    Point3="553.944444444444,49.8333333333333" />
-                  <mssgle:LineSegment
-                    End="553.944444444444,84.1666666666665" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="228.780835503472,50.8333333333333,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
-          TopLeft="659.444444444444,369.944444444444">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-174,0"
-              Start="0,0"
-              End="-166.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-166.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-131.44138671875,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
-          TopLeft="1043.44444444444,370.444444444444">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-178,0"
-              Start="0,0"
-              End="-170.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-170.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-133.44138671875,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
-          TopLeft="769.111111111111,273.277777777777">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="213.111111111108,0"
-              Start="0,0"
-              End="205.611111111108,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="205.611111111108,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="54.614168836804,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
           TopLeft="101.833333333333,201.944444444444">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24576,103 +24394,31 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
-          TopLeft="385.666666666666,179.888888888889">
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output12]"
+          TopLeft="1135.22222222221,276.166666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-194.833333333333,0"
+              EndConnector="197.222222222222,0"
               Start="0,0"
-              End="-187.333333333333,0">
+              End="189.722222222222,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-187.333333333333,0" />
+                    End="189.722222222222,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-141.858053385416,5,96.3827734375,11.609375"
+              BoundingBox="46.669724392361,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
-          TopLeft="762.944444444444,177.111111111111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-208.277777777778,0"
-              Start="0,0"
-              End="-200.777777777778,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-200.777777777778,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-148.580275607639,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
-          TopLeft="379.888888888889,273.222222222221">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="206.222222222222,0"
-              Start="0,0"
-              End="198.722222222222,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="198.722222222222,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="51.169724392361,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
-          TopLeft="1118.55555555555,175.055555555555">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-183.611111111111,0"
-              Start="0,0"
-              End="-176.111111111111,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-176.111111111111,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-136.246942274305,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output11]"
           TopLeft="1446.66666666666,372.027777777777">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -24696,26 +24442,302 @@ where [refTable].[SalesCommissionAlternativeKeySource] = ? and [refTable].[Compa
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
-          TopLeft="1135.22222222221,276.166666666666">
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output10]"
+          TopLeft="1118.55555555555,175.055555555555">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="197.222222222222,0"
+              EndConnector="-183.611111111111,0"
               Start="0,0"
-              End="189.722222222222,0">
+              End="-176.111111111111,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="189.722222222222,0" />
+                    End="-176.111111111111,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="46.669724392361,5,96.3827734375,11.609375"
+              BoundingBox="-136.246942274305,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output9]"
+          TopLeft="379.888888888889,273.222222222221">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="206.222222222222,0"
+              Start="0,0"
+              End="198.722222222222,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="198.722222222222,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="51.169724392361,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output8]"
+          TopLeft="762.944444444444,177.111111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-208.277777777778,0"
+              Start="0,0"
+              End="-200.777777777778,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-200.777777777778,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-148.580275607639,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output7]"
+          TopLeft="385.666666666666,179.888888888889">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-194.833333333333,0"
+              Start="0,0"
+              End="-187.333333333333,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-187.333333333333,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-141.858053385416,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output6]"
+          TopLeft="1043.44444444444,370.444444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-178,0"
+              Start="0,0"
+              End="-170.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-170.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-133.44138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output5]"
+          TopLeft="769.111111111111,273.277777777777">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="213.111111111108,0"
+              Start="0,0"
+              End="205.611111111108,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="205.611111111108,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="54.614168836804,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output4]"
+          TopLeft="659.444444444444,369.944444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-174,0"
+              Start="0,0"
+              End="-166.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-166.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-131.44138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output3]"
+          TopLeft="380.944444444444,391.444444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="553.944444444444,91.6666666666665"
+              Start="0,0"
+              End="553.944444444444,84.1666666666665">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.8333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.8333333333333"
+                    Point2="0,45.8333333333333"
+                    Point3="4,45.8333333333333" />
+                  <mssgle:LineSegment
+                    End="549.944444444444,45.8333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="549.944444444444,45.8333333333333"
+                    Point2="553.944444444444,45.8333333333333"
+                    Point3="553.944444444444,49.8333333333333" />
+                  <mssgle:LineSegment
+                    End="553.944444444444,84.1666666666665" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="228.780835503472,50.8333333333333,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output2]"
+          TopLeft="1770.16666666666,295.277777777777">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-231,56.3333333333333"
+              Start="0,0"
+              End="-231,48.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.1666666666667"
+                    Point2="0,28.1666666666667"
+                    Point3="-4,28.1666666666667" />
+                  <mssgle:LineSegment
+                    End="-227,28.1666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-227,28.1666666666667"
+                    Point2="-231,28.1666666666667"
+                    Point3="-231,32.1666666666667" />
+                  <mssgle:LineSegment
+                    End="-231,48.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-163.69138671875,33.1666666666667,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output1]"
+          TopLeft="1511.44444444444,275.222222222221">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="184.222222222223,0"
+              Start="0,0"
+              End="176.722222222223,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="176.722222222223,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="40.1697243923615,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactSales\Data Flow Task-Insert,Update.Paths[Lookup Match Output]"
+          TopLeft="960.222222222221,525.111111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="254.5,56.3888888888889"
+              Start="0,0"
+              End="254.5,48.8888888888889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.8905390539054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.8905390539054"
+                    Point2="0,22.8905390539054"
+                    Point3="4,22.8905390539054" />
+                  <mssgle:LineSegment
+                    End="250.5,22.8905390539054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="250.5,22.8905390539054"
+                    Point2="254.5,22.8905390539054"
+                    Point3="254.5,26.8905390539054" />
+                  <mssgle:LineSegment
+                    End="254.5,48.8888888888889" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="79.05861328125,27.8905390539054,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
