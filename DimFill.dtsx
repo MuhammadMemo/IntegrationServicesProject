@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DimFill"
   DTS:PackageType="5"
-  DTS:VersionBuild="166"
-  DTS:VersionGUID="{600F9A28-447C-4929-BC46-3E2A1DADEF8B}">
+  DTS:VersionBuild="167"
+  DTS:VersionGUID="{6114A0A9-6E30-4A11-9A33-5B7BC3BF6C65}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -12091,7 +12091,29 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimProduct]
+   SET 
+      [GROUPTYPE] = ?
+      ,[TOPCATEGORY] = ?
+      ,[GROUPNAME] = ?
+      ,[SUBCATEGORID] = ?
+      ,[SUBCATEGORNAME] = ?
+      ,[LINEID] = ?
+      ,[LINENAME] = ?
+
+      ,[ProductName] = ?
+      ,[CALC] = ?
+      ,[PRICE] = ?
+      ,[PRICEQTY] = ?
+      ,[QTY] = ?
+      ,[PurchasePrice] = ?
+      ,[TOTALPRICE] = ?
+      ,[DISCPERCENT] = ?
+      ,[DISCAMOUNT] = ?
+      ,[TOTALAFTER] = ?
+      ,[ListProduct] = ?
+
+ WHERE         [ProductAlternativeKey] = ?  and [CompanyKey] = ? and [ID] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -12100,6 +12122,8 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                   <connections>
                     <connection
                       refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Connections[OleDbConnection]"
+                      connectionManagerID="{076E2FF8-72A8-49FE-B2B1-BE7B0FC6CF47}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Mffco-srv DataWarehouse]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -12110,8 +12134,388 @@ where [refTable].[CompanyAlternativeKey] = ?</property>
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[GroupType]"
+                          cachedDataType="wstr"
+                          cachedLength="13"
+                          cachedName="GroupType"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[GroupType]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[TOPCATEGORY]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="TOPCATEGORY"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[TOPCATEGORY]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[GROUPNAME]"
+                          cachedDataType="wstr"
+                          cachedLength="150"
+                          cachedName="GROUPNAME"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[GROUPNAME]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SUBCATEGORID]"
+                          cachedDataType="i4"
+                          cachedName="SUBCATEGORID"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[SUBCATEGORID]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SUBCATEGORNAME]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="SUBCATEGORNAME"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[SUBCATEGORNAME]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[LINEID]"
+                          cachedDataType="i4"
+                          cachedName="LINEID"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[LINEID]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[LINENAME]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="LINENAME"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[LINENAME]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ProductName]"
+                          cachedDataType="wstr"
+                          cachedLength="150"
+                          cachedName="ProductName"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[ProductName]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CALC]"
+                          cachedDataType="i4"
+                          cachedName="CALC"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[CALC]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Copy of PRICE]"
+                          cachedDataType="cy"
+                          cachedName="Copy of PRICE"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of PRICE]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Copy of PRICEQTY]"
+                          cachedDataType="cy"
+                          cachedName="Copy of PRICEQTY"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of PRICEQTY]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[QTY]"
+                          cachedDataType="i4"
+                          cachedName="QTY"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[QTY]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Copy of PurchasePrice]"
+                          cachedDataType="cy"
+                          cachedName="Copy of PurchasePrice"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of PurchasePrice]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Copy of TOTALPRICE]"
+                          cachedDataType="cy"
+                          cachedName="Copy of TOTALPRICE"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of TOTALPRICE]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Copy of DiscPERCENT]"
+                          cachedDataType="cy"
+                          cachedName="Copy of DiscPERCENT"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of DiscPERCENT]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Copy of DISCAMOUNT]"
+                          cachedDataType="cy"
+                          cachedName="Copy of DISCAMOUNT"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of DISCAMOUNT]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Copy of TOTALAFTER]"
+                          cachedDataType="cy"
+                          cachedName="Copy of TOTALAFTER"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of TOTALAFTER]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ListProduct]"
+                          cachedDataType="i4"
+                          cachedName="ListProduct"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[ListProduct]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Companykey]"
+                          cachedDataType="ui1"
+                          cachedName="Companykey"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\Lookup 2.Outputs[Lookup Match Output].Columns[Companykey]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ProductAlternativeKey]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="ProductAlternativeKey"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[ProductAlternativeKey]" />
+                        <inputColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID]"
+                          cachedDataType="i8"
+                          cachedName="ID"
+                          externalMetadataColumnId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
+                          lineageId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Source 1.Outputs[OLE DB Source Output].Columns[ID]" />
+                      </inputColumns>
                       <externalMetadataColumns
-                        isUsed="True" />
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="wstr"
+                          length="50"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="wstr"
+                          length="150"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="wstr"
+                          length="150"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          dataType="i4"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          dataType="wstr"
+                          length="100"
+                          name="Param_4">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          dataType="i4"
+                          name="Param_5">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          dataType="wstr"
+                          length="30"
+                          name="Param_6">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          dataType="wstr"
+                          length="150"
+                          name="Param_7">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          dataType="i4"
+                          name="Param_8">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          dataType="numeric"
+                          name="Param_9"
+                          precision="28"
+                          scale="12">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          dataType="numeric"
+                          name="Param_10"
+                          precision="28"
+                          scale="12">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                          dataType="i4"
+                          name="Param_11">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                          dataType="cy"
+                          name="Param_12">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                          dataType="cy"
+                          name="Param_13">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                          dataType="numeric"
+                          name="Param_14"
+                          precision="28"
+                          scale="12">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                          dataType="cy"
+                          name="Param_15">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                          dataType="cy"
+                          name="Param_16">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
+                          dataType="i4"
+                          name="Param_17">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
+                          dataType="wstr"
+                          length="30"
+                          name="Param_18">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
+                          dataType="ui1"
+                          name="Param_19">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Container DimProduct\Data Flow Task-Insert,Update\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
+                          dataType="i8"
+                          name="Param_20">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">17</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
                     </input>
                   </inputs>
                   <outputs>
