@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Emp_Att"
   DTS:PackageType="5"
-  DTS:VersionBuild="121"
-  DTS:VersionGUID="{E6F3ECEB-1C23-4554-9E35-77948E1761FA}">
+  DTS:VersionBuild="129"
+  DTS:VersionGUID="{184DF368-DF57-4E44-ABCA-214B14B44781}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -42,12 +42,12 @@
       DTS:CreationName=""
       DTS:DTSID="{EA36EE63-BD91-4D18-8A8A-58575021136E}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="&quot;SELECT * FROM MO_AX_ATT WHERE last_updated &gt; TO_DATE('&quot; + &#xA;    (DT_WSTR, 30) (DT_DBTIMESTAMP) @[User::LastModifaydate] + &#xA;    &quot;', 'YYYY-MM-DD HH24:MI:SS')&quot;"
+      DTS:Expression="&quot;SELECT * FROM MO_AX_ATT WHERE last_updated &gt; TO_DATE('&quot; + &#xA;    (DT_WSTR, 30) (DT_DBTIMESTAMP) DATEADD( &quot;HOUR&quot;,-2,@[User::LastModifaydate] )  + &#xA;    &quot;', 'YYYY-MM-DD HH24:MI:SS')&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ATT_last_updated">
       <DTS:VariableValue
-        DTS:DataType="8">SELECT * FROM MO_AX_ATT WHERE last_updated &gt; TO_DATE('1899-12-30 00:00:00', 'YYYY-MM-DD HH24:MI:SS')</DTS:VariableValue>
+        DTS:DataType="8">SELECT * FROM MO_AX_ATT WHERE last_updated &gt; TO_DATE('1899-12-29 22:00:00', 'YYYY-MM-DD HH24:MI:SS')</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -355,9 +355,9 @@
                         </inputColumn>
                         <inputColumn
                           refId="Package\EmpAtt\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[ARRIVAL_TIME]"
-                          cachedDataType="numeric"
+                          cachedDataType="wstr"
+                          cachedLength="38"
                           cachedName="ARRIVAL_TIME"
-                          cachedPrecision="2"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ARRIVAL_TIME]"
@@ -379,9 +379,9 @@
                         </inputColumn>
                         <inputColumn
                           refId="Package\EmpAtt\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[ARRIVAL_MINUTE]"
-                          cachedDataType="numeric"
+                          cachedDataType="wstr"
+                          cachedLength="38"
                           cachedName="ARRIVAL_MINUTE"
-                          cachedPrecision="2"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ARRIVAL_MINUTE]"
@@ -403,9 +403,9 @@
                         </inputColumn>
                         <inputColumn
                           refId="Package\EmpAtt\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[LEAVE_TIME]"
-                          cachedDataType="numeric"
+                          cachedDataType="wstr"
+                          cachedLength="38"
                           cachedName="LEAVE_TIME"
-                          cachedPrecision="2"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LEAVE_TIME]"
@@ -427,9 +427,9 @@
                         </inputColumn>
                         <inputColumn
                           refId="Package\EmpAtt\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[LEAVE_MINUTE]"
-                          cachedDataType="numeric"
+                          cachedDataType="wstr"
+                          cachedLength="38"
                           cachedName="LEAVE_MINUTE"
-                          cachedPrecision="2"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LEAVE_MINUTE]"
@@ -813,30 +813,30 @@ where [refTable].[EMPLOYEE_CODE] = ? and [refTable].[ATT_DATE] = ?</property>
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[S_NAME]" />
                         <inputColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ARRIVAL_TIME]"
-                          cachedDataType="numeric"
+                          cachedDataType="wstr"
+                          cachedLength="38"
                           cachedName="ARRIVAL_TIME"
-                          cachedPrecision="2"
                           externalMetadataColumnId="Package\EmpAtt\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ARRIVAL_TIME]" />
                         <inputColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ARRIVAL_MINUTE]"
-                          cachedDataType="numeric"
+                          cachedDataType="wstr"
+                          cachedLength="38"
                           cachedName="ARRIVAL_MINUTE"
-                          cachedPrecision="2"
                           externalMetadataColumnId="Package\EmpAtt\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ARRIVAL_MINUTE]" />
                         <inputColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[LEAVE_TIME]"
-                          cachedDataType="numeric"
+                          cachedDataType="wstr"
+                          cachedLength="38"
                           cachedName="LEAVE_TIME"
-                          cachedPrecision="2"
                           externalMetadataColumnId="Package\EmpAtt\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LEAVE_TIME]" />
                         <inputColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[LEAVE_MINUTE]"
-                          cachedDataType="numeric"
+                          cachedDataType="wstr"
+                          cachedLength="38"
                           cachedName="LEAVE_MINUTE"
-                          cachedPrecision="2"
                           externalMetadataColumnId="Package\EmpAtt\Data Flow Task\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LEAVE_MINUTE]" />
                         <inputColumn
@@ -1253,30 +1253,30 @@ where [refTable].[EMPLOYEE_CODE] = ? and [refTable].[ATT_DATE] = ?</property>
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[S_NAME]" />
                         <inputColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ARRIVAL_TIME]"
-                          cachedDataType="numeric"
+                          cachedDataType="wstr"
+                          cachedLength="38"
                           cachedName="ARRIVAL_TIME"
-                          cachedPrecision="2"
                           externalMetadataColumnId="Package\EmpAtt\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ARRIVAL_TIME]"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ARRIVAL_TIME]" />
                         <inputColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ARRIVAL_MINUTE]"
-                          cachedDataType="numeric"
+                          cachedDataType="wstr"
+                          cachedLength="38"
                           cachedName="ARRIVAL_MINUTE"
-                          cachedPrecision="2"
                           externalMetadataColumnId="Package\EmpAtt\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ARRIVAL_MINUTE]"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ARRIVAL_MINUTE]" />
                         <inputColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LEAVE_TIME]"
-                          cachedDataType="numeric"
+                          cachedDataType="wstr"
+                          cachedLength="38"
                           cachedName="LEAVE_TIME"
-                          cachedPrecision="2"
                           externalMetadataColumnId="Package\EmpAtt\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LEAVE_TIME]"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LEAVE_TIME]" />
                         <inputColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LEAVE_MINUTE]"
-                          cachedDataType="numeric"
+                          cachedDataType="wstr"
+                          cachedLength="38"
                           cachedName="LEAVE_MINUTE"
-                          cachedPrecision="2"
                           externalMetadataColumnId="Package\EmpAtt\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LEAVE_MINUTE]"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LEAVE_MINUTE]" />
                         <inputColumn
@@ -1633,43 +1633,43 @@ where [refTable].[EMPLOYEE_CODE] = ? and [refTable].[ATT_DATE] = ?</property>
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ARRIVAL_TIME]"
-                          dataType="numeric"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ARRIVAL_TIME]"
+                          length="38"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ARRIVAL_TIME]"
                           name="ARRIVAL_TIME"
-                          precision="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ARRIVAL_MINUTE]"
-                          dataType="numeric"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ARRIVAL_MINUTE]"
+                          length="38"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ARRIVAL_MINUTE]"
                           name="ARRIVAL_MINUTE"
-                          precision="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LEAVE_TIME]"
-                          dataType="numeric"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LEAVE_TIME]"
+                          length="38"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LEAVE_TIME]"
                           name="LEAVE_TIME"
-                          precision="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LEAVE_MINUTE]"
-                          dataType="numeric"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LEAVE_MINUTE]"
+                          length="38"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LEAVE_MINUTE]"
                           name="LEAVE_MINUTE"
-                          precision="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LAST_UPDATED]"
@@ -1765,24 +1765,24 @@ where [refTable].[EMPLOYEE_CODE] = ? and [refTable].[ATT_DATE] = ?</property>
                           name="S_NAME" />
                         <externalMetadataColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ARRIVAL_TIME]"
-                          dataType="numeric"
-                          name="ARRIVAL_TIME"
-                          precision="2" />
+                          dataType="wstr"
+                          length="38"
+                          name="ARRIVAL_TIME" />
                         <externalMetadataColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ARRIVAL_MINUTE]"
-                          dataType="numeric"
-                          name="ARRIVAL_MINUTE"
-                          precision="2" />
+                          dataType="wstr"
+                          length="38"
+                          name="ARRIVAL_MINUTE" />
                         <externalMetadataColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LEAVE_TIME]"
-                          dataType="numeric"
-                          name="LEAVE_TIME"
-                          precision="2" />
+                          dataType="wstr"
+                          length="38"
+                          name="LEAVE_TIME" />
                         <externalMetadataColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LEAVE_MINUTE]"
-                          dataType="numeric"
-                          name="LEAVE_MINUTE"
-                          precision="2" />
+                          dataType="wstr"
+                          length="38"
+                          name="LEAVE_MINUTE" />
                         <externalMetadataColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LAST_UPDATED]"
                           dataType="dbTimeStamp"
@@ -1885,28 +1885,28 @@ where [refTable].[EMPLOYEE_CODE] = ? and [refTable].[ATT_DATE] = ?</property>
                           name="ATT_DATE" />
                         <outputColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ARRIVAL_TIME]"
-                          dataType="numeric"
+                          dataType="wstr"
+                          length="38"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ARRIVAL_TIME]"
-                          name="ARRIVAL_TIME"
-                          precision="2" />
+                          name="ARRIVAL_TIME" />
                         <outputColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ARRIVAL_MINUTE]"
-                          dataType="numeric"
+                          dataType="wstr"
+                          length="38"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ARRIVAL_MINUTE]"
-                          name="ARRIVAL_MINUTE"
-                          precision="2" />
+                          name="ARRIVAL_MINUTE" />
                         <outputColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LEAVE_TIME]"
-                          dataType="numeric"
+                          dataType="wstr"
+                          length="38"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LEAVE_TIME]"
-                          name="LEAVE_TIME"
-                          precision="2" />
+                          name="LEAVE_TIME" />
                         <outputColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LEAVE_MINUTE]"
-                          dataType="numeric"
+                          dataType="wstr"
+                          length="38"
                           lineageId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LEAVE_MINUTE]"
-                          name="LEAVE_MINUTE"
-                          precision="2" />
+                          name="LEAVE_MINUTE" />
                         <outputColumn
                           refId="Package\EmpAtt\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[H_SER]"
                           dataType="numeric"
